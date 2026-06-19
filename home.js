@@ -443,27 +443,27 @@ const Hero = () => {
     hi: false
   }].map((c, idx) => /*#__PURE__*/React.createElement("div", {
     key: idx,
-    className: "rounded-2xl p-4 border " + (c.hi ? "" : "bg-white border-black/5"),
-    style: c.hi ? {
-      background: "rgba(65,166,54,0.08)",
-      borderColor: "rgba(65,166,54,0.28)"
-    } : {}
+    className: "rounded-2xl p-4 border",
+    style: {
+      background: c.hi ? "#16241A" : "#16191F",
+      borderColor: c.hi ? "rgba(65,166,54,0.55)" : "rgba(255,255,255,0.1)"
+    }
   }, /*#__PURE__*/React.createElement("div", {
     className: "flex items-center justify-between mb-2.5"
   }, /*#__PURE__*/React.createElement("span", {
-    className: "font-heading font-bold uppercase tracking-[0.14em] text-[11px] " + (c.hi ? "text-brand-deep" : "text-content-secondary")
+    className: "font-heading font-bold uppercase tracking-[0.14em] text-[11px] " + (c.hi ? "text-brand" : "text-white/55")
   }, c.e), /*#__PURE__*/React.createElement("span", {
-    className: "w-7 h-7 rounded-lg flex items-center justify-center shrink-0 " + (c.hi ? "bg-white shadow-sm text-brand-deep" : "bg-brand/15 text-brand-deep")
+    className: "w-7 h-7 rounded-lg flex items-center justify-center shrink-0 " + (c.hi ? "bg-brand text-white" : "bg-white/10 text-brand")
   }, /*#__PURE__*/React.createElement(Svg, {
     size: 15,
     sw: 2
   }, c.i))), /*#__PURE__*/React.createElement("div", {
-    className: "font-heading text-2xl leading-none mb-1.5 " + (c.hi ? "text-brand-deep" : "text-content"),
+    className: "font-heading text-2xl leading-none mb-1.5 " + (c.hi ? "text-brand" : "text-white"),
     style: {
       fontWeight: 800
     }
   }, c.b), /*#__PURE__*/React.createElement("div", {
-    className: "text-[12.5px] font-semibold text-content-secondary leading-snug"
+    className: "text-[12.5px] font-semibold text-white/60 leading-snug"
   }, c.s))))), /*#__PURE__*/React.createElement("div", {
     className: "hero-visual relative"
   }, /*#__PURE__*/React.createElement("div", {
