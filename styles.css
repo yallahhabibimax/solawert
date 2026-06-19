@@ -123,6 +123,8 @@ section[id] { scroll-margin-top: 96px; }
 .reveal-left.active, .reveal-right.active { opacity: 1; transform: translateX(0); filter: blur(0); }
 .reveal-scale { opacity: 0; transform: scale(.92); filter: blur(18px); transition: opacity 1.05s cubic-bezier(.16,1,.3,1), transform 1.2s cubic-bezier(.16,1,.3,1), filter 1.2s cubic-bezier(.16,1,.3,1); will-change: opacity, transform, filter; }
 .reveal-scale.active { opacity: 1; transform: scale(1); filter: blur(0); }
+/* Wenn GSAP ScrollTrigger den Reveal steuert: CSS-Transition aus, GSAP tweent inline */
+.gsap-on .reveal, .gsap-on .reveal-left, .gsap-on .reveal-right, .gsap-on .reveal-scale { transition: none !important; }
 
 @media (prefers-reduced-motion: reduce) {
   .reveal, .reveal-left, .reveal-right, .reveal-scale { opacity: 1 !important; transform: none !important; filter: none !important; }

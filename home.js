@@ -155,18 +155,55 @@ const Stars = ({
 }, ICO.star)));
 const App = () => {
   useEffect(() => {
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('active');
-          obs.unobserve(e.target);
-        }
+    let cleanupReveal = () => {};
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const hasST = typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined';
+    if (reduce) {
+      document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => el.classList.add('active'));
+    } else if (hasST) {
+      /* Award-winning Reveal: GSAP ScrollTrigger.batch — Elemente, die zusammen in den
+         Viewport kommen, werden als Gruppe gestaffelt animiert (Blur + Fade + Rise),
+         auch bei schnellem Scrollen sauber nachgezogen. */
+      gsap.registerPlugin(ScrollTrigger);
+      document.documentElement.classList.add('gsap-on');
+      const EASE = 'power3.out';
+      const batch = (sel, from) => {
+        const els = gsap.utils.toArray(sel);
+        if (!els.length) return;
+        gsap.set(els, from);
+        ScrollTrigger.batch(els, {
+          start: 'top 88%',
+          once: true,
+          onEnter: b => gsap.to(b, {
+            opacity: 1, x: 0, y: 0, scale: 1, filter: 'blur(0px)',
+            duration: 1.15, ease: EASE, stagger: { each: 0.13, from: 'start' }, overwrite: true
+          })
+        });
+      };
+      batch('.reveal', { opacity: 0, y: 48, scale: 0.985, filter: 'blur(14px)' });
+      batch('.reveal-left', { opacity: 0, x: -54, filter: 'blur(12px)' });
+      batch('.reveal-right', { opacity: 0, x: 54, filter: 'blur(12px)' });
+      batch('.reveal-scale', { opacity: 0, scale: 0.92, filter: 'blur(18px)' });
+      ScrollTrigger.refresh();
+      cleanupReveal = () => {
+        ScrollTrigger.getAll().forEach(t => t.kill());
+        document.documentElement.classList.remove('gsap-on');
+      };
+    } else {
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('active');
+            obs.unobserve(e.target);
+          }
+        });
+      }, {
+        threshold: 0.12,
+        rootMargin: '0px 0px -40px 0px'
       });
-    }, {
-      threshold: 0.12,
-      rootMargin: '0px 0px -40px 0px'
-    });
-    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => obs.observe(el));
+      document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => obs.observe(el));
+      cleanupReveal = () => obs.disconnect();
+    }
     const onScroll = () => {
       const h = document.documentElement;
       const sp = document.getElementById('scroll-progress');
@@ -176,7 +213,7 @@ const App = () => {
       passive: true
     });
     return () => {
-      obs.disconnect();
+      cleanupReveal();
       window.removeEventListener('scroll', onScroll);
     };
   }, []);
