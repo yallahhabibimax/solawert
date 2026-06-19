@@ -397,7 +397,7 @@ const Hero = () => {
     size: 18,
     sw: 2.2
   }, ICO.arrow)))), /*#__PURE__*/React.createElement("div", {
-    className: "hero-el grid grid-cols-3 gap-2.5 mt-10 max-w-md"
+    className: "hero-el grid grid-cols-3 gap-4 mt-10 max-w-lg"
   }, [{
     e: "Ihr Risiko",
     b: "0 €",
@@ -438,7 +438,7 @@ const Hero = () => {
       fontWeight: 800
     }
   }, c.b), /*#__PURE__*/React.createElement("div", {
-    className: "text-[12px] text-content-secondary leading-snug"
+    className: "text-[12.5px] font-semibold text-content-secondary leading-snug"
   }, c.s))))), /*#__PURE__*/React.createElement("div", {
     className: "hero-visual relative"
   }, /*#__PURE__*/React.createElement("div", {
@@ -455,9 +455,7 @@ const Hero = () => {
     className: "font-heading font-bold text-lg leading-tight"
   }, "Gegam Sargsian"), /*#__PURE__*/React.createElement("div", {
     className: "text-sm text-white/80"
-  }, "Inhaber")), /*#__PURE__*/React.createElement("span", {
-    className: "px-3 py-1.5 rounded-full bg-brand text-brand-text text-xs font-heading font-bold"
-  }, "Inhabergeführt"))), /*#__PURE__*/React.createElement("div", {
+  }, "Inhaber")))), /*#__PURE__*/React.createElement("div", {
     className: "animate-float absolute -top-5 -left-4 md:-left-8 bg-white rounded-2xl shadow-xl border border-black/5 px-5 py-4 flex items-center gap-3.5"
   }, /*#__PURE__*/React.createElement("span", {
     className: "w-12 h-12 rounded-2xl bg-brand/15 text-brand-deep flex items-center justify-center shrink-0"
