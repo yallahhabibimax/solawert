@@ -370,9 +370,10 @@ const Hero = () => {
     className: "hero-el flex flex-wrap items-center gap-4"
   }, /*#__PURE__*/React.createElement("a", {
     href: "tel:" + PHONE_FEST_TEL,
-    className: "btn-primary cta-pulse rounded-full pl-8 pr-2.5 py-2.5 font-heading text-[1.02rem] inline-flex items-center gap-4",
+    className: "btn-primary cta-pulse rounded-full font-heading text-[1.02rem] inline-flex items-center gap-4",
     style: {
-      color: "#fff"
+      color: "#fff",
+      padding: "0.7rem 0.7rem 0.7rem 2rem"
     }
   }, /*#__PURE__*/React.createElement("span", null, "Jetzt unverbindlich anrufen"), /*#__PURE__*/React.createElement("span", {
     className: "w-11 h-11 rounded-full flex items-center justify-center shrink-0",
@@ -383,7 +384,10 @@ const Hero = () => {
     size: 18
   }, ICO.phone))), /*#__PURE__*/React.createElement("a", {
     href: "#anfrage",
-    className: "btn-dark rounded-full pl-8 pr-2.5 py-2.5 font-heading text-[1.02rem] inline-flex items-center gap-4"
+    className: "btn-dark rounded-full font-heading text-[1.02rem] inline-flex items-center gap-4",
+    style: {
+      padding: "0.7rem 0.7rem 0.7rem 2rem"
+    }
   }, /*#__PURE__*/React.createElement("span", null, "Angebot anfragen"), /*#__PURE__*/React.createElement("span", {
     className: "w-11 h-11 rounded-full flex items-center justify-center shrink-0",
     style: {
