@@ -26,8 +26,8 @@
   --bg-alt: #F4F6EF;          /* warm-grün getöntes Off-White */
   --bg-card: #FFFFFF;
 
-  --dark: #15181D;            /* dunkle Sections — wie die Arbeitskleidung */
-  --dark-2: #1D222A;
+  --dark: #2A2E36;            /* hell-schwarz — wie die Benefit-Karten */
+  --dark-2: #2A2E36;
   --dark-card: rgba(255, 255, 255, 0.045);
   --dark-border: rgba(255, 255, 255, 0.10);
 
@@ -70,7 +70,12 @@ section[id] { scroll-margin-top: 96px; }
   color: #fff;
   transition: transform .3s cubic-bezier(.16,1,.3,1), box-shadow .3s ease, background .3s ease;
 }
-.btn-dark:hover { background: #000; transform: translateY(-2px); box-shadow: 0 14px 30px -12px rgba(0,0,0,.5); }
+.btn-dark:hover { background: #1f232a; transform: translateY(-2px); box-shadow: 0 14px 30px -12px rgba(0,0,0,.5); }
+
+/* "Hell-schwarz" Farbkombo (#2A2E36) auf allen dunklen Sections — wie die Benefit-Karten.
+   Tailwind hat die bg-ink Klassen mit festen RGB-Werten kompiliert, daher hier ueberschreiben. */
+.bg-ink   { background-color: #2A2E36 !important; }
+.bg-ink-2 { background-color: #2A2E36 !important; }
 .btn-ghost {
   background: #fff; color: var(--ink); border: 1px solid var(--border);
   transition: all .3s ease;
