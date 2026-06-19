@@ -414,7 +414,7 @@ const Hero = () => {
   }, /*#__PURE__*/React.createElement("img", {
     src: "img/portrait.jpg",
     alt: "Gegam Sargsian, Inhaber von SolaWert",
-    className: "w-full h-[440px] md:h-[560px] object-cover object-top"
+    className: "w-full h-[440px] md:h-[560px] object-cover object-[center_22%]"
   }), /*#__PURE__*/React.createElement("div", {
     className: "absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/55 to-transparent"
   }), /*#__PURE__*/React.createElement("div", {
@@ -886,7 +886,7 @@ const About = () => /*#__PURE__*/React.createElement("section", {
 }, /*#__PURE__*/React.createElement("img", {
   src: "img/portrait.jpg",
   alt: "Gegam Sargsian",
-  className: "w-14 h-14 rounded-full object-cover object-top"
+  className: "w-14 h-14 rounded-full object-cover object-[center_20%]"
 }), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
   className: "font-heading font-bold text-content"
 }, "Gegam Sargsian"), /*#__PURE__*/React.createElement("div", {
