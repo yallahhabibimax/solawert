@@ -357,7 +357,11 @@ const Hero = () => {
   }), /*#__PURE__*/React.createElement("span", {
     className: "text-[11.5px] font-heading font-semibold tracking-[0.14em] uppercase text-content-secondary"
   }, "Photovoltaik · Wärmepumpe · Speicher · NRW")), /*#__PURE__*/React.createElement("h1", {
-    className: "hero-el font-heading font-bold text-content leading-[1.07] tracking-tight text-[2.4rem] sm:text-5xl lg:text-[3.8rem] mb-6"
+    className: "hero-el font-heading font-extrabold text-content leading-[1.07] tracking-tight text-[2.4rem] sm:text-5xl lg:text-[3.8rem] mb-6",
+    style: {
+      fontWeight: 900,
+      letterSpacing: "-0.035em"
+    }
   }, "Photovoltaik & Wärmepumpe für ", /*#__PURE__*/React.createElement("span", {
     className: "swoosh"
   }, "ganz NRW")), /*#__PURE__*/React.createElement("p", {
@@ -376,38 +380,49 @@ const Hero = () => {
     size: 18,
     sw: 2.2
   }, ICO.arrow))), /*#__PURE__*/React.createElement("div", {
-    className: "hero-el flex items-center gap-x-6 lg:gap-x-8 gap-y-4 mt-10"
+    className: "hero-el grid grid-cols-3 gap-2.5 mt-10 max-w-md"
+  }, [{
+    e: "Ihr Risiko",
+    b: "0 €",
+    s: "Zahlung erst nach Abnahme",
+    i: ICO.euro,
+    hi: true
+  }, {
+    e: "Garantie",
+    b: "30 J.",
+    s: "auf Ihre Solarmodule",
+    i: ICO.shield,
+    hi: false
+  }, {
+    e: "Montage",
+    b: "1-3 Tage",
+    s: "pro Anlage, terminiert",
+    i: ICO.clock,
+    hi: false
+  }].map((c, idx) => /*#__PURE__*/React.createElement("div", {
+    key: idx,
+    className: "rounded-2xl p-4 border " + (c.hi ? "" : "bg-white border-black/5"),
+    style: c.hi ? {
+      background: "rgba(65,166,54,0.08)",
+      borderColor: "rgba(65,166,54,0.28)"
+    } : {}
   }, /*#__PURE__*/React.createElement("div", {
-    className: "flex items-center gap-3"
-  }, /*#__PURE__*/React.createElement("img", {
-    src: "img/_blank.png",
-    alt: "Meisterbetrieb",
-    className: "h-11 w-auto",
-    onError: e => {
-      e.target.style.display = 'none';
-    }
-  }), /*#__PURE__*/React.createElement("div", {
-    className: "leading-tight"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "font-heading font-bold text-content text-sm"
-  }, "Keine Anzahlung"), /*#__PURE__*/React.createElement("div", {
-    className: "text-xs text-content-secondary"
-  }, "Zahlung nach Inbetriebnahme"))), /*#__PURE__*/React.createElement("div", {
-    className: "w-px h-11 bg-black/10"
-  }), /*#__PURE__*/React.createElement("div", {
-    className: "flex items-center gap-3"
+    className: "flex items-center justify-between mb-2.5"
   }, /*#__PURE__*/React.createElement("span", {
-    className: "text-brand-deep"
+    className: "font-heading font-bold uppercase tracking-[0.14em] text-[11px] " + (c.hi ? "text-brand-deep" : "text-content-secondary")
+  }, c.e), /*#__PURE__*/React.createElement("span", {
+    className: "w-7 h-7 rounded-lg flex items-center justify-center shrink-0 " + (c.hi ? "bg-white shadow-sm text-brand-deep" : "bg-brand/15 text-brand-deep")
   }, /*#__PURE__*/React.createElement(Svg, {
-    size: 26,
-    sw: 1.8
-  }, ICO.shield)), /*#__PURE__*/React.createElement("div", {
-    className: "leading-tight"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "font-heading font-bold text-content text-sm"
-  }, "30 Jahre Garantie"), /*#__PURE__*/React.createElement("div", {
-    className: "text-xs text-content-secondary"
-  }, "auf Ihre Solarmodule"))))), /*#__PURE__*/React.createElement("div", {
+    size: 15,
+    sw: 2
+  }, c.i))), /*#__PURE__*/React.createElement("div", {
+    className: "font-heading text-2xl leading-none mb-1.5 " + (c.hi ? "text-brand-deep" : "text-content"),
+    style: {
+      fontWeight: 800
+    }
+  }, c.b), /*#__PURE__*/React.createElement("div", {
+    className: "text-[12px] text-content-secondary leading-snug"
+  }, c.s))))), /*#__PURE__*/React.createElement("div", {
     className: "hero-visual relative"
   }, /*#__PURE__*/React.createElement("div", {
     className: "relative rounded-[28px] overflow-hidden shadow-2xl ring-1 ring-black/5"
