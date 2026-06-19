@@ -842,7 +842,7 @@ const RegionBand = () => {
   }];
   return /*#__PURE__*/React.createElement("section", {
     id: "einzugsgebiet",
-    className: "px-5 md:px-8 py-20 md:py-28 bg-white"
+    className: "px-5 md:px-8 py-12 md:py-16 bg-white"
   }, /*#__PURE__*/React.createElement("div", {
     className: "max-w-7xl mx-auto"
   }, /*#__PURE__*/React.createElement("div", {
@@ -897,14 +897,14 @@ const RegionBand = () => {
       borderColor: o.hi ? "rgba(65,166,54,0.5)" : "rgba(0,0,0,0.07)",
       transitionDelay: i % 3 * 0.08 + "s"
     }
-  }, /*#__PURE__*/React.createElement("div", {
+  }, o.hi && /*#__PURE__*/React.createElement("div", {
     className: "absolute inset-0 pointer-events-none",
     style: {
-      backgroundImage: o.hi ? "linear-gradient(rgba(255,255,255,0.09) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.09) 1px, transparent 1px)" : "linear-gradient(rgba(65,166,54,0.10) 1px, transparent 1px), linear-gradient(90deg, rgba(65,166,54,0.10) 1px, transparent 1px)",
+      backgroundImage: "linear-gradient(rgba(255,255,255,0.09) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.09) 1px, transparent 1px)",
       backgroundSize: "30px 30px"
     }
   }), /*#__PURE__*/React.createElement("div", {
-    className: "relative flex items-start justify-between mb-8"
+    className: "relative flex items-start justify-between mb-6"
   }, /*#__PURE__*/React.createElement("span", {
     className: "font-heading font-bold uppercase tracking-[0.14em] text-[11px] " + (o.hi ? "text-brand" : "text-brand-deep")
   }, o.tag), /*#__PURE__*/React.createElement("span", {
