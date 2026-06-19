@@ -367,15 +367,15 @@ const Hero = () => {
   }, "ganz NRW")), /*#__PURE__*/React.createElement("p", {
     className: "hero-el text-[1.05rem] md:text-lg text-content-secondary leading-relaxed max-w-xl mb-8"
   }, "Schlüsselfertig aus einer Hand, mit durchdachter Planung, deutlich mehr Speicher zum gleichen Preis und Zahlung erst, wenn Ihre Anlage läuft. Unseren Sitz haben wir in Wuppertal, im Einsatz sind wir in ganz Nordrhein-Westfalen."), /*#__PURE__*/React.createElement("div", {
-    className: "hero-el flex flex-wrap items-center gap-3"
+    className: "hero-el flex flex-wrap items-center gap-4"
   }, /*#__PURE__*/React.createElement("a", {
     href: "tel:" + PHONE_FEST_TEL,
-    className: "btn-primary cta-pulse rounded-full pl-7 pr-2 py-2 font-heading text-[1.02rem] inline-flex items-center gap-3",
+    className: "btn-primary cta-pulse rounded-full pl-8 pr-2.5 py-2.5 font-heading text-[1.02rem] inline-flex items-center gap-4",
     style: {
       color: "#fff"
     }
   }, /*#__PURE__*/React.createElement("span", null, "Jetzt unverbindlich anrufen"), /*#__PURE__*/React.createElement("span", {
-    className: "w-10 h-10 rounded-full flex items-center justify-center shrink-0",
+    className: "w-11 h-11 rounded-full flex items-center justify-center shrink-0",
     style: {
       background: "rgba(0,0,0,0.8)"
     }
@@ -383,9 +383,9 @@ const Hero = () => {
     size: 18
   }, ICO.phone))), /*#__PURE__*/React.createElement("a", {
     href: "#anfrage",
-    className: "btn-dark rounded-full pl-7 pr-2 py-2 font-heading text-[1.02rem] inline-flex items-center gap-3"
+    className: "btn-dark rounded-full pl-8 pr-2.5 py-2.5 font-heading text-[1.02rem] inline-flex items-center gap-4"
   }, /*#__PURE__*/React.createElement("span", null, "Angebot anfragen"), /*#__PURE__*/React.createElement("span", {
-    className: "w-10 h-10 rounded-full flex items-center justify-center shrink-0",
+    className: "w-11 h-11 rounded-full flex items-center justify-center shrink-0",
     style: {
       background: "rgba(255,255,255,0.16)"
     }
