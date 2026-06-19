@@ -249,9 +249,12 @@ const Navbar = () => {
   }, /*#__PURE__*/React.createElement("img", {
     src: "img/logo.png",
     alt: "SolaWert Wuppertal",
-    className: "h-9 w-auto"
+    className: "w-auto transition-all duration-300 " + (scrolled ? "h-9" : "h-14")
   }), /*#__PURE__*/React.createElement("span", {
-    className: "font-heading font-bold tracking-tight text-[19px] sm:text-[21px] leading-none"
+    className: "font-heading font-bold tracking-tight leading-none transition-all duration-300",
+    style: {
+      fontSize: scrolled ? "20px" : "28px"
+    }
   }, /*#__PURE__*/React.createElement("span", {
     className: "text-content"
   }, "Sola"), /*#__PURE__*/React.createElement("span", {
@@ -397,7 +400,10 @@ const Hero = () => {
     size: 18,
     sw: 2.2
   }, ICO.arrow)))), /*#__PURE__*/React.createElement("div", {
-    className: "hero-el grid grid-cols-3 gap-4 mt-10 max-w-lg"
+    className: "hero-el grid grid-cols-3 gap-4 mt-10",
+    style: {
+      maxWidth: "638px"
+    }
   }, [{
     e: "Ihr Risiko",
     b: "0 €",
