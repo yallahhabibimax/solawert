@@ -393,7 +393,9 @@ const Hero = () => {
       color: "#fff",
       padding: "0.7rem 0.7rem 0.7rem 2rem"
     }
-  }, /*#__PURE__*/React.createElement("span", null, "Jetzt unverbindlich anrufen"), /*#__PURE__*/React.createElement("span", {
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "font-extrabold"
+  }, "Jetzt unverbindlich anrufen"), /*#__PURE__*/React.createElement("span", {
     className: "w-11 h-11 rounded-full flex items-center justify-center shrink-0",
     style: {
       background: "rgba(0,0,0,0.8)"
@@ -406,7 +408,9 @@ const Hero = () => {
     style: {
       padding: "0.7rem 0.7rem 0.7rem 2rem"
     }
-  }, /*#__PURE__*/React.createElement("span", null, "Angebot anfragen"), /*#__PURE__*/React.createElement("span", {
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "font-extrabold"
+  }, "Angebot anfragen"), /*#__PURE__*/React.createElement("span", {
     className: "w-11 h-11 rounded-full flex items-center justify-center shrink-0",
     style: {
       background: "rgba(255,255,255,0.16)"
