@@ -249,11 +249,11 @@ const Navbar = () => {
   }, /*#__PURE__*/React.createElement("img", {
     src: "img/logo.png",
     alt: "SolaWert Wuppertal",
-    className: "w-auto transition-all duration-300 " + (scrolled ? "h-9" : "h-14")
+    className: "w-auto transition-all duration-300 " + (scrolled ? "h-9" : "h-12")
   }), /*#__PURE__*/React.createElement("span", {
     className: "font-heading font-bold tracking-tight leading-none transition-all duration-300",
     style: {
-      fontSize: scrolled ? "20px" : "28px"
+      fontSize: scrolled ? "19px" : "24px"
     }
   }, /*#__PURE__*/React.createElement("span", {
     className: "text-content"
@@ -340,10 +340,25 @@ const Hero = () => {
         delay: 0.35
       });
     }
+    const syncW = () => {
+      const btn = document.querySelector('.hero-el.flex.flex-wrap');
+      const cards = document.querySelector('.hero-el.grid');
+      if (btn && cards) cards.style.maxWidth = btn.offsetWidth + 'px';
+    };
+    syncW();
+    const t1 = setTimeout(syncW, 300);
+    const t2 = setTimeout(syncW, 1200);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(syncW);
+    window.addEventListener('resize', syncW);
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+      window.removeEventListener('resize', syncW);
+    };
   }, []);
   return /*#__PURE__*/React.createElement("section", {
     id: "top",
-    className: "relative pt-32 md:pt-40 pb-20 md:pb-28 px-5 md:px-8 overflow-hidden bg-white"
+    className: "relative pt-28 md:pt-32 pb-20 md:pb-28 px-5 md:px-8 overflow-hidden bg-white"
   }, /*#__PURE__*/React.createElement("div", {
     className: "absolute inset-0 bg-dots opacity-60 pointer-events-none"
   }), /*#__PURE__*/React.createElement("div", {
