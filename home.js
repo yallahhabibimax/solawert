@@ -370,16 +370,29 @@ const Hero = () => {
     className: "hero-el flex flex-wrap items-center gap-3"
   }, /*#__PURE__*/React.createElement("a", {
     href: "tel:" + PHONE_FEST_TEL,
-    className: "btn-primary cta-pulse rounded-full px-7 py-4 font-heading text-[1.02rem] inline-flex items-center gap-2.5"
+    className: "btn-primary cta-pulse rounded-full pl-7 pr-2 py-2 font-heading text-[1.02rem] inline-flex items-center gap-3",
+    style: {
+      color: "#fff"
+    }
+  }, /*#__PURE__*/React.createElement("span", null, "Jetzt unverbindlich anrufen"), /*#__PURE__*/React.createElement("span", {
+    className: "w-10 h-10 rounded-full flex items-center justify-center shrink-0",
+    style: {
+      background: "rgba(0,0,0,0.8)"
+    }
   }, /*#__PURE__*/React.createElement(Svg, {
-    size: 19
-  }, ICO.phone), " Jetzt unverbindlich anrufen"), /*#__PURE__*/React.createElement("a", {
+    size: 18
+  }, ICO.phone))), /*#__PURE__*/React.createElement("a", {
     href: "#anfrage",
-    className: "btn-dark rounded-full px-6 py-4 font-heading text-[1.02rem] inline-flex items-center gap-2.5"
-  }, "Unverbindlich Angebot anfragen ", /*#__PURE__*/React.createElement(Svg, {
+    className: "btn-dark rounded-full pl-7 pr-2 py-2 font-heading text-[1.02rem] inline-flex items-center gap-3"
+  }, /*#__PURE__*/React.createElement("span", null, "Angebot anfragen"), /*#__PURE__*/React.createElement("span", {
+    className: "w-10 h-10 rounded-full flex items-center justify-center shrink-0",
+    style: {
+      background: "rgba(255,255,255,0.16)"
+    }
+  }, /*#__PURE__*/React.createElement(Svg, {
     size: 18,
     sw: 2.2
-  }, ICO.arrow))), /*#__PURE__*/React.createElement("div", {
+  }, ICO.arrow)))), /*#__PURE__*/React.createElement("div", {
     className: "hero-el grid grid-cols-3 gap-2.5 mt-10 max-w-md"
   }, [{
     e: "Ihr Risiko",
@@ -441,17 +454,20 @@ const Hero = () => {
   }, "Inhaber")), /*#__PURE__*/React.createElement("span", {
     className: "px-3 py-1.5 rounded-full bg-brand text-brand-text text-xs font-heading font-bold"
   }, "Inhabergeführt"))), /*#__PURE__*/React.createElement("div", {
-    className: "animate-float absolute -top-5 -left-4 md:-left-8 bg-white rounded-2xl shadow-xl border border-black/5 px-4 py-3 flex items-center gap-3"
+    className: "animate-float absolute -top-5 -left-4 md:-left-8 bg-white rounded-2xl shadow-xl border border-black/5 px-5 py-4 flex items-center gap-3.5"
   }, /*#__PURE__*/React.createElement("span", {
-    className: "w-10 h-10 rounded-xl bg-brand/15 text-brand-deep flex items-center justify-center"
+    className: "w-12 h-12 rounded-2xl bg-brand/15 text-brand-deep flex items-center justify-center shrink-0"
   }, /*#__PURE__*/React.createElement(Svg, {
-    size: 20
+    size: 24
   }, ICO.euro)), /*#__PURE__*/React.createElement("div", {
     className: "leading-tight"
   }, /*#__PURE__*/React.createElement("div", {
-    className: "font-heading font-bold text-content text-sm"
+    className: "font-heading text-content text-xl",
+    style: {
+      fontWeight: 900
+    }
   }, "0 \u20ac Anzahlung"), /*#__PURE__*/React.createElement("div", {
-    className: "text-[11px] text-content-secondary"
+    className: "text-[12.5px] text-content-secondary"
   }, "Zahlung erst nach Abnahme"))), /*#__PURE__*/React.createElement("div", {
     className: "animate-float-delay absolute -bottom-5 -right-3 md:-right-7 bg-ink text-white rounded-2xl shadow-xl px-4 py-3 flex items-center gap-3"
   }, /*#__PURE__*/React.createElement("span", {
