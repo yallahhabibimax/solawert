@@ -445,8 +445,8 @@ const Hero = () => {
     key: idx,
     className: "rounded-2xl p-4 border",
     style: {
-      background: c.hi ? "#16241A" : "#16191F",
-      borderColor: c.hi ? "rgba(65,166,54,0.55)" : "rgba(255,255,255,0.1)"
+      background: c.hi ? "#22331E" : "#2A2E36",
+      borderColor: c.hi ? "rgba(65,166,54,0.55)" : "rgba(255,255,255,0.12)"
     }
   }, /*#__PURE__*/React.createElement("div", {
     className: "flex items-center justify-between mb-2.5"
@@ -808,7 +808,32 @@ const CaseStudies = () => {
 
 /* ── Region band (Oliver im Einsatz) ── */
 const RegionBand = () => {
-  const orte = [["Wuppertal", "#anfrage"], ["Solingen", "#anfrage"], ["Remscheid", "#anfrage"], ["Düsseldorf", "#anfrage"], ["Köln", "#anfrage"], ["Essen", "#anfrage"], ["Velbert", "#anfrage"], ["Hagen", "#anfrage"], ["Mettmann", "#anfrage"], ["Hilden", "#anfrage"], ["Haan", "#anfrage"], ["Wülfrath", "#anfrage"]];
+  const orte = [{
+    c: "Wuppertal",
+    meta: "Hauptstandort · ganz NRW",
+    tag: "Zentrale",
+    hi: true
+  }, {
+    c: "Solingen",
+    meta: "13 km entfernt",
+    tag: "ca. 15 Min."
+  }, {
+    c: "Remscheid",
+    meta: "16 km entfernt",
+    tag: "ca. 20 Min."
+  }, {
+    c: "Velbert",
+    meta: "18 km entfernt",
+    tag: "ca. 20 Min."
+  }, {
+    c: "Mettmann",
+    meta: "20 km entfernt",
+    tag: "ca. 25 Min."
+  }, {
+    c: "Haan",
+    meta: "12 km entfernt",
+    tag: "ca. 15 Min."
+  }];
   return /*#__PURE__*/React.createElement("section", {
     id: "einzugsgebiet",
     className: "px-5 md:px-8 py-20 md:py-28 bg-white"
@@ -856,12 +881,36 @@ const RegionBand = () => {
     size: 15,
     sw: 2.2
   }, ICO.arrow))), /*#__PURE__*/React.createElement("div", {
-    className: "flex flex-wrap gap-2.5"
-  }, orte.map(([n, h]) => /*#__PURE__*/React.createElement("a", {
-    key: h,
-    href: h,
-    className: "px-4 py-2 rounded-full border border-black/10 bg-surface-alt text-content-secondary text-[14px] font-heading font-medium hover:border-brand hover:text-brand-deep hover:bg-brand/[0.06] transition-colors"
-  }, n))))));
+    className: "grid sm:grid-cols-2 lg:grid-cols-3 gap-4"
+  }, orte.map((o, i) => /*#__PURE__*/React.createElement("a", {
+    key: i,
+    href: "#anfrage",
+    className: "reveal relative overflow-hidden rounded-3xl p-6 border block transition-all hover:-translate-y-1",
+    style: {
+      background: o.hi ? "linear-gradient(140deg, #2c5a1d 0%, #16301a 100%)" : "#ffffff",
+      borderColor: o.hi ? "rgba(65,166,54,0.5)" : "rgba(0,0,0,0.07)",
+      transitionDelay: i % 3 * 0.08 + "s"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "absolute inset-0 pointer-events-none",
+    style: {
+      backgroundImage: o.hi ? "linear-gradient(rgba(255,255,255,0.09) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.09) 1px, transparent 1px)" : "linear-gradient(rgba(65,166,54,0.10) 1px, transparent 1px), linear-gradient(90deg, rgba(65,166,54,0.10) 1px, transparent 1px)",
+      backgroundSize: "30px 30px"
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    className: "relative flex items-start justify-between mb-8"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "font-heading font-bold uppercase tracking-[0.14em] text-[11px] " + (o.hi ? "text-brand" : "text-brand-deep")
+  }, o.tag), /*#__PURE__*/React.createElement("span", {
+    className: "w-11 h-11 rounded-xl flex items-center justify-center shrink-0 " + (o.hi ? "bg-brand text-white" : "bg-brand/15 text-brand-deep")
+  }, /*#__PURE__*/React.createElement(Svg, {
+    size: 20,
+    sw: 1.9
+  }, o.hi ? ICO.home : ICO.pin))), /*#__PURE__*/React.createElement("div", {
+    className: "relative font-heading font-bold text-2xl mb-1.5 " + (o.hi ? "text-white" : "text-content")
+  }, o.c), /*#__PURE__*/React.createElement("div", {
+    className: "relative text-[13.5px] font-medium " + (o.hi ? "text-white/70" : "text-content-secondary")
+  }, o.meta)))))));
 };
 
 /* ── Blog / Ratgeber-Teaser ── */
