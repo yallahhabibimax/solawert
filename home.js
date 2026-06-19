@@ -341,9 +341,15 @@ const Hero = () => {
       });
     }
     const syncW = () => {
-      const btn = document.querySelector('.hero-el.flex.flex-wrap');
+      const btnRow = document.querySelector('.hero-el.flex.flex-wrap');
       const cards = document.querySelector('.hero-el.grid');
-      if (btn && cards) cards.style.maxWidth = btn.offsetWidth + 'px';
+      if (btnRow && cards && btnRow.children.length) {
+        const rowLeft = btnRow.getBoundingClientRect().left;
+        let maxRight = 0;
+        for (const k of btnRow.children) maxRight = Math.max(maxRight, k.getBoundingClientRect().right);
+        const w = maxRight - rowLeft;
+        if (w > 0) cards.style.maxWidth = Math.round(w) + 'px';
+      }
     };
     syncW();
     const t1 = setTimeout(syncW, 300);
