@@ -1325,9 +1325,9 @@ const FAQ = () => {
     style: { background: "rgba(245,179,1,0.12)", color: "#F5B301" }
   }, "FAQ"), React.createElement("h2", {
     className: "font-heading font-black tracking-tight mb-5",
-    style: { color: "#ffffff", fontSize: "clamp(2.3rem,4.6vw,3.5rem)", lineHeight: "0.98" }
+    style: { color: "#ffffff", fontSize: "clamp(2.3rem,4.6vw,3.5rem)", lineHeight: "1.12" }
   }, "Häufig gestellte ", React.createElement("span", {
-    style: { background: "#F5B301", color: "#2A2E36", padding: "0 0.14em", borderRadius: "8px", WebkitBoxDecorationBreak: "clone", boxDecorationBreak: "clone" }
+    style: { background: "#F5B301", color: "#14171C", padding: "0.05em 0.16em", borderRadius: "8px", WebkitBoxDecorationBreak: "clone", boxDecorationBreak: "clone" }
   }, "Fragen")), React.createElement("p", {
     className: "font-body font-bold leading-relaxed mb-8",
     style: { color: "rgba(255,255,255,0.72)", fontSize: "1.05rem", maxWidth: "23rem" }

@@ -101,7 +101,7 @@
         '</div>' +
       '</div>' +
       '<div class="mx-auto relative z-10" style="max-width:80rem">' +
-        '<div data-kf-card class="bg-white" style="border-radius:24px;box-shadow:0 40px 90px -45px rgba(20,23,28,0.45);border:1px solid rgba(20,23,28,0.06);padding:clamp(1rem,2.1vw,1.5rem)"></div>' +
+        '<div data-kf-card class="bg-white" style="border-radius:24px;box-shadow:0 40px 90px -45px rgba(20,23,28,0.45);border:1px solid rgba(20,23,28,0.06);padding:clamp(1.3rem,2.4vw,1.9rem)"></div>' +
       '</div>' +
     '</section>';
   }
@@ -164,7 +164,7 @@
       card.innerHTML =
         '<div class="flex items-center justify-between mb-1.5"><span class="text-xs font-heading font-semibold text-content-secondary uppercase tracking-wider">Schritt '+step+' von '+TOTAL+'</span><span class="text-xs text-content-secondary">ca. 30 Sek.</span></div>'
         + '<div class="h-1.5 rounded-full bg-surface-alt overflow-hidden mb-4"><div class="h-full rounded-full bg-brand transition-all duration-500 ease-out" style="width:'+(step/TOTAL*100)+'%"></div></div>'
-        + '<div style="min-height:150px;display:flex;flex-direction:column;justify-content:center;'+(step===4?'max-width:560px;margin:0 auto;':'')+'">' + stepHTML() + '</div>'
+        + '<div style="min-height:185px;display:flex;flex-direction:column;justify-content:center;'+(step===4?'max-width:560px;margin:0 auto;':'')+'">' + stepHTML() + '</div>'
         + nav;
     }
 
