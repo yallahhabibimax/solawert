@@ -11,7 +11,7 @@
   /* ═══ FOOTER ═══ */
   function footerHTML() {
     return '' +
-    '<footer class="text-white pt-16 pb-28 lg:pb-10 px-5 md:px-8 border-t border-white/5" style="background:#1D222A">' +
+    '<footer class="text-white pt-16 pb-28 lg:pb-10 px-5 md:px-8 border-t border-white/5" style="background:#2A2E36">' +
       '<div class="max-w-7xl mx-auto">' +
         '<div class="grid md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.1fr] gap-10 lg:gap-8 pb-12 border-b border-white/10">' +
           '<div>' +
