@@ -484,19 +484,7 @@ const Hero = () => {
     className: "sw-hero__bottom"
   }, /*#__PURE__*/React.createElement("div", {
     className: "sw-hero__left"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "hero-el sw-pill"
-  }, /*#__PURE__*/React.createElement("span", {
-    className: "t"
-  }, "Sauber"), /*#__PURE__*/React.createElement("span", {
-    className: "d"
-  }), /*#__PURE__*/React.createElement("span", {
-    className: "t"
-  }, "Stark"), /*#__PURE__*/React.createElement("span", {
-    className: "d"
-  }), /*#__PURE__*/React.createElement("span", {
-    className: "t"
-  }, "Schlüsselfertig")), /*#__PURE__*/React.createElement("h1", {
+  }, /*#__PURE__*/React.createElement("h1", {
     className: "hero-el sw-hero__sub"
   }, /*#__PURE__*/React.createElement("span", {
     className: "hero-kw"
