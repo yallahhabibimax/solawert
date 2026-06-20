@@ -86,20 +86,19 @@
 
   function sectionShell() {
     return '' +
-    '<section id="anfrage" class="relative py-16 md:py-24 px-5 md:px-8 bg-surface-alt overflow-hidden">' +
-      '<div class="max-w-7xl mx-auto rounded-[28px] overflow-hidden shadow-2xl grid lg:grid-cols-[0.82fr_1.18fr] relative z-10">' +
-        '<div class="relative p-8 md:p-10 flex flex-col justify-center overflow-hidden" style="background:linear-gradient(155deg,#F5B301 0%,#F5B301 52%,#F5B301 100%)">' +
-          '<div class="absolute top-[-20%] right-[-15%] w-[65%] h-[60%] rounded-full pointer-events-none" style="background:radial-gradient(ellipse,rgba(255,255,255,0.30) 0%,transparent 70%)"></div>' +
-          '<div class="relative z-10">' +
-            '<span class="inline-block px-3.5 py-1.5 rounded-full font-heading font-semibold tracking-[0.16em] uppercase text-[11px] mb-5" style="background:rgba(255,255,255,0.08);border:1px solid #FFFFFF;color:#FFFFFF">Kostenlose Anfrage</span>' +
-            '<h2 class="text-3xl md:text-[2.6rem] font-heading font-black leading-[1.08] mb-4" style="color:#1A1402">In 30 Sekunden zu Ihrer kostenlosen Einschätzung</h2>' +
-            '<p class="text-[15.5px] leading-relaxed mb-7 max-w-md" style="color:rgba(26,20,2,0.82)">Ein paar kurze Fragen genügen. Wir melden uns mit einer ehrlichen Einschätzung und einem fairen Festpreis, absolut unverbindlich.</p>' +
-            '<ul class="space-y-3.5">' +
-              ['Keine Anzahlung, Zahlung nach Abnahme','Mehr Speicher zum gleichen Preis','Faire Festpreise ohne versteckte Kosten','100% unverbindlich & kostenlos'].map(function(t){return '<li class="flex items-center gap-3 text-[14.5px] font-medium" style="color:#1A1402"><span class="w-6 h-6 rounded-full flex items-center justify-center shrink-0" style="background:#1A1402;color:#F5B301">'+svg('check',13)+'</span>'+t+'</li>';}).join('') +
-            '</ul>' +
-          '</div>' +
+    '<section id="anfrage" class="relative py-12 md:py-16 px-5 md:px-8 bg-surface-alt overflow-hidden">' +
+      '<div class="absolute pointer-events-none" style="top:-12%;left:50%;transform:translateX(-50%);width:760px;max-width:130%;height:440px;background:radial-gradient(ellipse,rgba(245,179,1,0.22) 0%,transparent 68%)"></div>' +
+      '<div class="max-w-2xl mx-auto text-center relative z-10" style="margin-bottom:2.5rem">' +
+        '<span class="inline-flex items-center font-heading uppercase" style="gap:0.5rem;padding:0.42rem 0.9rem 0.42rem 0.72rem;border-radius:999px;background:rgba(245,179,1,0.14);border:1px solid rgba(245,179,1,0.4);color:#8A5E00;font-weight:800;font-size:11px;letter-spacing:0.16em;margin-bottom:1.1rem">' +
+          '<span style="width:7px;height:7px;border-radius:50%;background:#F5B301;display:inline-block"></span>Kostenlose Anfrage</span>' +
+        '<h2 class="font-heading" style="font-weight:900;color:#14171C;font-size:clamp(2rem,4.6vw,3.05rem);line-height:1.04;margin-bottom:1rem">In 30 Sekunden zu Ihrer <span style="background:#F5B301;color:#1A1402;padding:0 0.12em;border-radius:8px;-webkit-box-decoration-break:clone;box-decoration-break:clone">kostenlosen Einschätzung</span></h2>' +
+        '<p class="mx-auto" style="color:#525A64;font-size:16px;line-height:1.6;max-width:30rem">Ein paar kurze Fragen genügen. Ehrliche Einschätzung, fairer Festpreis, absolut unverbindlich.</p>' +
+        '<div class="flex flex-wrap items-center justify-center" style="gap:0.55rem 1.25rem;margin-top:1.35rem">' +
+          ['Keine Anzahlung','Mehr Speicher','Faire Festpreise','100% unverbindlich'].map(function(t){return '<span class="inline-flex items-center font-heading" style="gap:0.4rem;font-size:13px;font-weight:600;color:#3D2C00"><span class="inline-flex items-center justify-center" style="width:18px;height:18px;border-radius:50%;background:#F5B301;color:#1A1402">'+svg('check',11)+'</span>'+t+'</span>';}).join('') +
         '</div>' +
-        '<div data-kf-card class="bg-white p-6 md:p-9 lg:p-10"></div>' +
+      '</div>' +
+      '<div class="mx-auto relative z-10" style="max-width:46rem">' +
+        '<div data-kf-card class="bg-white" style="border-radius:24px;box-shadow:0 40px 90px -45px rgba(20,23,28,0.45);border:1px solid rgba(20,23,28,0.06);padding:clamp(1.4rem,3vw,2.25rem)"></div>' +
       '</div>' +
     '</section>';
   }

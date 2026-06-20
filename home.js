@@ -659,19 +659,31 @@ const WerWirSind = () => {
     className: "grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8"
   }, cards.map((c, i) => /*#__PURE__*/React.createElement("div", {
     key: i,
-    className: "reveal bg-surface-alt rounded-2xl p-5 border border-black/5",
+    className: "reveal rounded-2xl p-5",
     style: {
-      transitionDelay: i * 0.08 + 's'
+      transitionDelay: i * 0.08 + 's',
+      background: "#2A2E36",
+      border: "1px solid rgba(255,255,255,0.08)"
     }
   }, /*#__PURE__*/React.createElement("div", {
-    className: "w-10 h-10 rounded-xl bg-white shadow-sm border border-black/5 text-brand-deep flex items-center justify-center mb-2.5"
+    className: "w-10 h-10 rounded-xl flex items-center justify-center mb-2.5",
+    style: {
+      background: "rgba(245,179,1,0.14)",
+      color: "var(--accent)"
+    }
   }, /*#__PURE__*/React.createElement(Svg, {
     size: 20,
     sw: 1.8
   }, c.ico)), /*#__PURE__*/React.createElement("h3", {
-    className: "font-heading font-bold text-content mb-1.5 text-[15.5px] tracking-tight"
+    className: "font-heading font-bold mb-1.5 text-[15.5px] tracking-tight",
+    style: {
+      color: "#fff"
+    }
   }, c.title), /*#__PURE__*/React.createElement("p", {
-    className: "text-content-secondary leading-snug text-[13px]"
+    className: "leading-snug text-[13px]",
+    style: {
+      color: "rgba(255,255,255,0.62)"
+    }
   }, c.desc)))))));
 };
 
@@ -932,25 +944,25 @@ const Process = () => {
 /* ── Case studies with real photos ── */
 const CaseStudies = () => {
   const cases = [{
-    img: "img/cases/c1.jpg", tag: "Privathaus", ort: "Wuppertal", t: "Einfamilienhaus in Wuppertal",
-    p: "Die Familie wollte unabhängiger von steigenden Strompreisen werden.",
-    l: "Schlüsselfertige Anlage mit reichlich Speicher, die heute den Großteil des Eigenbedarfs deckt, Tag und Nacht."
+    img: "img/cases/efh-pv.jpg", tag: "Einfamilienhaus", ort: "Wuppertal", t: "Einfamilienhaus in Wuppertal",
+    p: "Die Stromrechnung stieg Jahr für Jahr, und das große Satteldach lag ungenutzt in der Sonne.",
+    l: "Schlüsselfertige Anlage auf der Sonnenseite. Heute kommt der Großteil des Tagesstroms vom eigenen Dach statt teuer aus dem Netz."
   }, {
     img: "img/cases/c2.jpg", tag: "Gewerbe", ort: "Bergisches Land", t: "Gewerbedach im Bergischen Land",
     p: "Ein Betrieb mit hohem Tagesverbrauch suchte eine wirtschaftliche Lösung.",
     l: "Auf der großen Dachfläche entstand eine Anlage, die den Strom genau dann liefert, wenn er im Betrieb gebraucht wird."
   }, {
-    img: "img/cases/c3.jpg", tag: "Doppelhaus", ort: "Solingen", t: "Doppelhaushälfte in Solingen",
-    p: "Begrenzte Dachfläche bei dem Wunsch nach maximalem Ertrag.",
-    l: "Mit optimierter String-Verteilung und passenden Modulen holten wir das Optimum aus der kleinen Fläche heraus."
+    img: "img/cases/doppelhaus-pv.jpg", tag: "Doppelhaus", ort: "Velbert", t: "Doppelhaushälfte in Velbert",
+    p: "Begrenzte Dachfläche bei dem Wunsch nach möglichst viel Ertrag.",
+    l: "Mit passender Modulwahl und durchdachter Belegung haben wir die vorhandene Fläche voll ausgereizt."
   }, {
-    img: "img/cases/c4.jpg", tag: "Nachrüstung", ort: "Velbert", t: "Speicher-Nachrüstung in Velbert",
-    p: "Die bestehende Anlage hatte zu wenig Speicher, abends kam der Strom teuer aus dem Netz.",
-    l: "Wir rüsteten einen deutlich größeren Speicher nach. Jetzt sind auch die Abendstunden mit eigenem Solarstrom gedeckt."
+    img: "img/cases/speicher-technik.jpg", tag: "Speicher-Nachrüstung", ort: "Solingen", t: "Speicher-Nachrüstung in Solingen",
+    p: "Tagsüber lief die Anlage stark, doch abends kam der Strom wieder teuer aus dem Netz.",
+    l: "Hybrid-Wechselrichter und passender Speicher nachgerüstet. Der Sonnenstrom vom Tag deckt jetzt auch Abend und Nacht."
   }, {
-    img: "img/cases/c5.jpg", tag: "PV & Wärmepumpe", ort: "Remscheid", t: "Wärmepumpe & PV in Remscheid",
-    p: "Alte Heizung, hohe Energiekosten und der Wunsch nach mehr Unabhängigkeit.",
-    l: "Photovoltaik, Speicher und Wärmepumpe aus einer Hand. Geheizt wird jetzt größtenteils mit dem eigenen Strom vom Dach."
+    img: "img/cases/bungalow-carport.jpg", tag: "Neubau", ort: "Mettmann", t: "Bungalow mit Carport in Mettmann",
+    p: "Beim Neubau sollte die Photovoltaik von Anfang an mitgedacht werden, auch auf dem Carport.",
+    l: "PV auf Haus und Carport direkt mitgeplant und schlüsselfertig gebaut. Eigener Strom ab dem ersten Tag."
   }, {
     img: "img/services/s2.jpg", tag: "Gewerbe", ort: "Hilden", t: "Lagerhalle in Hilden",
     p: "Hohe Stromkosten im Betrieb und eine große, ungenutzte Dachfläche.",
