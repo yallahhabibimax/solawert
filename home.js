@@ -205,12 +205,12 @@ const App = () => {
           scrollTrigger: { trigger: el, start: 'top 92%', end: 'top 30%', scrub: true }
         });
       });
-      /* Leistungs-Karte leuchtet auf, sobald sie im Viewport zentriert ist */
+      /* Leistungs-Karte leuchtet auf, solange die Bildschirmmitte in ihr liegt */
       gsap.utils.toArray('.lz-card').forEach(card => {
         ScrollTrigger.create({
           trigger: card,
-          start: 'top 72%',
-          end: 'bottom 28%',
+          start: 'top center',
+          end: 'bottom center',
           toggleClass: { targets: card, className: 'lz-active' }
         });
       });
@@ -778,9 +778,9 @@ const SonneSlider = () => {
   }, slides.map(row)), /*#__PURE__*/React.createElement("div", {
     className: "mt-16 md:mt-20 text-center reveal"
   }, /*#__PURE__*/React.createElement("p", {
-    className: "text-base mb-6 max-w-xl mx-auto",
+    className: "text-lg md:text-xl font-heading font-bold leading-snug mb-9 max-w-2xl mx-auto",
     style: {
-      color: W(".9")
+      color: "#fff"
     }
   }, "Nicht sicher, welche Lösung zu Ihrem Dach passt? Wir beraten Sie kostenlos und nennen Ihnen vorab einen fairen Festpreis."), /*#__PURE__*/React.createElement("div", {
     className: "flex flex-wrap justify-center gap-3"
@@ -1209,7 +1209,8 @@ const Testimonials = () => {
   }, /*#__PURE__*/React.createElement("span", {
     className: "text-brand-deep font-heading font-semibold tracking-[0.16em] uppercase text-xs mb-3 block"
   }, "Bewertungen"), /*#__PURE__*/React.createElement("h2", {
-    className: "text-3xl md:text-[2.7rem] font-heading font-black text-content leading-tight"
+    className: "text-3xl md:text-[2.7rem] font-heading text-content leading-tight",
+    style: { fontFamily: "'Archivo', system-ui, sans-serif", fontWeight: 900 }
   }, "Das sagen unsere Kunden")), /*#__PURE__*/React.createElement("div", {
     className: "flex items-center gap-4 rounded-2xl px-6 py-4 border border-black/5 shrink-0",
     style: { background: "#FBF4D2" }
@@ -1227,10 +1228,10 @@ const Testimonials = () => {
     className: "grid md:grid-cols-2 lg:grid-cols-3 gap-5"
   }, reviews.map((r, i) => /*#__PURE__*/React.createElement("div", {
     key: i,
-    className: "reveal card-lift rounded-3xl p-7 border border-black/5 flex flex-col",
+    className: "reveal card-lift rounded-3xl p-7 border border-white/10 flex flex-col",
     style: {
       transitionDelay: i % 3 * 0.1 + 's',
-      background: "#FBF4D2"
+      background: "#15181D"
     }
   }, /*#__PURE__*/React.createElement("div", {
     className: "flex items-center gap-3 mb-3"
@@ -1240,16 +1241,16 @@ const Testimonials = () => {
   }, r.n.charAt(0)), /*#__PURE__*/React.createElement("div", {
     className: "flex-grow min-w-0"
   }, /*#__PURE__*/React.createElement("div", {
-    className: "font-heading font-semibold text-content text-sm leading-tight"
+    className: "font-heading font-bold text-white text-sm leading-tight"
   }, r.n), /*#__PURE__*/React.createElement("div", {
-    className: "text-[11.5px] text-content-secondary mt-0.5"
+    className: "text-[11.5px] text-white/55 mt-0.5"
   }, REVIEW_DATES[i % REVIEW_DATES.length])), /*#__PURE__*/React.createElement(GoogleG, {
     size: 20
   })), /*#__PURE__*/React.createElement(Stars, {
     size: 16,
     className: "mb-3"
   }), /*#__PURE__*/React.createElement("p", {
-    className: "text-content text-[14.5px] leading-relaxed flex-grow"
+    className: "text-white font-body font-bold text-[14.5px] leading-relaxed flex-grow"
   }, r.t))))));
 };
 
