@@ -453,11 +453,8 @@ const Hero = () => {
   }, /*#__PURE__*/React.createElement("b", null, "Dachmontage"), /*#__PURE__*/React.createElement("span", null, "Sauber & fachgerecht"))), /*#__PURE__*/React.createElement("div", {
     className: "sw-card sw-card--img"
   }, /*#__PURE__*/React.createElement("img", {
-    src: "img/projekt-2.jpg?v=1782000013",
-    alt: "Solarmodule auf einem Wohnhausdach in Nahaufnahme",
-    style: {
-      objectFit: "contain"
-    }
+    src: "img/hero-solar.jpg?v=1782000018",
+    alt: "Schwarze Solarmodule auf einem Wohnhausdach in NRW"
   }), /*#__PURE__*/React.createElement("div", {
     className: "sw-card__cap"
   }, /*#__PURE__*/React.createElement("b", null, "Solaranlagen"), /*#__PURE__*/React.createElement("span", null, "Photovoltaik aufs Dach"))))), /*#__PURE__*/React.createElement("div", {
@@ -561,7 +558,7 @@ const Features = () => {
     className: "text-brand-deep font-heading font-semibold tracking-[0.16em] uppercase text-xs mb-3 block"
   }, "Warum SolaWert"), /*#__PURE__*/React.createElement("h2", {
     className: "text-3xl md:text-[2.7rem] font-heading font-black text-content leading-tight"
-  }, "Warum SolaWert die richtige Wahl ist")), /*#__PURE__*/React.createElement("div", {
+  }, "Warum ", React.createElement("span", { style: { color: "#F5B301" } }, "SolaWert"), " die richtige Wahl ist")), /*#__PURE__*/React.createElement("div", {
     className: "grid md:grid-cols-3 gap-6"
   }, items.map((f, i) => /*#__PURE__*/React.createElement("div", {
     key: i,
@@ -920,7 +917,7 @@ const Process = () => {
     className: "text-brand font-heading font-semibold tracking-[0.16em] uppercase text-xs mb-3 block"
   }, "So einfach geht's"), /*#__PURE__*/React.createElement("h2", {
     className: "text-3xl md:text-[2.7rem] font-heading font-black leading-tight mb-4"
-  }, "In 4 Schritten zu Ihrer Solaranlage"), /*#__PURE__*/React.createElement("p", {
+  }, "In 4 Schritten zu Ihrer ", React.createElement("span", { style: { color: "#F5B301" } }, "Solaranlage")), /*#__PURE__*/React.createElement("p", {
     className: "text-white/60 text-lg"
   }, "Von der ersten Anfrage bis zur fertigen Arbeit, klar, schnell und ohne Stress für Sie.")), /*#__PURE__*/React.createElement("div", {
     className: "grid sm:grid-cols-2 lg:grid-cols-4 gap-5"
@@ -1108,7 +1105,7 @@ const BlogTeaser = () => {
     className: "text-brand-deep font-heading font-semibold tracking-[0.16em] uppercase text-xs mb-3 block"
   }, "Ratgeber & Tipps"), /*#__PURE__*/React.createElement("h2", {
     className: "text-3xl md:text-[2.7rem] font-heading font-black text-content leading-tight"
-  }, "Wissen vom Photovoltaik")), /*#__PURE__*/React.createElement("a", {
+  }, "Wissen vom ", React.createElement("span", { style: { color: "#F5B301" } }, "Photovoltaik"))), /*#__PURE__*/React.createElement("a", {
     href: "blog",
     className: "btn-dark rounded-full px-6 py-3 font-heading text-sm inline-flex items-center gap-2 shrink-0"
   }, "Zum Ratgeber ", /*#__PURE__*/React.createElement(Svg, {
@@ -1167,7 +1164,7 @@ const About = () => /*#__PURE__*/React.createElement("section", {
   className: "text-brand-deep font-heading font-semibold tracking-[0.16em] uppercase text-xs mb-3 block"
 }, "Über uns"), /*#__PURE__*/React.createElement("h2", {
   className: "text-3xl md:text-[2.6rem] font-heading font-black text-content leading-tight mb-5"
-}, "Ihr Partner für Photovoltaik & Wärmepumpe in NRW"), /*#__PURE__*/React.createElement("div", {
+}, "Ihr ", React.createElement("span", { style: { color: "#F5B301" } }, "Partner"), " für Photovoltaik & Wärmepumpe in NRW"), /*#__PURE__*/React.createElement("div", {
   className: "space-y-4 text-content-secondary leading-relaxed text-[15.5px]"
 }, /*#__PURE__*/React.createElement("p", null, "Bei SolaWert entscheiden Effizienz und Wirtschaftlichkeit über jede Anlage. Inhaber Gegam Sargsian und sein Team planen so, dass aus Ihrem Dach das Maximum herauskommt, statt einfach Standard zu verbauen. Vorkasse gibt es bei uns nicht: Sie zahlen erst, wenn die Anlage läuft und wir Ihnen die volle Funktion vorgeführt haben."), /*#__PURE__*/React.createElement("p", null, "Drei Dinge machen bei uns den Unterschied: eine sauber berechnete String-Verteilung der Module, oft rund 60 Prozent mehr Speicher zum gleichen Preis und ein bewusst größer dimensionierter Wechselrichter mit Reserve für die Zukunft. Und während die meisten nach der Montage verschwinden, nehmen wir uns danach rund eine Woche Zeit und stellen die Anlage gemeinsam mit Ihnen auf Ihren Verbrauch ein.")), /*#__PURE__*/React.createElement("div", {
   className: "flex items-center gap-4 mt-7 p-4 rounded-2xl bg-white border border-black/5"
@@ -1253,7 +1250,7 @@ const Testimonials = () => {
   }, "Bewertungen"), /*#__PURE__*/React.createElement("h2", {
     className: "text-3xl md:text-[2.7rem] font-heading text-content leading-tight",
     style: { fontFamily: "'Archivo', system-ui, sans-serif", fontWeight: 900 }
-  }, "Das sagen unsere Kunden")), /*#__PURE__*/React.createElement("div", {
+  }, "Das sagen unsere ", React.createElement("span", { style: { background: "#F5B301", color: "#1A1402", padding: "0 0.14em", borderRadius: "8px", WebkitBoxDecorationBreak: "clone", boxDecorationBreak: "clone" } }, "Kunden"))), /*#__PURE__*/React.createElement("div", {
     className: "sw-grating shrink-0 relative overflow-hidden",
     style: { display: "flex", alignItems: "center", gap: "16px", background: "#2A2E36", border: "1px solid rgba(245,179,1,0.30)", borderRadius: "20px", padding: "16px 22px", boxShadow: "0 18px 44px -22px rgba(0,0,0,0.65), inset 0 1px 0 rgba(255,255,255,0.05), 0 0 0 4px rgba(245,179,1,0.04)" }
   }, /*#__PURE__*/React.createElement("div", {
@@ -1412,7 +1409,7 @@ const Contact = () => {
     style: { marginBottom: "1.15rem" }
   }, /*#__PURE__*/React.createElement("span", { className: "sw-cdot" }), "Kontakt"), /*#__PURE__*/React.createElement("h2", {
     className: "text-3xl md:text-[2.8rem] font-heading font-black leading-[1.08] mb-5"
-  }, "Jetzt unverbindlich anfragen"), /*#__PURE__*/React.createElement("p", {
+  }, "Jetzt ", React.createElement("span", { style: { color: "#F5B301" } }, "unverbindlich"), " anfragen"), /*#__PURE__*/React.createElement("p", {
     className: "text-content-secondary text-lg leading-relaxed mb-8 max-w-lg"
   }, "Lassen Sie sich kostenlos beraten und erfahren Sie, was auf Ihrem Dach möglich ist."), /*#__PURE__*/React.createElement("div", {
     className: "sw-contact-wrap mb-8"
