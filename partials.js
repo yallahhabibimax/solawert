@@ -159,7 +159,7 @@
       card.innerHTML =
         '<div class="flex items-center justify-between mb-1.5"><span class="text-xs font-heading font-semibold text-content-secondary uppercase tracking-wider">Schritt '+step+' von '+TOTAL+'</span><span class="text-xs text-content-secondary">ca. 30 Sek.</span></div>'
         + '<div class="h-1.5 rounded-full bg-surface-alt overflow-hidden mb-6"><div class="h-full rounded-full bg-brand transition-all duration-500 ease-out" style="width:'+(step/TOTAL*100)+'%"></div></div>'
-        + '<div class="min-h-[296px]" style="'+(step===1?'':'max-width:620px;margin:0 auto;')+'">' + stepHTML() + '</div>'
+        + '<div style="min-height:190px;display:flex;flex-direction:column;justify-content:center;'+(step===1?'':'max-width:600px;margin:0 auto;')+'">' + stepHTML() + '</div>'
         + nav;
     }
 
