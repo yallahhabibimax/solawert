@@ -184,6 +184,13 @@ const App = () => {
       batch('.reveal-left', { opacity: 0, x: -54, filter: 'blur(12px)' });
       batch('.reveal-right', { opacity: 0, x: 54, filter: 'blur(12px)' });
       batch('.reveal-scale', { opacity: 0, scale: 0.92, filter: 'blur(18px)' });
+      /* Leistungs-Bilder: skalieren beim Scrollen rein (Vordergrund-Effekt) */
+      gsap.utils.toArray('.lz-media').forEach(el => {
+        gsap.fromTo(el, { scale: 0.9 }, {
+          scale: 1.04, ease: 'none',
+          scrollTrigger: { trigger: el, start: 'top 92%', end: 'top 30%', scrub: true }
+        });
+      });
       ScrollTrigger.refresh();
       cleanupReveal = () => {
         ScrollTrigger.getAll().forEach(t => t.kill());
@@ -221,7 +228,7 @@ const App = () => {
     className: "relative"
   }, /*#__PURE__*/React.createElement(Navbar, null), /*#__PURE__*/React.createElement("main", null, /*#__PURE__*/React.createElement(Hero, null), /*#__PURE__*/React.createElement(Marquee, null), /*#__PURE__*/React.createElement("section", {
     "data-kaefer": "form"
-  }), /*#__PURE__*/React.createElement(WerWirSind, null), /*#__PURE__*/React.createElement(SonneSlider, null), /*#__PURE__*/React.createElement(Services, null), /*#__PURE__*/React.createElement(Segments, null), /*#__PURE__*/React.createElement(Process, null), /*#__PURE__*/React.createElement(CaseStudies, null), /*#__PURE__*/React.createElement(RegionBand, null), /*#__PURE__*/React.createElement(About, null), /*#__PURE__*/React.createElement(Values, null), /*#__PURE__*/React.createElement(Testimonials, null), /*#__PURE__*/React.createElement(FAQ, null), /*#__PURE__*/React.createElement(Contact, null)), /*#__PURE__*/React.createElement("div", {
+  }), /*#__PURE__*/React.createElement(WerWirSind, null), /*#__PURE__*/React.createElement(SonneSlider, null), /*#__PURE__*/React.createElement(Segments, null), /*#__PURE__*/React.createElement(Process, null), /*#__PURE__*/React.createElement(CaseStudies, null), /*#__PURE__*/React.createElement(RegionBand, null), /*#__PURE__*/React.createElement(About, null), /*#__PURE__*/React.createElement(Values, null), /*#__PURE__*/React.createElement(Testimonials, null), /*#__PURE__*/React.createElement(FAQ, null), /*#__PURE__*/React.createElement(Contact, null)), /*#__PURE__*/React.createElement("div", {
     "data-kaefer": "footer"
   }), /*#__PURE__*/React.createElement(MobileCallBar, null));
 };
@@ -668,14 +675,48 @@ const SonneSlider = () => {
     foot: "Komplett",
     sub: "aus einer Hand"
   }];
-  const [i, setI] = useState(0);
-  const n = slides.length;
-  const go = d => setI(p => (p + d + n) % n);
-  const s = slides[i];
-  const bullets = ["Photovoltaik, Wärmepumpe und Speicher aus einer Hand", "Festpreis ohne versteckte Kosten", "Eine Woche Nachoptimierung inklusive"];
   const W = a => "rgba(255,255,255," + a + ")";
+  const row = (s, idx) => /*#__PURE__*/React.createElement("div", {
+    key: idx,
+    className: "lz-card reveal" + (idx % 2 ? " lz-card--rev" : "")
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "lz-badge",
+    "aria-hidden": "true"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "lz-badge__num"
+  }, String(idx + 1).padStart(2, "0")), /*#__PURE__*/React.createElement("span", {
+    className: "lz-badge__tot"
+  }, "/ " + String(slides.length).padStart(2, "0"))), /*#__PURE__*/React.createElement("div", {
+    className: "lz-inner"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "lz-text"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "lz-tag"
+  }, s.tag), /*#__PURE__*/React.createElement("h3", {
+    className: "text-2xl md:text-[2rem] font-heading font-black leading-tight tracking-tight mb-4",
+    style: {
+      color: "#fff"
+    }
+  }, s.name), /*#__PURE__*/React.createElement("p", {
+    className: "text-base leading-relaxed",
+    style: {
+      color: W(".62"),
+      maxWidth: "32rem"
+    }
+  }, s.desc), /*#__PURE__*/React.createElement("div", {
+    className: "lz-stat"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "lz-stat__val"
+  }, s.foot), /*#__PURE__*/React.createElement("span", {
+    className: "lz-stat__sub"
+  }, s.sub))), /*#__PURE__*/React.createElement("div", {
+    className: "lz-media"
+  }, /*#__PURE__*/React.createElement("img", {
+    src: s.img,
+    alt: s.name
+  }))));
   return /*#__PURE__*/React.createElement("section", {
-    id: "leistungen-slider",
+    id: "leistungen",
     className: "py-20 md:py-28 px-5 md:px-8 relative overflow-hidden",
     style: {
       background: "#15181D"
@@ -691,45 +732,9 @@ const SonneSlider = () => {
       background: "radial-gradient(circle, rgba(245,179,1,0.22) 0%, rgba(245,179,1,0.06) 38%, transparent 70%)"
     }
   }), /*#__PURE__*/React.createElement("div", {
-    className: "max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-center relative z-10"
+    className: "max-w-7xl mx-auto relative z-10"
   }, /*#__PURE__*/React.createElement("div", {
-    className: "absolute right-0 pointer-events-none",
-    "aria-hidden": "true",
-    style: {
-      top: "-22px",
-      width: "104px",
-      height: "84px"
-    }
-  }, /*#__PURE__*/React.createElement("span", {
-    className: "absolute rounded-full",
-    style: {
-      width: "54px",
-      height: "54px",
-      right: "40px",
-      top: "28px",
-      background: "#39414D"
-    }
-  }), /*#__PURE__*/React.createElement("span", {
-    className: "absolute rounded-full",
-    style: {
-      width: "44px",
-      height: "44px",
-      right: "8px",
-      top: "40px",
-      background: "#4A5360"
-    }
-  }), /*#__PURE__*/React.createElement("span", {
-    className: "absolute rounded-full",
-    style: {
-      width: "26px",
-      height: "26px",
-      right: "0px",
-      top: "0px",
-      background: "var(--accent)",
-      boxShadow: "0 6px 18px -4px rgba(245,179,1,0.6)"
-    }
-  })), /*#__PURE__*/React.createElement("div", {
-    className: "reveal-left"
+    className: "max-w-2xl mb-16 md:mb-20 reveal"
   }, /*#__PURE__*/React.createElement("span", {
     className: "font-heading font-semibold uppercase text-xs mb-4 block tracking-[0.16em]",
     style: {
@@ -741,182 +746,19 @@ const SonneSlider = () => {
       color: "#fff"
     }
   }, "Die Kraft der Sonne nutzen"), /*#__PURE__*/React.createElement("p", {
-    className: "text-base md:text-lg leading-relaxed mb-8",
+    className: "text-base md:text-lg leading-relaxed",
     style: {
-      color: W(".6"),
-      maxWidth: "30rem"
+      color: W(".6")
     }
-  }, "Von der Effizienz-Planung bis zur fertigen Anlage. Photovoltaik, Wärmepumpe und Speicher schlüsselfertig aus einer Hand. Wir behandeln jedes Projekt wie unser eigenes Zuhause."), /*#__PURE__*/React.createElement("ul", {
-    className: "flex flex-col gap-4"
-  }, bullets.map((t, k) => /*#__PURE__*/React.createElement("li", {
-    key: k,
-    className: "flex items-center gap-3 font-heading font-medium",
-    style: {
-      color: W(".85")
-    }
-  }, /*#__PURE__*/React.createElement("span", {
-    className: "w-7 h-7 rounded-full flex items-center justify-center shrink-0",
-    style: {
-      background: "rgba(var(--accent-rgb),0.16)",
-      color: "var(--accent)"
-    }
-  }, /*#__PURE__*/React.createElement(Svg, {
-    size: 16,
-    sw: 2.4
-  }, ICO.check)), t))), /*#__PURE__*/React.createElement("div", {
-    className: "flex items-center gap-2.5 mt-10"
-  }, /*#__PURE__*/React.createElement("button", {
-    onClick: () => go(-1),
-    "aria-label": "Vorherige Leistung",
-    className: "w-11 h-11 rounded-full flex items-center justify-center transition-colors",
-    style: {
-      border: "1px solid " + W(".2"),
-      color: W(".8")
-    }
-  }, /*#__PURE__*/React.createElement("span", {
-    style: {
-      display: "inline-flex",
-      transform: "rotate(180deg)"
-    }
-  }, /*#__PURE__*/React.createElement(Svg, {
-    size: 18,
-    sw: 2.2
-  }, ICO.arrow))), /*#__PURE__*/React.createElement("button", {
-    onClick: () => go(1),
-    "aria-label": "Nächste Leistung",
-    className: "w-11 h-11 rounded-full flex items-center justify-center transition-transform hover:-translate-y-0.5",
-    style: {
-      background: "var(--accent)",
-      color: "#15181D"
-    }
-  }, /*#__PURE__*/React.createElement(Svg, {
-    size: 18,
-    sw: 2.2
-  }, ICO.arrow)))), /*#__PURE__*/React.createElement("div", {
-    className: "reveal-right"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "flex items-center justify-between mb-5"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "font-heading text-sm tracking-wider",
-    style: {
-      color: W(".5")
-    }
-  }, /*#__PURE__*/React.createElement("span", {
-    style: {
-      color: "#fff",
-      fontWeight: 700,
-      fontSize: "18px"
-    }
-  }, String(i + 1).padStart(2, "0")), " / " + String(n).padStart(2, "0"))), /*#__PURE__*/React.createElement("div", {
-    className: "rounded-[28px] overflow-hidden",
-    style: {
-      background: "#1B1F26",
-      border: "1px solid " + W(".1")
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "relative overflow-hidden",
-    style: {
-      height: "250px"
-    }
-  }, /*#__PURE__*/React.createElement("img", {
-    src: s.img,
-    alt: s.name,
-    className: "w-full h-full object-cover"
-  }), /*#__PURE__*/React.createElement("span", {
-    className: "absolute top-4 right-4 font-heading font-semibold text-xs px-3 py-1.5 rounded-full",
-    style: {
-      background: "var(--accent)",
-      color: "#15181D"
-    }
-  }, s.tag)), /*#__PURE__*/React.createElement("div", {
-    className: "p-6 md:p-8"
-  }, /*#__PURE__*/React.createElement("h3", {
-    className: "font-heading font-bold text-xl mb-2 tracking-tight",
-    style: {
-      color: "#fff"
-    }
-  }, s.name), /*#__PURE__*/React.createElement("p", {
-    className: "text-sm leading-relaxed mb-6",
-    style: {
-      color: W(".55")
-    }
-  }, s.desc), /*#__PURE__*/React.createElement("div", {
-    className: "flex items-center justify-between gap-4"
-  }, /*#__PURE__*/React.createElement("a", {
-    href: "#anfrage",
-    className: "btn-primary rounded-full px-5 py-2.5 font-heading inline-flex items-center gap-2 text-sm"
-  }, "Angebot anfordern ", /*#__PURE__*/React.createElement(Svg, {
-    size: 15,
-    sw: 2.2
-  }, ICO.arrow)), /*#__PURE__*/React.createElement("div", {
-    className: "text-right"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "font-heading font-bold text-lg leading-none",
-    style: {
-      color: "#fff"
-    }
-  }, s.foot), /*#__PURE__*/React.createElement("div", {
-    className: "text-xs mt-1",
-    style: {
-      color: W(".45")
-    }
-  }, s.sub))))))));
-};
-
-/* ── Services (9 pests, Gemini icons) ── */
-const Services = () => {
-  const services = [{"img": "img/services/s1.jpg", "icon": "img/_blank.png", "href": "#anfrage", "name": "Photovoltaik schlüsselfertig", "desc": "Komplette PV-Anlagen für Ihr Dach, von der Planung über Lieferung und Montage bis zur Anmeldung. Sauber installiert, abgestimmt auf Ihren Verbrauch. Am Ende müssen Sie nur noch Ihren eigenen Strom nutzen."}, {"img": "img/services/s2.jpg", "icon": "img/_blank.png", "href": "#anfrage", "name": "Wärmepumpe schlüsselfertig", "desc": "Moderne Wärmepumpen, komplett geplant und installiert. Wir bringen Heizung und Photovoltaik sinnvoll zusammen, damit Sie mit Ihrem eigenen Strom günstig und unabhängig heizen."}, {"img": "img/services/s3.jpg", "icon": "img/_blank.png", "href": "#anfrage", "name": "Stromspeicher mit mehr Kapazität", "desc": "Der Speicher ist der Erfolgsfaktor jeder Anlage. Wir geben Ihnen deutlich mehr Speicher zum gleichen Preis, exakt auf Ihren Verbrauch dimensioniert. So nutzen Sie Ihren Solarstrom auch abends und nachts."}, {"img": "img/services/s4.jpg", "icon": "img/_blank.png", "href": "#anfrage", "name": "Monitoring & Feintuning", "desc": "Wir überwachen Ihre Anlage und stimmen die Einstellungen genau auf Ihr Verbrauchsverhalten ab. So holen wir aus jeder Kilowattstunde das Maximum heraus, statt es bei Standardwerten zu belassen."}, {"img": "img/services/s5.jpg", "icon": "img/_blank.png", "href": "#anfrage", "name": "Effizienz-Planung & String-Optimierung", "desc": "Wir berechnen Spannung und Strom genau und verteilen die Module optimal in den Strings. Der Wechselrichter wird mit Reserve geplant. Das bringt mehr Ertrag, längere Lebensdauer und Spielraum für die Zukunft."}, {"img": "img/services/s6.jpg", "icon": "img/_blank.png", "href": "#anfrage", "name": "Inbetriebnahme, Anmeldung & Wartung", "desc": "Wir übernehmen die komplette Anmeldung und nehmen uns nach der Fertigstellung noch eine Woche Zeit, um die Anlage gemeinsam mit Ihnen zu optimieren. Auf Wunsch betreuen wir sie dauerhaft."}];
-  return /*#__PURE__*/React.createElement("section", {
-    id: "leistungen",
-    className: "py-20 md:py-28 px-5 md:px-8 bg-surface-alt relative accent-line-top"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "max-w-7xl mx-auto relative z-10"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "max-w-2xl mb-14 reveal"
-  }, /*#__PURE__*/React.createElement("span", {
-    className: "text-brand-deep font-heading font-semibold tracking-[0.16em] uppercase text-xs mb-3 block"
-  }, "Leistungen"), /*#__PURE__*/React.createElement("h2", {
-    className: "text-3xl md:text-[2.7rem] font-heading font-black text-content leading-tight mb-4"
-  }, "Photovoltaik, Wärmepumpe & Speicher"), /*#__PURE__*/React.createElement("p", {
-    className: "text-content-secondary text-lg"
-  }, "Von der Effizienz-Planung bis zur fertigen Anlage. Wir begleiten Sie über den gesamten Weg und holen das Maximum aus Ihrem Projekt heraus.")), /*#__PURE__*/React.createElement("div", {
-    className: "grid sm:grid-cols-2 lg:grid-cols-3 gap-5 spot"
-  }, services.map((s, i) => /*#__PURE__*/React.createElement("div", {
-    key: i,
-    className: "reveal pest-card bg-white rounded-3xl border border-black/5 overflow-hidden flex flex-col spot-item",
-    style: {
-      transitionDelay: i % 3 * 0.1 + 's'
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "h-48 overflow-hidden relative"
-  }, /*#__PURE__*/React.createElement("img", {
-    src: s.img,
-    alt: s.name,
-    className: "pest-bg w-full h-full object-cover"
-  }), /*#__PURE__*/React.createElement("div", {
-    className: "hidden"
-  }, /*#__PURE__*/React.createElement("img", {
-    src: s.icon,
-    alt: "",
-    className: "w-full h-full object-contain"
-  }))), /*#__PURE__*/React.createElement("div", {
-    className: "p-7 flex flex-col flex-grow"
-  }, /*#__PURE__*/React.createElement("h3", {
-    className: "text-lg font-heading font-bold text-content mb-2.5"
-  }, s.name), /*#__PURE__*/React.createElement("p", {
-    className: "text-content-secondary text-[14px] leading-relaxed"
-  }, s.desc), /*#__PURE__*/React.createElement("a", {
-    href: "#anfrage",
-    className: "mt-auto pt-5 inline-flex items-center gap-1.5 text-brand-deep font-heading font-semibold text-sm group/l"
-  }, "Angebot anfordern", /*#__PURE__*/React.createElement("span", {
-    className: "transition-transform group-hover/l:translate-x-1"
-  }, /*#__PURE__*/React.createElement(Svg, {
-    size: 16,
-    sw: 2.2
-  }, ICO.arrow))))))), /*#__PURE__*/React.createElement("div", {
-    className: "mt-14 text-center reveal"
+  }, "Von der Effizienz-Planung bis zur fertigen Anlage. Photovoltaik, Wärmepumpe und Speicher schlüsselfertig aus einer Hand. Wir behandeln jedes Projekt wie unser eigenes Zuhause.")), /*#__PURE__*/React.createElement("div", {
+    className: "lz-rows"
+  }, slides.map(row)), /*#__PURE__*/React.createElement("div", {
+    className: "mt-16 md:mt-20 text-center reveal"
   }, /*#__PURE__*/React.createElement("p", {
-    className: "text-content-secondary text-base mb-5 max-w-xl mx-auto"
+    className: "text-base mb-6 max-w-xl mx-auto",
+    style: {
+      color: W(".6")
+    }
   }, "Nicht sicher, welche Lösung zu Ihrem Dach passt? Wir beraten Sie kostenlos und nennen Ihnen vorab einen fairen Festpreis."), /*#__PURE__*/React.createElement("div", {
     className: "flex flex-wrap justify-center gap-3"
   }, /*#__PURE__*/React.createElement("a", {
@@ -927,7 +769,11 @@ const Services = () => {
     sw: 2.2
   }, ICO.arrow)), /*#__PURE__*/React.createElement("a", {
     href: "tel:" + PHONE_FEST_TEL,
-    className: "btn-dark rounded-full px-6 py-4 font-heading inline-flex items-center gap-2.5"
+    className: "rounded-full px-6 py-4 font-heading inline-flex items-center gap-2.5 transition-colors",
+    style: {
+      border: "1px solid " + W(".2"),
+      color: "#fff"
+    }
   }, /*#__PURE__*/React.createElement(Svg, {
     size: 18
   }, ICO.phone), " ", PHONE_FEST)))));
@@ -1377,7 +1223,7 @@ const FAQ = () => {
   return React.createElement("section", {
     id: "faq",
     className: "relative overflow-hidden px-5 md:px-8 py-20 md:py-28",
-    style: { background: "linear-gradient(160deg,#E3A82C 0%,#CE9114 52%,#B17D08 100%)" }
+    style: { background: "#2A2E36" }
   }, React.createElement("div", {
     "aria-hidden": "true",
     className: "absolute inset-0 pointer-events-none",
@@ -1385,7 +1231,7 @@ const FAQ = () => {
   }), React.createElement("div", {
     "aria-hidden": "true",
     className: "absolute pointer-events-none",
-    style: { top: "-18%", left: "-12%", width: "640px", height: "640px", background: "radial-gradient(circle,rgba(255,255,255,0.30) 0%,transparent 62%)" }
+    style: { top: "-18%", left: "-12%", width: "640px", height: "640px", background: "radial-gradient(circle,rgba(245,179,1,0.12) 0%,transparent 62%)" }
   }), React.createElement("div", {
     className: "max-w-7xl mx-auto relative z-10 grid lg:grid-cols-2 gap-12 lg:gap-16 items-start"
   }, React.createElement("div", {
@@ -1393,22 +1239,22 @@ const FAQ = () => {
     style: { position: "sticky", top: "110px" }
   }, React.createElement("span", {
     className: "inline-block font-heading font-bold uppercase tracking-[0.16em] text-[11px] px-3.5 py-1.5 rounded-full mb-6",
-    style: { background: "#15181D", color: "#FFC633" }
+    style: { background: "rgba(245,179,1,0.12)", color: "#FFC633" }
   }, "FAQ"), React.createElement("h2", {
     className: "font-heading font-black tracking-tight mb-5",
-    style: { color: "#15181D", fontSize: "clamp(2.3rem,4.6vw,3.5rem)", lineHeight: "0.98" }
+    style: { color: "#ffffff", fontSize: "clamp(2.3rem,4.6vw,3.5rem)", lineHeight: "0.98" }
   }, "Häufig gestellte ", React.createElement("span", {
-    style: { background: "#15181D", color: "#FFC633", padding: "0 0.14em", borderRadius: "8px", WebkitBoxDecorationBreak: "clone", boxDecorationBreak: "clone" }
+    style: { background: "#F5B301", color: "#15181D", padding: "0 0.14em", borderRadius: "8px", WebkitBoxDecorationBreak: "clone", boxDecorationBreak: "clone" }
   }, "Fragen")), React.createElement("p", {
     className: "font-body font-bold leading-relaxed mb-8",
-    style: { color: "#ffffff", fontSize: "1.05rem", maxWidth: "23rem", textShadow: "0 1px 2px rgba(20,16,2,0.30)" }
+    style: { color: "rgba(255,255,255,0.72)", fontSize: "1.05rem", maxWidth: "23rem" }
   }, "Alles, was Sie vor dem Start wissen wollen. Klare Antworten, keine Anzahlung, kein Kleingedrucktes."), React.createElement("a", {
     href: "#anfrage",
     className: "group inline-flex items-center gap-3 font-heading font-extrabold tracking-tight rounded-full transition-transform hover:-translate-y-0.5",
-    style: { background: "#15181D", color: "#ffffff", fontSize: "16.5px", fontWeight: 800, padding: "8px 8px 8px 24px" }
+    style: { background: "#F5B301", color: "#15181D", fontSize: "16.5px", fontWeight: 800, padding: "8px 8px 8px 24px" }
   }, "Kostenlos anfragen", React.createElement("span", {
     className: "flex items-center justify-center rounded-full shrink-0",
-    style: { width: "34px", height: "34px", background: "#F5B301", color: "#15181D" }
+    style: { width: "34px", height: "34px", background: "#15181D", color: "#F5B301" }
   }, React.createElement(Svg, { size: 18, sw: 2.4 }, ICO.arrow)))), React.createElement("div", {
     className: "space-y-3.5"
   }, faqs.map((f, i) => React.createElement("details", {
@@ -1462,8 +1308,8 @@ const Contact = () => {
     id: "kontakt",
     className: "py-20 md:py-28 px-5 md:px-8 bg-ink text-white relative overflow-hidden"
   }, /*#__PURE__*/React.createElement("div", {
-    className: "absolute inset-0 opacity-50 pointer-events-none",
-    style: { display: "none" }
+    className: "absolute inset-0 pointer-events-none",
+    style: { backgroundImage: "linear-gradient(180deg,rgba(20,23,28,0.80) 0%,rgba(20,23,28,0.90) 100%), url('img/hero.jpg')", backgroundSize: "cover", backgroundPosition: "center" }
   }), /*#__PURE__*/React.createElement("div", {
     className: "absolute bottom-[-20%] left-[-8%] w-[44%] h-[60%] rounded-full pointer-events-none",
     style: {
