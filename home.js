@@ -1359,6 +1359,9 @@ const FAQ = () => {
 /* ── Contact ── */
 const Contact = () => {
   const [sent, setSent] = useState(false);
+  const userIco = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("circle", { cx: "12", cy: "8", r: "3.6" }), /*#__PURE__*/React.createElement("path", { d: "M5.5 20a6.5 6.5 0 0 1 13 0" }));
+  const chatIco = /*#__PURE__*/React.createElement("path", { d: "M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.7A8.38 8.38 0 0 1 4 11.5 8.5 8.5 0 0 1 12.5 3 8.38 8.38 0 0 1 21 11.5Z" });
+  const ff = (ico, el, area) => /*#__PURE__*/React.createElement("div", { className: area ? "sw-ff sw-ff--area" : "sw-ff" }, /*#__PURE__*/React.createElement("span", { className: "sw-ff__ico" }, /*#__PURE__*/React.createElement(Svg, { size: 17, sw: 1.9 }, ico)), el);
   const submit = e => {
     e.preventDefault();
     const f = e.target;
@@ -1472,7 +1475,7 @@ const Contact = () => {
     className: "text-white/55 text-sm mb-5"
   }, "Unverbindlich. Wir melden uns schnellstmöglich."), /*#__PURE__*/React.createElement("div", {
     className: "space-y-3"
-  }, /*#__PURE__*/React.createElement("select", {
+  }, ff(ICO.users, /*#__PURE__*/React.createElement("select", {
     className: "field",
     name: "anrede",
     required: true,
@@ -1485,49 +1488,49 @@ const Contact = () => {
     value: "Herr"
   }, "Herr"), /*#__PURE__*/React.createElement("option", {
     value: "Divers"
-  }, "Divers")), /*#__PURE__*/React.createElement("div", {
+  }, "Divers"))), /*#__PURE__*/React.createElement("div", {
     className: "grid sm:grid-cols-2 gap-3"
-  }, /*#__PURE__*/React.createElement("input", {
+  }, ff(userIco, /*#__PURE__*/React.createElement("input", {
     className: "field",
     type: "text",
     name: "vorname",
     placeholder: "Vorname *",
     required: true
-  }), /*#__PURE__*/React.createElement("input", {
+  })), ff(userIco, /*#__PURE__*/React.createElement("input", {
     className: "field",
     type: "text",
     name: "nachname",
     placeholder: "Nachname *",
     required: true
-  })), /*#__PURE__*/React.createElement("div", {
+  }))), /*#__PURE__*/React.createElement("div", {
     className: "grid sm:grid-cols-2 gap-3"
-  }, /*#__PURE__*/React.createElement("input", {
+  }, ff(ICO.phone, /*#__PURE__*/React.createElement("input", {
     className: "field",
     type: "tel",
     name: "telefon",
     placeholder: "Telefon *",
     required: true
-  }), /*#__PURE__*/React.createElement("input", {
+  })), ff(ICO.mail, /*#__PURE__*/React.createElement("input", {
     className: "field",
     type: "email",
     name: "email",
     placeholder: "E-Mail *",
     required: true
-  })), /*#__PURE__*/React.createElement("input", {
+  }))), ff(ICO.pin, /*#__PURE__*/React.createElement("input", {
     className: "field",
     type: "text",
     name: "ort",
     placeholder: "Auftragsort & Straße *",
     required: true
-  }), /*#__PURE__*/React.createElement("textarea", {
+  })), ff(chatIco, /*#__PURE__*/React.createElement("textarea", {
     className: "field resize-none",
     name: "anliegen",
     rows: "3",
     placeholder: "Wie können wir Ihnen helfen? *",
     required: true
-  }), /*#__PURE__*/React.createElement("button", {
+  }), true), /*#__PURE__*/React.createElement("button", {
     type: "submit",
-    className: "btn-primary cta-pulse w-full rounded-full py-4 font-heading text-[1.02rem] flex items-center justify-center gap-2"
+    className: "btn-primary cta-pulse sw-submit w-full rounded-full py-4 font-heading text-[1.02rem] flex items-center justify-center gap-2"
   }, "Unverbindlich anfragen ", /*#__PURE__*/React.createElement(Svg, {
     size: 18,
     sw: 2.2
