@@ -16,12 +16,15 @@
         '<div class="grid md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.1fr] gap-10 lg:gap-8 pb-12 border-b border-white/10">' +
           '<div>' +
             '<a href="#top" style="display:inline-flex;align-items:center;gap:4px;text-decoration:none;margin-bottom:1rem">' +
-              '<img src="img/logo-icon-v4.png?v=1782000021" alt="SolaWert" class="w-auto" style="height:56px">' +
-              '<span class="font-heading font-bold tracking-tight leading-none" style="font-size:24px"><span class="text-white">Sola</span><span class="text-brand">Wert</span></span>' +
+              '<img src="img/logo-icon-v4.png?v=1782000021" alt="SolaWert" class="w-auto" style="height:60px">' +
             '</a>' +
             '<p class="text-white text-sm leading-relaxed max-w-xs mb-5">Ihr inhabergeführter Partner für Photovoltaik und Wärmepumpen in Wuppertal und ganz NRW. Effizient, ehrlich und fair.</p>' +
             '<div class="flex flex-wrap gap-2">' +
               ['Faire Festpreise','Mehr Speicher','Schlüsselfertig','Inhabergeführt'].map(function(t){return '<span class="px-3 py-1 rounded-full bg-white/[0.06] border border-white/10 text-[12px] text-white font-heading">'+t+'</span>';}).join('') +
+            '</div>' +
+            '<div style="margin-top:1.6rem">' +
+              '<div class="font-heading" style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.55rem">Umgesetzt von</div>' +
+              '<a href="https://pstudio.io" target="_blank" rel="noopener" style="display:inline-block;transition:opacity .25s ease;opacity:.85" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.85"><img src="img/pstudio-partner.webp" alt="PStudio" style="height:24px;width:auto;display:block"></a>' +
             '</div>' +
           '</div>' +
           '<div>' +
