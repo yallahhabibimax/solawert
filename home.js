@@ -802,7 +802,7 @@ const SonneSlider = () => {
     style: {
       color: "#fff"
     }
-  }, "Ihr Dach wird zum ", React.createElement("span", { style: { color: "#F5B301" } }, "Kraftwerk")), /*#__PURE__*/React.createElement("p", {
+  }, "Wie wir Ihnen helfen, die ", React.createElement("span", { style: { color: "#F5B301" } }, "Kraft der Sonne"), " zu nutzen"), /*#__PURE__*/React.createElement("p", {
     className: "text-base md:text-lg leading-relaxed",
     style: {
       color: "#fff"
@@ -1326,8 +1326,7 @@ const FAQ = () => {
   })), React.createElement("div", {
     className: "max-w-7xl mx-auto relative z-10 grid lg:grid-cols-2 gap-12 lg:gap-16 items-start"
   }, React.createElement("div", {
-    className: "reveal-left faq-left",
-    style: { position: "sticky", top: "110px" }
+    className: "reveal-left faq-left"
   }, React.createElement("span", {
     className: "faq-chip"
   }, React.createElement("span", { className: "faq-dot" }), "Häufige Fragen"), React.createElement("h2", {

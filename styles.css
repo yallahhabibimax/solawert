@@ -314,7 +314,10 @@ details > summary { list-style: none; cursor: pointer; }
 details > summary::-webkit-details-marker { display: none; }
 
 /* FAQ – nummerierte Reihen (Editorial-Stil, Marcel-Davia) */
-.faq-list { display: flex; flex-direction: column; border: 1px solid rgba(255,255,255,.08); border-radius: 24px; background: rgba(255,255,255,.02); padding: 4px 30px; }
+.faq-list { position: relative; display: flex; flex-direction: column; border: 1px solid rgba(255,255,255,.08); border-radius: 24px; background: rgba(255,255,255,.02); padding: 4px 30px; }
+.faq-list::before, .faq-list::after { content: ""; position: absolute; left: 1px; right: 1px; height: 70px; pointer-events: none; z-index: 3; }
+.faq-list::before { top: 1px; border-radius: 24px 24px 0 0; background: linear-gradient(180deg, rgba(245,179,1,.20) 0%, rgba(245,179,1,.05) 45%, transparent 100%); }
+.faq-list::after { bottom: 1px; border-radius: 0 0 24px 24px; background: linear-gradient(0deg, rgba(245,179,1,.20) 0%, rgba(245,179,1,.05) 45%, transparent 100%); }
 .faq-item { border-top: 1px solid rgba(255,255,255,.10); }
 .faq-item:first-child { border-top: none; }
 .faq-head { display: flex; align-items: center; gap: 1.25rem; padding: 50px 4px; }
@@ -638,4 +641,6 @@ details[open] > summary .faq-q, details[open] > summary .faq-num { color: var(--
 
 /* FAQ – linke Spalte etwas nach rechts (Desktop) */
 .faq-left { padding-left: 0; }
-@media (min-width: 1024px) { .faq-left { padding-left: 2rem; } }
+@media (min-width: 1024px) {
+  .faq-left { padding-left: 2rem; position: sticky; top: 0; height: 100vh; display: flex; flex-direction: column; justify-content: center; }
+}
