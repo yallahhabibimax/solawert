@@ -1246,8 +1246,9 @@ const Testimonials = () => {
   }, /*#__PURE__*/React.createElement("div", {
     className: "max-w-2xl"
   }, /*#__PURE__*/React.createElement("span", {
-    className: "text-brand-deep font-heading font-semibold tracking-[0.16em] uppercase text-xs mb-3 block"
-  }, "Bewertungen"), /*#__PURE__*/React.createElement("h2", {
+    className: "sw-glass-chip",
+    style: { marginBottom: "1.1rem" }
+  }, /*#__PURE__*/React.createElement("span", { className: "sw-cdot" }), "Bewertungen"), /*#__PURE__*/React.createElement("h2", {
     className: "text-3xl md:text-[2.7rem] font-heading text-content leading-tight",
     style: { fontFamily: "'Archivo', system-ui, sans-serif", fontWeight: 900 }
   }, "Das sagen unsere ", React.createElement("span", { style: { background: "#F5B301", color: "#1A1402", padding: "0 0.14em", borderRadius: "8px", WebkitBoxDecorationBreak: "clone", boxDecorationBreak: "clone" } }, "Kunden"))), /*#__PURE__*/React.createElement("div", {

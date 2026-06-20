@@ -91,14 +91,14 @@
 
   function sectionShell() {
     return '' +
-    '<section id="anfrage" class="relative py-8 md:py-10 px-5 md:px-8 bg-surface-alt overflow-hidden">' +
+    '<section id="anfrage" class="relative pt-10 md:pt-16 pb-8 md:pb-12 px-5 md:px-8 bg-surface-alt overflow-hidden">' +
       '<div class="absolute pointer-events-none" style="top:-12%;left:50%;transform:translateX(-50%);width:760px;max-width:130%;height:440px;background:radial-gradient(ellipse,rgba(245,179,1,0.22) 0%,transparent 68%)"></div>' +
-      '<div class="max-w-2xl mx-auto text-center relative z-10" style="margin-bottom:1.4rem">' +
-        '<span class="inline-flex items-center font-heading uppercase" style="gap:0.5rem;padding:0.42rem 0.9rem 0.42rem 0.72rem;border-radius:999px;background:rgba(245,179,1,0.14);border:1px solid rgba(245,179,1,0.4);color:#8A5E00;font-weight:800;font-size:11px;letter-spacing:0.16em;margin-bottom:0.7rem">' +
+      '<div class="max-w-2xl mx-auto text-center relative z-10" style="margin-bottom:1.85rem">' +
+        '<span class="inline-flex items-center font-heading uppercase" style="gap:0.5rem;padding:0.42rem 0.9rem 0.42rem 0.72rem;border-radius:999px;background:rgba(245,179,1,0.14);border:1px solid rgba(245,179,1,0.4);color:#8A5E00;font-weight:800;font-size:11px;letter-spacing:0.16em;margin-bottom:0.95rem">' +
           '<span style="width:7px;height:7px;border-radius:50%;background:#F5B301;display:inline-block"></span>Kostenlose Anfrage</span>' +
-        '<h2 class="font-heading" style="font-weight:900;color:#14171C;font-size:clamp(1.65rem,3.3vw,2.35rem);line-height:1.07;margin-bottom:0.6rem">In 30 Sekunden zu Ihrer <span style="background:#F5B301;color:#1A1402;padding:0 0.12em;border-radius:8px;-webkit-box-decoration-break:clone;box-decoration-break:clone">kostenlosen Einschätzung</span></h2>' +
-        '<p class="mx-auto" style="color:#525A64;font-size:14.5px;line-height:1.5;max-width:30rem">Ein paar kurze Fragen genügen. Ehrliche Einschätzung, fairer Festpreis, absolut unverbindlich.</p>' +
-        '<div class="flex flex-wrap items-center justify-center" style="gap:0.5rem 1.15rem;margin-top:0.85rem">' +
+        '<h2 class="font-heading" style="font-weight:900;color:#14171C;font-size:clamp(1.65rem,3.3vw,2.35rem);line-height:1.08;margin-bottom:0.85rem">In 30 Sekunden zu Ihrer <span style="background:#F5B301;color:#1A1402;padding:0 0.12em;border-radius:8px;-webkit-box-decoration-break:clone;box-decoration-break:clone">kostenlosen Einschätzung</span></h2>' +
+        '<p class="mx-auto" style="color:#525A64;font-size:15px;line-height:1.55;max-width:30rem">Ein paar kurze Fragen genügen. Ehrliche Einschätzung, fairer Festpreis, absolut unverbindlich.</p>' +
+        '<div class="flex flex-wrap items-center justify-center" style="gap:0.5rem 1.15rem;margin-top:1.1rem">' +
           ['Keine Anzahlung','Mehr Speicher','Faire Festpreise','100% unverbindlich'].map(function(t){return '<span class="inline-flex items-center font-heading" style="gap:0.4rem;font-size:13px;font-weight:600;color:#3D2C00"><span class="inline-flex items-center justify-center" style="width:18px;height:18px;border-radius:50%;background:#F5B301;color:#1A1402">'+svg('check',11)+'</span>'+t+'</span>';}).join('') +
         '</div>' +
       '</div>' +
