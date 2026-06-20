@@ -16,14 +16,14 @@
         '<div class="grid md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.1fr] gap-10 lg:gap-8 pb-12 border-b border-white/10">' +
           '<div>' +
             '<img src="img/logo-light.png" alt="SolaWert · Solarenergie & Wertsteigerung" class="h-16 w-auto mb-4">' +
-            '<p class="text-white/55 text-sm leading-relaxed max-w-xs mb-5">Ihr inhabergeführter Partner für Photovoltaik und Wärmepumpen in Wuppertal und ganz NRW. Effizient, ehrlich und fair.</p>' +
+            '<p class="text-white text-sm leading-relaxed max-w-xs mb-5">Ihr inhabergeführter Partner für Photovoltaik und Wärmepumpen in Wuppertal und ganz NRW. Effizient, ehrlich und fair.</p>' +
             '<div class="flex flex-wrap gap-2">' +
-              ['Keine Anzahlung','Mehr Speicher','Schlüsselfertig','Inhabergeführt'].map(function(t){return '<span class="px-3 py-1 rounded-full bg-white/[0.06] border border-white/10 text-[12px] text-white/70 font-heading">'+t+'</span>';}).join('') +
+              ['Keine Anzahlung','Mehr Speicher','Schlüsselfertig','Inhabergeführt'].map(function(t){return '<span class="px-3 py-1 rounded-full bg-white/[0.06] border border-white/10 text-[12px] text-white font-heading">'+t+'</span>';}).join('') +
             '</div>' +
           '</div>' +
           '<div>' +
-            '<h4 class="font-heading font-bold text-sm uppercase tracking-wider text-white/40 mb-4">Leistungen</h4>' +
-            '<ul class="space-y-2.5 text-sm text-white/65">' +
+            '<h4 class="font-heading font-bold text-sm uppercase tracking-wider text-white mb-4">Leistungen</h4>' +
+            '<ul class="space-y-2.5 text-sm text-white">' +
               '<li><a href="#leistungen" class="hover:text-brand">Photovoltaik schlüsselfertig</a></li>' +
               '<li><a href="#leistungen" class="hover:text-brand">Wärmepumpe schlüsselfertig</a></li>' +
               '<li><a href="#leistungen" class="hover:text-brand">Stromspeicher</a></li>' +
@@ -32,8 +32,8 @@
             '</ul>' +
           '</div>' +
           '<div>' +
-            '<h4 class="font-heading font-bold text-sm uppercase tracking-wider text-white/40 mb-4">Navigation</h4>' +
-            '<ul class="space-y-2.5 text-sm text-white/65">' +
+            '<h4 class="font-heading font-bold text-sm uppercase tracking-wider text-white mb-4">Navigation</h4>' +
+            '<ul class="space-y-2.5 text-sm text-white">' +
               '<li><a href="/#ueber-uns" class="hover:text-brand">Über uns</a></li>' +
               '<li><a href="/#referenzen" class="hover:text-brand">Referenzen</a></li>' +
               '<li><a href="/#bewertungen" class="hover:text-brand">Bewertungen</a></li>' +
@@ -42,8 +42,8 @@
             '</ul>' +
           '</div>' +
           '<div>' +
-            '<h4 class="font-heading font-bold text-sm uppercase tracking-wider text-white/40 mb-4">Kontakt</h4>' +
-            '<ul class="space-y-3 text-sm text-white/65">' +
+            '<h4 class="font-heading font-bold text-sm uppercase tracking-wider text-white mb-4">Kontakt</h4>' +
+            '<ul class="space-y-3 text-sm text-white">' +
               '<li class="flex items-start gap-2.5"><span class="text-brand mt-0.5 shrink-0">' + svg('phone',17) + '</span><a href="tel:'+TEL+'" class="hover:text-brand">'+TELD+'</a></li>' +
               '<li class="flex items-start gap-2.5"><span class="text-brand mt-0.5 shrink-0">' + svg('mail',17) + '</span><a href="mailto:'+MAIL+'" class="hover:text-brand break-all">'+MAIL+'</a></li>' +
               '<li class="flex items-start gap-2.5"><span class="text-brand mt-0.5 shrink-0">' + svg('pin',17) + '</span><span>Friedrich-Ebert-Str. 55<br>42103 Wuppertal</span></li>' +
@@ -51,7 +51,7 @@
             '</ul>' +
           '</div>' +
         '</div>' +
-        '<div class="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 text-sm text-white/45">' +
+        '<div class="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 text-sm text-white">' +
           '<div>© ' + (new Date().getFullYear()) + ' SolaWert · Gegam Sargsian · Inhaber</div>' +
           '<div class="flex items-center gap-5"><a href="impressum" class="hover:text-brand">Impressum</a><a href="datenschutz" class="hover:text-brand">Datenschutz</a></div>' +
         '</div>' +
@@ -91,8 +91,8 @@
         '<div class="relative p-8 md:p-10 flex flex-col justify-center overflow-hidden" style="background:linear-gradient(155deg,#F8C223 0%,#F5B301 52%,#E3A200 100%)">' +
           '<div class="absolute top-[-20%] right-[-15%] w-[65%] h-[60%] rounded-full pointer-events-none" style="background:radial-gradient(ellipse,rgba(255,255,255,0.30) 0%,transparent 70%)"></div>' +
           '<div class="relative z-10">' +
-            '<span class="inline-block px-3.5 py-1.5 rounded-full font-heading font-semibold tracking-[0.16em] uppercase text-[11px] mb-5" style="background:rgba(20,16,2,0.12);color:#241B02">Kostenlose Anfrage</span>' +
-            '<h2 class="text-3xl md:text-[2.6rem] font-heading font-bold leading-[1.08] mb-4" style="color:#1A1402">In 30 Sekunden zu Ihrer kostenlosen Einschätzung</h2>' +
+            '<span class="inline-block px-3.5 py-1.5 rounded-full font-heading font-semibold tracking-[0.16em] uppercase text-[11px] mb-5" style="background:rgba(255,255,255,0.08);border:1px solid #FFFFFF;color:#FFFFFF">Kostenlose Anfrage</span>' +
+            '<h2 class="text-3xl md:text-[2.6rem] font-heading font-black leading-[1.08] mb-4" style="color:#1A1402">In 30 Sekunden zu Ihrer kostenlosen Einschätzung</h2>' +
             '<p class="text-[15.5px] leading-relaxed mb-7 max-w-md" style="color:rgba(26,20,2,0.82)">Ein paar kurze Fragen genügen. Wir melden uns mit einer ehrlichen Einschätzung und einem fairen Festpreis, absolut unverbindlich.</p>' +
             '<ul class="space-y-3.5">' +
               ['Keine Anzahlung, Zahlung nach Abnahme','Mehr Speicher zum gleichen Preis','Faire Festpreise ohne versteckte Kosten','100% unverbindlich & kostenlos'].map(function(t){return '<li class="flex items-center gap-3 text-[14.5px] font-medium" style="color:#1A1402"><span class="w-6 h-6 rounded-full flex items-center justify-center shrink-0" style="background:#1A1402;color:#F5B301">'+svg('check',13)+'</span>'+t+'</li>';}).join('') +

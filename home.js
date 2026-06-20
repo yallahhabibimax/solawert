@@ -594,7 +594,7 @@ const WerWirSind = () => {
   }, /*#__PURE__*/React.createElement("a", {
     href: "#anfrage",
     className: "btn-primary rounded-full px-7 py-3.5 font-heading inline-flex items-center gap-2.5"
-  }, "Mehr erfahren ", /*#__PURE__*/React.createElement(Svg, {
+  }, "Angebot anfordern ", /*#__PURE__*/React.createElement(Svg, {
     size: 18,
     sw: 2
   }, ICO.arrow)), /*#__PURE__*/React.createElement("div", {
@@ -845,7 +845,7 @@ const SonneSlider = () => {
   }, /*#__PURE__*/React.createElement("a", {
     href: "#anfrage",
     className: "btn-primary rounded-full px-5 py-2.5 font-heading inline-flex items-center gap-2 text-sm"
-  }, "Mehr erfahren ", /*#__PURE__*/React.createElement(Svg, {
+  }, "Angebot anfordern ", /*#__PURE__*/React.createElement(Svg, {
     size: 15,
     sw: 2.2
   }, ICO.arrow)), /*#__PURE__*/React.createElement("div", {
@@ -906,9 +906,9 @@ const Services = () => {
   }, s.name), /*#__PURE__*/React.createElement("p", {
     className: "text-content-secondary text-[14px] leading-relaxed"
   }, s.desc), /*#__PURE__*/React.createElement("a", {
-    href: s.href,
+    href: "#anfrage",
     className: "mt-auto pt-5 inline-flex items-center gap-1.5 text-brand-deep font-heading font-semibold text-sm group/l"
-  }, "Mehr erfahren", /*#__PURE__*/React.createElement("span", {
+  }, "Angebot anfordern", /*#__PURE__*/React.createElement("span", {
     className: "transition-transform group-hover/l:translate-x-1"
   }, /*#__PURE__*/React.createElement(Svg, {
     size: 16,
@@ -967,7 +967,7 @@ const Segments = () => {
   }, ICO.check)), p))), /*#__PURE__*/React.createElement("a", {
     href: "#anfrage",
     className: "seg-card__link"
-  }, "Mehr erfahren ", /*#__PURE__*/React.createElement(Svg, {
+  }, "Angebot anfordern ", /*#__PURE__*/React.createElement(Svg, {
     size: 16,
     sw: 2.4
   }, ICO.arrow))));
@@ -995,7 +995,8 @@ const Process = () => {
     id: "ablauf",
     className: "py-20 md:py-28 px-5 md:px-8 bg-ink text-white relative overflow-hidden"
   }, /*#__PURE__*/React.createElement("div", {
-    className: "absolute inset-0 bg-grid-dark opacity-60 pointer-events-none"
+    className: "absolute inset-0 opacity-60 pointer-events-none",
+    style: { display: "none" }
   }), /*#__PURE__*/React.createElement("div", {
     className: "absolute top-[-20%] right-[-10%] w-[40%] h-[60%] rounded-full pointer-events-none",
     style: {
@@ -1292,7 +1293,8 @@ const Values = () => {
   return /*#__PURE__*/React.createElement("section", {
     className: "py-20 md:py-28 px-5 md:px-8 bg-ink-2 text-white relative overflow-hidden"
   }, /*#__PURE__*/React.createElement("div", {
-    className: "absolute inset-0 bg-grid-dark opacity-50 pointer-events-none"
+    className: "absolute inset-0 opacity-50 pointer-events-none",
+    style: { display: "none" }
   }), /*#__PURE__*/React.createElement("div", {
     className: "max-w-7xl mx-auto relative z-10"
   }, /*#__PURE__*/React.createElement("div", {
@@ -1460,7 +1462,8 @@ const Contact = () => {
     id: "kontakt",
     className: "py-20 md:py-28 px-5 md:px-8 bg-ink text-white relative overflow-hidden"
   }, /*#__PURE__*/React.createElement("div", {
-    className: "absolute inset-0 bg-grid-dark opacity-50 pointer-events-none"
+    className: "absolute inset-0 opacity-50 pointer-events-none",
+    style: { display: "none" }
   }), /*#__PURE__*/React.createElement("div", {
     className: "absolute bottom-[-20%] left-[-8%] w-[44%] h-[60%] rounded-full pointer-events-none",
     style: {
