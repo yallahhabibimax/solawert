@@ -232,8 +232,13 @@ section[id] { scroll-margin-top: 96px; }
   .lz-badge__num { font-size: 21px; }
 }
 /* Problem → Lösung Timeline (durchgehender gelber Strich) */
-.case-steps { position:relative; margin-top:auto; display:flex; flex-direction:column; gap:1rem; }
+.case-steps { position:relative; display:flex; flex-direction:column; gap:1rem; }
 .case-step { position:relative; padding-left:1.4rem; }
+/* Einheitliche Hoehen: PROBLEM + LOESUNG sitzen auf allen Karten auf gleicher Hoehe (ab sm, wo Karten nebeneinander stehen) */
+@media (min-width: 640px) {
+  .case-head    { min-height: 4rem; }    /* Ort + bis zu 2-zeiliger Titel */
+  .case-problem { min-height: 5.6rem; }  /* bis zu 4 Zeilen Problemtext */
+}
 .case-step__dot { position:absolute; left:1px; top:3px; width:9px; height:9px; border-radius:9999px; z-index:1; box-shadow:0 0 0 3px #fff; }
 .case-step:not(:last-child)::before { content:""; position:absolute; left:5px; top:7px; bottom:-1rem; width:2px; background:var(--accent); }
 
@@ -258,7 +263,7 @@ section[id] { scroll-margin-top: 96px; }
 .field:focus { outline: none; border-color: var(--accent); background: rgba(255,255,255,.10); box-shadow: 0 0 0 4px rgba(var(--accent-rgb), .16); }
 .field-light {
   width: 100%; background: #fff; border: 1px solid var(--border); color: var(--ink);
-  border-radius: 14px; padding: 14px 16px; font-size: 15px;
+  border-radius: 12px; padding: 11px 14px; font-size: 14.5px;
   transition: border-color .25s ease, box-shadow .25s ease;
 }
 .field-light::placeholder { color: var(--muted); }
@@ -565,3 +570,19 @@ details > div.faq-body { animation: faqOpen .4s cubic-bezier(.16,1,.3,1); }
 .sw-qtile-wide:hover { border-color:var(--accent); color:var(--accent-deep); }
 .sw-qtile-wide.sw-qtile-active { border-style:solid; border-color:var(--accent); color:var(--accent-deep); background:rgba(245,179,1,.08); outline:none; }
 @media (prefers-reduced-motion: reduce){ .sw-qtile, .sw-qtile::before { transition:none !important; } }
+
+
+/* === Anfrage Erfolg-Animation === */
+.sw-success-badge { position:relative; width:96px; height:96px; margin:0 auto 22px; }
+.sw-suc-ring { position:absolute; inset:0; border-radius:50%; background:radial-gradient(circle, rgba(245,179,1,.4), rgba(245,179,1,0) 70%); animation:sw-suc-ring 1.9s ease-out infinite; }
+@keyframes sw-suc-ring { 0%{transform:scale(.55);opacity:.75} 70%{opacity:0} 100%{transform:scale(1.7);opacity:0} }
+.sw-suc-disc { position:absolute; inset:14px; border-radius:50%; background:linear-gradient(145deg,#FFD45A,#F5B301); display:flex; align-items:center; justify-content:center; box-shadow:0 16px 32px -10px rgba(245,179,1,.75); animation:sw-suc-pop .6s cubic-bezier(.34,1.56,.64,1) both; }
+@keyframes sw-suc-pop { 0%{transform:scale(0) rotate(-25deg)} 100%{transform:scale(1) rotate(0)} }
+.sw-check-svg path { stroke-dasharray:30; stroke-dashoffset:30; animation:sw-check-draw .45s .35s ease forwards; }
+@keyframes sw-check-draw { to{ stroke-dashoffset:0 } }
+.sw-suc-rise { opacity:0; transform:translateY(14px); animation:sw-suc-rise .55s ease forwards; }
+@keyframes sw-suc-rise { to{ opacity:1; transform:none } }
+.sw-confetti { position:absolute; top:48px; left:50%; width:0; height:0; pointer-events:none; }
+.sw-confetti i { position:absolute; width:9px; height:9px; border-radius:2px; opacity:0; animation:sw-conf 1.05s ease-out forwards; }
+@keyframes sw-conf { 0%{opacity:1; transform:translate(0,0) rotate(0) scale(1)} 100%{opacity:0; transform:translate(var(--x),var(--y)) rotate(var(--r)) scale(.35)} }
+@media (prefers-reduced-motion: reduce){ .sw-suc-ring,.sw-confetti i,.sw-check-svg path,.sw-suc-disc,.sw-suc-rise{ animation:none !important; opacity:1 !important; transform:none !important; stroke-dashoffset:0 !important } }

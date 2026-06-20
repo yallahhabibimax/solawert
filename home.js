@@ -964,7 +964,7 @@ const CaseStudies = () => {
     p: "Der frisch gebaute Bungalow verbrauchte vom ersten Tag an Strom, der komplett teuer aus dem Netz kam.",
     l: "PV auf Haus und Carport direkt mitgeplant und schlüsselfertig gebaut. Eigener Strom ab dem ersten Tag, statt voll auf den Netzbezug angewiesen zu sein."
   }, {
-    img: "img/cases/schwarze-module.jpg", tag: "Photovoltaik", ort: "Wülfrath", t: "Schwarze Module in Wülfrath",
+    img: "img/cases/schwarze-module.jpg?v=1782170021", tag: "Photovoltaik", ort: "Wülfrath", t: "Schwarze Module in Wülfrath",
     p: "Die Eigentümer wollten unbedingt eigenen Strom, hatten aber Sorge, dass auffällige Module mit dicken Rahmen das Haus verschandeln.",
     l: "Vollschwarze Module, sauber um Kamin und Dachfenster verlegt. Optisch ruhig und unauffällig, beim Ertrag trotzdem ganz vorne."
   }];
@@ -994,7 +994,7 @@ const CaseStudies = () => {
     style: { background: "#F5B301", color: "#1A1402" }
   }, c.tag)), React.createElement("div", {
     className: "p-6 flex flex-col gap-3.5 flex-grow"
-  }, React.createElement("div", null, React.createElement("div", {
+  }, React.createElement("div", { className: "case-head" }, React.createElement("div", {
     className: "text-[12px] text-content-secondary mb-1"
   }, c.ort), React.createElement("h3", {
     className: "font-heading font-bold text-content leading-tight text-lg"
@@ -1011,7 +1011,7 @@ const CaseStudies = () => {
     className: "block mb-1.5 text-[10.5px] font-heading font-bold tracking-wider uppercase",
     style: { color: "#EF4444" }
   }, "Problem"), React.createElement("p", {
-    className: "text-content-secondary text-[13.5px] leading-relaxed"
+    className: "text-content-secondary text-[13.5px] leading-relaxed case-problem"
   }, c.p))), React.createElement("div", {
     className: "case-step"
   }, React.createElement("span", {

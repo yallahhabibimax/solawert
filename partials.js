@@ -123,7 +123,7 @@
       if (step === 2) return '<div class="step-in"><h3 class="text-lg md:text-xl font-heading font-bold text-content mb-1">Wo soll die Anlage entstehen?</h3><p class="text-content-secondary text-sm mb-5">Damit wir die passende Lösung wählen.</p><div class="grid sm:grid-cols-2 gap-3">'
         + [['Privathaushalt','Wohnung, Haus oder Garten','home'],['Unternehmen','Gastronomie, Handel, Büro, Lager','building']].map(function(o){return '<button type="button" data-pick="type" data-val="'+o[0]+'" class="choice-tile rounded-2xl border p-5 text-left flex items-start gap-3 '+(data.type===o[0]?'choice-active':'border-black/10')+'"><span class="w-11 h-11 rounded-xl bg-brand/15 text-brand-deep flex items-center justify-center shrink-0">'+svg(o[2],22)+'</span><span><span class="block font-heading font-bold text-content">'+o[0]+'</span><span class="block text-[12.5px] text-content-secondary leading-snug mt-0.5">'+o[1]+'</span></span></button>';}).join('')
         + '</div></div>';
-      if (step === 3) return '<div class="step-in"><h3 class="text-lg md:text-xl font-heading font-bold text-content mb-1">Wie dringend ist es?</h3><p class="text-content-secondary text-sm mb-5">Wir richten uns nach Ihnen.</p><div class="grid gap-3">'
+      if (step === 3) return '<div class="step-in"><h3 class="text-lg md:text-xl font-heading font-bold text-content mb-1">Wie dringend ist es?</h3><p class="text-content-secondary text-sm mb-5">Wir richten uns nach Ihnen.</p><div class="grid md:grid-cols-3 gap-3.5">'
         + [['Möglichst zeitnah','Ich möchte bald mit der Planung starten','home'],['In den nächsten Wochen','Konkret geplant, aber kein Zeitdruck','clock'],['Erstmal nur Beratung','Ich möchte mich zunächst informieren','search']].map(function(o){return '<button type="button" data-pick="urgency" data-val="'+o[0]+'" class="choice-tile rounded-2xl border p-4 text-left flex items-center gap-3 '+(data.urgency===o[0]?'choice-active':'border-black/10')+'"><span class="w-10 h-10 rounded-xl bg-brand/15 text-brand-deep flex items-center justify-center shrink-0">'+svg(o[2],20)+'</span><span><span class="block font-heading font-bold text-content text-[15px]">'+o[0]+'</span><span class="block text-[12.5px] text-content-secondary">'+o[1]+'</span></span></button>';}).join('')
         + '</div></div>';
       // step 4
@@ -142,10 +142,15 @@
 
     function paint() {
       if (sent) {
-        card.innerHTML = '<div class="text-center py-8 step-in"><div class="w-16 h-16 mx-auto rounded-full bg-brand text-brand-text flex items-center justify-center mb-5 pop-in">'+svg('check',32)+'</div>'
-          + '<h3 class="text-2xl font-heading font-bold text-content mb-2">Vielen Dank'+(data.vorname?', '+esc(data.vorname):'')+'!</h3>'
-          + '<p class="text-content-secondary max-w-sm mx-auto mb-6">Ihre Anfrage zu <strong class="text-content">'+(esc(data.pest)||'Ihrem Projekt')+'</strong> ist eingegangen. Wir melden uns schnellstmöglich bei Ihnen.</p>'
-          + '<div class="flex flex-wrap justify-center gap-3"><a href="tel:'+TEL+'" class="btn-primary rounded-full px-6 py-3 font-heading text-sm inline-flex items-center gap-2">'+svg('phone',17)+' Lieber direkt anrufen</a>'
+        var greet = (data.anrede && data.nachname) ? ', ' + esc(data.anrede) + ' ' + esc(data.nachname) : '';
+        var confetti = '<span class="sw-confetti">';
+        for (var ci = 0; ci < 14; ci++) { var ang = (Math.PI * 2) * (ci / 14); var dist = 58 + Math.random() * 46; var cx = (Math.cos(ang) * dist).toFixed(0); var cy = (Math.sin(ang) * dist - 8).toFixed(0); var rr = (Math.random() * 360) | 0; var cols = ['#F5B301', '#1A1402', '#FFD45A', '#E3A82C']; confetti += '<i style="--x:' + cx + 'px;--y:' + cy + 'px;--r:' + rr + 'deg;background:' + cols[ci % 4] + ';animation-delay:' + (0.25 + Math.random() * 0.18).toFixed(2) + 's"></i>'; }
+        confetti += '</span>';
+        card.innerHTML = '<div class="sw-success text-center" style="padding:14px 0 8px">'
+          + '<div class="sw-success-badge"><span class="sw-suc-ring"></span><span class="sw-suc-ring" style="animation-delay:.7s"></span><span class="sw-suc-disc"><svg class="sw-check-svg" width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#1A1402" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.2 4.2L19 7"/></svg></span>' + confetti + '</div>'
+          + '<h3 class="sw-suc-rise text-2xl font-heading font-bold text-content mb-2" style="animation-delay:.4s">Vielen Dank' + greet + '!</h3>'
+          + '<p class="sw-suc-rise text-content-secondary max-w-sm mx-auto mb-6" style="animation-delay:.55s">Ihre Anfrage zu <strong class="text-content">' + (esc(data.pest) || 'Ihrem Projekt') + '</strong> ist eingegangen. Wir melden uns schnellstmöglich bei Ihnen.</p>'
+          + '<div class="sw-suc-rise flex flex-wrap justify-center gap-3" style="animation-delay:.68s"><a href="tel:' + TEL + '" class="btn-primary rounded-full px-6 py-3 font-heading text-sm inline-flex items-center gap-2">' + svg('phone', 17) + ' Lieber direkt anrufen</a>'
           + '</div></div>';
         return;
       }
@@ -159,7 +164,7 @@
       card.innerHTML =
         '<div class="flex items-center justify-between mb-1.5"><span class="text-xs font-heading font-semibold text-content-secondary uppercase tracking-wider">Schritt '+step+' von '+TOTAL+'</span><span class="text-xs text-content-secondary">ca. 30 Sek.</span></div>'
         + '<div class="h-1.5 rounded-full bg-surface-alt overflow-hidden mb-6"><div class="h-full rounded-full bg-brand transition-all duration-500 ease-out" style="width:'+(step/TOTAL*100)+'%"></div></div>'
-        + '<div style="min-height:190px;display:flex;flex-direction:column;justify-content:center;'+(step===1?'':'max-width:600px;margin:0 auto;')+'">' + stepHTML() + '</div>'
+        + '<div style="min-height:190px;display:flex;flex-direction:column;justify-content:center;'+(step===4?'max-width:560px;margin:0 auto;':'')+'">' + stepHTML() + '</div>'
         + nav;
     }
 
