@@ -177,6 +177,93 @@ const GoogleG = ({ size = 18 }) => /*#__PURE__*/React.createElement("svg", {
       '<path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/>'
   }
 });
+const LeadQuiz = () => {
+  const h = React.createElement;
+  const [step, setStep] = useState(0);
+  const [a, setA] = useState({});
+  const [sent, setSent] = useState(false);
+  const isWP = a.interesse === "Wärmepumpe";
+  const STEPS = [
+    { key: "interesse", label: "Interesse", q: "Was interessiert Sie?", hint: "Ein Klick genügt, kein Tippen.", cols: 3, opts: [
+      { ico: ICO.sun, t: "Photovoltaik", d: "Eigenen Sonnenstrom erzeugen" },
+      { ico: ICO.flame, t: "Wärmepumpe", d: "Effizient und günstig heizen" },
+      { ico: ICO.combo, t: "Beides / Komplettlösung", d: "PV und Wärmepumpe aus einer Hand" } ] },
+    { key: "gebaeude", label: "Gebäude", q: "Um was für ein Gebäude geht es?", cols: 3, opts: [
+      { ico: ICO.home, t: "Einfamilienhaus" },
+      { ico: ICO.building, t: "Mehrfamilienhaus" },
+      { ico: ICO.warehouse, t: "Gewerbe & Halle" } ] },
+    { key: "eigentum", label: "Eigentum", q: "Wie sind die Eigentumsverhältnisse?", cols: 2, opts: [
+      { ico: ICO.key, t: "Eigentümer" },
+      { ico: ICO.users, t: "Mieter" } ] },
+    isWP
+      ? { key: "detail", label: "Heizung", q: "Womit heizen Sie aktuell?", cols: 3, opts: [
+          { ico: ICO.flame, t: "Gas" }, { ico: ICO.drop, t: "Öl" }, { ico: ICO.search, t: "Andere / weiß nicht" } ] }
+      : { key: "detail", label: "Verbrauch", q: "Wie hoch ist Ihre Stromrechnung etwa?", cols: 3, opts: [
+          { ico: ICO.euro, t: "Bis 100 €/Monat" }, { ico: ICO.euro, t: "100 bis 200 €/Monat" }, { ico: ICO.euro, t: "Über 200 €/Monat" } ] },
+    { key: "zeitpunkt", label: "Zeitpunkt", q: "Wann planen Sie die Umsetzung?", cols: 3, opts: [
+      { ico: ICO.bolt, t: "So schnell wie möglich" }, { ico: ICO.clock, t: "In 3 bis 6 Monaten" }, { ico: ICO.search, t: "Erstmal nur informieren" } ] },
+    { key: "plz", label: "PLZ", q: "Wie lautet Ihre Postleitzahl?", hint: "Wir prüfen, ob wir in Ihrer Region tätig sind.", type: "plz" },
+    { key: "kontakt", label: "Kontakt", q: "Wohin dürfen wir uns melden?", hint: "Unverbindlich und kostenlos. Ihre Daten bleiben vertraulich.", type: "contact" }
+  ];
+  const TOTAL = STEPS.length;
+  const cur = STEPS[step];
+  const pick = (key, val) => { setA(function (p) { return Object.assign({}, p, { [key]: val }); }); if (step < TOTAL - 1) setStep(step + 1); };
+  const upd = (key, val) => setA(function (p) { return Object.assign({}, p, { [key]: val }); });
+  const back = () => { if (step > 0) setStep(step - 1); };
+  const submit = () => { setSent(true); try { fetch('/api/lead', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(a) }).catch(function () {}); } catch (e) {} };
+  const plzOk = /^\d{5}$/.test(a.plz || "");
+  const mailOk = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(a.email || "");
+  const kontaktOk = (a.name || "").trim().length > 1 && mailOk && (a.telefon || "").trim().length >= 5;
+
+  const rail = h("div", { className: "lq-rail" },
+    h("div", { className: "lq-logo" }, "Sola", h("span", { style: { color: "#F5B301" } }, "Wert")),
+    h("div", { className: "lq-steps" }, STEPS.map((s, i) =>
+      h("div", { key: i, className: "lq-step" + (i === step ? " is-active" : i < step ? " is-done" : "") },
+        h("span", { className: "lq-step__dot" }, i < step ? h(Svg, { size: 14, sw: 2.4 }, ICO.check) : (i + 1)),
+        s.label))),
+    h("div", { className: "lq-rail__foot" },
+      h("div", { style: { color: "#F5B301", fontSize: "15px", letterSpacing: "1.5px" } }, "★★★★★"),
+      h("p", { className: "lq-quote" }, "„Von der ersten Anfrage bis zur fertigen Anlage alles top. Klare Empfehlung."),
+      h("div", { className: "lq-trust" }, "4,9 · 500+ Projekte in NRW")));
+
+  let body;
+  if (cur.type === "plz") {
+    body = h("div", null,
+      h("input", { className: "field-light", style: { maxWidth: "220px", letterSpacing: "0.15em", fontWeight: 700 }, type: "text", inputMode: "numeric", maxLength: 5, placeholder: "PLZ", value: a.plz || "", onChange: e => upd("plz", e.target.value.replace(/\D/g, "").slice(0, 5)) }),
+      h("div", { style: { marginTop: "1.3rem" } }, h("button", { className: "btn-primary rounded-full font-heading", style: { padding: "13px 30px", fontWeight: 700, opacity: plzOk ? 1 : 0.45, pointerEvents: plzOk ? "auto" : "none" }, onClick: () => { if (plzOk) setStep(step + 1); } }, "Weiter")));
+  } else if (cur.type === "contact") {
+    body = h("div", { style: { display: "flex", flexDirection: "column", gap: "0.8rem", maxWidth: "30rem" } },
+      h("input", { className: "field-light", placeholder: "Vor- und Nachname", value: a.name || "", onChange: e => upd("name", e.target.value) }),
+      h("input", { className: "field-light", type: "email", placeholder: "E-Mail", value: a.email || "", onChange: e => upd("email", e.target.value) }),
+      h("input", { className: "field-light", type: "tel", placeholder: "Telefonnummer", value: a.telefon || "", onChange: e => upd("telefon", e.target.value) }),
+      h("button", { className: "btn-primary rounded-full font-heading", style: { marginTop: "0.4rem", padding: "15px 28px", fontWeight: 700, display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "0.5rem", opacity: kontaktOk ? 1 : 0.45, pointerEvents: kontaktOk ? "auto" : "none" }, onClick: () => { if (kontaktOk) submit(); } }, "Kostenlose Einschätzung anfordern", h(Svg, { size: 18, sw: 2.2 }, ICO.arrow)));
+  } else {
+    body = h("div", { className: "lq-tilegrid cols-" + (cur.cols || 3) }, cur.opts.map((o, i) =>
+      h("button", { key: i, className: "lq-tile" + (a[cur.key] === o.t ? " is-sel" : ""), style: { "--i": i }, onClick: () => upd(cur.key, o.t) },
+        h("div", { className: "lq-tile__ico" }, h(Svg, { size: 28, sw: 1.7 }, o.ico)),
+        h("div", { className: "lq-tile__t" }, o.t),
+        o.d ? h("div", { className: "lq-tile__d" }, o.d) : null)));
+  }
+
+  const main = sent
+    ? h("div", { className: "lq-main", style: { display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center" } },
+        h("div", { style: { width: "74px", height: "74px", borderRadius: "50%", background: "#F5B301", color: "#1A1402", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "1.4rem" } }, h(Svg, { size: 38, sw: 2.4 }, ICO.check)),
+        h("h3", { className: "font-heading font-black", style: { fontSize: "clamp(1.6rem,3vw,2.1rem)", color: "#14171C", marginBottom: "0.6rem" } }, "Vielen Dank, " + ((a.name || "").trim().split(" ")[0] || "") + "!"),
+        h("p", { style: { color: "#525A64", maxWidth: "26rem", lineHeight: "1.6" } }, "Ihre Anfrage ist eingegangen. Wir melden uns in den meisten Fällen innerhalb von 24 Stunden mit einer ehrlichen Einschätzung."))
+    : h("div", { className: "lq-main", key: step },
+        h("div", { className: "lq-mobhead" },
+          h("div", { style: { display: "flex", justifyContent: "space-between", fontFamily: "'Archivo',sans-serif", fontWeight: 600, fontSize: "12px", color: "#8A929C", textTransform: "uppercase", letterSpacing: "0.08em" } },
+            h("span", null, "Schritt " + (step + 1) + " von " + TOTAL), h("span", null, cur.label)),
+          h("div", { className: "lq-progress" }, h("span", { style: { width: (((step + 1) / TOTAL) * 100) + "%" } }))),
+        h("h3", { className: "font-heading font-black lq-q", style: { fontSize: "clamp(2rem,3.6vw,2.9rem)", color: "#14171C", lineHeight: "1.04", letterSpacing: "-0.02em" } }, cur.q),
+        cur.hint ? h("p", { style: { color: "#8A929C", fontSize: "14px", marginTop: "0.5rem", marginBottom: "1.6rem" } }, cur.hint) : h("div", { style: { height: "1.5rem" } }),
+        body,
+        h("div", { className: "lq-foot" }, step > 0 ? h("button", { className: "lq-back", onClick: back }, h(Svg, { size: 15, sw: 2 }, ICO.arrowLeft), "Zurück") : h("span", null), !cur.type ? h("button", { className: "lq-next" + (a[cur.key] ? "" : " is-off"), "aria-label": "Weiter", onClick: () => { if (a[cur.key]) setStep(step + 1); } }, h(Svg, { size: 22, sw: 2.4 }, ICO.arrow)) : null));
+
+  return h("section", { id: "anfrage", className: "relative", style: { padding: "0" } },
+    h("div", { className: "lq-card" }, h("div", { className: "lq-grid" }, rail, main)));
+};
+
 const App = () => {
   useEffect(() => {
     let cleanupReveal = () => {};
@@ -276,9 +363,7 @@ const App = () => {
   }, []);
   return /*#__PURE__*/React.createElement("div", {
     className: "relative"
-  }, /*#__PURE__*/React.createElement(Navbar, null), /*#__PURE__*/React.createElement("main", null, /*#__PURE__*/React.createElement(Hero, null), /*#__PURE__*/React.createElement(Marquee, null), /*#__PURE__*/React.createElement("section", {
-    "data-kaefer": "form"
-  }), /*#__PURE__*/React.createElement(WerWirSind, null), /*#__PURE__*/React.createElement(SonneSlider, null), /*#__PURE__*/React.createElement(Segments, null), /*#__PURE__*/React.createElement(Process, null), /*#__PURE__*/React.createElement(CaseStudies, null), /*#__PURE__*/React.createElement(RegionBand, null), /*#__PURE__*/React.createElement(About, null), /*#__PURE__*/React.createElement(Values, null), /*#__PURE__*/React.createElement(Testimonials, null), /*#__PURE__*/React.createElement(FAQ, null), /*#__PURE__*/React.createElement(Contact, null)), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement(Navbar, null), /*#__PURE__*/React.createElement("main", null, /*#__PURE__*/React.createElement(Hero, null), /*#__PURE__*/React.createElement(Marquee, null), /*#__PURE__*/React.createElement(LeadQuiz, null), /*#__PURE__*/React.createElement(WerWirSind, null), /*#__PURE__*/React.createElement(SonneSlider, null), /*#__PURE__*/React.createElement(Segments, null), /*#__PURE__*/React.createElement(Process, null), /*#__PURE__*/React.createElement(CaseStudies, null), /*#__PURE__*/React.createElement(RegionBand, null), /*#__PURE__*/React.createElement(About, null), /*#__PURE__*/React.createElement(Values, null), /*#__PURE__*/React.createElement(Testimonials, null), /*#__PURE__*/React.createElement(FAQ, null), /*#__PURE__*/React.createElement(Contact, null)), /*#__PURE__*/React.createElement("div", {
     "data-kaefer": "footer"
   }), /*#__PURE__*/React.createElement(MobileCallBar, null));
 };
@@ -307,22 +392,13 @@ const Navbar = () => {
     href: "#top",
     className: "flex items-center shrink-0",
     style: {
-      gap: "0.2rem"
+      marginLeft: "1rem"
     }
   }, /*#__PURE__*/React.createElement("img", {
     src: "img/logo-icon-v2.png?v=1782000019",
     alt: "SolaWert Wuppertal",
     className: "sw-navlogo"
-  }), /*#__PURE__*/React.createElement("span", {
-    className: "font-heading font-bold tracking-tight leading-none",
-    style: {
-      fontSize: "22px"
-    }
-  }, /*#__PURE__*/React.createElement("span", {
-    className: "text-white"
-  }, "Sola"), /*#__PURE__*/React.createElement("span", {
-    className: "text-brand"
-  }, "Wert"))), /*#__PURE__*/React.createElement("div", {
+  })), /*#__PURE__*/React.createElement("div", {
     className: "sw-navlinks hidden lg:flex"
   }, links.map(([t, h], i) => /*#__PURE__*/React.createElement("a", {
     key: h,
@@ -423,10 +499,12 @@ const Hero = () => {
   }, "Schlüsselfertig")), /*#__PURE__*/React.createElement("h1", {
     className: "hero-el sw-hero__sub"
   }, /*#__PURE__*/React.createElement("span", {
-    style: { color: "#F5B301" }
+    className: "hero-kw"
   }, "Photovoltaik"), " &", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
-    style: { color: "#F5B301" }
-  }, "Wärmepumpe"), /*#__PURE__*/React.createElement("br", null), "in Wuppertal"), /*#__PURE__*/React.createElement("div", {
+    className: "hero-kw"
+  }, "Wärmepumpe"), /*#__PURE__*/React.createElement("br", null), "in Wuppertal"), /*#__PURE__*/React.createElement("p", {
+    className: "hero-el sw-hero__lead"
+  }, "Photovoltaik und Wärmepumpe schlüsselfertig in Wuppertal und ganz NRW \u2014 fair, ehrlich, ohne Anzahlung."), /*#__PURE__*/React.createElement("div", {
     className: "hero-el sw-cta-row"
   }, /*#__PURE__*/React.createElement("a", {
     href: "#anfrage",
@@ -443,29 +521,10 @@ const Hero = () => {
     size: 18,
     sw: 2
   }, ICO.phone), "Anrufen")), /*#__PURE__*/React.createElement("div", {
-    className: "hero-el sw-cards"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "sw-card sw-card--img"
-  }, /*#__PURE__*/React.createElement("img", {
-    src: "img/leistung-waermepumpe.png?v=1782000016",
-    alt: "Wärmepumpe schlüsselfertig installiert"
-  }), /*#__PURE__*/React.createElement("div", {
-    className: "sw-card__cap"
-  }, /*#__PURE__*/React.createElement("b", null, "Wärmepumpen"), /*#__PURE__*/React.createElement("span", null, "Schlüsselfertig installiert"))), /*#__PURE__*/React.createElement("div", {
-    className: "sw-card sw-card--img"
-  }, /*#__PURE__*/React.createElement("img", {
-    src: "img/hero-mitte-haus.jpg?v=1782000018",
-    alt: "Fertiges Photovoltaik-Projekt an einem Wohnhaus in NRW"
-  }), /*#__PURE__*/React.createElement("div", {
-    className: "sw-card__cap"
-  }, /*#__PURE__*/React.createElement("b", null, "Dachmontage"), /*#__PURE__*/React.createElement("span", null, "Sauber & fachgerecht"))), /*#__PURE__*/React.createElement("div", {
-    className: "sw-card sw-card--img"
-  }, /*#__PURE__*/React.createElement("img", {
-    src: "img/hero-solar.jpg?v=1782000018",
-    alt: "Schwarze Solarmodule auf einem Wohnhausdach in NRW"
-  }), /*#__PURE__*/React.createElement("div", {
-    className: "sw-card__cap"
-  }, /*#__PURE__*/React.createElement("b", null, "Solaranlagen"), /*#__PURE__*/React.createElement("span", null, "Photovoltaik aufs Dach"))))), /*#__PURE__*/React.createElement("div", {
+    className: "hero-el hero-services"
+  }, [["Photovoltaik", ICO.sun], ["Wärmepumpe", ICO.flame], ["Stromspeicher", ICO.bolt], ["Schlüsselfertig", ICO.key]].map(function (s, si) {
+    return /*#__PURE__*/React.createElement("div", { key: si, className: "hero-srv" }, /*#__PURE__*/React.createElement("span", { className: "hero-srv__ic" }, /*#__PURE__*/React.createElement(Svg, { size: 22, sw: 2 }, s[1])), /*#__PURE__*/React.createElement("span", { className: "hero-srv__t" }, s[0]));
+  }))), /*#__PURE__*/React.createElement("div", {
     className: "hero-el sw-hero__right"
   }, /*#__PURE__*/React.createElement("div", {
     className: "sw-founder"
@@ -992,10 +1051,10 @@ const CaseStudies = () => {
     className: "grid sm:grid-cols-2 lg:grid-cols-3 gap-6 spot"
   }, cases.map((c, i) => React.createElement("div", {
     key: i,
-    className: "reveal bg-white rounded-3xl border border-black/5 shadow-[0_18px_44px_-30px_rgba(20,23,28,0.35)] overflow-hidden flex flex-col spot-item",
+    className: "reveal bg-white rounded-3xl overflow-hidden flex flex-col case-card",
     style: { transitionDelay: i % 3 * 0.1 + "s" }
   }, React.createElement("div", {
-    className: "relative"
+    className: "relative case-media"
   }, React.createElement("img", {
     src: c.img, alt: c.t, className: "w-full object-cover", style: { height: "190px" }
   }), React.createElement("span", {
