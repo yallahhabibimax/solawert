@@ -158,14 +158,14 @@
       }
       var nav = '';
       if (step > 1) {
-        nav = '<div class="flex items-center justify-between mt-5 pt-5 border-t border-black/5">'
+        nav = '<div class="flex items-center justify-center gap-4 mt-6">'
           + '<button type="button" data-back class="text-sm font-heading font-semibold text-content-secondary hover:text-content transition-colors inline-flex items-center gap-1.5"><span class="rotate-180">'+svg('arrow',15)+'</span> Zurück</button>'
           + (step===TOTAL ? '<button type="button" data-submit class="btn-primary cta-pulse rounded-full px-6 py-3.5 font-heading text-sm inline-flex items-center gap-2 '+(valid()?'':'opacity-40 cursor-not-allowed')+'">Anfrage senden '+svg('arrow',16)+'</button>' : '')
           + '</div>';
       }
       card.innerHTML =
         '<div class="flex items-center justify-between mb-1.5"><span class="text-xs font-heading font-semibold text-content-secondary uppercase tracking-wider">Schritt '+step+' von '+TOTAL+'</span><span class="text-xs text-content-secondary">ca. 30 Sek.</span></div>'
-        + '<div class="h-1.5 rounded-full bg-surface-alt overflow-hidden mb-4"><div class="h-full rounded-full bg-brand transition-all duration-500 ease-out" style="width:'+(step/TOTAL*100)+'%"></div></div>'
+        + '<div class="h-1.5 rounded-full bg-surface-alt overflow-hidden mb-6"><div class="h-full rounded-full bg-brand transition-all duration-500 ease-out" style="width:'+(step/TOTAL*100)+'%"></div></div>'
         + '<div style="min-height:185px;display:flex;flex-direction:column;justify-content:center;'+(step===4?'max-width:560px;margin:0 auto;':'')+'">' + stepHTML() + '</div>'
         + nav;
     }
