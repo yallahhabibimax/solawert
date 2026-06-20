@@ -153,6 +153,20 @@ const Stars = ({
   key: i,
   size: size
 }, ICO.star)));
+const GoogleG = ({ size = 18 }) => /*#__PURE__*/React.createElement("svg", {
+  width: size,
+  height: size,
+  viewBox: "0 0 48 48",
+  "aria-hidden": "true",
+  style: { display: "block", flexShrink: 0 },
+  dangerouslySetInnerHTML: {
+    __html:
+      '<path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/>' +
+      '<path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/>' +
+      '<path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34A21.99 21.99 0 0 0 2 24c0 3.55.85 6.91 2.34 9.88l7.35-5.7z"/>' +
+      '<path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/>'
+  }
+});
 const App = () => {
   useEffect(() => {
     let cleanupReveal = () => {};
@@ -189,6 +203,15 @@ const App = () => {
         gsap.fromTo(el, { scale: 0.9 }, {
           scale: 1.04, ease: 'none',
           scrollTrigger: { trigger: el, start: 'top 92%', end: 'top 30%', scrub: true }
+        });
+      });
+      /* Leistungs-Karte leuchtet auf, sobald sie im Viewport zentriert ist */
+      gsap.utils.toArray('.lz-card').forEach(card => {
+        ScrollTrigger.create({
+          trigger: card,
+          start: 'top 72%',
+          end: 'bottom 28%',
+          toggleClass: { targets: card, className: 'lz-active' }
         });
       });
       ScrollTrigger.refresh();
@@ -678,7 +701,7 @@ const SonneSlider = () => {
   const W = a => "rgba(255,255,255," + a + ")";
   const row = (s, idx) => /*#__PURE__*/React.createElement("div", {
     key: idx,
-    className: "lz-card reveal" + (idx % 2 ? " lz-card--rev" : "")
+    className: "lz-card" + (idx % 2 ? " lz-card--rev" : "")
   }, /*#__PURE__*/React.createElement("div", {
     className: "lz-badge",
     "aria-hidden": "true"
@@ -700,7 +723,7 @@ const SonneSlider = () => {
   }, s.name), /*#__PURE__*/React.createElement("p", {
     className: "text-base leading-relaxed",
     style: {
-      color: W(".62"),
+      color: W(".9"),
       maxWidth: "32rem"
     }
   }, s.desc), /*#__PURE__*/React.createElement("div", {
@@ -748,16 +771,16 @@ const SonneSlider = () => {
   }, "Die Kraft der Sonne nutzen"), /*#__PURE__*/React.createElement("p", {
     className: "text-base md:text-lg leading-relaxed",
     style: {
-      color: W(".6")
+      color: W(".9")
     }
   }, "Von der Effizienz-Planung bis zur fertigen Anlage. Photovoltaik, Wärmepumpe und Speicher schlüsselfertig aus einer Hand. Wir behandeln jedes Projekt wie unser eigenes Zuhause.")), /*#__PURE__*/React.createElement("div", {
-    className: "lz-rows"
+    className: "lz-rows reveal"
   }, slides.map(row)), /*#__PURE__*/React.createElement("div", {
     className: "mt-16 md:mt-20 text-center reveal"
   }, /*#__PURE__*/React.createElement("p", {
     className: "text-base mb-6 max-w-xl mx-auto",
     style: {
-      color: W(".6")
+      color: W(".9")
     }
   }, "Nicht sicher, welche Lösung zu Ihrem Dach passt? Wir beraten Sie kostenlos und nennen Ihnen vorab einen fairen Festpreis."), /*#__PURE__*/React.createElement("div", {
     className: "flex flex-wrap justify-center gap-3"
@@ -1172,6 +1195,8 @@ const Values = () => {
 /* ── Testimonials ── */
 const Testimonials = () => {
   const reviews = [{"n": "Markus Hoffmann", "t": "Von der Beratung bis zur fertigen Anlage lief alles reibungslos. Dass wir erst nach der Inbetriebnahme gezahlt haben, hat uns ein richtig gutes Gefühl gegeben."}, {"n": "Sabine Krüger", "t": "Wir hatten mehrere Angebote. Bei SolaWert gab es spürbar mehr Speicher zum gleichen Preis. Die Planung war durchdacht, die Montage absolut sauber."}, {"n": "Thomas Berger", "t": "Photovoltaik und Wärmepumpe aus einer Hand, genau das hatten wir gesucht. Auch die Anmeldung wurde komplett übernommen, das hat uns viel Arbeit erspart."}, {"n": "Andrea Schmitz", "t": "Was mich überzeugt hat: Nach der Montage waren sie nicht weg, sondern haben die Anlage eine Woche lang mit uns optimiert. Das macht sonst keiner."}, {"n": "Peter Wagner", "t": "Für unser Gewerbedach wurde eine passgenaue Lösung durchgerechnet. Die Stromkosten sind seitdem spürbar gesunken."}, {"n": "Julia Neumann", "t": "Kompetent, termintreu und ehrlich beraten. Innerhalb weniger Wochen stand die Anlage. Wir würden jederzeit wieder hier kaufen."}];
+  const REVIEW_COLORS = ["#7E57C2", "#26A69A", "#EF5350", "#5C6BC0", "#FB8C00", "#43A047"];
+  const REVIEW_DATES = ["vor 2 Wochen", "vor 1 Monat", "vor 3 Wochen", "vor 2 Monaten", "vor 1 Woche", "vor 1 Monat"];
   return /*#__PURE__*/React.createElement("section", {
     id: "bewertungen",
     className: "py-20 md:py-28 px-5 md:px-8 bg-white relative"
@@ -1186,35 +1211,46 @@ const Testimonials = () => {
   }, "Bewertungen"), /*#__PURE__*/React.createElement("h2", {
     className: "text-3xl md:text-[2.7rem] font-heading font-black text-content leading-tight"
   }, "Das sagen unsere Kunden")), /*#__PURE__*/React.createElement("div", {
-    className: "flex items-center gap-4 bg-surface-alt rounded-2xl px-6 py-4 border border-black/5 shrink-0"
+    className: "flex items-center gap-4 rounded-2xl px-6 py-4 border border-black/5 shrink-0",
+    style: { background: "#FBF4D2" }
+  }, /*#__PURE__*/React.createElement(GoogleG, {
+    size: 38
+  }), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    className: "flex items-center gap-2"
   }, /*#__PURE__*/React.createElement("div", {
-    className: "text-4xl font-heading font-bold text-content"
-  }, "5,0"), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Stars, {
+    className: "text-3xl font-heading font-bold text-content leading-none"
+  }, "5,0"), /*#__PURE__*/React.createElement(Stars, {
     size: 16
-  }), /*#__PURE__*/React.createElement("div", {
+  })), /*#__PURE__*/React.createElement("div", {
     className: "text-xs text-content-secondary mt-1"
-  }, "Zufriedene Kunden in ganz NRW")))), /*#__PURE__*/React.createElement("div", {
+  }, "Google Bewertungen · Kunden in ganz NRW")))), /*#__PURE__*/React.createElement("div", {
     className: "grid md:grid-cols-2 lg:grid-cols-3 gap-5"
   }, reviews.map((r, i) => /*#__PURE__*/React.createElement("div", {
     key: i,
-    className: "reveal card-lift bg-surface-alt rounded-3xl p-7 border border-black/5 flex flex-col",
+    className: "reveal card-lift rounded-3xl p-7 border border-black/5 flex flex-col",
     style: {
-      transitionDelay: i % 3 * 0.1 + 's'
+      transitionDelay: i % 3 * 0.1 + 's',
+      background: "#FBF4D2"
     }
-  }, /*#__PURE__*/React.createElement(Stars, {
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "flex items-center gap-3 mb-3"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "w-10 h-10 rounded-full text-white font-heading font-bold flex items-center justify-center shrink-0",
+    style: { background: REVIEW_COLORS[i % REVIEW_COLORS.length] }
+  }, r.n.charAt(0)), /*#__PURE__*/React.createElement("div", {
+    className: "flex-grow min-w-0"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "font-heading font-semibold text-content text-sm leading-tight"
+  }, r.n), /*#__PURE__*/React.createElement("div", {
+    className: "text-[11.5px] text-content-secondary mt-0.5"
+  }, REVIEW_DATES[i % REVIEW_DATES.length])), /*#__PURE__*/React.createElement(GoogleG, {
+    size: 20
+  })), /*#__PURE__*/React.createElement(Stars, {
     size: 16,
-    className: "mb-4"
+    className: "mb-3"
   }), /*#__PURE__*/React.createElement("p", {
     className: "text-content text-[14.5px] leading-relaxed flex-grow"
-  }, r.t), /*#__PURE__*/React.createElement("div", {
-    className: "flex items-center gap-3 mt-5 pt-5 border-t border-black/5"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "w-10 h-10 rounded-full bg-brand/20 text-brand-deep font-heading font-bold flex items-center justify-center"
-  }, r.n.charAt(0)), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
-    className: "font-heading font-semibold text-content text-sm"
-  }, r.n), /*#__PURE__*/React.createElement("div", {
-    className: "text-[11.5px] text-content-secondary"
-  }, "Kunde aus NRW"))))))));
+  }, r.t))))));
 };
 
 /* ── FAQ ── */
@@ -1223,7 +1259,7 @@ const FAQ = () => {
   return React.createElement("section", {
     id: "faq",
     className: "relative overflow-hidden px-5 md:px-8 py-20 md:py-28",
-    style: { background: "#2A2E36" }
+    style: { background: "#15181D" }
   }, React.createElement("div", {
     "aria-hidden": "true",
     className: "absolute inset-0 pointer-events-none",
@@ -1306,25 +1342,26 @@ const Contact = () => {
   };
   return /*#__PURE__*/React.createElement("section", {
     id: "kontakt",
-    className: "py-20 md:py-28 px-5 md:px-8 bg-ink text-white relative overflow-hidden"
+    className: "py-12 md:py-16 px-5 md:px-8 relative overflow-hidden",
+    style: { background: "#FFFFFF" }
   }, /*#__PURE__*/React.createElement("div", {
     className: "absolute inset-0 pointer-events-none",
-    style: { backgroundImage: "linear-gradient(180deg,rgba(20,23,28,0.80) 0%,rgba(20,23,28,0.90) 100%), url('img/hero.jpg')", backgroundSize: "cover", backgroundPosition: "center" }
+    style: { display: "none" }
   }), /*#__PURE__*/React.createElement("div", {
     className: "absolute bottom-[-20%] left-[-8%] w-[44%] h-[60%] rounded-full pointer-events-none",
     style: {
-      background: "radial-gradient(ellipse, rgba(245,179,1,0.14) 0%, transparent 70%)"
+      display: "none"
     }
   }), /*#__PURE__*/React.createElement("div", {
     className: "max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-center relative z-10"
   }, /*#__PURE__*/React.createElement("div", {
     className: "reveal-left"
   }, /*#__PURE__*/React.createElement("span", {
-    className: "text-brand font-heading font-semibold tracking-[0.16em] uppercase text-xs mb-3 block"
+    className: "text-brand-deep font-heading font-semibold tracking-[0.16em] uppercase text-xs mb-3 block"
   }, "Kontakt"), /*#__PURE__*/React.createElement("h2", {
     className: "text-3xl md:text-[2.8rem] font-heading font-black leading-[1.08] mb-5"
   }, "Jetzt unverbindlich anfragen"), /*#__PURE__*/React.createElement("p", {
-    className: "text-white/65 text-lg leading-relaxed mb-8 max-w-lg"
+    className: "text-content-secondary text-lg leading-relaxed mb-8 max-w-lg"
   }, "Lassen Sie sich kostenlos beraten und erfahren Sie, was auf Ihrem Dach möglich ist."), /*#__PURE__*/React.createElement("div", {
     className: "space-y-3 mb-8"
   }, /*#__PURE__*/React.createElement("a", {
@@ -1335,28 +1372,22 @@ const Contact = () => {
   }, /*#__PURE__*/React.createElement(Svg, {
     size: 22
   }, ICO.phone)), /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("span", {
-    className: "block text-white/50 text-xs"
+    className: "block text-content-secondary text-xs"
   }, "Telefon"), /*#__PURE__*/React.createElement("span", {
     className: "font-heading font-bold text-lg group-hover:text-brand transition-colors"
   }, PHONE_FEST))), /*#__PURE__*/React.createElement("a", {
     href: "mailto:" + EMAIL,
     className: "flex items-center gap-4 group"
   }, /*#__PURE__*/React.createElement("span", {
-    className: "w-12 h-12 rounded-xl bg-white/10 text-white flex items-center justify-center shrink-0"
+    className: "w-12 h-12 rounded-xl bg-brand text-brand-text flex items-center justify-center shrink-0"
   }, /*#__PURE__*/React.createElement(Svg, {
     size: 22
   }, ICO.mail)), /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("span", {
-    className: "block text-white/50 text-xs"
+    className: "block text-content-secondary text-xs"
   }, "E-Mail"), /*#__PURE__*/React.createElement("span", {
     className: "font-heading font-semibold text-[15px] group-hover:text-brand transition-colors break-all"
-  }, EMAIL)))), /*#__PURE__*/React.createElement("a", {
-    href: "#anfrage",
-    className: "btn-primary cta-pulse inline-flex items-center gap-2.5 rounded-full px-6 py-3.5 font-heading"
-  }, "Unverbindlich Angebot anfragen ", /*#__PURE__*/React.createElement(Svg, {
-    size: 18,
-    sw: 2.2
-  }, ICO.arrow))), /*#__PURE__*/React.createElement("div", {
-    className: "reveal-right bg-white/[0.05] border border-white/10 rounded-3xl p-7 md:p-9 backdrop-blur-sm"
+  }, EMAIL))))), /*#__PURE__*/React.createElement("div", {
+    className: "reveal-right border border-white/10 rounded-3xl p-7 md:p-9", style: { background: "#14171C", boxShadow: "0 30px 60px -30px rgba(20,23,28,0.45)" }
   }, sent ? /*#__PURE__*/React.createElement("div", {
     className: "text-center py-12"
   }, /*#__PURE__*/React.createElement("div", {
