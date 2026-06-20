@@ -88,7 +88,7 @@
     return '' +
     '<section id="anfrage" class="relative py-16 md:py-24 px-5 md:px-8 bg-surface-alt overflow-hidden">' +
       '<div class="max-w-7xl mx-auto rounded-[28px] overflow-hidden shadow-2xl grid lg:grid-cols-[0.82fr_1.18fr] relative z-10">' +
-        '<div class="relative p-8 md:p-10 flex flex-col justify-center overflow-hidden" style="background:linear-gradient(155deg,#F8C223 0%,#F5B301 52%,#E3A200 100%)">' +
+        '<div class="relative p-8 md:p-10 flex flex-col justify-center overflow-hidden" style="background:linear-gradient(155deg,#F5B301 0%,#F5B301 52%,#F5B301 100%)">' +
           '<div class="absolute top-[-20%] right-[-15%] w-[65%] h-[60%] rounded-full pointer-events-none" style="background:radial-gradient(ellipse,rgba(255,255,255,0.30) 0%,transparent 70%)"></div>' +
           '<div class="relative z-10">' +
             '<span class="inline-block px-3.5 py-1.5 rounded-full font-heading font-semibold tracking-[0.16em] uppercase text-[11px] mb-5" style="background:rgba(255,255,255,0.08);border:1px solid #FFFFFF;color:#FFFFFF">Kostenlose Anfrage</span>' +

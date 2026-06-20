@@ -723,7 +723,7 @@ const SonneSlider = () => {
   }, s.name), /*#__PURE__*/React.createElement("p", {
     className: "text-base leading-relaxed",
     style: {
-      color: W(".9"),
+      color: "#fff",
       maxWidth: "32rem"
     }
   }, s.desc), /*#__PURE__*/React.createElement("div", {
@@ -771,16 +771,20 @@ const SonneSlider = () => {
   }, "Die Kraft der Sonne nutzen"), /*#__PURE__*/React.createElement("p", {
     className: "text-base md:text-lg leading-relaxed",
     style: {
-      color: W(".9")
+      color: "#fff"
     }
   }, "Von der Effizienz-Planung bis zur fertigen Anlage. Photovoltaik, Wärmepumpe und Speicher schlüsselfertig aus einer Hand. Wir behandeln jedes Projekt wie unser eigenes Zuhause.")), /*#__PURE__*/React.createElement("div", {
     className: "lz-rows reveal"
   }, slides.map(row)), /*#__PURE__*/React.createElement("div", {
-    className: "mt-16 md:mt-20 text-center reveal"
-  }, /*#__PURE__*/React.createElement("p", {
-    className: "text-lg md:text-xl font-heading font-bold leading-snug mb-9 max-w-2xl mx-auto",
+    className: "text-center reveal",
     style: {
-      color: "#fff"
+      marginTop: "5rem"
+    }
+  }, /*#__PURE__*/React.createElement("p", {
+    className: "text-lg md:text-xl font-heading font-bold leading-snug max-w-2xl mx-auto",
+    style: {
+      color: "#fff",
+      marginBottom: "2.25rem"
     }
   }, "Nicht sicher, welche Lösung zu Ihrem Dach passt? Wir beraten Sie kostenlos und nennen Ihnen vorab einen fairen Festpreis."), /*#__PURE__*/React.createElement("div", {
     className: "flex flex-wrap justify-center gap-3"
@@ -1212,18 +1216,18 @@ const Testimonials = () => {
     className: "text-3xl md:text-[2.7rem] font-heading text-content leading-tight",
     style: { fontFamily: "'Archivo', system-ui, sans-serif", fontWeight: 900 }
   }, "Das sagen unsere Kunden")), /*#__PURE__*/React.createElement("div", {
-    className: "flex items-center gap-4 rounded-2xl px-6 py-4 border border-black/5 shrink-0",
-    style: { background: "#FBF4D2" }
+    className: "flex items-center gap-4 rounded-2xl px-6 py-4 shrink-0",
+    style: { background: "#F5B301", border: "2px solid #15181D" }
   }, /*#__PURE__*/React.createElement(GoogleG, {
     size: 38
   }), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
     className: "flex items-center gap-2"
   }, /*#__PURE__*/React.createElement("div", {
-    className: "text-3xl font-heading font-bold text-content leading-none"
+    className: "text-3xl font-heading font-bold text-white leading-none"
   }, "5,0"), /*#__PURE__*/React.createElement(Stars, {
     size: 16
   })), /*#__PURE__*/React.createElement("div", {
-    className: "text-xs text-content-secondary mt-1"
+    className: "text-xs text-white mt-1"
   }, "Google Bewertungen · Kunden in ganz NRW")))), /*#__PURE__*/React.createElement("div", {
     className: "grid md:grid-cols-2 lg:grid-cols-3 gap-5"
   }, reviews.map((r, i) => /*#__PURE__*/React.createElement("div", {
@@ -1276,7 +1280,7 @@ const FAQ = () => {
     style: { position: "sticky", top: "110px" }
   }, React.createElement("span", {
     className: "inline-block font-heading font-bold uppercase tracking-[0.16em] text-[11px] px-3.5 py-1.5 rounded-full mb-6",
-    style: { background: "rgba(245,179,1,0.12)", color: "#FFC633" }
+    style: { background: "rgba(245,179,1,0.12)", color: "#F5B301" }
   }, "FAQ"), React.createElement("h2", {
     className: "font-heading font-black tracking-tight mb-5",
     style: { color: "#ffffff", fontSize: "clamp(2.3rem,4.6vw,3.5rem)", lineHeight: "0.98" }
