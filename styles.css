@@ -162,16 +162,15 @@ section[id] { scroll-margin-top: 96px; }
   background: linear-gradient(152deg, #1d222b 0%, #15181d 62%);
   border: 1px solid rgba(255,255,255,.07);
   box-shadow: 0 36px 80px -46px rgba(0,0,0,.95), inset 0 1px 0 rgba(255,255,255,.04);
-  transition: transform .55s cubic-bezier(.16,1,.3,1), box-shadow .55s ease, border-color .55s ease, background .55s ease;
+  /* transform wird per GSAP-Scrub gesteuert (Fokus-Skalierung) -> hier nicht transitionen */
+  transition: box-shadow .55s ease, border-color .55s ease, background .55s ease;
 }
 .lz-card:hover {
-  transform: translateY(-5px);
   border-color: rgba(245,179,1,.32);
   box-shadow: 0 52px 100px -48px rgba(0,0,0,1), 0 0 0 1px rgba(245,179,1,.18), inset 0 1px 0 rgba(255,255,255,.05);
 }
-/* Scroll-Highlight: aktive Karte im Viewport leuchtet auf + kommt nach vorne */
+/* Scroll-Highlight: die zentrierte (groesste) Karte leuchtet auf */
 .lz-card.lz-active {
-  transform: translateY(-6px);
   border-color: rgba(245,179,1,.55);
   background: linear-gradient(152deg, #242b36 0%, #181c22 62%);
   box-shadow:
@@ -251,7 +250,7 @@ section[id] { scroll-margin-top: 96px; }
   border: 1px solid var(--dark-border);
   color: #fff;
   border-radius: 14px;
-  padding: 14px 16px;
+  padding: 12px 15px;
   font-size: 15px;
   transition: border-color .25s ease, background .25s ease, box-shadow .25s ease;
 }

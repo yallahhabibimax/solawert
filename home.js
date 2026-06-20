@@ -198,15 +198,15 @@ const App = () => {
       batch('.reveal-left', { opacity: 0, x: -54, filter: 'blur(12px)' });
       batch('.reveal-right', { opacity: 0, x: 54, filter: 'blur(12px)' });
       batch('.reveal-scale', { opacity: 0, scale: 0.92, filter: 'blur(18px)' });
-      /* Leistungs-Bilder: skalieren beim Scrollen rein (Vordergrund-Effekt) */
-      gsap.utils.toArray('.lz-media').forEach(el => {
-        gsap.fromTo(el, { scale: 0.9 }, {
-          scale: 1.04, ease: 'none',
-          scrollTrigger: { trigger: el, start: 'top 92%', end: 'top 30%', scrub: true }
-        });
-      });
-      /* Leistungs-Karte leuchtet auf, solange die Bildschirmmitte in ihr liegt */
+      /* Fokus-Effekt: die mittig im Viewport stehende Leistung wird groesser
+         (Peak in der Bildschirmmitte), die Karten darueber/darunter etwas kleiner.
+         Zusaetzlich leuchtet die zentrierte Karte auf (.lz-active). */
       gsap.utils.toArray('.lz-card').forEach(card => {
+        gsap.timeline({
+          scrollTrigger: { trigger: card, start: 'top bottom', end: 'bottom top', scrub: 0.5 }
+        })
+          .fromTo(card, { scale: 0.95 }, { scale: 1.035, ease: 'none' })
+          .to(card, { scale: 0.95, ease: 'none' });
         ScrollTrigger.create({
           trigger: card,
           start: 'top center',
@@ -1216,18 +1216,26 @@ const Testimonials = () => {
     className: "text-3xl md:text-[2.7rem] font-heading text-content leading-tight",
     style: { fontFamily: "'Archivo', system-ui, sans-serif", fontWeight: 900 }
   }, "Das sagen unsere Kunden")), /*#__PURE__*/React.createElement("div", {
-    className: "flex items-center gap-4 rounded-2xl px-6 py-4 shrink-0",
-    style: { background: "#F5B301", border: "2px solid #15181D" }
-  }, /*#__PURE__*/React.createElement(GoogleG, {
-    size: 38
-  }), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
-    className: "flex items-center gap-2"
+    className: "sw-grating shrink-0 relative overflow-hidden",
+    style: { display: "flex", alignItems: "center", gap: "16px", background: "linear-gradient(150deg,#1B1F26 0%,#15181D 58%,#101317 100%)", border: "1px solid rgba(245,179,1,0.30)", borderRadius: "20px", padding: "16px 22px", boxShadow: "0 18px 44px -22px rgba(0,0,0,0.65), inset 0 1px 0 rgba(255,255,255,0.05), 0 0 0 4px rgba(245,179,1,0.04)" }
   }, /*#__PURE__*/React.createElement("div", {
-    className: "text-3xl font-heading font-bold text-white leading-none"
-  }, "5,0"), /*#__PURE__*/React.createElement(Stars, {
-    size: 16
+    "aria-hidden": "true",
+    style: { position: "absolute", top: "-45%", left: "-12%", width: "170px", height: "170px", background: "radial-gradient(circle,rgba(245,179,1,0.20) 0%,transparent 70%)", pointerEvents: "none" }
+  }), /*#__PURE__*/React.createElement("div", {
+    style: { position: "relative", width: "46px", height: "46px", borderRadius: "13px", background: "#fff", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 6px 16px -6px rgba(0,0,0,0.5)", flexShrink: 0 }
+  }, /*#__PURE__*/React.createElement(GoogleG, {
+    size: 27
   })), /*#__PURE__*/React.createElement("div", {
-    className: "text-xs text-white mt-1"
+    style: { position: "relative" }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: { display: "flex", alignItems: "center", gap: "10px" }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "font-heading",
+    style: { fontSize: "30px", fontWeight: 900, color: "#fff", lineHeight: 1, letterSpacing: "-0.01em" }
+  }, "5,0"), /*#__PURE__*/React.createElement(Stars, {
+    size: 17
+  })), /*#__PURE__*/React.createElement("div", {
+    style: { fontSize: "12px", color: "rgba(255,255,255,0.55)", marginTop: "6px", fontWeight: 500 }
   }, "Google Bewertungen · Kunden in ganz NRW")))), /*#__PURE__*/React.createElement("div", {
     className: "grid md:grid-cols-2 lg:grid-cols-3 gap-5"
   }, reviews.map((r, i) => /*#__PURE__*/React.createElement("div", {
@@ -1347,7 +1355,7 @@ const Contact = () => {
   };
   return /*#__PURE__*/React.createElement("section", {
     id: "kontakt",
-    className: "py-12 md:py-16 px-5 md:px-8 relative overflow-hidden",
+    className: "py-10 md:py-14 px-5 md:px-8 relative overflow-hidden",
     style: { background: "#FFFFFF" }
   }, /*#__PURE__*/React.createElement("div", {
     className: "absolute inset-0 pointer-events-none",
@@ -1392,7 +1400,7 @@ const Contact = () => {
   }, "E-Mail"), /*#__PURE__*/React.createElement("span", {
     className: "font-heading font-semibold text-[15px] group-hover:text-brand transition-colors break-all"
   }, EMAIL))))), /*#__PURE__*/React.createElement("div", {
-    className: "reveal-right border border-white/10 rounded-3xl p-7 md:p-9", style: { background: "#14171C", boxShadow: "0 30px 60px -30px rgba(20,23,28,0.45)" }
+    className: "reveal-right border border-white/10 rounded-3xl p-6 md:p-7", style: { background: "#14171C", boxShadow: "0 30px 60px -30px rgba(20,23,28,0.45)" }
   }, sent ? /*#__PURE__*/React.createElement("div", {
     className: "text-center py-12"
   }, /*#__PURE__*/React.createElement("div", {
@@ -1414,9 +1422,9 @@ const Contact = () => {
   }, /*#__PURE__*/React.createElement("h3", {
     className: "text-2xl font-heading font-bold mb-1.5"
   }, "Kostenlosen Rückruf anfordern"), /*#__PURE__*/React.createElement("p", {
-    className: "text-white/55 text-sm mb-6"
+    className: "text-white/55 text-sm mb-5"
   }, "Unverbindlich. Wir melden uns schnellstmöglich."), /*#__PURE__*/React.createElement("div", {
-    className: "space-y-3.5"
+    className: "space-y-3"
   }, /*#__PURE__*/React.createElement("select", {
     className: "field",
     name: "anrede",
@@ -1431,7 +1439,7 @@ const Contact = () => {
   }, "Herr"), /*#__PURE__*/React.createElement("option", {
     value: "Divers"
   }, "Divers")), /*#__PURE__*/React.createElement("div", {
-    className: "grid sm:grid-cols-2 gap-3.5"
+    className: "grid sm:grid-cols-2 gap-3"
   }, /*#__PURE__*/React.createElement("input", {
     className: "field",
     type: "text",
@@ -1445,7 +1453,7 @@ const Contact = () => {
     placeholder: "Nachname *",
     required: true
   })), /*#__PURE__*/React.createElement("div", {
-    className: "grid sm:grid-cols-2 gap-3.5"
+    className: "grid sm:grid-cols-2 gap-3"
   }, /*#__PURE__*/React.createElement("input", {
     className: "field",
     type: "tel",
@@ -1467,7 +1475,7 @@ const Contact = () => {
   }), /*#__PURE__*/React.createElement("textarea", {
     className: "field resize-none",
     name: "anliegen",
-    rows: "4",
+    rows: "3",
     placeholder: "Wie können wir Ihnen helfen? *",
     required: true
   }), /*#__PURE__*/React.createElement("button", {
