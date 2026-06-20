@@ -16,7 +16,7 @@
         '<div class="grid md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.1fr] gap-10 lg:gap-8 pb-12 border-b border-white/10">' +
           '<div>' +
             '<a href="#top" style="display:inline-flex;align-items:center;gap:4px;text-decoration:none;margin-bottom:1rem">' +
-              '<img src="img/logo-icon-v2.png?v=1782000019" alt="SolaWert" class="w-auto" style="height:56px">' +
+              '<img src="img/logo-icon-v4.png?v=1782000021" alt="SolaWert" class="w-auto" style="height:56px">' +
               '<span class="font-heading font-bold tracking-tight leading-none" style="font-size:24px"><span class="text-white">Sola</span><span class="text-brand">Wert</span></span>' +
             '</a>' +
             '<p class="text-white text-sm leading-relaxed max-w-xs mb-5">Ihr inhabergeführter Partner für Photovoltaik und Wärmepumpen in Wuppertal und ganz NRW. Effizient, ehrlich und fair.</p>' +

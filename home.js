@@ -392,13 +392,24 @@ const Navbar = () => {
     href: "#top",
     className: "flex items-center shrink-0",
     style: {
-      marginLeft: "1rem"
+      gap: "0.2rem"
     }
   }, /*#__PURE__*/React.createElement("img", {
-    src: "img/logo-icon-v2.png?v=1782000019",
+    src: "img/logo-icon-v4.png?v=1782000021",
     alt: "SolaWert Wuppertal",
     className: "sw-navlogo"
-  })), /*#__PURE__*/React.createElement("div", {
+  }), /*#__PURE__*/React.createElement("span", {
+    className: "font-heading leading-none",
+    style: {
+      fontSize: "23px",
+      fontWeight: 900,
+      letterSpacing: "-0.03em"
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: { color: "#fff" }
+  }, "Sola"), /*#__PURE__*/React.createElement("span", {
+    style: { background: "linear-gradient(180deg, #FFDD66 0%, #F5B301 100%)", WebkitBackgroundClip: "text", backgroundClip: "text", WebkitTextFillColor: "transparent", color: "transparent" }
+  }, "Wert"))), /*#__PURE__*/React.createElement("div", {
     className: "sw-navlinks hidden lg:flex"
   }, links.map(([t, h], i) => /*#__PURE__*/React.createElement("a", {
     key: h,

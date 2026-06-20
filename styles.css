@@ -763,3 +763,21 @@ details[open] > summary .faq-q, details[open] > summary .faq-num { color: var(--
 .hero-srv:hover .hero-srv__ic { transform: rotate(-6deg) scale(1.06); }
 .hero-srv__t { font-family: 'Archivo', system-ui, sans-serif; font-weight: 700; font-size: 14.5px; color: #fff; letter-spacing: -.01em; }
 @media (prefers-reduced-motion: reduce) { .hero-kw, .hero-srv, .hero-srv__ic { animation: none !important; transition: none !important; } }
+
+
+/* === Hero Buttons fresh === */
+.sw-cta { position: relative; overflow: hidden; background: linear-gradient(180deg,#ffffff,#f1efe7); box-shadow: 0 12px 30px -14px rgba(0,0,0,.55); transition: transform .3s cubic-bezier(.16,1,.3,1), box-shadow .3s ease; }
+.sw-cta::after { content: ""; position: absolute; top: 0; left: -130%; width: 55%; height: 100%; background: linear-gradient(100deg, transparent, rgba(255,255,255,.9), transparent); transform: skewX(-18deg); transition: left .6s cubic-bezier(.16,1,.3,1); pointer-events: none; }
+.sw-cta:hover { transform: translateY(-3px) scale(1.01); box-shadow: 0 24px 50px -16px rgba(245,179,1,.55), 0 0 0 1px rgba(245,179,1,.3); }
+.sw-cta:hover::after { left: 150%; }
+.sw-cta__ico { transition: transform .4s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+.sw-cta:hover .sw-cta__ico { transform: translateX(4px); box-shadow: 0 0 0 8px rgba(245,179,1,.12); }
+
+.sw-cta-ghost { position: relative; overflow: hidden; z-index: 0; background: rgba(255,255,255,.06); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); transition: color .35s ease, border-color .35s ease, transform .3s cubic-bezier(.16,1,.3,1), box-shadow .3s ease; }
+.sw-cta-ghost::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg,#FFD45A,#F5B301); transform: translateY(101%); transition: transform .42s cubic-bezier(.16,1,.3,1); }
+.sw-cta-ghost:hover { color: #1A1402; border-color: transparent; transform: translateY(-3px); box-shadow: 0 20px 44px -16px rgba(245,179,1,.6); }
+.sw-cta-ghost:hover::before { transform: translateY(0); }
+.sw-cta-ghost svg { transition: transform .35s ease; }
+.sw-cta-ghost:hover svg { animation: ctaRing .6s ease; }
+@keyframes ctaRing { 0%,100% { transform: rotate(0); } 20% { transform: rotate(-14deg); } 40% { transform: rotate(11deg); } 60% { transform: rotate(-7deg); } 80% { transform: rotate(4deg); } }
+@media (prefers-reduced-motion: reduce) { .sw-cta::after, .sw-cta-ghost::before, .sw-cta-ghost:hover svg, .sw-cta__ico, .sw-cta:hover .sw-cta__ico { transition: none !important; animation: none !important; } }
