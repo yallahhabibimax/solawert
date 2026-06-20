@@ -89,19 +89,19 @@
 
   function sectionShell() {
     return '' +
-    '<section id="anfrage" class="relative py-12 md:py-16 px-5 md:px-8 bg-surface-alt overflow-hidden">' +
+    '<section id="anfrage" class="relative py-8 md:py-10 px-5 md:px-8 bg-surface-alt overflow-hidden">' +
       '<div class="absolute pointer-events-none" style="top:-12%;left:50%;transform:translateX(-50%);width:760px;max-width:130%;height:440px;background:radial-gradient(ellipse,rgba(245,179,1,0.22) 0%,transparent 68%)"></div>' +
-      '<div class="max-w-2xl mx-auto text-center relative z-10" style="margin-bottom:2.5rem">' +
-        '<span class="inline-flex items-center font-heading uppercase" style="gap:0.5rem;padding:0.42rem 0.9rem 0.42rem 0.72rem;border-radius:999px;background:rgba(245,179,1,0.14);border:1px solid rgba(245,179,1,0.4);color:#8A5E00;font-weight:800;font-size:11px;letter-spacing:0.16em;margin-bottom:1.1rem">' +
+      '<div class="max-w-2xl mx-auto text-center relative z-10" style="margin-bottom:1.4rem">' +
+        '<span class="inline-flex items-center font-heading uppercase" style="gap:0.5rem;padding:0.42rem 0.9rem 0.42rem 0.72rem;border-radius:999px;background:rgba(245,179,1,0.14);border:1px solid rgba(245,179,1,0.4);color:#8A5E00;font-weight:800;font-size:11px;letter-spacing:0.16em;margin-bottom:0.7rem">' +
           '<span style="width:7px;height:7px;border-radius:50%;background:#F5B301;display:inline-block"></span>Kostenlose Anfrage</span>' +
-        '<h2 class="font-heading" style="font-weight:900;color:#14171C;font-size:clamp(2rem,4.6vw,3.05rem);line-height:1.04;margin-bottom:1rem">In 30 Sekunden zu Ihrer <span style="background:#F5B301;color:#1A1402;padding:0 0.12em;border-radius:8px;-webkit-box-decoration-break:clone;box-decoration-break:clone">kostenlosen Einschätzung</span></h2>' +
-        '<p class="mx-auto" style="color:#525A64;font-size:16px;line-height:1.6;max-width:30rem">Ein paar kurze Fragen genügen. Ehrliche Einschätzung, fairer Festpreis, absolut unverbindlich.</p>' +
-        '<div class="flex flex-wrap items-center justify-center" style="gap:0.55rem 1.25rem;margin-top:1.35rem">' +
+        '<h2 class="font-heading" style="font-weight:900;color:#14171C;font-size:clamp(1.65rem,3.3vw,2.35rem);line-height:1.07;margin-bottom:0.6rem">In 30 Sekunden zu Ihrer <span style="background:#F5B301;color:#1A1402;padding:0 0.12em;border-radius:8px;-webkit-box-decoration-break:clone;box-decoration-break:clone">kostenlosen Einschätzung</span></h2>' +
+        '<p class="mx-auto" style="color:#525A64;font-size:14.5px;line-height:1.5;max-width:30rem">Ein paar kurze Fragen genügen. Ehrliche Einschätzung, fairer Festpreis, absolut unverbindlich.</p>' +
+        '<div class="flex flex-wrap items-center justify-center" style="gap:0.5rem 1.15rem;margin-top:0.85rem">' +
           ['Keine Anzahlung','Mehr Speicher','Faire Festpreise','100% unverbindlich'].map(function(t){return '<span class="inline-flex items-center font-heading" style="gap:0.4rem;font-size:13px;font-weight:600;color:#3D2C00"><span class="inline-flex items-center justify-center" style="width:18px;height:18px;border-radius:50%;background:#F5B301;color:#1A1402">'+svg('check',11)+'</span>'+t+'</span>';}).join('') +
         '</div>' +
       '</div>' +
       '<div class="mx-auto relative z-10" style="max-width:80rem">' +
-        '<div data-kf-card class="bg-white" style="border-radius:24px;box-shadow:0 40px 90px -45px rgba(20,23,28,0.45);border:1px solid rgba(20,23,28,0.06);padding:clamp(1.4rem,3vw,2.25rem)"></div>' +
+        '<div data-kf-card class="bg-white" style="border-radius:24px;box-shadow:0 40px 90px -45px rgba(20,23,28,0.45);border:1px solid rgba(20,23,28,0.06);padding:clamp(1rem,2.1vw,1.5rem)"></div>' +
       '</div>' +
     '</section>';
   }
@@ -115,15 +115,15 @@
     function tile(active){ return 'choice-tile rounded-2xl border p-3 flex flex-col items-center justify-center gap-2 ' + (active?'choice-active':'border-black/10'); }
 
     function stepHTML() {
-      if (step === 1) return '<div class="step-in"><h3 class="text-lg md:text-xl font-heading font-bold text-content mb-1">Worum geht es?</h3><p class="text-content-secondary text-sm mb-5">Tippen Sie auf das passende Anliegen.</p>'
-        + '<div class="grid grid-cols-2 sm:grid-cols-4 gap-3.5">'
+      if (step === 1) return '<div class="step-in"><h3 class="text-lg md:text-xl font-heading font-bold text-content mb-1">Worum geht es?</h3><p class="text-content-secondary text-sm mb-3">Tippen Sie auf das passende Anliegen.</p>'
+        + '<div class="grid grid-cols-2 sm:grid-cols-4 gap-3">'
         + PESTS.map(function(p,qi){return '<button type="button" data-pick="pest" data-val="'+p[0]+'" class="sw-qtile'+(data.pest===p[0]?' sw-qtile-active':'')+'" style="background-image:url(img/anfrage/q'+(qi+1)+'.jpg)"><span class="sw-qtile-ic">'+p[1]+'</span><span class="sw-qtile-lb">'+p[0]+'</span></button>';}).join('')
         + '<button type="button" data-pick="pest" data-val="Sonstiges / unklar" class="sw-qtile-wide col-span-2 sm:col-span-4'+(data.pest==='Sonstiges / unklar'?' sw-qtile-active':'')+'">Sonstiges / ich bin nicht sicher</button>'
         + '</div></div>';
-      if (step === 2) return '<div class="step-in"><h3 class="text-lg md:text-xl font-heading font-bold text-content mb-1">Wo soll die Anlage entstehen?</h3><p class="text-content-secondary text-sm mb-5">Damit wir die passende Lösung wählen.</p><div class="grid sm:grid-cols-2 gap-3">'
+      if (step === 2) return '<div class="step-in"><h3 class="text-lg md:text-xl font-heading font-bold text-content mb-1">Wo soll die Anlage entstehen?</h3><p class="text-content-secondary text-sm mb-3">Damit wir die passende Lösung wählen.</p><div class="grid sm:grid-cols-2 gap-3">'
         + [['Privathaushalt','Wohnung, Haus oder Garten','home'],['Unternehmen','Gastronomie, Handel, Büro, Lager','building']].map(function(o){return '<button type="button" data-pick="type" data-val="'+o[0]+'" class="choice-tile rounded-2xl border p-5 text-left flex items-start gap-3 '+(data.type===o[0]?'choice-active':'border-black/10')+'"><span class="w-11 h-11 rounded-xl bg-brand/15 text-brand-deep flex items-center justify-center shrink-0">'+svg(o[2],22)+'</span><span><span class="block font-heading font-bold text-content">'+o[0]+'</span><span class="block text-[12.5px] text-content-secondary leading-snug mt-0.5">'+o[1]+'</span></span></button>';}).join('')
         + '</div></div>';
-      if (step === 3) return '<div class="step-in"><h3 class="text-lg md:text-xl font-heading font-bold text-content mb-1">Wie dringend ist es?</h3><p class="text-content-secondary text-sm mb-5">Wir richten uns nach Ihnen.</p><div class="grid md:grid-cols-3 gap-3.5">'
+      if (step === 3) return '<div class="step-in"><h3 class="text-lg md:text-xl font-heading font-bold text-content mb-1">Wie dringend ist es?</h3><p class="text-content-secondary text-sm mb-3">Wir richten uns nach Ihnen.</p><div class="grid md:grid-cols-3 gap-3.5">'
         + [['Möglichst zeitnah','Ich möchte bald mit der Planung starten','home'],['In den nächsten Wochen','Konkret geplant, aber kein Zeitdruck','clock'],['Erstmal nur Beratung','Ich möchte mich zunächst informieren','search']].map(function(o){return '<button type="button" data-pick="urgency" data-val="'+o[0]+'" class="choice-tile rounded-2xl border p-4 text-left flex items-center gap-3 '+(data.urgency===o[0]?'choice-active':'border-black/10')+'"><span class="w-10 h-10 rounded-xl bg-brand/15 text-brand-deep flex items-center justify-center shrink-0">'+svg(o[2],20)+'</span><span><span class="block font-heading font-bold text-content text-[15px]">'+o[0]+'</span><span class="block text-[12.5px] text-content-secondary">'+o[1]+'</span></span></button>';}).join('')
         + '</div></div>';
       // step 4
@@ -163,8 +163,8 @@
       }
       card.innerHTML =
         '<div class="flex items-center justify-between mb-1.5"><span class="text-xs font-heading font-semibold text-content-secondary uppercase tracking-wider">Schritt '+step+' von '+TOTAL+'</span><span class="text-xs text-content-secondary">ca. 30 Sek.</span></div>'
-        + '<div class="h-1.5 rounded-full bg-surface-alt overflow-hidden mb-6"><div class="h-full rounded-full bg-brand transition-all duration-500 ease-out" style="width:'+(step/TOTAL*100)+'%"></div></div>'
-        + '<div style="min-height:190px;display:flex;flex-direction:column;justify-content:center;'+(step===4?'max-width:560px;margin:0 auto;':'')+'">' + stepHTML() + '</div>'
+        + '<div class="h-1.5 rounded-full bg-surface-alt overflow-hidden mb-4"><div class="h-full rounded-full bg-brand transition-all duration-500 ease-out" style="width:'+(step/TOTAL*100)+'%"></div></div>'
+        + '<div style="min-height:150px;display:flex;flex-direction:column;justify-content:center;'+(step===4?'max-width:560px;margin:0 auto;':'')+'">' + stepHTML() + '</div>'
         + nav;
     }
 
