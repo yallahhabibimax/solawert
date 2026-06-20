@@ -10,6 +10,8 @@ const EMAIL = "info@solawert.de";
 
 /* utility icons (stroke, fragment-wrapped) */
 const ICO = {
+  clock: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("circle", { cx: "12", cy: "12", r: "8" }), /*#__PURE__*/React.createElement("path", { d: "M12 8v4l2.5 2" })),
+  pin: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("path", { d: "M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z" }), /*#__PURE__*/React.createElement("circle", { cx: "12", cy: "10", r: "2.5" })),
   shield: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("path", {
     d: "M12 3 5 6v5.5c0 4.3 3 7.4 7 8.5 4-1.1 7-4.2 7-8.5V6l-7-3Z"
   }), /*#__PURE__*/React.createElement("path", {
@@ -198,22 +200,8 @@ const App = () => {
       batch('.reveal-left', { opacity: 0, x: -54, filter: 'blur(12px)' });
       batch('.reveal-right', { opacity: 0, x: 54, filter: 'blur(12px)' });
       batch('.reveal-scale', { opacity: 0, scale: 0.92, filter: 'blur(18px)' });
-      /* Fokus-Effekt: die mittig im Viewport stehende Leistung wird groesser
-         (Peak in der Bildschirmmitte), die Karten darueber/darunter etwas kleiner.
-         Zusaetzlich leuchtet die zentrierte Karte auf (.lz-active). */
-      gsap.utils.toArray('.lz-card').forEach(card => {
-        gsap.timeline({
-          scrollTrigger: { trigger: card, start: 'top bottom', end: 'bottom top', scrub: 0.5 }
-        })
-          .fromTo(card, { scale: 0.95 }, { scale: 1.035, ease: 'none' })
-          .to(card, { scale: 0.95, ease: 'none' });
-        ScrollTrigger.create({
-          trigger: card,
-          start: 'top center',
-          end: 'bottom center',
-          toggleClass: { targets: card, className: 'lz-active' }
-        });
-      });
+      /* Leistungs-Karten: keine Skalierung mehr. Das Glow-Highlight (.lz-active)
+         laeuft GSAP-unabhaengig im onScroll-Handler (siehe updateLzActive unten). */
       ScrollTrigger.refresh();
       cleanupReveal = () => {
         ScrollTrigger.getAll().forEach(t => t.kill());
@@ -234,14 +222,31 @@ const App = () => {
       document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => obs.observe(el));
       cleanupReveal = () => obs.disconnect();
     }
+    /* Leistungs-Karte hervorheben, deren Mitte der Bildschirmmitte am naechsten ist */
+    const lzCards = Array.from(document.querySelectorAll('.lz-card'));
+    let lzTick = false;
+    const updateLzActive = () => {
+      lzTick = false;
+      const mid = window.innerHeight / 2;
+      let best = null, bestDist = Infinity;
+      lzCards.forEach(c => {
+        const r = c.getBoundingClientRect();
+        const center = r.top + r.height / 2;
+        const dist = Math.abs(center - mid);
+        if (r.bottom > 0 && r.top < window.innerHeight && dist < bestDist) { bestDist = dist; best = c; }
+      });
+      lzCards.forEach(c => c.classList.toggle('lz-active', c === best && bestDist < window.innerHeight * 0.5));
+    };
     const onScroll = () => {
       const h = document.documentElement;
       const sp = document.getElementById('scroll-progress');
       if (sp) sp.style.width = h.scrollTop / (h.scrollHeight - h.clientHeight) * 100 + '%';
+      if (!lzTick) { lzTick = true; requestAnimationFrame(updateLzActive); }
     };
     window.addEventListener('scroll', onScroll, {
       passive: true
     });
+    updateLzActive();
     return () => {
       cleanupReveal();
       window.removeEventListener('scroll', onScroll);
@@ -280,7 +285,7 @@ const Navbar = () => {
     href: "#top",
     className: "flex items-center gap-2.5 shrink-0"
   }, /*#__PURE__*/React.createElement("img", {
-    src: "img/logo-mark-white.png?v=1782000014",
+    src: "img/logo-icon.png?v=1782000015",
     alt: "SolaWert Wuppertal",
     className: "sw-navlogo"
   }), /*#__PURE__*/React.createElement("span", {
@@ -742,7 +747,7 @@ const SonneSlider = () => {
     id: "leistungen",
     className: "py-20 md:py-28 px-5 md:px-8 relative overflow-hidden",
     style: {
-      background: "#15181D"
+      background: "#2A2E36"
     }
   }, /*#__PURE__*/React.createElement("div", {
     className: "absolute pointer-events-none",
@@ -1217,7 +1222,7 @@ const Testimonials = () => {
     style: { fontFamily: "'Archivo', system-ui, sans-serif", fontWeight: 900 }
   }, "Das sagen unsere Kunden")), /*#__PURE__*/React.createElement("div", {
     className: "sw-grating shrink-0 relative overflow-hidden",
-    style: { display: "flex", alignItems: "center", gap: "16px", background: "linear-gradient(150deg,#1B1F26 0%,#15181D 58%,#101317 100%)", border: "1px solid rgba(245,179,1,0.30)", borderRadius: "20px", padding: "16px 22px", boxShadow: "0 18px 44px -22px rgba(0,0,0,0.65), inset 0 1px 0 rgba(255,255,255,0.05), 0 0 0 4px rgba(245,179,1,0.04)" }
+    style: { display: "flex", alignItems: "center", gap: "16px", background: "linear-gradient(150deg,#1B1F26 0%,#2A2E36 58%,#101317 100%)", border: "1px solid rgba(245,179,1,0.30)", borderRadius: "20px", padding: "16px 22px", boxShadow: "0 18px 44px -22px rgba(0,0,0,0.65), inset 0 1px 0 rgba(255,255,255,0.05), 0 0 0 4px rgba(245,179,1,0.04)" }
   }, /*#__PURE__*/React.createElement("div", {
     "aria-hidden": "true",
     style: { position: "absolute", top: "-45%", left: "-12%", width: "170px", height: "170px", background: "radial-gradient(circle,rgba(245,179,1,0.20) 0%,transparent 70%)", pointerEvents: "none" }
@@ -1243,7 +1248,7 @@ const Testimonials = () => {
     className: "reveal card-lift rounded-3xl p-7 border border-white/10 flex flex-col",
     style: {
       transitionDelay: i % 3 * 0.1 + 's',
-      background: "#15181D"
+      background: "#2A2E36"
     }
   }, /*#__PURE__*/React.createElement("div", {
     className: "flex items-center gap-3 mb-3"
@@ -1272,7 +1277,7 @@ const FAQ = () => {
   return React.createElement("section", {
     id: "faq",
     className: "relative overflow-hidden px-5 md:px-8 py-20 md:py-28",
-    style: { background: "#15181D" }
+    style: { background: "#2A2E36" }
   }, React.createElement("div", {
     "aria-hidden": "true",
     className: "absolute inset-0 pointer-events-none",
@@ -1293,17 +1298,17 @@ const FAQ = () => {
     className: "font-heading font-black tracking-tight mb-5",
     style: { color: "#ffffff", fontSize: "clamp(2.3rem,4.6vw,3.5rem)", lineHeight: "0.98" }
   }, "Häufig gestellte ", React.createElement("span", {
-    style: { background: "#F5B301", color: "#15181D", padding: "0 0.14em", borderRadius: "8px", WebkitBoxDecorationBreak: "clone", boxDecorationBreak: "clone" }
+    style: { background: "#F5B301", color: "#2A2E36", padding: "0 0.14em", borderRadius: "8px", WebkitBoxDecorationBreak: "clone", boxDecorationBreak: "clone" }
   }, "Fragen")), React.createElement("p", {
     className: "font-body font-bold leading-relaxed mb-8",
     style: { color: "rgba(255,255,255,0.72)", fontSize: "1.05rem", maxWidth: "23rem" }
   }, "Alles, was Sie vor dem Start wissen wollen. Klare Antworten, keine Anzahlung, kein Kleingedrucktes."), React.createElement("a", {
     href: "#anfrage",
     className: "group inline-flex items-center gap-3 font-heading font-extrabold tracking-tight rounded-full transition-transform hover:-translate-y-0.5",
-    style: { background: "#F5B301", color: "#15181D", fontSize: "16.5px", fontWeight: 800, padding: "8px 8px 8px 24px" }
+    style: { background: "#F5B301", color: "#2A2E36", fontSize: "16.5px", fontWeight: 800, padding: "8px 8px 8px 24px" }
   }, "Kostenlos anfragen", React.createElement("span", {
     className: "flex items-center justify-center rounded-full shrink-0",
-    style: { width: "34px", height: "34px", background: "#15181D", color: "#F5B301" }
+    style: { width: "34px", height: "34px", background: "#2A2E36", color: "#F5B301" }
   }, React.createElement(Svg, { size: 18, sw: 2.4 }, ICO.arrow)))), React.createElement("div", {
     className: "space-y-3.5"
   }, faqs.map((f, i) => React.createElement("details", {
@@ -1318,7 +1323,7 @@ const FAQ = () => {
     style: { color: "#ffffff", fontSize: "16px", lineHeight: "1.3" }
   }, f.q), React.createElement("span", {
     className: "faq-icon shrink-0 flex items-center justify-center",
-    style: { width: "34px", height: "34px", borderRadius: "50%", background: "#F5B301", color: "#15181D" }
+    style: { width: "34px", height: "34px", borderRadius: "50%", background: "#F5B301", color: "#2A2E36" }
   }, React.createElement(Svg, { size: 20, sw: 2.4 }, ICO.plus))), React.createElement("div", {
     className: "faq-body",
     style: { padding: "0 22px 20px", color: "rgba(255,255,255,0.62)", lineHeight: "1.7", fontSize: "14.5px" }
@@ -1359,48 +1364,74 @@ const Contact = () => {
     style: { background: "#FFFFFF" }
   }, /*#__PURE__*/React.createElement("div", {
     className: "absolute inset-0 pointer-events-none",
-    style: { display: "none" }
+    style: { backgroundImage: "radial-gradient(rgba(20,23,28,0.05) 1px, transparent 1px)", backgroundSize: "22px 22px", WebkitMaskImage: "linear-gradient(105deg, rgba(0,0,0,0.5) 0%, transparent 46%)", maskImage: "linear-gradient(105deg, rgba(0,0,0,0.5) 0%, transparent 46%)" }
   }), /*#__PURE__*/React.createElement("div", {
     className: "absolute bottom-[-20%] left-[-8%] w-[44%] h-[60%] rounded-full pointer-events-none",
     style: {
-      display: "none"
+      background: "radial-gradient(ellipse, rgba(245,179,1,0.10) 0%, transparent 70%)"
     }
   }), /*#__PURE__*/React.createElement("div", {
     className: "max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-center relative z-10"
   }, /*#__PURE__*/React.createElement("div", {
     className: "reveal-left"
   }, /*#__PURE__*/React.createElement("span", {
-    className: "text-brand-deep font-heading font-semibold tracking-[0.16em] uppercase text-xs mb-3 block"
-  }, "Kontakt"), /*#__PURE__*/React.createElement("h2", {
+    className: "sw-kontakt-chip",
+    style: { marginBottom: "1.15rem" }
+  }, /*#__PURE__*/React.createElement("span", { className: "sw-cdot" }), "Kontakt"), /*#__PURE__*/React.createElement("h2", {
     className: "text-3xl md:text-[2.8rem] font-heading font-black leading-[1.08] mb-5"
   }, "Jetzt unverbindlich anfragen"), /*#__PURE__*/React.createElement("p", {
     className: "text-content-secondary text-lg leading-relaxed mb-8 max-w-lg"
   }, "Lassen Sie sich kostenlos beraten und erfahren Sie, was auf Ihrem Dach möglich ist."), /*#__PURE__*/React.createElement("div", {
-    className: "space-y-3 mb-8"
+    className: "sw-contact-wrap mb-8"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "sw-contact-cards"
   }, /*#__PURE__*/React.createElement("a", {
     href: "tel:" + PHONE_FEST_TEL,
-    className: "flex items-center gap-4 group"
+    className: "sw-contact-card group"
   }, /*#__PURE__*/React.createElement("span", {
-    className: "w-12 h-12 rounded-xl bg-brand text-brand-text flex items-center justify-center shrink-0"
+    className: "sw-contact-ico"
   }, /*#__PURE__*/React.createElement(Svg, {
     size: 22
-  }, ICO.phone)), /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("span", {
-    className: "block text-content-secondary text-xs"
+  }, ICO.phone)), /*#__PURE__*/React.createElement("span", {
+    className: "min-w-0"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "sw-contact-label"
   }, "Telefon"), /*#__PURE__*/React.createElement("span", {
-    className: "font-heading font-bold text-lg group-hover:text-brand transition-colors"
-  }, PHONE_FEST))), /*#__PURE__*/React.createElement("a", {
+    className: "sw-contact-value"
+  }, PHONE_FEST)), /*#__PURE__*/React.createElement("span", {
+    className: "sw-contact-go"
+  }, /*#__PURE__*/React.createElement(Svg, {
+    size: 18,
+    sw: 2.4
+  }, ICO.arrow))), /*#__PURE__*/React.createElement("a", {
     href: "mailto:" + EMAIL,
-    className: "flex items-center gap-4 group"
+    className: "sw-contact-card group"
   }, /*#__PURE__*/React.createElement("span", {
-    className: "w-12 h-12 rounded-xl bg-brand text-brand-text flex items-center justify-center shrink-0"
+    className: "sw-contact-ico"
   }, /*#__PURE__*/React.createElement(Svg, {
     size: 22
-  }, ICO.mail)), /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("span", {
-    className: "block text-content-secondary text-xs"
+  }, ICO.mail)), /*#__PURE__*/React.createElement("span", {
+    className: "min-w-0"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "sw-contact-label"
   }, "E-Mail"), /*#__PURE__*/React.createElement("span", {
-    className: "font-heading font-semibold text-[15px] group-hover:text-brand transition-colors break-all"
-  }, EMAIL))))), /*#__PURE__*/React.createElement("div", {
-    className: "reveal-right border border-white/10 rounded-3xl p-6 md:p-7", style: { background: "#14171C", boxShadow: "0 30px 60px -30px rgba(20,23,28,0.45)" }
+    className: "sw-contact-value",
+    style: { wordBreak: "break-all" }
+  }, EMAIL)), /*#__PURE__*/React.createElement("span", {
+    className: "sw-contact-go"
+  }, /*#__PURE__*/React.createElement(Svg, {
+    size: 18,
+    sw: 2.4
+  }, ICO.arrow)))), /*#__PURE__*/React.createElement("div", {
+    className: "sw-contact-arrow",
+    "aria-hidden": "true"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "sw-contact-arrow-label"
+  }, "Zum Formular"), /*#__PURE__*/React.createElement("div", {
+    className: "sw-contact-arrow-svg",
+    dangerouslySetInnerHTML: { __html: '<svg width="80" height="30" viewBox="0 0 80 30" fill="none" stroke="#F5B301" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15 H68"/><path d="M55 5 L70 15 L55 25"/></svg>' }
+  }))), React.createElement("div", { style: { marginTop: "1.75rem", paddingTop: "1.5rem", borderTop: "1px solid rgba(20,23,28,0.08)" } }, React.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(190px,1fr))", gap: "1.1rem", marginBottom: "1.35rem" } }, React.createElement("div", { style: { display: "flex", alignItems: "flex-start", gap: "0.7rem" } }, React.createElement("span", { style: { width: "38px", height: "38px", borderRadius: "10px", background: "#F4F5F6", color: "#14171C", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 } }, React.createElement(Svg, { size: 19 }, ICO.pin)), React.createElement("span", null, React.createElement("span", { className: "font-heading font-semibold", style: { display: "block", color: "#8A929C", fontSize: "11px", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "2px" } }, "Adresse"), React.createElement("span", { className: "font-heading font-bold", style: { color: "#14171C", fontSize: "14.5px", lineHeight: "1.35" } }, "Friedrich-Ebert-Str. 55, 42103 Wuppertal"))), React.createElement("div", { style: { display: "flex", alignItems: "flex-start", gap: "0.7rem" } }, React.createElement("span", { style: { width: "38px", height: "38px", borderRadius: "10px", background: "#F4F5F6", color: "#14171C", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 } }, React.createElement(Svg, { size: 19 }, ICO.clock)), React.createElement("span", null, React.createElement("span", { className: "font-heading font-semibold", style: { display: "block", color: "#8A929C", fontSize: "11px", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "2px" } }, "Erreichbarkeit"), React.createElement("span", { className: "font-heading font-bold", style: { color: "#14171C", fontSize: "14.5px", lineHeight: "1.35" } }, "Mo bis Sa, 8 bis 18 Uhr")))), React.createElement("div", { style: { display: "flex", flexWrap: "wrap", alignItems: "center", gap: "0.5rem 1.1rem" } }, React.createElement("span", { style: { display: "inline-flex", alignItems: "center", gap: "0.4rem" } }, React.createElement("span", { style: { color: "#F5B301", fontSize: "15px", letterSpacing: "1.5px" } }, "★★★★★"), React.createElement("span", { className: "font-heading font-bold", style: { color: "#14171C", fontSize: "13.5px" } }, "4,9 Google")), React.createElement("span", { style: { width: "4px", height: "4px", borderRadius: "50%", background: "#CBD0D6" } }), React.createElement("span", { className: "font-heading font-semibold", style: { color: "#525A64", fontSize: "13.5px" } }, "500+ Projekte"), React.createElement("span", { style: { width: "4px", height: "4px", borderRadius: "50%", background: "#CBD0D6" } }), React.createElement("span", { className: "font-heading font-semibold", style: { color: "#525A64", fontSize: "13.5px" } }, "Antwort meist unter 24 Std.")))), /*#__PURE__*/React.createElement("div", {
+    className: "reveal-right border border-white/10 rounded-3xl p-6 md:p-7", style: { background: "linear-gradient(162deg,#1B2029 0%,#14171C 58%)", boxShadow: "0 40px 80px -34px rgba(20,23,28,0.5), inset 0 1px 0 rgba(255,255,255,0.07)", borderTop: "1px solid rgba(245,179,1,0.25)" }
   }, sent ? /*#__PURE__*/React.createElement("div", {
     className: "text-center py-12"
   }, /*#__PURE__*/React.createElement("div", {
