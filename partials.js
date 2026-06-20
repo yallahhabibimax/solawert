@@ -21,7 +21,7 @@
             '</a>' +
             '<p class="text-white text-sm leading-relaxed max-w-xs mb-5">Ihr inhabergeführter Partner für Photovoltaik und Wärmepumpen in Wuppertal und ganz NRW. Effizient, ehrlich und fair.</p>' +
             '<div class="flex flex-wrap gap-2">' +
-              ['Keine Anzahlung','Mehr Speicher','Schlüsselfertig','Inhabergeführt'].map(function(t){return '<span class="px-3 py-1 rounded-full bg-white/[0.06] border border-white/10 text-[12px] text-white font-heading">'+t+'</span>';}).join('') +
+              ['Faire Festpreise','Mehr Speicher','Schlüsselfertig','Inhabergeführt'].map(function(t){return '<span class="px-3 py-1 rounded-full bg-white/[0.06] border border-white/10 text-[12px] text-white font-heading">'+t+'</span>';}).join('') +
             '</div>' +
           '</div>' +
           '<div>' +
@@ -99,7 +99,7 @@
         '<h2 class="font-heading" style="font-weight:900;color:#14171C;font-size:clamp(1.65rem,3.3vw,2.35rem);line-height:1.08;margin-bottom:0.85rem">In 30 Sekunden zu Ihrer <span style="background:#F5B301;color:#1A1402;padding:0 0.12em;border-radius:8px;-webkit-box-decoration-break:clone;box-decoration-break:clone">kostenlosen Einschätzung</span></h2>' +
         '<p class="mx-auto" style="color:#525A64;font-size:15px;line-height:1.55;max-width:30rem">Ein paar kurze Fragen genügen. Ehrliche Einschätzung, fairer Festpreis, absolut unverbindlich.</p>' +
         '<div class="flex flex-wrap items-center justify-center" style="gap:0.5rem 1.15rem;margin-top:1.1rem">' +
-          ['Keine Anzahlung','Mehr Speicher','Faire Festpreise','100% unverbindlich'].map(function(t){return '<span class="inline-flex items-center font-heading" style="gap:0.4rem;font-size:13px;font-weight:600;color:#3D2C00"><span class="inline-flex items-center justify-center" style="width:18px;height:18px;border-radius:50%;background:#F5B301;color:#1A1402">'+svg('check',11)+'</span>'+t+'</span>';}).join('') +
+          ['30 Jahre Garantie','Mehr Speicher','Faire Festpreise','100% unverbindlich'].map(function(t){return '<span class="inline-flex items-center font-heading" style="gap:0.4rem;font-size:13px;font-weight:600;color:#3D2C00"><span class="inline-flex items-center justify-center" style="width:18px;height:18px;border-radius:50%;background:#F5B301;color:#1A1402">'+svg('check',11)+'</span>'+t+'</span>';}).join('') +
         '</div>' +
       '</div>' +
       '<div class="mx-auto relative z-10" style="max-width:80rem">' +

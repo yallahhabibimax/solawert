@@ -521,7 +521,7 @@ const Hero = () => {
 
 /* ── Marquee ── */
 const Marquee = () => {
-  const items = ["Keine Anzahlung", "Mehr Speicher zum gleichen Preis", "Photovoltaik & Wärmepumpe", "30 Jahre Garantie auf Module", "Montage in 1 bis 3 Tagen", "Eine Woche Nachoptimierung", "Schlüsselfertig aus einer Hand", "In ganz NRW im Einsatz"];
+  const items = ["Faire Festpreise", "Mehr Speicher zum gleichen Preis", "Photovoltaik & Wärmepumpe", "30 Jahre Garantie auf Module", "Montage in 1 bis 3 Tagen", "Eine Woche Nachoptimierung", "Schlüsselfertig aus einer Hand", "In ganz NRW im Einsatz"];
   const row = [...items, ...items];
   return /*#__PURE__*/React.createElement("div", {
     className: "bg-ink py-4 border-y border-white/5"
@@ -546,7 +546,7 @@ const Marquee = () => {
 
 /* ── Features ── */
 const Features = () => {
-  const items = [{"ico": ICO.euro, "title": "Zahlung erst, wenn alles läuft", "desc": "Keine Anzahlung, keine Vorkasse. Sie zahlen erst nach vollständiger Inbetriebnahme, wenn wir Ihnen die funktionierende Anlage vorgeführt haben. Das volle Risiko liegt bei uns, nicht bei Ihnen."}, {"ico": ICO.leaf, "title": "Mehr Speicher zum gleichen Preis", "desc": "Der Speicher entscheidet über die Effizienz Ihrer Anlage. Wo andere knausern, um ihre Marge zu erhöhen, geben wir Ihnen oft rund 60 Prozent mehr Speicher zum gleichen Preis. Weder zu wenig noch zu viel, sondern genau passend."}, {"ico": ICO.search, "title": "Wir holen das Maximum heraus", "desc": "Optimierte String-Verteilung, sauber berechnete Spannung und Strom, ein leicht überdimensionierter Wechselrichter mit Reserve für die Zukunft. Wir behandeln jedes Projekt wie unser eigenes Zuhause."}];
+  const items = [{"ico": ICO.euro, "title": "Klarer Festpreis, keine Überraschungen", "desc": "Sie bekommen vorab einen festen Preis, schwarz auf weiß. Keine versteckten Posten und keine Nachforderungen, nachdem die Anlage läuft."}, {"ico": ICO.leaf, "title": "Mehr Speicher zum gleichen Preis", "desc": "Der Speicher entscheidet über die Effizienz Ihrer Anlage. Wo andere knausern, um ihre Marge zu erhöhen, geben wir Ihnen oft rund 60 Prozent mehr Speicher zum gleichen Preis. Weder zu wenig noch zu viel, sondern genau passend."}, {"ico": ICO.search, "title": "Wir holen das Maximum heraus", "desc": "Optimierte String-Verteilung, sauber berechnete Spannung und Strom, ein leicht überdimensionierter Wechselrichter mit Reserve für die Zukunft. Wir behandeln jedes Projekt wie unser eigenes Zuhause."}];
   return /*#__PURE__*/React.createElement("section", {
     className: "py-20 md:py-28 px-5 md:px-8 bg-white relative",
     "data-watermark": "VERTRAUEN"
@@ -694,14 +694,14 @@ const SonneSlider = () => {
     name: "Photovoltaik schlüsselfertig",
     tag: "Privat & Gewerbe",
     desc: "Komplette PV-Anlage für Ihr Dach, von der Planung über die Montage bis zur Anmeldung. Am Ende nutzen Sie nur noch Ihren eigenen Strom.",
-    foot: "0 € Anzahlung",
+    foot: "Zum Festpreis",
     sub: "Zahlung nach Abnahme"
   }, {
     img: "img/leistung-waermepumpe.png?v=1782000016",
     name: "Wärmepumpe schlüsselfertig",
     tag: "Privat & Gewerbe",
     desc: "Moderne Wärmepumpen, komplett geplant und installiert. Heizung und Photovoltaik sinnvoll kombiniert, damit Sie mit eigenem Strom günstig heizen.",
-    foot: "0 € Anzahlung",
+    foot: "Zum Festpreis",
     sub: "Zahlung nach Abnahme"
   }, {
     img: "img/leistung-speicher2.png?v=1782000018",
@@ -802,7 +802,7 @@ const SonneSlider = () => {
     style: {
       color: "#fff"
     }
-  }, "Die Kraft der ", React.createElement("span", { style: { color: "#F5B301" } }, "Sonne"), " nutzen"), /*#__PURE__*/React.createElement("p", {
+  }, "Ihr Dach wird zum ", React.createElement("span", { style: { color: "#F5B301" } }, "Kraftwerk")), /*#__PURE__*/React.createElement("p", {
     className: "text-base md:text-lg leading-relaxed",
     style: {
       color: "#fff"
@@ -892,7 +892,7 @@ const Segments = () => {
     className: "seg-amp"
   }, "&"), " Geschäftskunden")), /*#__PURE__*/React.createElement("div", {
     className: "seg-grid reveal"
-  }, card(ICO.home, "Für Privatkunden", "Machen Sie Ihren eigenen Strom, heizen Sie mit der Wärmepumpe und werden Sie unabhängiger von steigenden Preisen.", ["Eigenheim, Doppelhaus & Neubau", "Photovoltaik, Speicher & Wärmepumpe", "Keine Anzahlung, Zahlung nach Abnahme"], "img/privatkunden.jpg?v=1782170016"), card(ICO.building, "Für Geschäftskunden", "Senken Sie Ihre Energiekosten und nutzen Sie Ihre Dachflächen wirtschaftlich aus.", ["Gewerbe- & Industriedächer", "Hohe Eigenverbrauchsquote", "Wirtschaftlich durchgerechnet"], "img/about-3.jpg"))));
+  }, card(ICO.home, "Für Privatkunden", "Machen Sie Ihren eigenen Strom, heizen Sie mit der Wärmepumpe und werden Sie unabhängiger von steigenden Preisen.", ["Eigenheim, Doppelhaus & Neubau", "Photovoltaik, Speicher & Wärmepumpe", "Oft mehr Speicher zum gleichen Preis"], "img/privatkunden.jpg?v=1782170016"), card(ICO.building, "Für Geschäftskunden", "Senken Sie Ihre Energiekosten und nutzen Sie Ihre Dachflächen wirtschaftlich aus.", ["Gewerbe- & Industriedächer", "Hohe Eigenverbrauchsquote", "Wirtschaftlich durchgerechnet"], "img/about-3.jpg"))));
 };
 
 /* ── Process ── */
@@ -1187,7 +1187,7 @@ const About = () => /*#__PURE__*/React.createElement("section", {
 })), /*#__PURE__*/React.createElement("div", {
   className: "grid grid-cols-3 gap-4 mt-7",
   style: { background: "rgba(255,255,255,0.6)", backdropFilter: "blur(16px) saturate(1.15)", WebkitBackdropFilter: "blur(16px) saturate(1.15)", border: "1px solid rgba(20,23,28,0.09)", borderRadius: "20px", padding: "1.3rem 1.6rem", boxShadow: "0 22px 46px -28px rgba(20,23,28,0.28), inset 0 1px 0 rgba(255,255,255,0.7)" }
-}, [["30 Jahre", "Garantie auf Module"], ["0 €", "Anzahlung vorab"], ["1-3", "Tage Montage"]].map(([n, l], i) => /*#__PURE__*/React.createElement("div", {
+}, [["30 Jahre", "Garantie auf Module"], ["60 %", "mehr Speicher"], ["1-3", "Tage Montage"]].map(([n, l], i) => /*#__PURE__*/React.createElement("div", {
   key: i,
   className: "text-center sm:text-left"
 }, /*#__PURE__*/React.createElement("div", {
@@ -1198,7 +1198,7 @@ const About = () => /*#__PURE__*/React.createElement("section", {
 
 /* ── Values ── */
 const Values = () => {
-  const vals = [{"ico": ICO.search, "t": "Effizienz zuerst", "d": "Mit optimierter Planung, exakter String-Verteilung und dem richtigen Speicher holen wir das Maximum aus jedem Dach. Wirtschaftlichkeit steht bei uns an erster Stelle."}, {"ico": ICO.euro, "t": "Ehrliche Preise", "d": "Faire Festpreise, keine Anzahlung und keine versteckten Posten. Sie zahlen erst, wenn Ihre Anlage vollständig läuft und vorgeführt ist."}, {"ico": ICO.users, "t": "Betreuung statt Abschied", "d": "Nach der Montage sind wir nicht einfach weg. Eine Woche lang optimieren wir die Einstellungen gemeinsam mit Ihnen, bis wirklich alles passt."}];
+  const vals = [{"ico": ICO.search, "t": "Effizienz zuerst", "d": "Mit optimierter Planung, exakter String-Verteilung und dem richtigen Speicher holen wir das Maximum aus jedem Dach. Wirtschaftlichkeit steht bei uns an erster Stelle."}, {"ico": ICO.euro, "t": "Ehrliche Preise", "d": "Faire Festpreise und keine versteckten Posten. Den Preis legen wir vorab fest, damit Sie von Anfang an genau wissen, woran Sie sind."}, {"ico": ICO.users, "t": "Betreuung statt Abschied", "d": "Nach der Montage sind wir nicht einfach weg. Eine Woche lang optimieren wir die Einstellungen gemeinsam mit Ihnen, bis wirklich alles passt."}];
   return /*#__PURE__*/React.createElement("section", {
     className: "py-20 md:py-28 px-5 md:px-8 bg-ink-2 text-white relative overflow-hidden"
   }, /*#__PURE__*/React.createElement("div", {
@@ -1312,7 +1312,7 @@ const Testimonials = () => {
 
 /* ── FAQ ── */
 const FAQ = () => {
-  const faqs = [{"q": "Wie läuft die Zahlung ab? Muss ich etwas anzahlen?", "a": "Nein. Bei uns gibt es keine Anzahlung und keine Vorkasse. Sie zahlen erst nach der vollständigen Inbetriebnahme, wenn wir Ihnen die funktionierende Anlage vorgeführt haben."}, {"q": "Wie schnell bekomme ich einen Termin für den Baubeginn?", "a": "In der Regel ist jede Baustelle innerhalb von 2 bis 4 Wochen terminiert und fertig gebaut. Wir nennen Ihnen bei der Beratung einen konkreten Zeitrahmen."}, {"q": "Wie lange dauert die Montage?", "a": "Je nach Anlage und Umständen wie Wetter dauert die Montage meist nur 1 bis 3 Tage. Sie haben also nur kurz eine Baustelle am Haus."}, {"q": "Welche Garantien gibt es?", "a": "Auf die Solarmodule erhalten Sie 30 Jahre Garantie, auf Wechselrichter und Batteriespeicher jeweils 10 bis 15 Jahre. Sie sind also langfristig abgesichert."}, {"q": "Bauen Sie auch Wärmepumpen?", "a": "Ja. Wir bauen Wärmepumpen genauso schlüsselfertig wie Photovoltaik und bringen beides sinnvoll zusammen, damit Sie mit Ihrem eigenen Strom heizen."}, {"q": "Warum bekomme ich bei Ihnen mehr Speicher?", "a": "Der Speicher ist der entscheidende Effizienzfaktor einer Anlage. Viele bieten bewusst zu wenig an, um ihre Marge zu erhöhen. Wir machen das Gegenteil und geben Ihnen oft rund 60 Prozent mehr Speicher zum gleichen Preis."}, {"q": "In welchem Gebiet sind Sie tätig?", "a": "Unser Fokus liegt auf Nordrhein-Westfalen, von Wuppertal über Solingen und Remscheid bis Düsseldorf und Köln. Auf Wunsch sind wir aber in ganz Deutschland für Sie unterwegs."}];
+  const faqs = [{"q": "Bekomme ich vorab einen festen Preis?", "a": "Ja. Nach der Beratung erhalten Sie einen klaren Festpreis, schwarz auf weiß. Keine versteckten Posten und keine Nachforderungen, nachdem die Anlage läuft."}, {"q": "Wie schnell bekomme ich einen Termin für den Baubeginn?", "a": "In der Regel ist jede Baustelle innerhalb von 2 bis 4 Wochen terminiert und fertig gebaut. Wir nennen Ihnen bei der Beratung einen konkreten Zeitrahmen."}, {"q": "Wie lange dauert die Montage?", "a": "Je nach Anlage und Umständen wie Wetter dauert die Montage meist nur 1 bis 3 Tage. Sie haben also nur kurz eine Baustelle am Haus."}, {"q": "Welche Garantien gibt es?", "a": "Auf die Solarmodule erhalten Sie 30 Jahre Garantie, auf Wechselrichter und Batteriespeicher jeweils 10 bis 15 Jahre. Sie sind also langfristig abgesichert."}, {"q": "Bauen Sie auch Wärmepumpen?", "a": "Ja. Wir bauen Wärmepumpen genauso schlüsselfertig wie Photovoltaik und bringen beides sinnvoll zusammen, damit Sie mit Ihrem eigenen Strom heizen."}, {"q": "Warum bekomme ich bei Ihnen mehr Speicher?", "a": "Der Speicher ist der entscheidende Effizienzfaktor einer Anlage. Viele bieten bewusst zu wenig an, um ihre Marge zu erhöhen. Wir machen das Gegenteil und geben Ihnen oft rund 60 Prozent mehr Speicher zum gleichen Preis."}, {"q": "In welchem Gebiet sind Sie tätig?", "a": "Unser Fokus liegt auf Nordrhein-Westfalen, von Wuppertal über Solingen und Remscheid bis Düsseldorf und Köln. Auf Wunsch sind wir aber in ganz Deutschland für Sie unterwegs."}];
   return React.createElement("section", {
     id: "faq",
     className: "relative overflow-hidden px-5 md:px-8 py-20 md:py-28",
@@ -1324,13 +1324,13 @@ const FAQ = () => {
   }), React.createElement("div", {
     className: "max-w-7xl mx-auto relative z-10 grid lg:grid-cols-2 gap-12 lg:gap-16 items-start"
   }, React.createElement("div", {
-    className: "reveal-left",
+    className: "reveal-left faq-left",
     style: { position: "sticky", top: "110px" }
   }, React.createElement("span", {
     className: "faq-chip"
   }, React.createElement("span", { className: "faq-dot" }), "Häufige Fragen"), React.createElement("h2", {
     className: "font-heading",
-    style: { color: "#ffffff", fontWeight: 900, fontSize: "clamp(2.1rem,4.4vw,3.2rem)", lineHeight: "1.07", letterSpacing: "-0.01em", margin: "1.3rem 0 1.1rem" }
+    style: { color: "#ffffff", fontWeight: 900, fontSize: "clamp(2.4rem,5vw,3.9rem)", lineHeight: "1.04", letterSpacing: "-0.01em", margin: "1.3rem 0 1.1rem" }
   }, "Häufige ", React.createElement("span", { style: { color: "#F5B301" } }, "Fragen"), " und unsere Antworten"), React.createElement("p", {
     className: "font-body",
     style: { color: "rgba(255,255,255,0.62)", fontSize: "1.02rem", lineHeight: "1.6", maxWidth: "24rem", marginBottom: "2rem" }
