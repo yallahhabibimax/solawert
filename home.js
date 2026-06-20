@@ -10,6 +10,14 @@ const EMAIL = "info@solawert.de";
 
 /* utility icons (stroke, fragment-wrapped) */
 const ICO = {
+  sun: React.createElement(React.Fragment, null, React.createElement("circle", { cx: "12", cy: "12", r: "4" }), React.createElement("path", { d: "M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" })),
+  flame: React.createElement("path", { d: "M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.07-2.14-.22-4.05 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.15.43-2.29 1-3a2.5 2.5 0 0 0 2.5 2.5Z" }),
+  bolt: React.createElement("path", { d: "M13 2 4 14h7l-1 8 9-12h-7l1-8Z" }),
+  warehouse: React.createElement(React.Fragment, null, React.createElement("path", { d: "M3 21V8l9-4 9 4v13" }), React.createElement("path", { d: "M3 21h18" }), React.createElement("path", { d: "M8 21v-7h8v7" })),
+  key: React.createElement(React.Fragment, null, React.createElement("circle", { cx: "8", cy: "16", r: "3" }), React.createElement("path", { d: "M10 14 21 3" }), React.createElement("path", { d: "M18 6l2 2" }), React.createElement("path", { d: "M15 9l1.5 1.5" })),
+  drop: React.createElement("path", { d: "M12 2.7l5.66 5.66a8 8 0 1 1-11.31 0L12 2.7Z" }),
+  combo: React.createElement(React.Fragment, null, React.createElement("path", { d: "M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z" }), React.createElement("path", { d: "M2 12l8.58 3.91a2 2 0 0 0 1.66 0L21 12" }), React.createElement("path", { d: "M2 17l8.58 3.91a2 2 0 0 0 1.66 0L21 17" })),
+  arrowLeft: React.createElement(React.Fragment, null, React.createElement("path", { d: "M19 12H5" }), React.createElement("path", { d: "M12 19l-7-7 7-7" })),
   clock: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("circle", { cx: "12", cy: "12", r: "8" }), /*#__PURE__*/React.createElement("path", { d: "M12 8v4l2.5 2" })),
   pin: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("path", { d: "M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z" }), /*#__PURE__*/React.createElement("circle", { cx: "12", cy: "10", r: "2.5" })),
   shield: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("path", {
@@ -302,7 +310,7 @@ const Navbar = () => {
       gap: "0.2rem"
     }
   }, /*#__PURE__*/React.createElement("img", {
-    src: "img/logo-icon.png?v=1782000015",
+    src: "img/logo-icon-v2.png?v=1782000019",
     alt: "SolaWert Wuppertal",
     className: "sw-navlogo"
   }), /*#__PURE__*/React.createElement("span", {
@@ -1057,12 +1065,13 @@ const RegionBand = () => {
   }];
   return /*#__PURE__*/React.createElement("section", {
     id: "einzugsgebiet",
-    className: "px-5 md:px-8 pt-12 md:pt-16 pb-0 bg-white"
+    className: "px-3 md:px-5 pt-10 md:pt-12 pb-12 md:pb-16 bg-white"
   }, /*#__PURE__*/React.createElement("div", {
-    className: "max-w-7xl mx-auto"
+    className: "mx-auto",
+    style: { maxWidth: "1760px" }
   }, /*#__PURE__*/React.createElement("div", {
     className: "relative rounded-[28px] overflow-hidden reveal-scale",
-    style: { minHeight: "clamp(460px, 62vh, 620px)", display: "flex", alignItems: "center" }
+    style: { minHeight: "clamp(340px, 46vh, 460px)", display: "flex", alignItems: "center" }
   }, /*#__PURE__*/React.createElement("img", {
     src: "img/einsatz-team.jpg?v=1782000017",
     alt: "SolaWert montiert eine Photovoltaik-Anlage in NRW",
@@ -1136,7 +1145,11 @@ const BlogTeaser = () => {
 /* ── About ── */
 const About = () => /*#__PURE__*/React.createElement("section", {
   id: "ueber-uns",
-  className: "pt-10 md:pt-16 pb-20 md:pb-28 px-5 md:px-8 bg-white relative overflow-hidden"
+  className: "pb-20 md:pb-28 px-5 md:px-8 relative overflow-hidden",
+  style: {
+    background: "#FBF6E9",
+    paddingTop: "7.5rem"
+  }
 }, /*#__PURE__*/React.createElement("div", {
   className: "max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 about-grid relative z-10"
 }, /*#__PURE__*/React.createElement("div", {
