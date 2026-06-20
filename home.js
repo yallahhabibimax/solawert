@@ -1315,13 +1315,15 @@ const FAQ = () => {
   const faqs = [{"q": "Bekomme ich vorab einen festen Preis?", "a": "Ja. Nach der Beratung erhalten Sie einen klaren Festpreis, schwarz auf weiß. Keine versteckten Posten und keine Nachforderungen, nachdem die Anlage läuft."}, {"q": "Wie schnell bekomme ich einen Termin für den Baubeginn?", "a": "In der Regel ist jede Baustelle innerhalb von 2 bis 4 Wochen terminiert und fertig gebaut. Wir nennen Ihnen bei der Beratung einen konkreten Zeitrahmen."}, {"q": "Wie lange dauert die Montage?", "a": "Je nach Anlage und Umständen wie Wetter dauert die Montage meist nur 1 bis 3 Tage. Sie haben also nur kurz eine Baustelle am Haus."}, {"q": "Welche Garantien gibt es?", "a": "Auf die Solarmodule erhalten Sie 30 Jahre Garantie, auf Wechselrichter und Batteriespeicher jeweils 10 bis 15 Jahre. Sie sind also langfristig abgesichert."}, {"q": "Bauen Sie auch Wärmepumpen?", "a": "Ja. Wir bauen Wärmepumpen genauso schlüsselfertig wie Photovoltaik und bringen beides sinnvoll zusammen, damit Sie mit Ihrem eigenen Strom heizen."}, {"q": "Warum bekomme ich bei Ihnen mehr Speicher?", "a": "Der Speicher ist der entscheidende Effizienzfaktor einer Anlage. Viele bieten bewusst zu wenig an, um ihre Marge zu erhöhen. Wir machen das Gegenteil und geben Ihnen oft rund 60 Prozent mehr Speicher zum gleichen Preis."}, {"q": "In welchem Gebiet sind Sie tätig?", "a": "Unser Fokus liegt auf Nordrhein-Westfalen, von Wuppertal über Solingen und Remscheid bis Düsseldorf und Köln. Auf Wunsch sind wir aber in ganz Deutschland für Sie unterwegs."}];
   return React.createElement("section", {
     id: "faq",
-    className: "relative overflow-hidden px-5 md:px-8 py-20 md:py-28",
+    className: "relative px-5 md:px-8 py-20 md:py-28",
     style: { background: "#2A2E36" }
   }, React.createElement("div", {
     "aria-hidden": "true",
-    className: "absolute pointer-events-none",
+    className: "absolute inset-0 overflow-hidden pointer-events-none"
+  }, React.createElement("div", {
+    className: "absolute",
     style: { top: "-18%", left: "-12%", width: "640px", height: "640px", background: "radial-gradient(circle,rgba(245,179,1,0.12) 0%,transparent 62%)" }
-  }), React.createElement("div", {
+  })), React.createElement("div", {
     className: "max-w-7xl mx-auto relative z-10 grid lg:grid-cols-2 gap-12 lg:gap-16 items-start"
   }, React.createElement("div", {
     className: "reveal-left faq-left",
@@ -1450,8 +1452,8 @@ const Contact = () => {
     size: 18,
     sw: 2.4
   }, ICO.arrow))), React.createElement("div", { className: "sw-contact-card" }, React.createElement("span", { className: "sw-contact-ico" }, React.createElement(Svg, { size: 22 }, ICO.pin)), React.createElement("span", null, React.createElement("span", { className: "sw-contact-label" }, "Adresse"), React.createElement("span", { className: "sw-contact-value" }, "Friedrich-Ebert-Str. 55, 42103 Wuppertal"))), React.createElement("div", { className: "sw-contact-card" }, React.createElement("span", { className: "sw-contact-ico" }, React.createElement(Svg, { size: 22 }, ICO.clock)), React.createElement("span", null, React.createElement("span", { className: "sw-contact-label" }, "Erreichbarkeit"), React.createElement("span", { className: "sw-contact-value" }, "Mo bis Sa, 8 bis 18 Uhr")))))), /*#__PURE__*/React.createElement("div", {
-    className: "reveal-right border border-white/10 rounded-3xl p-6 md:p-7", style: { background: "linear-gradient(162deg,#1B2029 0%,#14171C 58%)", boxShadow: "0 40px 80px -34px rgba(20,23,28,0.5), inset 0 1px 0 rgba(255,255,255,0.07)", borderTop: "1px solid rgba(245,179,1,0.25)" }
-  }, sent ? /*#__PURE__*/React.createElement("div", {
+    className: "reveal-right border border-white/10 rounded-3xl p-6 md:p-7 relative overflow-hidden", style: { background: "linear-gradient(162deg,#1B2029 0%,#14171C 58%)", boxShadow: "0 40px 80px -34px rgba(20,23,28,0.5), inset 0 1px 0 rgba(255,255,255,0.07)", borderTop: "1px solid rgba(245,179,1,0.25)" }
+  }, /*#__PURE__*/React.createElement("div", { "aria-hidden": "true", style: { position: "absolute", top: "-18%", right: "-14%", width: "320px", height: "320px", background: "radial-gradient(circle, rgba(245,179,1,0.14) 0%, transparent 70%)", pointerEvents: "none" } }), /*#__PURE__*/React.createElement("div", { style: { position: "relative" } }, sent ? /*#__PURE__*/React.createElement("div", {
     className: "text-center py-12"
   }, /*#__PURE__*/React.createElement("div", {
     className: "w-16 h-16 mx-auto rounded-full bg-brand text-brand-text flex items-center justify-center mb-5"
@@ -1469,7 +1471,9 @@ const Contact = () => {
     size: 18
   }, ICO.phone), " Lieber direkt anrufen")) : /*#__PURE__*/React.createElement("form", {
     onSubmit: submit
-  }, /*#__PURE__*/React.createElement("h3", {
+  }, /*#__PURE__*/React.createElement("span", {
+    style: { display: "inline-flex", alignItems: "center", gap: "7px", fontFamily: "'Archivo', system-ui, sans-serif", fontWeight: 600, fontSize: "11px", letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--accent)", background: "rgba(245,179,1,0.10)", border: "1px solid rgba(245,179,1,0.28)", borderRadius: "999px", padding: "5px 12px", marginBottom: "14px" }
+  }, /*#__PURE__*/React.createElement("span", { style: { width: "6px", height: "6px", borderRadius: "50%", background: "var(--accent)" } }), "Antwort meist in 24 Std."), /*#__PURE__*/React.createElement("h3", {
     className: "text-2xl font-heading font-bold mb-1.5 text-white"
   }, "Kostenlosen Rückruf anfordern"), /*#__PURE__*/React.createElement("p", {
     className: "text-white/55 text-sm mb-5"
@@ -1539,7 +1543,7 @@ const Contact = () => {
   }, "Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Daten gemäß unserer ", /*#__PURE__*/React.createElement("a", {
     href: "datenschutz",
     className: "underline hover:text-brand"
-  }, "Datenschutzerklärung"), " zu."))))));
+  }, "Datenschutzerklärung"), " zu.")))))));
 };
 
 /* ── Sticky mobile call bar ── */
