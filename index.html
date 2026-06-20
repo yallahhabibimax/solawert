@@ -28,13 +28,35 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin href="fonts/inter-latin.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin href="fonts/archivo-latin.woff2">
 
-  <link rel="stylesheet" href="tailwind.css?v=1781898214">
-  <link rel="stylesheet" href="styles.css?v=1781898214">
-  <link rel="modulepreload" href="home.js?v=1781898214">
+  <link rel="stylesheet" href="tailwind.css?v=1782170001">
+  <link rel="stylesheet" href="styles.css?v=1782170001">
+  <link rel="modulepreload" href="home.js?v=1782170001">
 </head>
 <body class="font-body antialiased overflow-x-hidden" style="background:#FFFFFF;color:#14171C">
   <div id="scroll-progress"></div>
   <div id="root"></div>
+  <script>
+  (function(){
+    try{ history.scrollRestoration = 'manual'; }catch(e){}
+    var KEY = 'sw_scrollY';
+    addEventListener('scroll', function(){ try{ sessionStorage.setItem(KEY, String(Math.round(scrollY))); }catch(e){} }, {passive:true});
+    function restore(){
+      var y = 0; try{ y = parseInt(sessionStorage.getItem(KEY) || '0', 10); }catch(e){}
+      if(!y) return;
+      var tries = 0, userScrolled = false;
+      function onUser(){ userScrolled = true; }
+      addEventListener('wheel', onUser, {passive:true, once:true});
+      addEventListener('touchmove', onUser, {passive:true, once:true});
+      var iv = setInterval(function(){
+        if(userScrolled){ clearInterval(iv); return; }
+        window.scrollTo(0, y); tries++;
+        if(tries > 60 || Math.abs(scrollY - y) < 2) clearInterval(iv);
+      }, 40);
+    }
+    if(document.readyState === 'complete') restore();
+    else addEventListener('load', restore);
+  })();
+  </script>
   <!-- SEO-/AI-Crawler-Fallback: per CSS unsichtbar (nur im Roh-HTML fuer Crawler), nach React-Mount aus dem DOM entfernt; Nutzer sehen ihn nie -->
   
 
@@ -44,7 +66,7 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 
-  <script type="module" src="home.js?v=1781898214"></script>
-  <script src="partials.js?v=1781898214"></script>
+  <script type="module" src="home.js?v=1782170001"></script>
+  <script src="partials.js?v=1782170001"></script>
 </body>
 </html>

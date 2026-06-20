@@ -15,7 +15,7 @@
       '<div class="max-w-7xl mx-auto">' +
         '<div class="grid md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.1fr] gap-10 lg:gap-8 pb-12 border-b border-white/10">' +
           '<div>' +
-            '<img src="img/logo.png" alt="SolaWert" class="h-11 w-auto mb-4">' +
+            '<img src="img/logo-light.png" alt="SolaWert · Solarenergie & Wertsteigerung" class="h-16 w-auto mb-4">' +
             '<p class="text-white/55 text-sm leading-relaxed max-w-xs mb-5">Ihr inhabergeführter Partner für Photovoltaik und Wärmepumpen in Wuppertal und ganz NRW. Effizient, ehrlich und fair.</p>' +
             '<div class="flex flex-wrap gap-2">' +
               ['Keine Anzahlung','Mehr Speicher','Schlüsselfertig','Inhabergeführt'].map(function(t){return '<span class="px-3 py-1 rounded-full bg-white/[0.06] border border-white/10 text-[12px] text-white/70 font-heading">'+t+'</span>';}).join('') +
@@ -86,19 +86,20 @@
 
   function sectionShell() {
     return '' +
-    '<section id="anfrage" class="relative py-14 md:py-16 px-5 md:px-8 bg-surface-alt overflow-hidden">' +
-      '<div class="absolute top-[-15%] right-[-8%] w-[45%] h-[70%] rounded-full pointer-events-none" style="background:radial-gradient(ellipse, rgba(65,166,54,0.14) 0%, transparent 70%)"></div>' +
-      '<div class="max-w-7xl mx-auto grid lg:grid-cols-[0.82fr_1.18fr] gap-10 lg:gap-14 items-center relative z-10">' +
-        '<div>' +
-          '<span class="text-brand-deep font-heading font-semibold tracking-[0.16em] uppercase text-xs mb-3 block">Kostenlose Anfrage</span>' +
-          '<h2 class="text-3xl md:text-[2.5rem] font-heading font-bold text-content leading-[1.1] mb-4">In 30 Sekunden zu Ihrer kostenlosen Einschätzung</h2>' +
-          '<p class="text-content-secondary text-[15.5px] leading-relaxed mb-7 max-w-md">Beantworten Sie ein paar kurze Fragen. Wir melden uns schnellstmöglich mit einer ehrlichen Einschätzung und einem fairen Festpreis, absolut unverbindlich.</p>' +
-          '<ul class="space-y-3">' +
-            ['Keine Anzahlung, Zahlung nach Abnahme','Mehr Speicher zum gleichen Preis','100% unverbindlich & kostenlos','Faire Festpreise ohne versteckte Kosten'].map(function(t){return '<li class="flex items-center gap-3 text-content text-[14.5px] font-medium"><span class="w-6 h-6 rounded-full bg-brand/15 text-brand-deep flex items-center justify-center shrink-0">'+svg('check',14)+'</span>'+t+'</li>';}).join('') +
-          '</ul>' +
-          '<div class="flex items-center gap-3 mt-7"><span class="w-6 h-6 rounded-full bg-brand/15 text-brand-deep flex items-center justify-center shrink-0">'+svg('check',14)+'</span><span class="text-sm text-content-secondary"><strong class="text-content font-heading font-bold">Keine Anzahlung.</strong> Zahlung erst nach Inbetriebnahme.</span></div>' +
+    '<section id="anfrage" class="relative py-16 md:py-24 px-5 md:px-8 bg-surface-alt overflow-hidden">' +
+      '<div class="max-w-7xl mx-auto rounded-[28px] overflow-hidden shadow-2xl grid lg:grid-cols-[0.82fr_1.18fr] relative z-10">' +
+        '<div class="relative p-8 md:p-10 flex flex-col justify-center overflow-hidden" style="background:linear-gradient(155deg,#F8C223 0%,#F5B301 52%,#E3A200 100%)">' +
+          '<div class="absolute top-[-20%] right-[-15%] w-[65%] h-[60%] rounded-full pointer-events-none" style="background:radial-gradient(ellipse,rgba(255,255,255,0.30) 0%,transparent 70%)"></div>' +
+          '<div class="relative z-10">' +
+            '<span class="inline-block px-3.5 py-1.5 rounded-full font-heading font-semibold tracking-[0.16em] uppercase text-[11px] mb-5" style="background:rgba(20,16,2,0.12);color:#241B02">Kostenlose Anfrage</span>' +
+            '<h2 class="text-3xl md:text-[2.6rem] font-heading font-bold leading-[1.08] mb-4" style="color:#1A1402">In 30 Sekunden zu Ihrer kostenlosen Einschätzung</h2>' +
+            '<p class="text-[15.5px] leading-relaxed mb-7 max-w-md" style="color:rgba(26,20,2,0.82)">Ein paar kurze Fragen genügen. Wir melden uns mit einer ehrlichen Einschätzung und einem fairen Festpreis, absolut unverbindlich.</p>' +
+            '<ul class="space-y-3.5">' +
+              ['Keine Anzahlung, Zahlung nach Abnahme','Mehr Speicher zum gleichen Preis','Faire Festpreise ohne versteckte Kosten','100% unverbindlich & kostenlos'].map(function(t){return '<li class="flex items-center gap-3 text-[14.5px] font-medium" style="color:#1A1402"><span class="w-6 h-6 rounded-full flex items-center justify-center shrink-0" style="background:#1A1402;color:#F5B301">'+svg('check',13)+'</span>'+t+'</li>';}).join('') +
+            '</ul>' +
+          '</div>' +
         '</div>' +
-        '<div data-kf-card class="bg-white rounded-3xl border border-black/5 shadow-[0_30px_70px_-30px_rgba(20,23,28,0.32)] p-6 md:p-8"></div>' +
+        '<div data-kf-card class="bg-white p-6 md:p-9 lg:p-10"></div>' +
       '</div>' +
     '</section>';
   }
