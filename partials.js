@@ -15,7 +15,10 @@
       '<div class="max-w-7xl mx-auto">' +
         '<div class="grid md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.1fr] gap-10 lg:gap-8 pb-12 border-b border-white/10">' +
           '<div>' +
-            '<img src="img/logo-light.png" alt="SolaWert · Solarenergie & Wertsteigerung" class="h-16 w-auto mb-4">' +
+            '<a href="#top" style="display:inline-flex;align-items:center;gap:4px;text-decoration:none;margin-bottom:1rem">' +
+              '<img src="img/logo-icon.png?v=1782000015" alt="SolaWert" class="w-auto" style="height:56px">' +
+              '<span class="font-heading font-bold tracking-tight leading-none" style="font-size:24px"><span class="text-white">Sola</span><span class="text-brand">Wert</span></span>' +
+            '</a>' +
             '<p class="text-white text-sm leading-relaxed max-w-xs mb-5">Ihr inhabergeführter Partner für Photovoltaik und Wärmepumpen in Wuppertal und ganz NRW. Effizient, ehrlich und fair.</p>' +
             '<div class="flex flex-wrap gap-2">' +
               ['Keine Anzahlung','Mehr Speicher','Schlüsselfertig','Inhabergeführt'].map(function(t){return '<span class="px-3 py-1 rounded-full bg-white/[0.06] border border-white/10 text-[12px] text-white font-heading">'+t+'</span>';}).join('') +
@@ -97,7 +100,7 @@
           ['Keine Anzahlung','Mehr Speicher','Faire Festpreise','100% unverbindlich'].map(function(t){return '<span class="inline-flex items-center font-heading" style="gap:0.4rem;font-size:13px;font-weight:600;color:#3D2C00"><span class="inline-flex items-center justify-center" style="width:18px;height:18px;border-radius:50%;background:#F5B301;color:#1A1402">'+svg('check',11)+'</span>'+t+'</span>';}).join('') +
         '</div>' +
       '</div>' +
-      '<div class="mx-auto relative z-10" style="max-width:46rem">' +
+      '<div class="mx-auto relative z-10" style="max-width:72rem">' +
         '<div data-kf-card class="bg-white" style="border-radius:24px;box-shadow:0 40px 90px -45px rgba(20,23,28,0.45);border:1px solid rgba(20,23,28,0.06);padding:clamp(1.4rem,3vw,2.25rem)"></div>' +
       '</div>' +
     '</section>';
@@ -113,9 +116,9 @@
 
     function stepHTML() {
       if (step === 1) return '<div class="step-in"><h3 class="text-lg md:text-xl font-heading font-bold text-content mb-1">Worum geht es?</h3><p class="text-content-secondary text-sm mb-5">Tippen Sie auf das passende Anliegen.</p>'
-        + '<div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">'
-        + PESTS.map(function(p){return '<button type="button" data-pick="pest" data-val="'+p[0]+'" class="'+tile(data.pest===p[0])+'"><span class="inline-flex mb-1.5 text-brand-deep">'+p[1]+'</span><span class="text-[12.5px] font-heading font-semibold text-content">'+p[0]+'</span></button>';}).join('')
-        + '<button type="button" data-pick="pest" data-val="Sonstiges / unklar" class="choice-tile rounded-2xl border p-3 text-[13px] font-heading font-semibold text-content col-span-2 sm:col-span-4 '+(data.pest==='Sonstiges / unklar'?'choice-active':'border-black/10')+'">Sonstiges / ich bin nicht sicher</button>'
+        + '<div class="grid grid-cols-2 sm:grid-cols-4 gap-3.5">'
+        + PESTS.map(function(p,qi){return '<button type="button" data-pick="pest" data-val="'+p[0]+'" class="sw-qtile'+(data.pest===p[0]?' sw-qtile-active':'')+'" style="background-image:url(img/anfrage/q'+(qi+1)+'.jpg)"><span class="sw-qtile-ic">'+p[1]+'</span><span class="sw-qtile-lb">'+p[0]+'</span></button>';}).join('')
+        + '<button type="button" data-pick="pest" data-val="Sonstiges / unklar" class="sw-qtile-wide col-span-2 sm:col-span-4'+(data.pest==='Sonstiges / unklar'?' sw-qtile-active':'')+'">Sonstiges / ich bin nicht sicher</button>'
         + '</div></div>';
       if (step === 2) return '<div class="step-in"><h3 class="text-lg md:text-xl font-heading font-bold text-content mb-1">Wo soll die Anlage entstehen?</h3><p class="text-content-secondary text-sm mb-5">Damit wir die passende Lösung wählen.</p><div class="grid sm:grid-cols-2 gap-3">'
         + [['Privathaushalt','Wohnung, Haus oder Garten','home'],['Unternehmen','Gastronomie, Handel, Büro, Lager','building']].map(function(o){return '<button type="button" data-pick="type" data-val="'+o[0]+'" class="choice-tile rounded-2xl border p-5 text-left flex items-start gap-3 '+(data.type===o[0]?'choice-active':'border-black/10')+'"><span class="w-11 h-11 rounded-xl bg-brand/15 text-brand-deep flex items-center justify-center shrink-0">'+svg(o[2],22)+'</span><span><span class="block font-heading font-bold text-content">'+o[0]+'</span><span class="block text-[12.5px] text-content-secondary leading-snug mt-0.5">'+o[1]+'</span></span></button>';}).join('')
@@ -156,7 +159,7 @@
       card.innerHTML =
         '<div class="flex items-center justify-between mb-1.5"><span class="text-xs font-heading font-semibold text-content-secondary uppercase tracking-wider">Schritt '+step+' von '+TOTAL+'</span><span class="text-xs text-content-secondary">ca. 30 Sek.</span></div>'
         + '<div class="h-1.5 rounded-full bg-surface-alt overflow-hidden mb-6"><div class="h-full rounded-full bg-brand transition-all duration-500 ease-out" style="width:'+(step/TOTAL*100)+'%"></div></div>'
-        + '<div class="min-h-[296px]">' + stepHTML() + '</div>'
+        + '<div class="min-h-[296px]" style="'+(step===1?'':'max-width:620px;margin:0 auto;')+'">' + stepHTML() + '</div>'
         + nav;
     }
 
