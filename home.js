@@ -437,27 +437,30 @@ const Hero = () => {
   }, ICO.phone), "Anrufen")), /*#__PURE__*/React.createElement("div", {
     className: "hero-el sw-cards"
   }, /*#__PURE__*/React.createElement("div", {
-    className: "sw-card"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "sw-card__b"
-  }, "0 €"), /*#__PURE__*/React.createElement("div", {
-    className: "sw-card__s"
-  }, "Anzahlung – Zahlung", /*#__PURE__*/React.createElement("br", null), "erst nach Abnahme")), /*#__PURE__*/React.createElement("div", {
-    className: "sw-card"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "sw-card__b"
-  }, "30 J."), /*#__PURE__*/React.createElement("div", {
-    className: "sw-card__s"
-  }, "Garantie auf Ihre", /*#__PURE__*/React.createElement("br", null), "Solarmodule")), /*#__PURE__*/React.createElement("div", {
     className: "sw-card sw-card--img"
   }, /*#__PURE__*/React.createElement("img", {
-    src: "img/about-2.jpg",
-    alt: "Einfamilienhaus mit Photovoltaik-Anlage in NRW"
-  }), /*#__PURE__*/React.createElement("span", {
-    className: "sw-neu"
-  }, "Neu"), /*#__PURE__*/React.createElement("div", {
+    src: "img/leistung-waermepumpe.png?v=1782000016",
+    alt: "Wärmepumpe schlüsselfertig installiert"
+  }), /*#__PURE__*/React.createElement("div", {
     className: "sw-card__cap"
-  }, /*#__PURE__*/React.createElement("b", null, "Mehr Solarenergie für NRW"), /*#__PURE__*/React.createElement("span", null, "Schlüsselfertig zum Festpreis"))))), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("b", null, "Wärmepumpen"), /*#__PURE__*/React.createElement("span", null, "Schlüsselfertig installiert"))), /*#__PURE__*/React.createElement("div", {
+    className: "sw-card sw-card--img"
+  }, /*#__PURE__*/React.createElement("img", {
+    src: "img/hero-mitte-haus.jpg?v=1782000018",
+    alt: "Fertiges Photovoltaik-Projekt an einem Wohnhaus in NRW"
+  }), /*#__PURE__*/React.createElement("div", {
+    className: "sw-card__cap"
+  }, /*#__PURE__*/React.createElement("b", null, "Dachmontage"), /*#__PURE__*/React.createElement("span", null, "Sauber & fachgerecht"))), /*#__PURE__*/React.createElement("div", {
+    className: "sw-card sw-card--img"
+  }, /*#__PURE__*/React.createElement("img", {
+    src: "img/projekt-2.jpg?v=1782000013",
+    alt: "Solarmodule auf einem Wohnhausdach in Nahaufnahme",
+    style: {
+      objectFit: "contain"
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    className: "sw-card__cap"
+  }, /*#__PURE__*/React.createElement("b", null, "Solaranlagen"), /*#__PURE__*/React.createElement("span", null, "Photovoltaik aufs Dach"))))), /*#__PURE__*/React.createElement("div", {
     className: "hero-el sw-hero__right"
   }, /*#__PURE__*/React.createElement("div", {
     className: "sw-founder"
@@ -802,7 +805,7 @@ const SonneSlider = () => {
     style: {
       color: "#fff"
     }
-  }, "Die Kraft der Sonne nutzen"), /*#__PURE__*/React.createElement("p", {
+  }, "Die Kraft der ", React.createElement("span", { style: { color: "#F5B301" } }, "Sonne"), " nutzen"), /*#__PURE__*/React.createElement("p", {
     className: "text-base md:text-lg leading-relaxed",
     style: {
       color: "#fff"
@@ -977,7 +980,7 @@ const CaseStudies = () => {
     className: "max-w-2xl mx-auto text-center mb-12 md:mb-14 reveal"
   }, React.createElement("h2", {
     className: "text-3xl md:text-[2.7rem] font-heading font-black text-content leading-tight mb-4"
-  }, "Vom Problem zur Lösung"), React.createElement("p", {
+  }, "Vom Problem zur ", React.createElement("span", { style: { color: "#F5B301" } }, "Lösung")), React.createElement("p", {
     className: "text-content-secondary text-lg"
   }, "Jedes Projekt beginnt mit einer Herausforderung. So haben wir sie in NRW gelöst.")), React.createElement("div", {
     className: "grid sm:grid-cols-2 lg:grid-cols-3 gap-6 spot"
@@ -1073,7 +1076,7 @@ const RegionBand = () => {
     className: "text-brand font-heading font-semibold tracking-[0.16em] uppercase text-xs mb-3 block"
   }, "Einsatzgebiet"), /*#__PURE__*/React.createElement("h2", {
     className: "text-3xl md:text-[2.6rem] font-heading font-black leading-[1.1] mb-5"
-  }, "In Wuppertal zu Hause, in ganz NRW im Einsatz"), /*#__PURE__*/React.createElement("p", {
+  }, "In ", React.createElement("span", { style: { color: "#F5B301" } }, "Wuppertal"), " zu Hause, in ganz NRW im Einsatz"), /*#__PURE__*/React.createElement("p", {
     className: "text-white/75 text-lg leading-relaxed mb-8"
   }, "Unseren Sitz haben wir in Wuppertal. Geplant und montiert wird in ganz Nordrhein-Westfalen, auf Wunsch sind wir auch deutschlandweit für Sie unterwegs."), /*#__PURE__*/React.createElement("div", {
     className: "flex flex-wrap items-center gap-3"
@@ -1211,7 +1214,7 @@ const Values = () => {
     className: "text-brand font-heading font-semibold tracking-[0.16em] uppercase text-xs mb-3 block"
   }, "Unsere Werte"), /*#__PURE__*/React.createElement("h2", {
     className: "text-3xl md:text-[2.7rem] font-heading font-black leading-tight"
-  }, "Unsere Werte, Ihr Vertrauen")), /*#__PURE__*/React.createElement("div", {
+  }, "Unsere Werte, Ihr ", React.createElement("span", { style: { color: "#F5B301" } }, "Vertrauen"))), /*#__PURE__*/React.createElement("div", {
     className: "grid md:grid-cols-3 gap-6"
   }, vals.map((v, i) => /*#__PURE__*/React.createElement("div", {
     key: i,
@@ -1278,7 +1281,7 @@ const Testimonials = () => {
     className: "reveal card-lift rounded-3xl p-7 border border-white/10 flex flex-col",
     style: {
       transitionDelay: i % 3 * 0.1 + 's',
-      background: "#2A2E36"
+      background: "#3A4049"
     }
   }, /*#__PURE__*/React.createElement("div", {
     className: "flex items-center gap-3 mb-3"
