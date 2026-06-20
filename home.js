@@ -948,9 +948,9 @@ const CaseStudies = () => {
     p: "Die Stromrechnung stieg Jahr für Jahr, und das große Satteldach lag ungenutzt in der Sonne.",
     l: "Schlüsselfertige Anlage auf der Sonnenseite. Heute kommt der Großteil des Tagesstroms vom eigenen Dach statt teuer aus dem Netz."
   }, {
-    img: "img/cases/montage-team.jpg", tag: "Schlüsselfertig", ort: "Remscheid", t: "Alles aus einer Hand in Remscheid",
-    p: "Der Eigentümer hatte keine Lust, Module, Elektrik und Anmeldung über drei verschiedene Firmen zu koordinieren.",
-    l: "Planung, Montage, Elektrik und Anmeldung kamen komplett von uns. In wenigen Tagen stand die Anlage, ohne Schnittstellen-Chaos."
+    img: "img/cases/komplett-pv.jpg", tag: "Schlüsselfertig", ort: "Remscheid", t: "Alles aus einer Hand in Remscheid",
+    p: "Ein erstes Angebot kam von drei verschiedenen Firmen, und bei der kleinsten Rückfrage schob einer die Verantwortung auf den anderen.",
+    l: "Bei uns kam alles aus einer Hand: Planung, Montage, Elektrik und Anmeldung. Ein Ansprechpartner, ein Termin, kein Hin und Her."
   }, {
     img: "img/cases/doppelhaus-pv.jpg", tag: "Doppelhaus", ort: "Velbert", t: "Doppelhaushälfte in Velbert",
     p: "Begrenzte Dachfläche bei dem Wunsch nach möglichst viel Ertrag.",
@@ -964,9 +964,9 @@ const CaseStudies = () => {
     p: "Der frisch gebaute Bungalow verbrauchte vom ersten Tag an Strom, der komplett teuer aus dem Netz kam.",
     l: "PV auf Haus und Carport direkt mitgeplant und schlüsselfertig gebaut. Eigener Strom ab dem ersten Tag, statt voll auf den Netzbezug angewiesen zu sein."
   }, {
-    img: "img/cases/monitoring.jpg", tag: "Eigenverbrauch", ort: "Wülfrath", t: "Eigenverbrauch im Blick in Wülfrath",
-    p: "Nach der alten Stromabrechnung wusste die Familie nie, wann sie eigentlich am meisten verbraucht.",
-    l: "Das Hybrid-System zeigt jetzt live, was läuft: Sonne lädt den Speicher, das Haus nutzt den eigenen Strom, der Rest geht ins Netz."
+    img: "img/cases/schwarze-module.jpg", tag: "Photovoltaik", ort: "Wülfrath", t: "Schwarze Module in Wülfrath",
+    p: "Die Eigentümer wollten unbedingt eigenen Strom, hatten aber Sorge, dass auffällige Module mit dicken Rahmen das Haus verschandeln.",
+    l: "Vollschwarze Module, sauber um Kamin und Dachfenster verlegt. Optisch ruhig und unauffällig, beim Ertrag trotzdem ganz vorne."
   }];
   return React.createElement("section", {
     id: "referenzen",

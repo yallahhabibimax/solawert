@@ -100,7 +100,7 @@
           ['Keine Anzahlung','Mehr Speicher','Faire Festpreise','100% unverbindlich'].map(function(t){return '<span class="inline-flex items-center font-heading" style="gap:0.4rem;font-size:13px;font-weight:600;color:#3D2C00"><span class="inline-flex items-center justify-center" style="width:18px;height:18px;border-radius:50%;background:#F5B301;color:#1A1402">'+svg('check',11)+'</span>'+t+'</span>';}).join('') +
         '</div>' +
       '</div>' +
-      '<div class="mx-auto relative z-10" style="max-width:72rem">' +
+      '<div class="mx-auto relative z-10" style="max-width:80rem">' +
         '<div data-kf-card class="bg-white" style="border-radius:24px;box-shadow:0 40px 90px -45px rgba(20,23,28,0.45);border:1px solid rgba(20,23,28,0.06);padding:clamp(1.4rem,3vw,2.25rem)"></div>' +
       '</div>' +
     '</section>';
