@@ -923,14 +923,15 @@ const Process = () => {
     className: "grid sm:grid-cols-2 lg:grid-cols-4 gap-5"
   }, steps.map((s, i) => /*#__PURE__*/React.createElement("div", {
     key: i,
-    className: "reveal rounded-3xl p-7 bg-white/[0.04] border border-white/10 relative overflow-hidden card-lift",
+    className: "reveal sw-value rounded-3xl p-7",
     style: {
       transitionDelay: i * 0.1 + 's'
     }
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "absolute -top-3 -right-2 text-7xl font-heading font-bold text-white/[0.05] select-none"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "sw-value__num",
+    "aria-hidden": "true"
   }, s.n), /*#__PURE__*/React.createElement("div", {
-    className: "w-12 h-12 rounded-xl bg-brand text-brand-text flex items-center justify-center mb-5 relative z-10"
+    className: "sw-value__ico w-12 h-12 rounded-xl bg-brand text-brand-text flex items-center justify-center mb-5 relative z-10"
   }, /*#__PURE__*/React.createElement(Svg, {
     size: 23,
     sw: 1.8
@@ -1216,12 +1217,15 @@ const Values = () => {
     className: "grid md:grid-cols-3 gap-6"
   }, vals.map((v, i) => /*#__PURE__*/React.createElement("div", {
     key: i,
-    className: "reveal rounded-3xl p-8 bg-white/[0.04] border border-white/10 card-lift",
+    className: "reveal sw-value rounded-3xl p-8",
     style: {
       transitionDelay: i * 0.12 + 's'
     }
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "w-14 h-14 rounded-2xl bg-brand text-brand-text flex items-center justify-center mb-6"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "sw-value__num",
+    "aria-hidden": "true"
+  }, String(i + 1).padStart(2, "0")), /*#__PURE__*/React.createElement("div", {
+    className: "sw-value__ico w-14 h-14 rounded-2xl bg-brand text-brand-text flex items-center justify-center mb-6"
   }, /*#__PURE__*/React.createElement(Svg, {
     size: 26,
     sw: 1.8
@@ -1327,11 +1331,9 @@ const FAQ = () => {
     className: "max-w-7xl mx-auto relative z-10 grid lg:grid-cols-2 gap-12 lg:gap-16 items-start"
   }, React.createElement("div", {
     className: "reveal-left faq-left"
-  }, React.createElement("span", {
-    className: "faq-chip"
-  }, React.createElement("span", { className: "faq-dot" }), "Häufige Fragen"), React.createElement("h2", {
+  }, React.createElement("h2", {
     className: "font-heading",
-    style: { color: "#ffffff", fontWeight: 900, fontSize: "clamp(2.4rem,5vw,3.9rem)", lineHeight: "1.04", letterSpacing: "-0.01em", margin: "1.3rem 0 1.1rem" }
+    style: { color: "#ffffff", fontWeight: 900, fontSize: "clamp(2.4rem,5vw,3.9rem)", lineHeight: "1.04", letterSpacing: "-0.01em", margin: "0 0 1.1rem" }
   }, "Häufige ", React.createElement("span", { style: { color: "#F5B301" } }, "Fragen"), " und unsere Antworten"), React.createElement("p", {
     className: "font-body",
     style: { color: "rgba(255,255,255,0.62)", fontSize: "1.02rem", lineHeight: "1.6", maxWidth: "24rem", marginBottom: "2rem" }
@@ -1342,7 +1344,7 @@ const FAQ = () => {
     style: { display: "flex", flexDirection: "column", gap: "3px" }
   }, React.createElement("span", { className: "faq-cta-label" }, "Bleibt eine Frage?"), React.createElement("span", { className: "faq-cta-title font-heading" }, "Direkt mit uns sprechen"), React.createElement("span", { className: "faq-cta-sub font-body" }, "Erstgespräch · unverbindlich")), React.createElement("span", {
     className: "faq-cta-arrow"
-  }, React.createElement(Svg, { size: 20, sw: 2.4 }, ICO.arrow)))), React.createElement("div", {
+  }, React.createElement(Svg, { size: 26, sw: 2.4 }, ICO.arrow)))), React.createElement("div", {
     className: "faq-list"
   }, faqs.map((f, i) => React.createElement("details", {
     key: i,
