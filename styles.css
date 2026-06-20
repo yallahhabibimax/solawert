@@ -262,12 +262,18 @@ section[id] { scroll-margin-top: 96px; }
 .field::placeholder { color: rgba(255,255,255,.45); }
 .field:focus { outline: none; border-color: var(--accent); background: rgba(255,255,255,.10); box-shadow: 0 0 0 4px rgba(var(--accent-rgb), .16); }
 .field-light {
-  width: 100%; background: #fff; border: 1px solid var(--border); color: var(--ink);
-  border-radius: 12px; padding: 11px 14px; font-size: 14.5px;
-  transition: border-color .25s ease, box-shadow .25s ease;
+  width: 100%; background: #FBFAF6; border: 1.5px solid rgba(20,23,28,.10); color: var(--ink);
+  border-radius: 13px; padding: 11px 14px; font-size: 14.5px;
+  transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
 }
 .field-light::placeholder { color: var(--muted); }
-.field-light:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 4px rgba(var(--accent-rgb), .16); }
+.field-light:hover { border-color: rgba(245,179,1,.45); }
+.field-light:focus { outline: none; border-color: var(--accent); background: #fff; box-shadow: 0 0 0 4px rgba(var(--accent-rgb), .18); }
+.sw-fwrap { position: relative; }
+.sw-fic { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #C49A2E; display: flex; pointer-events: none; transition: color .2s ease; }
+.sw-fic-top { top: 15px; transform: none; }
+.field-light.sw-field-ico { padding-left: 43px; }
+.sw-fwrap:focus-within .sw-fic { color: var(--accent-deep); }
 
 /* ─── Step form (lead generator) ─────────────────────── */
 @keyframes stepIn {

@@ -1184,8 +1184,9 @@ const About = () => /*#__PURE__*/React.createElement("section", {
     e.target.style.display = 'none';
   }
 })), /*#__PURE__*/React.createElement("div", {
-  className: "grid grid-cols-3 gap-4 mt-7"
-}, [["30 J.", "Garantie auf Module"], ["0 €", "Anzahlung vorab"], ["1-3", "Tage Montage"]].map(([n, l], i) => /*#__PURE__*/React.createElement("div", {
+  className: "grid grid-cols-3 gap-4 mt-7",
+  style: { background: "rgba(255,255,255,0.6)", backdropFilter: "blur(16px) saturate(1.15)", WebkitBackdropFilter: "blur(16px) saturate(1.15)", border: "1px solid rgba(20,23,28,0.09)", borderRadius: "20px", padding: "1.3rem 1.6rem", boxShadow: "0 22px 46px -28px rgba(20,23,28,0.28), inset 0 1px 0 rgba(255,255,255,0.7)" }
+}, [["30 Jahre", "Garantie auf Module"], ["0 €", "Anzahlung vorab"], ["1-3", "Tage Montage"]].map(([n, l], i) => /*#__PURE__*/React.createElement("div", {
   key: i,
   className: "text-center sm:text-left"
 }, /*#__PURE__*/React.createElement("div", {

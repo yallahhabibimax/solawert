@@ -76,7 +76,9 @@
       building: '<rect x="5" y="3" width="14" height="18" rx="1.5"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2"/>',
       spray: '<path d="M9 8V5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3"/><rect x="8" y="8" width="6" height="12" rx="1.5"/><path d="M14 6h2M14 9h3M17 5v5"/>',
       clock: '<circle cx="12" cy="12" r="8"/><path d="M12 8v4l2.5 2"/>',
-      search: '<circle cx="11" cy="11" r="6"/><path d="m20 20-3.2-3.2"/>'
+      search: '<circle cx="11" cy="11" r="6"/><path d="m20 20-3.2-3.2"/>',
+      user: '<circle cx="12" cy="8" r="4"/><path d="M5.5 21a7.5 7.5 0 0 1 13 0"/>',
+      edit: '<path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/>'
     }[name] || '';
     return '<svg viewBox="0 0 24 24" width="'+s+'" height="'+s+'" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">'+p+'</svg>';
   }
@@ -128,12 +130,12 @@
         + '</div></div>';
       // step 4
       return '<div class="step-in"><h3 class="text-lg md:text-xl font-heading font-bold text-content mb-1">Fast geschafft, wohin dürfen wir uns melden?</h3><p class="text-content-secondary text-sm mb-4">Unverbindlich. Ihre Daten bleiben vertraulich.</p><div class="space-y-3">'
-        + '<select data-f="anrede" class="field-light"'+(data.anrede?'':' style="color:#8A929C"')+'><option value="">Anrede *</option><option value="Frau"'+(data.anrede==='Frau'?' selected':'')+'>Frau</option><option value="Herr"'+(data.anrede==='Herr'?' selected':'')+'>Herr</option><option value="Divers"'+(data.anrede==='Divers'?' selected':'')+'>Divers</option></select>'
-        + '<div class="grid sm:grid-cols-2 gap-3"><input data-f="vorname" class="field-light" type="text" placeholder="Vorname *" value="'+esc(data.vorname)+'"><input data-f="nachname" class="field-light" type="text" placeholder="Nachname *" value="'+esc(data.nachname)+'"></div>'
-        + '<div class="grid sm:grid-cols-2 gap-3"><input data-f="phone" class="field-light" type="tel" placeholder="Telefon *" value="'+esc(data.phone)+'"><input data-f="ort" class="field-light" type="text" placeholder="Ort / PLZ *" value="'+esc(data.ort)+'"></div>'
-        + '<input data-f="email" class="field-light" type="email" placeholder="E-Mail *" value="'+esc(data.email)+'">'
-        + '<textarea data-f="message" class="field-light resize-none" rows="2" placeholder="Beschreiben Sie kurz Ihr Anliegen (optional)">'+esc(data.message)+'</textarea>'
-        + '<div><span class="block text-[12px] font-heading font-semibold text-content-secondary mb-2">Am besten erreichbar (optional)</span><div class="flex flex-wrap gap-2">'
+        + '<div class="sw-fwrap"><span class="sw-fic">'+svg('user',18)+'</span><select data-f="anrede" class="field-light sw-field-ico"'+(data.anrede?'':' style="color:#8A929C"')+'><option value="">Anrede *</option><option value="Frau"'+(data.anrede==='Frau'?' selected':'')+'>Frau</option><option value="Herr"'+(data.anrede==='Herr'?' selected':'')+'>Herr</option><option value="Divers"'+(data.anrede==='Divers'?' selected':'')+'>Divers</option></select></div>'
+        + '<div class="grid sm:grid-cols-2 gap-3"><div class="sw-fwrap"><span class="sw-fic">'+svg('user',18)+'</span><input data-f="vorname" class="field-light sw-field-ico" type="text" placeholder="Vorname *" value="'+esc(data.vorname)+'"></div><div class="sw-fwrap"><span class="sw-fic">'+svg('user',18)+'</span><input data-f="nachname" class="field-light sw-field-ico" type="text" placeholder="Nachname *" value="'+esc(data.nachname)+'"></div></div>'
+        + '<div class="grid sm:grid-cols-2 gap-3"><div class="sw-fwrap"><span class="sw-fic">'+svg('phone',18)+'</span><input data-f="phone" class="field-light sw-field-ico" type="tel" placeholder="Telefon *" value="'+esc(data.phone)+'"></div><div class="sw-fwrap"><span class="sw-fic">'+svg('pin',18)+'</span><input data-f="ort" class="field-light sw-field-ico" type="text" placeholder="Ort / PLZ *" value="'+esc(data.ort)+'"></div></div>'
+        + '<div class="sw-fwrap"><span class="sw-fic">'+svg('mail',18)+'</span><input data-f="email" class="field-light sw-field-ico" type="email" placeholder="E-Mail *" value="'+esc(data.email)+'"></div>'
+        + '<div class="sw-fwrap"><span class="sw-fic sw-fic-top">'+svg('edit',18)+'</span><textarea data-f="message" class="field-light sw-field-ico resize-none" rows="2" placeholder="Beschreiben Sie kurz Ihr Anliegen (optional)">'+esc(data.message)+'</textarea></div>'
+        + '<div><span class="flex items-center gap-1.5 text-[12px] font-heading font-semibold text-content-secondary mb-2" style="color:#8A929C">'+svg('clock',14)+' Am besten erreichbar (optional)</span><div class="flex flex-wrap gap-2">'
         + ['Morgens','Mittags','Abends','Ganztags'].map(function(t){return '<button type="button" data-reach="'+t+'" class="px-3.5 py-1.5 rounded-full border text-[12.5px] font-heading font-semibold transition-all '+(data.reachable===t?'choice-active text-content':'border-black/10 text-content-secondary hover:border-brand')+'">'+t+'</button>';}).join('')
         + '</div></div>'
         + '<label class="flex items-start gap-2.5 text-[12.5px] text-content-secondary cursor-pointer pt-1"><input data-f="privacy" type="checkbox" '+(data.privacy?'checked':'')+' class="mt-0.5 w-4 h-4 accent-[#41a636] shrink-0"><span>Ich habe die <a href="datenschutz" target="_blank" rel="noopener" class="text-brand-deep underline hover:text-brand">Datenschutzbestimmungen</a> gelesen und stimme der Verarbeitung meiner Daten zu. *</span></label>'
