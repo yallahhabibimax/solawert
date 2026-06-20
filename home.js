@@ -200,8 +200,22 @@ const App = () => {
       batch('.reveal-left', { opacity: 0, x: -54, filter: 'blur(12px)' });
       batch('.reveal-right', { opacity: 0, x: 54, filter: 'blur(12px)' });
       batch('.reveal-scale', { opacity: 0, scale: 0.92, filter: 'blur(18px)' });
-      /* Leistungs-Karten: keine Skalierung mehr. Das Glow-Highlight (.lz-active)
-         laeuft GSAP-unabhaengig im onScroll-Handler (siehe updateLzActive unten). */
+      /* Leistungs-Karten: Award-Level Entrance (gestaffelt) + sanfte Bild-Parallax.
+         Kein Karten-Skalieren; das Glow-Highlight laeuft GSAP-unabhaengig im onScroll. */
+      gsap.utils.toArray('.lz-card').forEach(card => {
+        const img = card.querySelector('.lz-media img');
+        const badge = card.querySelector('.lz-badge');
+        const txt = card.querySelectorAll('.lz-text > *');
+        if (img) gsap.set(img, { scale: 1.16, transformOrigin: 'center center' });
+        const tl = gsap.timeline({ scrollTrigger: { trigger: card, start: 'top 82%', once: true } });
+        tl.from(card, { autoAlpha: 0, y: 44, filter: 'blur(14px)', duration: 1.15, ease: EASE }, 0);
+        if (txt.length) tl.from(txt, { autoAlpha: 0, y: 22, filter: 'blur(6px)', duration: 0.8, ease: EASE, stagger: 0.08 }, 0.25);
+        if (badge) tl.from(badge, { autoAlpha: 0, scale: 0.4, duration: 0.65, ease: 'back.out(2)' }, 0.35);
+        if (img) gsap.fromTo(img, { yPercent: -6 }, {
+          yPercent: 6, ease: 'none',
+          scrollTrigger: { trigger: card, start: 'top bottom', end: 'bottom top', scrub: true }
+        });
+      });
       ScrollTrigger.refresh();
       cleanupReveal = () => {
         ScrollTrigger.getAll().forEach(t => t.kill());
@@ -664,42 +678,42 @@ const WerWirSind = () => {
 /* ── SonneSlider (dunkle Leistungs-Section, durchblätterbar) ── */
 const SonneSlider = () => {
   const slides = [{
-    img: "img/services/s1.jpg",
+    img: "img/leistung-pv.jpg?v=1782000016",
     name: "Photovoltaik schlüsselfertig",
     tag: "Privat & Gewerbe",
     desc: "Komplette PV-Anlage für Ihr Dach, von der Planung über die Montage bis zur Anmeldung. Am Ende nutzen Sie nur noch Ihren eigenen Strom.",
     foot: "0 € Anzahlung",
     sub: "Zahlung nach Abnahme"
   }, {
-    img: "img/services/s2.jpg",
+    img: "img/leistung-waermepumpe.png?v=1782000016",
     name: "Wärmepumpe schlüsselfertig",
     tag: "Privat & Gewerbe",
     desc: "Moderne Wärmepumpen, komplett geplant und installiert. Heizung und Photovoltaik sinnvoll kombiniert, damit Sie mit eigenem Strom günstig heizen.",
     foot: "0 € Anzahlung",
     sub: "Zahlung nach Abnahme"
   }, {
-    img: "img/services/s3.jpg",
+    img: "img/leistung-speicher2.png?v=1782000018",
     name: "Stromspeicher mit mehr Kapazität",
     tag: "Mehr Speicher",
     desc: "Deutlich mehr Speicher zum gleichen Preis, exakt auf Ihren Verbrauch dimensioniert. So nutzen Sie Ihren Solarstrom auch abends und nachts.",
     foot: "+60 %",
     sub: "mehr Speicher inklusive"
   }, {
-    img: "img/services/s4.jpg",
+    img: "img/leistung-monitoring.png?v=1782000016",
     name: "Monitoring & Feintuning",
     tag: "Inklusive",
     desc: "Wir überwachen Ihre Anlage und stimmen die Einstellungen auf Ihr Verbrauchsverhalten ab. So holen wir aus jeder Kilowattstunde das Maximum.",
     foot: "1 Woche",
     sub: "Nachoptimierung inklusive"
   }, {
-    img: "img/services/s5.jpg",
+    img: "img/leistung-effizienz-haus.jpg?v=1782000017",
     name: "Effizienz-Planung & String-Optimierung",
     tag: "Festpreis",
     desc: "Spannung und Strom genau berechnet, Module optimal verteilt, Wechselrichter mit Reserve geplant. Das bringt mehr Ertrag und längere Lebensdauer.",
     foot: "Festpreis",
     sub: "ohne versteckte Kosten"
   }, {
-    img: "img/services/s6.jpg",
+    img: "img/leistung-inbetriebnahme.jpg?v=1782000017",
     name: "Inbetriebnahme, Anmeldung & Wartung",
     tag: "Rundum",
     desc: "Wir übernehmen die komplette Anmeldung und optimieren die Anlage nach der Fertigstellung gemeinsam mit Ihnen. Auf Wunsch dauerhaft betreut.",
@@ -782,7 +796,7 @@ const SonneSlider = () => {
       color: "#fff"
     }
   }, "Von der Effizienz-Planung bis zur fertigen Anlage. Photovoltaik, Wärmepumpe und Speicher schlüsselfertig aus einer Hand. Wir behandeln jedes Projekt wie unser eigenes Zuhause.")), /*#__PURE__*/React.createElement("div", {
-    className: "lz-rows reveal"
+    className: "lz-rows"
   }, slides.map(row)), /*#__PURE__*/React.createElement("div", {
     className: "text-center reveal",
     style: {
@@ -866,7 +880,7 @@ const Segments = () => {
     className: "seg-amp"
   }, "&"), " Geschäftskunden")), /*#__PURE__*/React.createElement("div", {
     className: "seg-grid reveal"
-  }, card(ICO.home, "Für Privatkunden", "Machen Sie Ihren eigenen Strom, heizen Sie mit der Wärmepumpe und werden Sie unabhängiger von steigenden Preisen.", ["Eigenheim, Doppelhaus & Neubau", "Photovoltaik, Speicher & Wärmepumpe", "Keine Anzahlung, Zahlung nach Abnahme"], "img/about-2.jpg"), card(ICO.building, "Für Geschäftskunden", "Senken Sie Ihre Energiekosten und nutzen Sie Ihre Dachflächen wirtschaftlich aus.", ["Gewerbe- & Industriedächer", "Hohe Eigenverbrauchsquote", "Wirtschaftlich durchgerechnet"], "img/about-3.jpg"))));
+  }, card(ICO.home, "Für Privatkunden", "Machen Sie Ihren eigenen Strom, heizen Sie mit der Wärmepumpe und werden Sie unabhängiger von steigenden Preisen.", ["Eigenheim, Doppelhaus & Neubau", "Photovoltaik, Speicher & Wärmepumpe", "Keine Anzahlung, Zahlung nach Abnahme"], "img/privatkunden.jpg?v=1782170016"), card(ICO.building, "Für Geschäftskunden", "Senken Sie Ihre Energiekosten und nutzen Sie Ihre Dachflächen wirtschaftlich aus.", ["Gewerbe- & Industriedächer", "Hohe Eigenverbrauchsquote", "Wirtschaftlich durchgerechnet"], "img/about-3.jpg"))));
 };
 
 /* ── Process ── */
@@ -1036,7 +1050,7 @@ const RegionBand = () => {
   }, /*#__PURE__*/React.createElement("div", {
     className: "relative rounded-[28px] overflow-hidden reveal-scale"
   }, /*#__PURE__*/React.createElement("img", {
-    src: "img/einsatz.jpg",
+    src: "img/einsatz-team.jpg?v=1782000017",
     alt: "SolaWert montiert eine Photovoltaik-Anlage in NRW",
     className: "absolute inset-0 w-full h-full object-cover"
   }), /*#__PURE__*/React.createElement("div", {
@@ -1116,7 +1130,7 @@ const About = () => /*#__PURE__*/React.createElement("section", {
 }, /*#__PURE__*/React.createElement("div", {
   className: "rounded-[28px] overflow-hidden shadow-2xl ring-1 ring-black/5 about-media"
 }, /*#__PURE__*/React.createElement("img", {
-  src: "img/about-2.jpg",
+  src: "img/ueberuns-dach.png?v=1782000017",
   alt: "SolaWert im Einsatz in Wuppertal",
   className: "w-full h-[360px] md:h-[480px] object-cover object-[center_20%]"
 })), /*#__PURE__*/React.createElement("div", {
@@ -1317,7 +1331,7 @@ const FAQ = () => {
   }, faqs.map((f, i) => React.createElement("details", {
     key: i,
     className: "faq-item reveal group border border-white/10",
-    style: { background: "#2A2E36", borderRadius: "18px", overflow: "hidden", transitionDelay: (i * 0.05) + "s", boxShadow: "0 14px 34px -22px rgba(20,16,2,0.7)" }
+    style: { background: "#16181E", borderRadius: "18px", overflow: "hidden", transitionDelay: (i * 0.05) + "s", boxShadow: "0 14px 34px -22px rgba(20,16,2,0.7)" }
   }, React.createElement("summary", {
     className: "flex items-center justify-between gap-5",
     style: { padding: "19px 22px", cursor: "pointer", listStyle: "none" }
@@ -1433,8 +1447,8 @@ const Contact = () => {
   }, "Zum Formular"), /*#__PURE__*/React.createElement("div", {
     className: "sw-contact-arrow-svg",
     dangerouslySetInnerHTML: { __html: '<svg width="80" height="30" viewBox="0 0 80 30" fill="none" stroke="#F5B301" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15 H68"/><path d="M55 5 L70 15 L55 25"/></svg>' }
-  }))), React.createElement("div", { style: { marginTop: "1.75rem", paddingTop: "1.5rem", borderTop: "1px solid rgba(20,23,28,0.08)" } }, React.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(190px,1fr))", gap: "1.1rem", marginBottom: "1.35rem" } }, React.createElement("div", { className: "sw-contact-card" }, React.createElement("span", { className: "sw-contact-ico" }, React.createElement(Svg, { size: 22 }, ICO.pin)), React.createElement("span", null, React.createElement("span", { className: "sw-contact-label" }, "Adresse"), React.createElement("span", { className: "sw-contact-value" }, "Friedrich-Ebert-Str. 55, 42103 Wuppertal"))), React.createElement("div", { className: "sw-contact-card" }, React.createElement("span", { className: "sw-contact-ico" }, React.createElement(Svg, { size: 22 }, ICO.clock)), React.createElement("span", null, React.createElement("span", { className: "sw-contact-label" }, "Erreichbarkeit"), React.createElement("span", { className: "sw-contact-value" }, "Mo bis Sa, 8 bis 18 Uhr")))), React.createElement("div", { style: { display: "flex", flexWrap: "wrap", alignItems: "center", gap: "0.5rem 1.1rem" } }, React.createElement("span", { style: { display: "inline-flex", alignItems: "center", gap: "0.4rem" } }, React.createElement("span", { style: { color: "#F5B301", fontSize: "15px", letterSpacing: "1.5px" } }, "★★★★★"), React.createElement("span", { className: "font-heading font-bold", style: { color: "#14171C", fontSize: "13.5px" } }, "4,9 Google")), React.createElement("span", { style: { width: "4px", height: "4px", borderRadius: "50%", background: "#CBD0D6" } }), React.createElement("span", { className: "font-heading font-semibold", style: { color: "#525A64", fontSize: "13.5px" } }, "500+ Projekte"), React.createElement("span", { style: { width: "4px", height: "4px", borderRadius: "50%", background: "#CBD0D6" } }), React.createElement("span", { className: "font-heading font-semibold", style: { color: "#525A64", fontSize: "13.5px" } }, "Antwort meist unter 24 Std.")))), /*#__PURE__*/React.createElement("div", {
-    className: "reveal-right border border-white/10 rounded-3xl p-6 md:p-7", style: { background: "linear-gradient(162deg,#33373F 0%,#2A2E36 58%)", boxShadow: "0 40px 80px -34px rgba(20,23,28,0.5), inset 0 1px 0 rgba(255,255,255,0.07)", borderTop: "1px solid rgba(245,179,1,0.25)" }
+  }))), React.createElement("div", { style: { marginTop: "1.75rem", paddingTop: "1.5rem", borderTop: "1px solid rgba(20,23,28,0.08)" } }, React.createElement("div", { style: { display: "grid", gridTemplateColumns: "1fr", gap: "0.85rem", marginBottom: "1.35rem" } }, React.createElement("div", { className: "sw-contact-card" }, React.createElement("span", { className: "sw-contact-ico" }, React.createElement(Svg, { size: 22 }, ICO.pin)), React.createElement("span", null, React.createElement("span", { className: "sw-contact-label" }, "Adresse"), React.createElement("span", { className: "sw-contact-value" }, "Friedrich-Ebert-Str. 55, 42103 Wuppertal"))), React.createElement("div", { className: "sw-contact-card" }, React.createElement("span", { className: "sw-contact-ico" }, React.createElement(Svg, { size: 22 }, ICO.clock)), React.createElement("span", null, React.createElement("span", { className: "sw-contact-label" }, "Erreichbarkeit"), React.createElement("span", { className: "sw-contact-value" }, "Mo bis Sa, 8 bis 18 Uhr")))), React.createElement("div", { style: { display: "flex", flexWrap: "wrap", alignItems: "center", gap: "0.5rem 1.1rem" } }, React.createElement("span", { style: { display: "inline-flex", alignItems: "center", gap: "0.4rem" } }, React.createElement("span", { style: { color: "#F5B301", fontSize: "15px", letterSpacing: "1.5px" } }, "★★★★★"), React.createElement("span", { className: "font-heading font-bold", style: { color: "#14171C", fontSize: "13.5px" } }, "4,9 Google")), React.createElement("span", { style: { width: "4px", height: "4px", borderRadius: "50%", background: "#CBD0D6" } }), React.createElement("span", { className: "font-heading font-semibold", style: { color: "#525A64", fontSize: "13.5px" } }, "500+ Projekte"), React.createElement("span", { style: { width: "4px", height: "4px", borderRadius: "50%", background: "#CBD0D6" } }), React.createElement("span", { className: "font-heading font-semibold", style: { color: "#525A64", fontSize: "13.5px" } }, "Antwort meist unter 24 Std.")))), /*#__PURE__*/React.createElement("div", {
+    className: "reveal-right border border-white/10 rounded-3xl p-6 md:p-7", style: { background: "linear-gradient(162deg,#1B2029 0%,#14171C 58%)", boxShadow: "0 40px 80px -34px rgba(20,23,28,0.5), inset 0 1px 0 rgba(255,255,255,0.07)", borderTop: "1px solid rgba(245,179,1,0.25)" }
   }, sent ? /*#__PURE__*/React.createElement("div", {
     className: "text-center py-12"
   }, /*#__PURE__*/React.createElement("div", {
@@ -1454,7 +1468,7 @@ const Contact = () => {
   }, ICO.phone), " Lieber direkt anrufen")) : /*#__PURE__*/React.createElement("form", {
     onSubmit: submit
   }, /*#__PURE__*/React.createElement("h3", {
-    className: "text-2xl font-heading font-bold mb-1.5"
+    className: "text-2xl font-heading font-bold mb-1.5 text-white"
   }, "Kostenlosen Rückruf anfordern"), /*#__PURE__*/React.createElement("p", {
     className: "text-white/55 text-sm mb-5"
   }, "Unverbindlich. Wir melden uns schnellstmöglich."), /*#__PURE__*/React.createElement("div", {
