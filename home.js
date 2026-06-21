@@ -241,8 +241,7 @@ const LeadQuiz = () => {
       return h("div", { key: i, className: "lq-step" + (i === step ? " is-active" : i < step ? " is-done" : "") },
         h("span", { className: "lq-step__dot" }, i < step ? h(Svg, { size: 18, sw: 2.6 }, ICO.check) : (i + 1)),
         h("span", { className: "lq-step__lbl" }, s.label));
-    })),
-    h("div", { className: "lq-google", style: { display: "flex", flexDirection: "column", gap: "1.05rem", alignItems: "stretch" } }, [["100% kostenlos & unverbindlich", "Keine Anzahlung, keine versteckten Kosten."], ["In nur 30 Sekunden erledigt", "Ein paar Klicks und Sie sind fertig."]].map(function (it, i) { return h("div", { key: i, style: { display: "flex", alignItems: "center", gap: ".85rem" } }, h("span", { style: { width: "40px", height: "40px", borderRadius: "12px", background: "linear-gradient(145deg,#FFD45A,#F5B301)", color: "#1A1402", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, boxShadow: "0 8px 18px -8px rgba(245,179,1,.7)" } }, h(Svg, { size: 20, sw: 3 }, ICO.check)), h("div", null, h("div", { style: { fontFamily: "'Archivo',sans-serif", fontWeight: 800, fontSize: "15.5px", color: "#fff", lineHeight: "1.2" } }, it[0]), h("div", { style: { color: "rgba(255,255,255,0.55)", fontSize: "12.5px", marginTop: "2px" } }, it[1]))); })));
+    })));
 
   let card;
   if (cur.type === "plz") {
@@ -284,6 +283,7 @@ const LeadQuiz = () => {
         h("p", { className: "lq-d-p", style: { color: "rgba(255,255,255,0.6)", maxWidth: "28rem", lineHeight: "1.6", margin: "0 0 1.7rem" } }, "Ihre Anfrage ist eingegangen. Wir melden uns in den meisten Fällen innerhalb von 24 Stunden mit einer ehrlichen Einschätzung."),
         h("div", { className: "lq-summary" }, [["Anliegen", a.interesse], ["Gebäude", a.gebaeude], ["Eigentum", a.eigentum], [isWP ? "Heizung" : "Verbrauch", a.detail], ["Zeitpunkt", a.zeitpunkt], ["PLZ", a.plz]].filter(function (r) { return r[1]; }).map(function (r, ri) { return h("div", { key: ri, className: "lq-srow", style: { animationDelay: (0.55 + ri * 0.07).toFixed(2) + "s" } }, h("span", { className: "lq-sk" }, r[0]), h("span", { className: "lq-sv" }, r[1])); })))
     : h("div", { className: "lq-main", key: step },
+        h("div", { style: { display: "flex", flexWrap: "wrap", justifyContent: "flex-end", gap: ".5rem", marginBottom: "1.1rem" } }, ["100% kostenlos & unverbindlich", "In nur 30 Sekunden erledigt"].map(function (t, ti) { return h("div", { key: ti, style: { display: "inline-flex", alignItems: "center", gap: ".45rem", padding: ".42rem .75rem", borderRadius: "999px", background: "rgba(245,179,1,0.1)", border: "1px solid rgba(245,179,1,0.32)", color: "#fff", fontFamily: "'Archivo',sans-serif", fontWeight: 700, fontSize: "12px", whiteSpace: "nowrap" } }, h("span", { style: { width: "16px", height: "16px", borderRadius: "50%", background: "#F5B301", color: "#1A1402", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 } }, h(Svg, { size: 10, sw: 3 }, ICO.check)), t); })),
         h("div", { className: "lq-badge" }, "✦ Schritt " + (step + 1) + " von " + TOTAL),
         h("div", { className: "lq-mobprog" }, h("span", { style: { width: (((step + 1) / TOTAL) * 100) + "%" } })),
         h("h3", { className: "font-heading font-black lq-q2" }, cur.q[0], h("span", { style: { color: "#F5B301" } }, cur.q[1]), cur.q[2]),
