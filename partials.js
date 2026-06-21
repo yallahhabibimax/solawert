@@ -24,7 +24,7 @@
             '</div>' +
             '<div style="margin-top:1.6rem">' +
               '<div class="font-heading" style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.55rem">Umgesetzt von</div>' +
-              '<a href="https://pstudio.io" target="_blank" rel="noopener" style="display:inline-block;transition:opacity .25s ease;opacity:.85" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.85"><img src="img/pstudio-partner.webp" alt="PStudio" style="height:24px;width:auto;display:block"></a>' +
+              '<a href="https://pstudio.io" target="_blank" rel="noopener" style="display:inline-block;transition:opacity .25s ease;opacity:.85" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.85"><img src="img/pstudio-partner.webp" alt="PStudio" style="height:44px;width:auto;display:block"></a>' +
             '</div>' +
           '</div>' +
           '<div>' +
