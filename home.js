@@ -226,7 +226,7 @@ const LeadQuiz = () => {
   const submit = () => { setSent(true); try { fetch('/api/lead', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(a) }).catch(function () {}); } catch (e) {} };
   const plzOk = /^\d{5}$/.test(a.plz || "");
   const mailOk = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(a.email || "");
-  const kontaktOk = (a.name || "").trim().length > 1 && mailOk && (a.telefon || "").trim().length >= 5;
+  const kontaktOk = (a.anrede === "Herr" || a.anrede === "Frau") && (a.name || "").trim().length > 1 && mailOk && (a.telefon || "").trim().length >= 5;
   const ctaOk = isChoice ? true : (cur.type === "plz" ? plzOk : kontaktOk);
   const goBack = () => { if (step > 0) { var ns = step - 1; setStep(ns); setOi(idxOf(ns)); } };
   const goNext = () => {
@@ -257,6 +257,7 @@ const LeadQuiz = () => {
   } else if (cur.type === "contact") {
     card = h("div", { className: "lq-card2 lq-card2--input" }, h("div", { className: "lq-inputwrap" },
       h("span", { className: "lq-ihr" }, "Ihre Kontaktdaten"),
+      h("div", { className: "lq-anrede" }, ["Herr", "Frau"].map(function (an) { return h("button", { key: an, className: "lq-anbtn" + (a.anrede === an ? " is-on" : ""), onClick: function () { upd("anrede", an); } }, an); })),
       h("div", { className: "lq-fields" },
         h("input", { className: "lq-fld", placeholder: "Vor- und Nachname", value: a.name || "", onChange: function (e) { upd("name", e.target.value); } }),
         h("input", { className: "lq-fld", type: "email", placeholder: "E-Mail", value: a.email || "", onChange: function (e) { upd("email", e.target.value); } }),
@@ -281,10 +282,11 @@ const LeadQuiz = () => {
 
   const main = sent
     ? h("div", { className: "lq-main lq-done" },
-        h("div", { className: "lq-donedisc" }, h(Svg, { size: 40, sw: 2.4 }, ICO.check)),
-        h("h3", { className: "font-heading font-black", style: { fontSize: "clamp(1.8rem,3.4vw,2.6rem)", color: "#ffffff", margin: "0 0 0.5rem" } }, "Vielen Dank, " + ((a.name || "").trim().split(" ")[0] || "") + "!"),
-        h("p", { style: { color: "rgba(255,255,255,0.6)", maxWidth: "28rem", lineHeight: "1.6", marginBottom: "1.6rem" } }, "Ihre Anfrage ist eingegangen. Wir melden uns in den meisten Fällen innerhalb von 24 Stunden mit einer ehrlichen Einschätzung."),
-        h("div", { className: "lq-summary" }, [["Anliegen", a.interesse], ["Gebäude", a.gebaeude], ["Eigentum", a.eigentum], [isWP ? "Heizung" : "Verbrauch", a.detail], ["Zeitpunkt", a.zeitpunkt], ["PLZ", a.plz]].filter(function (r) { return r[1]; }).map(function (r, ri) { return h("div", { key: ri, className: "lq-srow" }, h("span", { className: "lq-sk" }, r[0]), h("span", { className: "lq-sv" }, r[1])); })))
+        h("div", { className: "lq-confetti" }, Array.from({ length: 18 }).map(function (_, ci) { var cols = ["#F5B301", "#FFD45A", "#ffffff", "#F5B301", "#FFC633"]; return h("span", { key: ci, style: { left: (Math.random() * 100).toFixed(1) + "%", background: cols[ci % cols.length], animationDelay: (Math.random() * 0.7).toFixed(2) + "s", width: (6 + Math.round(Math.random() * 5)) + "px", height: (6 + Math.round(Math.random() * 5)) + "px" } }); })),
+        h("div", { className: "lq-donedisc" }, h(Svg, { size: 42, sw: 2.4 }, ICO.check)),
+        h("h3", { className: "lq-d-h font-heading font-black", style: { fontSize: "clamp(1.9rem,3.6vw,2.8rem)", color: "#ffffff", margin: "0 0 0.5rem" } }, "Vielen Dank, ", h("span", { style: { color: "#F5B301" } }, ((a.anrede ? a.anrede + " " : "") + (((a.name || "").trim().split(/\s+/).filter(Boolean).pop()) || "")).trim()), "!"),
+        h("p", { className: "lq-d-p", style: { color: "rgba(255,255,255,0.6)", maxWidth: "28rem", lineHeight: "1.6", margin: "0 0 1.7rem" } }, "Ihre Anfrage ist eingegangen. Wir melden uns in den meisten Fällen innerhalb von 24 Stunden mit einer ehrlichen Einschätzung."),
+        h("div", { className: "lq-summary" }, [["Anliegen", a.interesse], ["Gebäude", a.gebaeude], ["Eigentum", a.eigentum], [isWP ? "Heizung" : "Verbrauch", a.detail], ["Zeitpunkt", a.zeitpunkt], ["PLZ", a.plz]].filter(function (r) { return r[1]; }).map(function (r, ri) { return h("div", { key: ri, className: "lq-srow", style: { animationDelay: (0.55 + ri * 0.07).toFixed(2) + "s" } }, h("span", { className: "lq-sk" }, r[0]), h("span", { className: "lq-sv" }, r[1])); })))
     : h("div", { className: "lq-main", key: step },
         h("div", { className: "lq-badge" }, "✦ Schritt " + (step + 1) + " von " + TOTAL),
         h("div", { className: "lq-mobprog" }, h("span", { style: { width: (((step + 1) / TOTAL) * 100) + "%" } })),
@@ -1167,7 +1169,7 @@ const RegionBand = () => {
     style: { maxWidth: "1760px" }
   }, /*#__PURE__*/React.createElement("div", {
     className: "relative rounded-[28px] overflow-hidden reveal-scale",
-    style: { minHeight: "clamp(340px, 46vh, 460px)", display: "flex", alignItems: "center" }
+    style: { minHeight: "clamp(300px, 38vh, 400px)", display: "flex", alignItems: "center" }
   }, /*#__PURE__*/React.createElement("img", {
     src: "img/einsatz-team.jpg?v=1782000017",
     alt: "SolaWert montiert eine Photovoltaik-Anlage in NRW",
@@ -1175,7 +1177,7 @@ const RegionBand = () => {
   }), /*#__PURE__*/React.createElement("div", {
     className: "absolute inset-0 bg-gradient-to-r from-ink/95 via-ink/80 to-ink/20"
   }), /*#__PURE__*/React.createElement("div", {
-    className: "relative z-10 px-8 md:px-14 py-16 md:py-24 max-w-xl text-white"
+    className: "relative z-10 px-8 md:px-14 py-10 md:py-14 max-w-xl text-white"
   }, /*#__PURE__*/React.createElement("span", {
     className: "text-brand font-heading font-semibold tracking-[0.16em] uppercase text-xs mb-3 block"
   }, "Einsatzgebiet"), /*#__PURE__*/React.createElement("h2", {
@@ -1365,7 +1367,7 @@ const Testimonials = () => {
   }, /*#__PURE__*/React.createElement("span", { className: "sw-cdot" }), "Bewertungen"), /*#__PURE__*/React.createElement("h2", {
     className: "text-3xl md:text-[2.7rem] font-heading text-content leading-tight",
     style: { fontFamily: "'Archivo', system-ui, sans-serif", fontWeight: 900 }
-  }, "Das sagen unsere ", React.createElement("span", { style: { background: "#F5B301", color: "#1A1402", padding: "0 0.14em", borderRadius: "8px", WebkitBoxDecorationBreak: "clone", boxDecorationBreak: "clone" } }, "Kunden"))), /*#__PURE__*/React.createElement("div", {
+  }, "Das sagen unsere ", React.createElement("span", { style: { color: "#F5B301" } }, "Kunden"))), /*#__PURE__*/React.createElement("div", {
     className: "sw-grating shrink-0 relative overflow-hidden",
     style: { display: "flex", alignItems: "center", gap: "16px", background: "#2A2E36", border: "1px solid rgba(245,179,1,0.30)", borderRadius: "20px", padding: "16px 22px", boxShadow: "0 18px 44px -22px rgba(0,0,0,0.65), inset 0 1px 0 rgba(255,255,255,0.05), 0 0 0 4px rgba(245,179,1,0.04)" }
   }, /*#__PURE__*/React.createElement("div", {

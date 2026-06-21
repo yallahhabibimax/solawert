@@ -798,3 +798,29 @@ details[open] > summary .faq-q, details[open] > summary .faq-num { color: var(--
 .sw-cta-ghost:hover svg { animation: ctaRing .6s ease; }
 @keyframes ctaRing { 0%,100% { transform: rotate(0); } 20% { transform: rotate(-14deg); } 40% { transform: rotate(11deg); } 60% { transform: rotate(-7deg); } 80% { transform: rotate(4deg); } }
 @media (prefers-reduced-motion: reduce) { .sw-cta::after, .sw-cta-ghost::before, .sw-cta-ghost:hover svg, .sw-cta__ico, .sw-cta:hover .sw-cta__ico { transition: none !important; animation: none !important; } }
+
+
+/* ─── Danke-Screen Animation + Anrede ───────────────────── */
+.lq-done { position:relative; overflow:hidden; }
+.lq-donedisc { position:relative; animation:lqPop .6s cubic-bezier(.34,1.56,.64,1) both; }
+.lq-donedisc::before { content:""; position:absolute; inset:-9px; border-radius:50%; border:2px solid rgba(245,179,1,0.55); animation:lqRing 1s ease-out .15s both; }
+.lq-donedisc::after { content:""; position:absolute; inset:-48px; border-radius:50%; z-index:-1; background:radial-gradient(circle, rgba(245,179,1,0.3), transparent 65%); animation:lqGlow 1.4s ease-out both; }
+@keyframes lqPop { 0%{transform:scale(.3);opacity:0} 55%{transform:scale(1.12)} 100%{transform:scale(1);opacity:1} }
+@keyframes lqRing { 0%{transform:scale(.65);opacity:.85} 100%{transform:scale(2);opacity:0} }
+@keyframes lqGlow { 0%{transform:scale(.4);opacity:0} 45%{opacity:1} 100%{transform:scale(1.5);opacity:.55} }
+.lq-d-h { animation:lqRise .6s cubic-bezier(.16,1,.3,1) .25s both; }
+.lq-d-p { animation:lqRise .6s cubic-bezier(.16,1,.3,1) .4s both; }
+.lq-done .lq-summary { animation:lqRise .6s cubic-bezier(.16,1,.3,1) .5s both; }
+.lq-done .lq-srow { animation:lqRise .5s cubic-bezier(.16,1,.3,1) both; }
+@keyframes lqRise { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
+.lq-confetti { position:absolute; inset:0; pointer-events:none; z-index:2; }
+.lq-confetti span { position:absolute; top:-14px; border-radius:2px; opacity:0; animation:lqFall 2.8s cubic-bezier(.4,0,.7,1) forwards; }
+@keyframes lqFall { 0%{opacity:0; transform:translateY(-14px) rotate(0)} 12%{opacity:1} 100%{opacity:0; transform:translateY(460px) rotate(560deg)} }
+.lq-anrede { display:flex; gap:0.6rem; margin-bottom:0.8rem; }
+.lq-anbtn { flex:1; padding:0.7rem 1rem; border-radius:12px; border:1.5px solid rgba(255,255,255,0.12); background:rgba(255,255,255,0.04); color:rgba(255,255,255,0.75); font-family:'Archivo',sans-serif; font-weight:700; font-size:14.5px; cursor:pointer; transition:all .25s cubic-bezier(.16,1,.3,1); }
+.lq-anbtn:hover { border-color:rgba(245,179,1,0.5); }
+.lq-anbtn.is-on { background:#F5B301; border-color:#F5B301; color:#1A1402; }
+@media (prefers-reduced-motion: reduce){
+  .lq-donedisc, .lq-donedisc::before, .lq-donedisc::after, .lq-d-h, .lq-d-p, .lq-done .lq-summary, .lq-done .lq-srow { animation:none !important; opacity:1 !important; transform:none !important; }
+  .lq-confetti { display:none; }
+}
