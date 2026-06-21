@@ -219,85 +219,58 @@ const LeadQuiz = () => {
   const N = opts.length;
   const isChoice = !cur.type;
   const pad2 = (n) => (n < 10 ? "0" + n : "" + n);
-  const idxOf = (st) => { const s2 = STEPS[st]; if (!s2.opts) return 0; const i = s2.opts.findIndex(function (o) { return o.t === a[s2.key]; }); return i < 0 ? 0 : i; };
-  const prevOpt = () => setOi((oi - 1 + N) % N);
-  const nextOpt = () => setOi((oi + 1) % N);
   const upd = (key, val) => setA(function (p) { return Object.assign({}, p, { [key]: val }); });
   const submit = () => { setSent(true); try { fetch('/api/lead', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(a) }).catch(function () {}); } catch (e) {} };
   const plzOk = /^\d{5}$/.test(a.plz || "");
   const mailOk = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(a.email || "");
   const kontaktOk = (a.anrede === "Herr" || a.anrede === "Frau") && (a.name || "").trim().length > 1 && mailOk && (a.telefon || "").trim().length >= 5;
-  const ctaOk = isChoice ? true : (cur.type === "plz" ? plzOk : kontaktOk);
-  const goBack = () => { if (step > 0) { var ns = step - 1; setStep(ns); setOi(idxOf(ns)); } };
-  const goNext = () => {
-    if (!ctaOk) return;
-    if (isChoice) upd(cur.key, opts[oi].t);
-    if (step < TOTAL - 1) { var ns = step + 1; setStep(ns); setOi(idxOf(ns)); } else submit();
-  };
+  const ctaOk = isChoice ? !!a[cur.key] : (cur.type === "plz" ? plzOk : kontaktOk);
+  const goBack = () => { if (step > 0) setStep(step - 1); };
+  const goNext = () => { if (!ctaOk) return; if (step < TOTAL - 1) setStep(step + 1); else submit(); };
+  const pick = (o) => { upd(cur.key, o.t); setTimeout(function () { setStep(function (st) { return st < TOTAL - 1 ? st + 1 : st; }); }, 180); };
 
-  const rail = h("div", { className: "lq-rail" },
-    h("div", { className: "lq-logo" }, "Anfrage", h("span", { style: { color: "#F5B301" } }, "formular")),
-    h("div", { className: "lq-steps" }, STEPS.map(function (s, i) {
-      return h("div", { key: i, className: "lq-step" + (i === step ? " is-active" : i < step ? " is-done" : "") },
-        h("span", { className: "lq-step__dot" }, i < step ? h(Svg, { size: 18, sw: 2.6 }, ICO.check) : (i + 1)),
-        h("span", { className: "lq-step__lbl" }, s.label));
-    })));
-
-  let card;
+  let body;
   if (cur.type === "plz") {
-    card = h("div", { className: "lq-card2 lq-card2--input" }, h("div", { className: "lq-inputwrap" },
-      h("span", { className: "lq-ihr" }, "Ihre Postleitzahl"),
-      h("input", { className: "lq-plz", type: "text", inputMode: "numeric", maxLength: 5, placeholder: "00000", value: a.plz || "", onChange: function (e) { upd("plz", e.target.value.replace(/\D/g, "").slice(0, 5)); } }),
-      h("p", { className: "lq-inputhint" }, "Wir prüfen, ob wir in Ihrer Region tätig sind.")));
+    body = h("input", { className: "nq-input nq-input--c", inputMode: "numeric", maxLength: 5, placeholder: "z. B. 42103", value: a.plz || "", onChange: function (e) { upd("plz", e.target.value.replace(/\D/g, "").slice(0, 5)); } });
   } else if (cur.type === "contact") {
-    card = h("div", { className: "lq-card2 lq-card2--input" }, h("div", { className: "lq-inputwrap" },
-      h("span", { className: "lq-ihr" }, "Ihre Kontaktdaten"),
-      h("div", { className: "lq-anrede" }, ["Herr", "Frau"].map(function (an) { return h("button", { key: an, className: "lq-anbtn" + (a.anrede === an ? " is-on" : ""), onClick: function () { upd("anrede", an); } }, an); })),
-      h("div", { className: "lq-fields" },
-        h("input", { className: "lq-fld", placeholder: "Vor- und Nachname", value: a.name || "", onChange: function (e) { upd("name", e.target.value); } }),
-        h("input", { className: "lq-fld", type: "email", placeholder: "E-Mail", value: a.email || "", onChange: function (e) { upd("email", e.target.value); } }),
-        h("input", { className: "lq-fld", type: "tel", placeholder: "Telefonnummer", value: a.telefon || "", onChange: function (e) { upd("telefon", e.target.value); } })),
-      h("p", { className: "lq-inputhint" }, "Unverbindlich und kostenlos. Ihre Daten bleiben vertraulich.")));
+    body = h("div", { className: "nq-fields" },
+      h("div", { className: "nq-anrede" }, ["Herr", "Frau"].map(function (an) { return h("button", { key: an, type: "button", className: "nq-anbtn" + (a.anrede === an ? " is-on" : ""), onClick: function () { upd("anrede", an); } }, an); })),
+      h("input", { className: "nq-input", placeholder: "Vor- und Nachname", value: a.name || "", onChange: function (e) { upd("name", e.target.value); } }),
+      h("input", { className: "nq-input", type: "email", placeholder: "E-Mail", value: a.email || "", onChange: function (e) { upd("email", e.target.value); } }),
+      h("input", { className: "nq-input", type: "tel", placeholder: "Telefonnummer", value: a.telefon || "", onChange: function (e) { upd("telefon", e.target.value); } }));
   } else {
-    var o = opts[oi];
-    card = h("div", { className: "lq-card2" },
-      h("div", { className: "lq-num" },
-        h("span", { className: "lq-num__ico" }, h(Svg, { size: 30, sw: 1.8 }, o.ico)),
-        h("div", { className: "lq-num__big" }, h("span", { className: "lq-num__n" }, pad2(oi + 1)), h("span", { className: "lq-num__of" }, "von " + pad2(N)))),
-      h("div", { className: "lq-ans", key: oi },
-        h("span", { className: "lq-ihr" }, "Ihre Antwort"),
-        h("h4", { className: "lq-ans__t font-heading" }, o.t),
-        h("p", { className: "lq-ans__d" }, o.d),
-        h("ul", { className: "lq-checks" }, (o.b || []).map(function (bx, bi) { return h("li", { key: bi }, h("span", { className: "lq-chk" }, h(Svg, { size: 13, sw: 2.6 }, ICO.check)), bx); }))));
+    body = h("div", { className: "nq-opts" }, opts.map(function (o, i) {
+      var on = a[cur.key] === o.t;
+      return h("button", { key: i, type: "button", className: "nq-opt" + (on ? " is-on" : ""), onClick: function () { pick(o); } },
+        h("span", { className: "nq-opt__ic" }, h(Svg, { size: 22, sw: 2 }, o.ico)),
+        h("span", { className: "nq-opt__t font-heading" }, o.t),
+        o.b && o.b[0] ? h("span", { className: "nq-opt__d" }, o.b[0]) : null);
+    }));
   }
 
-  const optnav = isChoice ? h("div", { className: "lq-optnav" },
-    h("button", { className: "lq-optbtn", onClick: prevOpt }, h(Svg, { size: 16, sw: 2 }, ICO.arrowLeft), h("span", { className: "lq-optbtn__k" }, "Zurück"), h("span", { className: "lq-optbtn__v" }, opts[(oi - 1 + N) % N].t)),
-    h("button", { className: "lq-optbtn lq-optbtn--r", onClick: nextOpt }, h("span", { className: "lq-optbtn__k" }, "Weiter"), h("span", { className: "lq-optbtn__v" }, opts[(oi + 1) % N].t), h(Svg, { size: 16, sw: 2 }, ICO.arrow))) : null;
-
   const main = sent
-    ? h("div", { className: "lq-main lq-done" },
-        h("div", { className: "lq-confetti" }, Array.from({ length: 18 }).map(function (_, ci) { var cols = ["#F5B301", "#FFD45A", "#ffffff", "#F5B301", "#FFC633"]; return h("span", { key: ci, style: { left: (Math.random() * 100).toFixed(1) + "%", background: cols[ci % cols.length], animationDelay: (Math.random() * 0.7).toFixed(2) + "s", width: (6 + Math.round(Math.random() * 5)) + "px", height: (6 + Math.round(Math.random() * 5)) + "px" } }); })),
-        h("div", { className: "lq-donedisc" }, h(Svg, { size: 42, sw: 2.4 }, ICO.check)),
-        h("h3", { className: "lq-d-h font-heading font-black", style: { fontSize: "clamp(1.9rem,3.6vw,2.8rem)", color: "#ffffff", margin: "0 0 0.5rem" } }, "Vielen Dank, ", h("span", { style: { color: "#F5B301" } }, ((a.anrede ? a.anrede + " " : "") + (((a.name || "").trim().split(/\s+/).filter(Boolean).pop()) || "")).trim()), "!"),
-        h("p", { className: "lq-d-p", style: { color: "rgba(255,255,255,0.6)", maxWidth: "28rem", lineHeight: "1.6", margin: "0 0 1.7rem" } }, "Ihre Anfrage ist eingegangen. Wir melden uns in den meisten Fällen innerhalb von 24 Stunden mit einer ehrlichen Einschätzung."),
-        h("div", { className: "lq-summary" }, [["Anliegen", a.interesse], ["Gebäude", a.gebaeude], ["Eigentum", a.eigentum], [isWP ? "Heizung" : "Verbrauch", a.detail], ["Zeitpunkt", a.zeitpunkt], ["PLZ", a.plz]].filter(function (r) { return r[1]; }).map(function (r, ri) { return h("div", { key: ri, className: "lq-srow", style: { animationDelay: (0.55 + ri * 0.07).toFixed(2) + "s" } }, h("span", { className: "lq-sk" }, r[0]), h("span", { className: "lq-sv" }, r[1])); })))
-    : h("div", { className: "lq-main", key: step },
-        h("div", { style: { display: "flex", flexWrap: "wrap", justifyContent: "flex-end", gap: ".5rem", marginBottom: "1.1rem" } }, ["100% kostenlos & unverbindlich", "In nur 30 Sekunden erledigt"].map(function (t, ti) { return h("div", { key: ti, style: { display: "inline-flex", alignItems: "center", gap: ".45rem", padding: ".42rem .75rem", borderRadius: "999px", background: "rgba(245,179,1,0.1)", border: "1px solid rgba(245,179,1,0.32)", color: "#fff", fontFamily: "'Archivo',sans-serif", fontWeight: 700, fontSize: "12px", whiteSpace: "nowrap" } }, h("span", { style: { width: "16px", height: "16px", borderRadius: "50%", background: "#F5B301", color: "#1A1402", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 } }, h(Svg, { size: 10, sw: 3 }, ICO.check)), t); })),
-        h("div", { className: "lq-badge" }, "✦ Schritt " + (step + 1) + " von " + TOTAL),
-        h("div", { className: "lq-mobprog" }, h("span", { style: { width: (((step + 1) / TOTAL) * 100) + "%" } })),
-        h("h3", { className: "font-heading font-black lq-q2" }, cur.q[0], h("span", { style: { color: "#F5B301" } }, cur.q[1]), cur.q[2]),
-        h("p", { className: "lq-sub" }, cur.hint),
-        card,
-        optnav,
-        h("div", { className: "lq-bottom" },
-          h("div", { className: "lq-trust2" }, h("span", { className: "lq-tchk" }, h(Svg, { size: 13, sw: 2.6 }, ICO.check)), "Unverbindlich & kostenlos · Festpreis"),
-          h("div", { style: { display: "flex", alignItems: "center", gap: "0.8rem" } },
-            step > 0 ? h("button", { className: "lq-back2", onClick: goBack }, "Zurück") : null,
-            h("button", { className: "lq-cta" + (ctaOk ? "" : " is-off"), onClick: goNext }, step === TOTAL - 1 ? "Anfrage senden" : "Weiter", h("span", { className: "lq-cta__a" }, h(Svg, { size: 18, sw: 2.4 }, ICO.arrow))))));
+    ? h("div", { className: "nq-card nq-done" },
+        h("div", { className: "nq-done__disc" }, h(Svg, { size: 40, sw: 2.6 }, ICO.check)),
+        h("h3", { className: "nq-done__h font-heading" }, "Vielen Dank, ", h("span", null, ((a.anrede ? a.anrede + " " : "") + (((a.name || "").trim().split(/\s+/).filter(Boolean).pop()) || "")).trim()), "!"),
+        h("p", { className: "nq-done__p" }, "Ihre Anfrage ist eingegangen. Wir melden uns in den meisten Fällen innerhalb von 24 Stunden mit einer ehrlichen Einschätzung."))
+    : h("div", { className: "nq-card", key: step },
+        h("div", { className: "nq-prog" }, h("span", { style: { width: (((step + 1) / TOTAL) * 100) + "%" } })),
+        h("div", { className: "nq-steplbl" }, "Schritt " + (step + 1) + " / " + TOTAL),
+        h("h3", { className: "nq-q font-heading" }, cur.q[0], h("span", null, cur.q[1]), cur.q[2]),
+        h("p", { className: "nq-sub" }, cur.hint),
+        body,
+        h("div", { className: "nq-nav" },
+          step > 0 ? h("button", { type: "button", className: "nq-back", onClick: goBack }, h(Svg, { size: 16, sw: 2 }, ICO.arrowLeft), "Zurück") : h("span", null),
+          h("button", { type: "button", className: "nq-next" + (ctaOk ? "" : " is-off"), onClick: goNext }, step === TOTAL - 1 ? "Anfrage senden" : "weiter", h(Svg, { size: 16, sw: 2.2 }, ICO.arrow))));
 
-  return h("section", { id: "anfrage", className: "relative", style: { padding: "0" } },
-    h("div", { className: "lq-card" }, h("div", { className: "lq-grid" }, rail, main)));
+  return h("section", { id: "anfrage", className: "nq-section" },
+    h("div", { className: "nq-wrap" },
+      h("div", { className: "nq-head" },
+        h("div", { className: "nq-eyebrow" }, h("span", { className: "nq-dot" }), "Kostenlos & unverbindlich"),
+        h("h2", { className: "nq-title font-heading" }, "Ihre Solar-Einschätzung in ", h("span", null, "2 Minuten")),
+        h("p", { className: "nq-lead" }, "Ein paar kurze Fragen – ehrliche Einschätzung, fairer Festpreis.")),
+      main,
+      h("div", { className: "nq-trust" }, [["check", "100% kostenlos"], ["shield", "DSGVO-konform"], ["clock", "Antwort in 24 h"], ["euro", "Faire Festpreise"]].map(function (it, i) { return h("span", { key: i, className: "nq-trust__i" }, h("span", { className: "nq-trust__ic" }, h(Svg, { size: 15, sw: 2 }, ICO[it[0]])), it[1]); }))));
 };
 
 const App = () => {
@@ -401,7 +374,7 @@ const App = () => {
     className: "relative"
   }, /*#__PURE__*/React.createElement(Navbar, null), /*#__PURE__*/React.createElement("main", null, /*#__PURE__*/React.createElement(Hero, null), /*#__PURE__*/React.createElement(Marquee, null), /*#__PURE__*/React.createElement(LeadQuiz, null), /*#__PURE__*/React.createElement(WerWirSind, null), /*#__PURE__*/React.createElement(SonneSlider, null), /*#__PURE__*/React.createElement(Segments, null), /*#__PURE__*/React.createElement(Process, null), /*#__PURE__*/React.createElement(CaseStudies, null), /*#__PURE__*/React.createElement(RegionBand, null), /*#__PURE__*/React.createElement(About, null), /*#__PURE__*/React.createElement(Values, null), /*#__PURE__*/React.createElement(Testimonials, null), /*#__PURE__*/React.createElement(FAQ, null), /*#__PURE__*/React.createElement(BlogTeaser, null), /*#__PURE__*/React.createElement(Contact, null)), /*#__PURE__*/React.createElement("div", {
     "data-kaefer": "footer"
-  }), /*#__PURE__*/React.createElement(MobileCallBar, null));
+  }));
 };
 
 /* ── Navbar ── */
