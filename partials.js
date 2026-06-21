@@ -18,7 +18,7 @@
             '<a href="#top" style="display:inline-flex;align-items:center;gap:4px;text-decoration:none;margin-bottom:1rem">' +
               '<img src="img/logo-icon-v4.png?v=1782000021" alt="SolaWert" class="w-auto" style="height:60px">' +
             '</a>' +
-            '<p class="text-white text-sm leading-relaxed mb-5" style="max-width:17rem;text-align:justify;text-justify:inter-word">Ihr inhabergeführter Partner für Photovoltaik und Wärmepumpen in Wuppertal und ganz NRW. Effizient, ehrlich und fair.</p>' +
+            '<p class="text-white text-sm leading-relaxed max-w-xs mb-5">Ihr inhabergeführter Partner für Photovoltaik und Wärmepumpen in Wuppertal und ganz NRW. Effizient, ehrlich und fair.</p>' +
             '<div style="display:grid;grid-template-columns:max-content max-content;justify-content:start;justify-items:start;gap:.5rem">' +
               ['Faire Festpreise','Mehr Speicher','Schlüsselfertig','Inhabergeführt'].map(function(t){return '<span class="px-3 py-1 rounded-full bg-white/[0.06] border border-white/10 text-[12px] text-white font-heading">'+t+'</span>';}).join('') +
             '</div>' +
