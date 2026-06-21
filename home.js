@@ -1163,7 +1163,7 @@ const RegionBand = () => {
   }];
   return /*#__PURE__*/React.createElement("section", {
     id: "einzugsgebiet",
-    className: "px-3 md:px-5 pt-10 md:pt-12 pb-12 md:pb-16 bg-white"
+    className: "px-3 md:px-5 pt-10 md:pt-12 pb-12 md:pb-16 bg-ink"
   }, /*#__PURE__*/React.createElement("div", {
     className: "mx-auto",
     style: { maxWidth: "1760px" }
