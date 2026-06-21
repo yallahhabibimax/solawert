@@ -403,7 +403,7 @@ const App = () => {
   }, []);
   return /*#__PURE__*/React.createElement("div", {
     className: "relative"
-  }, /*#__PURE__*/React.createElement(Navbar, null), /*#__PURE__*/React.createElement("main", null, /*#__PURE__*/React.createElement(Hero, null), /*#__PURE__*/React.createElement(Marquee, null), /*#__PURE__*/React.createElement(LeadQuiz, null), /*#__PURE__*/React.createElement(WerWirSind, null), /*#__PURE__*/React.createElement(SonneSlider, null), /*#__PURE__*/React.createElement(Segments, null), /*#__PURE__*/React.createElement(Process, null), /*#__PURE__*/React.createElement(CaseStudies, null), /*#__PURE__*/React.createElement(RegionBand, null), /*#__PURE__*/React.createElement(About, null), /*#__PURE__*/React.createElement(Values, null), /*#__PURE__*/React.createElement(Testimonials, null), /*#__PURE__*/React.createElement(FAQ, null), /*#__PURE__*/React.createElement(Contact, null)), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement(Navbar, null), /*#__PURE__*/React.createElement("main", null, /*#__PURE__*/React.createElement(Hero, null), /*#__PURE__*/React.createElement(Marquee, null), /*#__PURE__*/React.createElement(LeadQuiz, null), /*#__PURE__*/React.createElement(WerWirSind, null), /*#__PURE__*/React.createElement(SonneSlider, null), /*#__PURE__*/React.createElement(Segments, null), /*#__PURE__*/React.createElement(Process, null), /*#__PURE__*/React.createElement(CaseStudies, null), /*#__PURE__*/React.createElement(RegionBand, null), /*#__PURE__*/React.createElement(About, null), /*#__PURE__*/React.createElement(Values, null), /*#__PURE__*/React.createElement(Testimonials, null), /*#__PURE__*/React.createElement(FAQ, null), /*#__PURE__*/React.createElement(BlogTeaser, null), /*#__PURE__*/React.createElement(Contact, null)), /*#__PURE__*/React.createElement("div", {
     "data-kaefer": "footer"
   }), /*#__PURE__*/React.createElement(MobileCallBar, null));
 };
@@ -421,7 +421,7 @@ const Navbar = () => {
     });
     return () => window.removeEventListener('scroll', f);
   }, []);
-  const links = [["Start", "#top"], ["Über uns", "#ueber-uns"], ["Leistungen", "#leistungen"], ["Team", "#bewertungen"], ["Kontakt", "#kontakt"]];
+  const links = [["Start", "#top"], ["Über uns", "#ueber-uns"], ["Leistungen", "#leistungen"], ["Ratgeber", "#ratgeber"], ["Team", "#bewertungen"], ["Kontakt", "#kontakt"]];
   return /*#__PURE__*/React.createElement("nav", {
     className: "sw-navwrap" + (scrolled ? " scrolled" : "")
   }, /*#__PURE__*/React.createElement("div", {
@@ -1202,42 +1202,41 @@ const RegionBand = () => {
 
 /* ── Blog / Ratgeber-Teaser ── */
 const BlogTeaser = () => {
-  const posts = [["Bettwanzen erkennen", "Bisse, Kot und Spuren sicher identifizieren – mit Fotos.", "bettwanzen-erkennen.html", "Bettwanzen"], ["Was kostet ein Photovoltaik?", "Preise 2026 nach Schädling im transparenten Überblick.", "was-kostet-ein-kammerjaeger.html", "Kosten"], ["Was tun bei einem Wespennest?", "Richtig reagieren statt Panik – und wann es weg muss.", "was-tun-bei-wespennest.html", "Wespen"], ["Rattenkot erkennen", "Spuren deuten und Ratten von Mäusen unterscheiden.", "rattenkot-erkennen.html", "Ratten"], ["Marder im Dachboden vertreiben", "Was wirklich hilft – und was Geldverschwendung ist.", "marder-im-dachboden-vertreiben.html", "Marder"], ["Wer zahlt den Photovoltaik?", "Mieter oder Vermieter? Die Rechtslage verständlich.", "wer-zahlt-kammerjaeger-mieter-vermieter.html", "Recht"]];
-  return /*#__PURE__*/React.createElement("section", {
+  const posts = [
+    ["Was kostet eine Photovoltaik-Anlage 2026?", "Preise, Förderung und ab wann sich Ihre Anlage rechnet, transparent erklärt.", "Kosten"],
+    ["Photovoltaik und Wärmepumpe kombinieren", "Warum beides zusammen am meisten bringt und wie Sie mit eigenem Strom heizen.", "Wärmepumpe"],
+    ["Wie viel Stromspeicher brauche ich wirklich?", "Den Speicher richtig dimensionieren, damit der Sonnenstrom auch abends reicht.", "Speicher"]
+  ];
+  return React.createElement("section", {
     id: "ratgeber",
-    className: "py-20 md:py-28 px-5 md:px-8 bg-surface-alt relative"
-  }, /*#__PURE__*/React.createElement("div", {
+    className: "py-20 md:py-28 px-5 md:px-8 relative",
+    style: { background: "#FBF6E9" }
+  }, React.createElement("div", {
     className: "max-w-7xl mx-auto"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "flex items-end justify-between flex-wrap gap-4 mb-10 md:mb-12"
-  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("span", {
+  }, React.createElement("div", {
+    className: "max-w-2xl mb-10 md:mb-12"
+  }, React.createElement("span", {
     className: "text-brand-deep font-heading font-semibold tracking-[0.16em] uppercase text-xs mb-3 block"
-  }, "Ratgeber & Tipps"), /*#__PURE__*/React.createElement("h2", {
+  }, "Ratgeber & Tipps"), React.createElement("h2", {
     className: "text-3xl md:text-[2.7rem] font-heading font-black text-content leading-tight"
-  }, "Wissen vom ", React.createElement("span", { style: { color: "#F5B301" } }, "Photovoltaik"))), /*#__PURE__*/React.createElement("a", {
-    href: "blog",
-    className: "btn-dark rounded-full px-6 py-3 font-heading text-sm inline-flex items-center gap-2 shrink-0"
-  }, "Zum Ratgeber ", /*#__PURE__*/React.createElement(Svg, {
-    size: 17,
-    sw: 2.2
-  }, ICO.arrow))), /*#__PURE__*/React.createElement("div", {
+  }, "Wissen rund um ", React.createElement("span", { style: { color: "#F5B301" } }, "Photovoltaik"))), React.createElement("div", {
     className: "grid sm:grid-cols-2 lg:grid-cols-3 gap-5"
-  }, posts.map(([t, d, h, cat]) => /*#__PURE__*/React.createElement("a", {
-    key: h,
-    href: h,
-    className: "reveal group bg-white rounded-2xl border border-black/5 p-6 flex flex-col shadow-[0_18px_44px_-30px_rgba(20,23,28,0.35)] hover:-translate-y-1 hover:shadow-[0_26px_60px_-30px_rgba(20,23,28,0.4)] transition-all duration-300"
-  }, /*#__PURE__*/React.createElement("span", {
-    className: "text-[11.5px] font-heading font-bold uppercase tracking-wider text-brand-deep mb-2"
-  }, cat), /*#__PURE__*/React.createElement("h3", {
-    className: "font-heading font-bold text-[1.18rem] text-content leading-snug group-hover:text-brand-deep transition-colors"
-  }, t), /*#__PURE__*/React.createElement("p", {
-    className: "text-content-secondary text-[14.5px] leading-relaxed mt-2 flex-1"
-  }, d), /*#__PURE__*/React.createElement("span", {
-    className: "mt-4 inline-flex items-center gap-1.5 text-brand-deep font-heading font-semibold text-[14px]"
-  }, "Weiterlesen ", /*#__PURE__*/React.createElement(Svg, {
-    size: 16,
-    sw: 2.2
-  }, ICO.arrow)))))));
+  }, posts.map(function (post, i) {
+    var t = post[0], d = post[1], cat = post[2];
+    return React.createElement("a", {
+      key: i,
+      href: "#anfrage",
+      className: "reveal group bg-white rounded-2xl border border-black/5 p-6 flex flex-col shadow-[0_18px_44px_-30px_rgba(20,23,28,0.35)] hover:-translate-y-1 hover:shadow-[0_26px_60px_-30px_rgba(20,23,28,0.4)] transition-all duration-300"
+    }, React.createElement("span", {
+      className: "text-[11.5px] font-heading font-bold uppercase tracking-wider text-brand-deep mb-2"
+    }, cat), React.createElement("h3", {
+      className: "font-heading font-bold text-[1.18rem] text-content leading-snug group-hover:text-brand-deep transition-colors"
+    }, t), React.createElement("p", {
+      className: "text-content-secondary text-[14.5px] leading-relaxed mt-2 flex-1"
+    }, d), React.createElement("span", {
+      className: "mt-4 inline-flex items-center gap-1.5 text-brand-deep font-heading font-semibold text-[14px]"
+    }, "Weiterlesen ", React.createElement(Svg, { size: 16, sw: 2.2 }, ICO.arrow)));
+  }))));
 };
 
 /* ── About ── */
