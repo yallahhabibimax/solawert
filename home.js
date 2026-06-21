@@ -1203,9 +1203,9 @@ const RegionBand = () => {
 /* ── Blog / Ratgeber-Teaser ── */
 const BlogTeaser = () => {
   const posts = [
-    ["Was kostet eine Photovoltaik-Anlage 2026?", "Preise, Förderung und ab wann sich Ihre Anlage rechnet, transparent erklärt.", "Kosten"],
-    ["Photovoltaik und Wärmepumpe kombinieren", "Warum beides zusammen am meisten bringt und wie Sie mit eigenem Strom heizen.", "Wärmepumpe"],
-    ["Wie viel Stromspeicher brauche ich wirklich?", "Den Speicher richtig dimensionieren, damit der Sonnenstrom auch abends reicht.", "Speicher"]
+    ["Was kostet eine Photovoltaik-Anlage 2026?", "Preise, Förderung und ab wann sich Ihre Anlage rechnet, transparent erklärt.", "Kosten", "img/leistung-pv.jpg"],
+    ["Photovoltaik und Wärmepumpe kombinieren", "Warum beides zusammen am meisten bringt und wie Sie mit eigenem Strom heizen.", "Wärmepumpe", "img/leistung-waermepumpe.png"],
+    ["Wie viel Stromspeicher brauche ich wirklich?", "Den Speicher richtig dimensionieren, damit der Sonnenstrom auch abends reicht.", "Speicher", "img/leistung-speicher.jpg"]
   ];
   return React.createElement("section", {
     id: "ratgeber",
@@ -1214,7 +1214,7 @@ const BlogTeaser = () => {
   }, React.createElement("div", {
     className: "max-w-7xl mx-auto"
   }, React.createElement("div", {
-    className: "max-w-2xl mb-10 md:mb-12"
+    className: "max-w-2xl mb-10 md:mb-12 reveal"
   }, React.createElement("span", {
     className: "text-brand-deep font-heading font-semibold tracking-[0.16em] uppercase text-xs mb-3 block"
   }, "Ratgeber & Tipps"), React.createElement("h2", {
@@ -1222,20 +1222,8 @@ const BlogTeaser = () => {
   }, "Wissen rund um ", React.createElement("span", { style: { color: "#F5B301" } }, "Photovoltaik"))), React.createElement("div", {
     className: "grid sm:grid-cols-2 lg:grid-cols-3 gap-5"
   }, posts.map(function (post, i) {
-    var t = post[0], d = post[1], cat = post[2];
-    return React.createElement("a", {
-      key: i,
-      href: "#anfrage",
-      className: "reveal group bg-white rounded-2xl border border-black/5 p-6 flex flex-col shadow-[0_18px_44px_-30px_rgba(20,23,28,0.35)] hover:-translate-y-1 hover:shadow-[0_26px_60px_-30px_rgba(20,23,28,0.4)] transition-all duration-300"
-    }, React.createElement("span", {
-      className: "text-[11.5px] font-heading font-bold uppercase tracking-wider text-brand-deep mb-2"
-    }, cat), React.createElement("h3", {
-      className: "font-heading font-bold text-[1.18rem] text-content leading-snug group-hover:text-brand-deep transition-colors"
-    }, t), React.createElement("p", {
-      className: "text-content-secondary text-[14.5px] leading-relaxed mt-2 flex-1"
-    }, d), React.createElement("span", {
-      className: "mt-4 inline-flex items-center gap-1.5 text-brand-deep font-heading font-semibold text-[14px]"
-    }, "Weiterlesen ", React.createElement(Svg, { size: 16, sw: 2.2 }, ICO.arrow)));
+    var t = post[0], d = post[1], cat = post[2], img = post[3];
+    return React.createElement("a", { key: i, href: "#anfrage", className: "rg-card reveal" }, React.createElement("div", { className: "rg-inner" }, React.createElement("div", { className: "rg-imgwrap" }, React.createElement("img", { src: img, alt: t, className: "rg-img" }), React.createElement("div", { className: "rg-shade" }), React.createElement("span", { className: "rg-cat" }, cat), React.createElement("span", { className: "rg-go" }, React.createElement(Svg, { size: 18, sw: 2.4 }, ICO.arrow))), React.createElement("div", { className: "rg-body" }, React.createElement("h3", { className: "rg-title font-heading" }, t), React.createElement("p", { className: "rg-text" }, d), React.createElement("span", { className: "rg-more font-heading" }, "Weiterlesen ", React.createElement("span", { className: "rg-arr" }, React.createElement(Svg, { size: 16, sw: 2.2 }, ICO.arrow))))));
   }))));
 };
 

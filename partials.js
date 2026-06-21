@@ -11,9 +11,9 @@
   /* ═══ FOOTER ═══ */
   function footerHTML() {
     return '' +
-    '<footer class="text-white pt-16 pb-28 lg:pb-10 px-5 md:px-8 border-t border-white/5" style="background:#1D222A">' +
+    '<footer class="text-white pt-16 pb-28 lg:pb-10 px-5 md:px-8 border-t border-white/5" style="background:#2A2E36">' +
       '<div class="max-w-7xl mx-auto">' +
-        '<div class="grid md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.1fr] gap-10 lg:gap-8 pb-12 border-b border-white/10">' +
+        '<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 pb-12 border-b border-white/10 items-start">' +
           '<div>' +
             '<a href="#top" style="display:inline-flex;align-items:center;gap:4px;text-decoration:none;margin-bottom:1rem">' +
               '<img src="img/logo-icon-v4.png?v=1782000021" alt="SolaWert" class="w-auto" style="height:60px">' +
@@ -22,12 +22,8 @@
             '<div style="display:grid;grid-template-columns:max-content max-content;justify-content:start;justify-items:start;gap:.5rem">' +
               ['Faire Festpreise','Mehr Speicher','Schlüsselfertig','Inhabergeführt'].map(function(t){return '<span class="px-3 py-1 rounded-full bg-white/[0.06] border border-white/10 text-[12px] text-white font-heading">'+t+'</span>';}).join('') +
             '</div>' +
-            '<div style="margin-top:1.6rem">' +
-              '<div class="font-heading" style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.55rem">Umgesetzt von</div>' +
-              '<a href="https://pstudio.io" target="_blank" rel="noopener" style="display:inline-block;transition:opacity .25s ease;opacity:.85" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.85"><img src="img/pstudio-partner.webp?v=2" alt="PStudio" style="height:52px;width:auto;display:block"></a>' +
-            '</div>' +
           '</div>' +
-          '<div>' +
+          '<div class="sw-fcol">' +
             '<h4 class="font-heading font-bold text-sm uppercase tracking-wider text-white mb-4">Leistungen</h4>' +
             '<ul class="space-y-2.5 text-sm text-white">' +
               '<li><a href="#leistungen" class="hover:text-brand">Photovoltaik schlüsselfertig</a></li>' +
@@ -37,7 +33,7 @@
               '<li><a href="#leistungen" class="hover:text-brand">Wartung & Anmeldung</a></li>' +
             '</ul>' +
           '</div>' +
-          '<div>' +
+          '<div class="sw-fcol">' +
             '<h4 class="font-heading font-bold text-sm uppercase tracking-wider text-white mb-4">Navigation</h4>' +
             '<ul class="space-y-2.5 text-sm text-white">' +
               '<li><a href="/#ueber-uns" class="hover:text-brand">Über uns</a></li>' +
@@ -47,7 +43,7 @@
               '<li><a href="/#kontakt" class="hover:text-brand">Kontakt</a></li>' +
             '</ul>' +
           '</div>' +
-          '<div>' +
+          '<div class="sw-fcol">' +
             '<h4 class="font-heading font-bold text-sm uppercase tracking-wider text-white mb-4">Kontakt</h4>' +
             '<ul class="space-y-3 text-sm text-white">' +
               '<li class="flex items-start gap-2.5"><span class="text-brand mt-0.5 shrink-0">' + svg('phone',17) + '</span><a href="tel:'+TEL+'" class="hover:text-brand">'+TELD+'</a></li>' +
@@ -59,6 +55,7 @@
         '</div>' +
         '<div class="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 text-sm text-white">' +
           '<div>© ' + (new Date().getFullYear()) + ' SolaWert · Gegam Sargsian · Inhaber</div>' +
+          '<a href="https://pstudio.io" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.6rem;opacity:.85;transition:opacity .25s ease" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.85"><span class="font-heading" style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.4)">Umgesetzt von</span><img src="img/pstudio-partner.webp?v=2" alt="PStudio" style="height:22px;width:auto;display:block"></a>' +
           '<div class="flex items-center gap-5"><a href="impressum" class="hover:text-brand">Impressum</a><a href="datenschutz" class="hover:text-brand">Datenschutz</a></div>' +
         '</div>' +
       '</div>' +

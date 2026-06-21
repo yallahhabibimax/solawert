@@ -393,6 +393,9 @@ html { interpolate-size: allow-keywords; }
 .faq-cta:hover .faq-cta-arrow { transform: rotate(-45deg); }
 @media (prefers-reduced-motion: reduce) { .faq-dot, .faq-icon, .faq-cta-arrow { animation: none !important; transition: none !important; } }
 
+/* Footer: Spalten-Ueberschriften auf eine Linie mit dem Brand-Text (Logo darueber) */
+@media (min-width: 1024px) { .sw-fcol { margin-top: 4.75rem; } }
+
 /* ─── Decorative backgrounds ───────────────────────────── */
 .bg-glow-tl { position: relative; }
 .bg-glow-tl::before {
@@ -840,3 +843,26 @@ html { interpolate-size: allow-keywords; }
   .lq-donedisc, .lq-donedisc::before, .lq-donedisc::after, .lq-d-h, .lq-d-p, .lq-done .lq-summary, .lq-done .lq-srow { animation:none !important; opacity:1 !important; transform:none !important; }
   .lq-confetti { display:none; }
 }
+
+
+/* ─── Ratgeber-Karten Effekte ───────────────────────────── */
+#ratgeber::before { content:""; position:absolute; top:-8%; right:-4%; width:46%; height:62%; pointer-events:none; background:radial-gradient(ellipse, rgba(245,179,1,0.13) 0%, transparent 64%); z-index:0; }
+#ratgeber > div { position:relative; z-index:1; }
+.rg-card { display:flex; text-decoration:none; }
+.rg-inner { flex:1; display:flex; flex-direction:column; background:#fff; border:1px solid rgba(20,23,28,0.06); border-radius:22px; overflow:hidden; box-shadow:0 18px 44px -30px rgba(20,23,28,0.35); transition:transform .4s cubic-bezier(.16,1,.3,1), box-shadow .4s ease, border-color .4s ease; }
+.rg-card:hover .rg-inner { transform:translateY(-8px); border-color:rgba(245,179,1,0.55); box-shadow:0 34px 66px -28px rgba(20,23,28,0.42); }
+.rg-imgwrap { position:relative; height:200px; overflow:hidden; flex-shrink:0; }
+.rg-img { width:100%; height:100%; object-fit:cover; transition:transform .7s cubic-bezier(.16,1,.3,1); }
+.rg-card:hover .rg-img { transform:scale(1.08); }
+.rg-shade { position:absolute; inset:0; pointer-events:none; background:linear-gradient(180deg, rgba(20,23,28,0.16) 0%, transparent 32%, transparent 62%, rgba(20,23,28,0.42) 100%); }
+.rg-cat { position:absolute; top:14px; left:14px; background:#F5B301; color:#1A1402; font-family:'Archivo',sans-serif; font-weight:800; text-transform:uppercase; letter-spacing:0.06em; font-size:10.5px; padding:0.38rem 0.75rem; border-radius:999px; box-shadow:0 8px 18px -8px rgba(245,179,1,0.8); }
+.rg-go { position:absolute; top:12px; right:12px; width:40px; height:40px; border-radius:50%; background:rgba(255,255,255,0.95); color:#14171C; display:flex; align-items:center; justify-content:center; opacity:0; transform:translateY(-8px) scale(0.7) rotate(-25deg); transition:all .45s cubic-bezier(.34,1.56,.64,1); box-shadow:0 10px 24px -8px rgba(0,0,0,0.45); }
+.rg-card:hover .rg-go { opacity:1; transform:translateY(0) scale(1) rotate(0); background:#F5B301; }
+.rg-body { padding:1.5rem 1.5rem 1.6rem; display:flex; flex-direction:column; flex:1; }
+.rg-title { font-weight:800; font-size:1.18rem; color:#14171C; line-height:1.25; letter-spacing:-0.01em; transition:color .3s ease; margin:0; }
+.rg-card:hover .rg-title { color:#C8910C; }
+.rg-text { color:#525A64; font-size:14.5px; line-height:1.6; margin:0.5rem 0 0; flex:1; }
+.rg-more { margin-top:1rem; color:#C8910C; display:inline-flex; align-items:center; gap:0.45rem; font-weight:700; font-size:14px; }
+.rg-arr { display:inline-flex; transition:transform .3s cubic-bezier(.16,1,.3,1); }
+.rg-card:hover .rg-arr { transform:translateX(6px); }
+@media (prefers-reduced-motion: reduce){ .rg-inner, .rg-img, .rg-go, .rg-arr { transition:none !important; } .rg-card:hover .rg-inner, .rg-card:hover .rg-img, .rg-card:hover .rg-go, .rg-card:hover .rg-arr { transform:none !important; } .rg-go { opacity:1; } }
