@@ -357,14 +357,12 @@ details > summary::-webkit-details-marker { display: none; }
 
 /* FAQ – nummerierte Reihen (Editorial-Stil, Marcel-Davia) */
 .faq-list { position: relative; display: flex; flex-direction: column; border: 1px solid rgba(255,255,255,.08); border-radius: 24px; background: rgba(255,255,255,.02); padding: 4px 30px; }
-.faq-list::before, .faq-list::after { content: ""; position: absolute; left: 1px; right: 1px; height: 70px; pointer-events: none; z-index: 3; }
-.faq-list::before { top: 1px; border-radius: 24px 24px 0 0; background: linear-gradient(180deg, rgba(245,179,1,.20) 0%, rgba(245,179,1,.05) 45%, transparent 100%); }
-.faq-list::after { bottom: 1px; border-radius: 0 0 24px 24px; background: linear-gradient(0deg, rgba(245,179,1,.20) 0%, rgba(245,179,1,.05) 45%, transparent 100%); }
+.faq-list::before, .faq-list::after { content: none; }
 .faq-item { border-top: 1px solid rgba(255,255,255,.10); }
 .faq-item:first-child { border-top: none; }
 .faq-head { display: flex; align-items: center; gap: .95rem; padding: 24px 4px; }
 .faq-num { width: 30px; flex-shrink: 0; font-weight: 700; font-size: 13px; letter-spacing: .04em; color: rgba(255,255,255,.34); transition: color .3s ease; }
-.faq-q { flex: 1; min-width: 0; font-weight: 800; font-size: 17.5px; line-height: 1.25; color: #fff; transition: color .3s ease; }
+.faq-q { flex: 1; min-width: 0; font-weight: 800; font-size: 20px; line-height: 1.25; color: #fff; transition: color .3s ease; }
 .faq-icon { flex-shrink: 0; display: flex; align-items: center; justify-content: center; color: var(--accent); transition: transform .35s cubic-bezier(.16,1,.3,1); }
 .faq-item:hover .faq-q { color: var(--accent); }
 .faq-item:hover .faq-num { color: rgba(245,179,1,.7); }
@@ -700,11 +698,8 @@ html { interpolate-size: allow-keywords; }
 .sw-glass-chip { display:inline-flex; align-items:center; gap:.5rem; padding:.42rem .9rem .42rem .72rem; border-radius:999px; background:rgba(245,179,1,.10); border:1px solid rgba(245,179,1,.38); -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px); color:#8A5E00; font-family:'Archivo',system-ui,sans-serif; font-weight:800; font-size:11px; letter-spacing:.16em; text-transform:uppercase; box-shadow:0 6px 18px -10px rgba(245,179,1,.5); }
 
 
-/* FAQ – linke Spalte etwas nach rechts (Desktop) */
+/* FAQ – normale Section, kein Sticky/100vh-Scroll mehr */
 .faq-left { padding-left: 0; }
-@media (min-width: 1024px) {
-  .faq-left { padding-left: 2rem; position: sticky; top: 0; height: 100vh; display: flex; flex-direction: column; justify-content: center; }
-}
 
 
 /* ─── Lead-Quiz „Antwort-Karussell" ─────────────────────── */

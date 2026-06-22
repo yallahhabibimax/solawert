@@ -1358,7 +1358,7 @@ const FAQ = () => {
     className: "absolute",
     style: { top: "-18%", left: "-12%", width: "640px", height: "640px", background: "radial-gradient(circle,rgba(245,179,1,0.12) 0%,transparent 62%)" }
   })), React.createElement("div", {
-    className: "max-w-7xl mx-auto relative z-10 grid lg:grid-cols-2 gap-12 lg:gap-16 items-start"
+    className: "max-w-7xl mx-auto relative z-10 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center"
   }, React.createElement("div", {
     className: "reveal-left faq-left"
   }, React.createElement("h2", {
