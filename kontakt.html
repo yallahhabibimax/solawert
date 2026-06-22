@@ -94,12 +94,26 @@
     .kt-submit:hover { transform:translateY(-2px); box-shadow:0 20px 44px -14px rgba(245,179,1,.7); }
     .kt-meta { font-family:'Inter',sans-serif; font-size:12.5px; color:#3D444E; margin:.9rem auto 0; line-height:1.5; max-width:32rem; }
 
-    /* FAQ */
-    .kt-faqsec { padding:5rem 1.25rem; background:#fff; }
-    @media (min-width:768px){ .kt-faqsec { padding:6rem 2rem; } }
-    .kt-faqsec__wrap { max-width:54rem; margin:0 auto; }
-    .kt-faqsec__head { text-align:center; margin-bottom:2.5rem; }
-    .kt-faqsec__h { font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(1.7rem,3vw,2.4rem); line-height:1.15; letter-spacing:-.02em; color:#14171C; margin:0; }
+    /* FAQ (Split Layout) */
+    .kt-faqsec { padding:4rem 1.25rem; background:#F4F5F7; }
+    @media (min-width:768px){ .kt-faqsec { padding:5.5rem 2rem; } }
+    .kt-faqsec__wrap { max-width:72rem; margin:0 auto; display:grid; grid-template-columns:1fr; gap:2.2rem; align-items:start; }
+    @media (min-width:900px){ .kt-faqsec__wrap { grid-template-columns:.85fr 1.15fr; gap:3.2rem; } }
+    .kt-faqsec__eyebrow { font-family:'Archivo',sans-serif; font-weight:800; font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:#a37700; margin-bottom:.85rem; }
+    .kt-faqsec__h { font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(1.7rem,3vw,2.4rem); line-height:1.15; letter-spacing:-.02em; color:#14171C; margin:0 0 1rem; }
+    .kt-faqsec__lead { font-family:'Inter',sans-serif; font-size:.98rem; line-height:1.6; color:#3D444E; margin:0 0 1.6rem; max-width:24rem; }
+    .kt-faqsec__phone { display:inline-flex; align-items:center; gap:.55rem; padding:.95rem 1.6rem; border-radius:999px; background:#14171C; color:#fff; font-family:'Archivo',sans-serif; font-weight:800; font-size:.95rem; transition:transform .25s ease, background .25s ease; }
+    .kt-faqsec__phone:hover { transform:translateY(-2px); background:#1f242c; }
+    .kt-faqsec__phone svg { color:#F5B301; }
+    .kt-faqsec__list { display:grid; gap:.85rem; }
+    .kt-faqsec__item { background:#fff; border:1px solid rgba(20,23,28,.08); border-radius:14px; transition:border-color .25s ease, box-shadow .25s ease; }
+    .kt-faqsec__item[open] { border-color:rgba(245,179,1,.45); box-shadow:0 12px 30px -18px rgba(20,23,28,.15); }
+    .kt-faqsec__item summary { list-style:none; cursor:pointer; padding:1.05rem 1.25rem; display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+    .kt-faqsec__item summary::-webkit-details-marker { display:none; }
+    .kt-faqsec__q { font-family:'Archivo',sans-serif; font-weight:800; font-size:.97rem; line-height:1.35; color:#14171C; }
+    .kt-faqsec__ic { width:28px; height:28px; flex-shrink:0; border-radius:50%; display:flex; align-items:center; justify-content:center; background:rgba(245,179,1,.15); color:#a37700; transition:transform .25s ease, background .25s ease; }
+    .kt-faqsec__item[open] .kt-faqsec__ic { transform:rotate(45deg); background:linear-gradient(180deg,#FFDD66,#F5B301); color:#1A1402; }
+    .kt-faqsec__a { padding:0 1.25rem 1.15rem; font-family:'Inter',sans-serif; font-size:14px; line-height:1.65; color:#3D444E; }
   </style>
 </head>
 <body class="font-body antialiased overflow-x-hidden" style="background:#FFFFFF;color:#14171C">
@@ -230,46 +244,52 @@
     </div>
   </section>
 
-  <!-- FAQ -->
+  <!-- FAQ (Split Layout) -->
   <section class="kt-faqsec">
     <div class="kt-faqsec__wrap">
-      <div class="kt-faqsec__head">
+      <div>
+        <div class="kt-faqsec__eyebrow">FAQ</div>
         <h2 class="kt-faqsec__h">Häufige Fragen zum Kontakt</h2>
+        <p class="kt-faqsec__lead">Noch offene Fragen? Rufen Sie uns an, wir beraten Sie gern und unverbindlich.</p>
+        <a href="tel:+4915205999900" class="kt-faqsec__phone">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          0152 5999900
+        </a>
       </div>
 
-      <section class="rg-faq" aria-label="Häufige Fragen zum Kontakt">
-        <details class="rg-faq__item">
-          <summary class="rg-faq__sum">
-            <span class="rg-faq__q">Wie schnell antwortet ihr?</span>
-            <span class="rg-faq__ic"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+      <div class="kt-faqsec__list">
+        <details class="kt-faqsec__item">
+          <summary>
+            <span class="kt-faqsec__q">Wie schnell antwortet ihr?</span>
+            <span class="kt-faqsec__ic"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
           </summary>
-          <div class="rg-faq__a">Werktags innerhalb eines Tages, in der Regel sogar binnen weniger Stunden. Anrufe direkt. Wenn wir gerade auf einem Dach sind, rufen wir spätestens am selben Werktag zurück.</div>
+          <div class="kt-faqsec__a">Werktags innerhalb eines Tages, in der Regel sogar binnen weniger Stunden. Anrufe direkt. Wenn wir gerade auf einem Dach sind, rufen wir spätestens am selben Werktag zurück.</div>
         </details>
 
-        <details class="rg-faq__item">
-          <summary class="rg-faq__sum">
-            <span class="rg-faq__q">Was kostet eine Erstberatung?</span>
-            <span class="rg-faq__ic"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        <details class="kt-faqsec__item">
+          <summary>
+            <span class="kt-faqsec__q">Was kostet eine Erstberatung?</span>
+            <span class="kt-faqsec__ic"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
           </summary>
-          <div class="rg-faq__a">Nichts. Die erste Vor-Ort-Beratung inklusive Dachcheck, Verbrauchsanalyse und schriftlichem Festpreis-Angebot ist immer kostenlos und unverbindlich.</div>
+          <div class="kt-faqsec__a">Nichts. Die erste Vor-Ort-Beratung inklusive Dachcheck, Verbrauchsanalyse und schriftlichem Festpreis-Angebot ist immer kostenlos und unverbindlich.</div>
         </details>
 
-        <details class="rg-faq__item">
-          <summary class="rg-faq__sum">
-            <span class="rg-faq__q">Welche Gebiete bedient ihr?</span>
-            <span class="rg-faq__ic"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        <details class="kt-faqsec__item">
+          <summary>
+            <span class="kt-faqsec__q">Welche Gebiete bedient ihr?</span>
+            <span class="kt-faqsec__ic"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
           </summary>
-          <div class="rg-faq__a">Hauptstandort Wuppertal, dazu Solingen, Remscheid, Velbert, Mettmann, Haan und das gesamte Bergische Land. Auf Anfrage auch weitere Orte in NRW.</div>
+          <div class="kt-faqsec__a">Hauptstandort Wuppertal, dazu Solingen, Remscheid, Velbert, Mettmann, Haan und das gesamte Bergische Land. Auf Anfrage auch weitere Orte in NRW.</div>
         </details>
 
-        <details class="rg-faq__item">
-          <summary class="rg-faq__sum">
-            <span class="rg-faq__q">Kann ich auch einfach vorbeikommen?</span>
-            <span class="rg-faq__ic"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        <details class="kt-faqsec__item">
+          <summary>
+            <span class="kt-faqsec__q">Kann ich auch einfach vorbeikommen?</span>
+            <span class="kt-faqsec__ic"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
           </summary>
-          <div class="rg-faq__a">Lieber kurz anrufen oder schreiben, wir sind oft auf Montage. Mit Termin sind wir verlässlich im Büro und nehmen uns Zeit für Sie.</div>
+          <div class="kt-faqsec__a">Lieber kurz anrufen oder schreiben, wir sind oft auf Montage. Mit Termin sind wir verlässlich im Büro und nehmen uns Zeit für Sie.</div>
         </details>
-      </section>
+      </div>
     </div>
   </section>
 
