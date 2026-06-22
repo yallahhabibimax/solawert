@@ -50,22 +50,22 @@
     .st-trustbar__l { font-family:'Inter',sans-serif; font-size:11px; color:rgba(255,255,255,.55); letter-spacing:.08em; text-transform:uppercase; font-weight:600; margin-top:.15rem; }
 
     /* === WARUM WIR (Cards) === */
-    .st-warum { padding:5rem 1.25rem; background:#14171C; color:#fff; }
+    .st-warum { padding:5rem 1.25rem; background:#fff; color:#14171C; }
     @media (min-width:768px){ .st-warum { padding:6rem 2rem; } }
     .st-warum__wrap { max-width:72rem; margin:0 auto; }
     .st-warum__head { text-align:center; margin-bottom:2.8rem; }
-    .st-eyebrow { display:inline-flex; align-items:center; gap:.5rem; padding:.42rem 1rem; border-radius:999px; background:rgba(245,179,1,.12); border:1px solid rgba(245,179,1,.28); color:#FFDD66; font-family:'Inter',sans-serif; font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; margin-bottom:1rem; }
-    .st-warum__h2 { font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(1.75rem,3.2vw,2.5rem); line-height:1.12; letter-spacing:-.02em; margin:0 0 .7rem; }
-    .st-warum__h2 .accent { background:linear-gradient(180deg,#FFDD66 0%,#F5B301 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:transparent; }
-    .st-warum__sub { font-family:'Inter',sans-serif; font-size:1.02rem; line-height:1.6; color:rgba(255,255,255,.68); max-width:36rem; margin:0 auto; }
+    .st-eyebrow { display:inline-flex; align-items:center; gap:.5rem; padding:.42rem 1rem; border-radius:999px; background:rgba(245,179,1,.12); color:#a37700; font-family:'Inter',sans-serif; font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; margin-bottom:1rem; }
+    .st-warum__h2 { font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(1.75rem,3.2vw,2.5rem); line-height:1.12; letter-spacing:-.02em; margin:0 0 .7rem; color:#14171C; }
+    .st-warum__h2 .accent { color:#F5B301; }
+    .st-warum__sub { font-family:'Inter',sans-serif; font-size:1.02rem; line-height:1.6; color:#3D444E; max-width:36rem; margin:0 auto; }
     .st-warum__grid { display:grid; grid-template-columns:1fr; gap:1rem; }
     @media (min-width:640px){ .st-warum__grid { grid-template-columns:repeat(2,1fr); } }
     @media (min-width:1024px){ .st-warum__grid { grid-template-columns:repeat(4,1fr); gap:1.2rem; } }
-    .st-warum__c { padding:1.6rem 1.4rem; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); border-radius:18px; transition:background .3s ease, border-color .3s ease, transform .3s ease; }
-    .st-warum__c:hover { background:rgba(255,255,255,.07); border-color:rgba(245,179,1,.25); transform:translateY(-3px); }
+    .st-warum__c { padding:1.6rem 1.4rem; background:#FBF6E9; border:1px solid rgba(20,23,28,.06); border-radius:18px; transition:background .3s ease, border-color .3s ease, transform .3s ease, box-shadow .3s ease; }
+    .st-warum__c:hover { background:#fff; border-color:rgba(245,179,1,.35); transform:translateY(-3px); box-shadow:0 18px 40px -22px rgba(245,179,1,.4); }
     .st-warum__c-ico { width:44px; height:44px; border-radius:12px; background:linear-gradient(180deg,#FFDD66,#F5B301); color:#1A1402; display:flex; align-items:center; justify-content:center; margin-bottom:1rem; }
-    .st-warum__c-h { font-family:'Archivo',sans-serif; font-weight:800; font-size:1.1rem; line-height:1.25; margin:0 0 .45rem; }
-    .st-warum__c-p { font-family:'Inter',sans-serif; font-size:14.5px; line-height:1.6; color:rgba(255,255,255,.7); margin:0; }
+    .st-warum__c-h { font-family:'Archivo',sans-serif; font-weight:800; font-size:1.1rem; line-height:1.25; margin:0 0 .45rem; color:#14171C; }
+    .st-warum__c-p { font-family:'Inter',sans-serif; font-size:14.5px; line-height:1.6; color:#3D444E; margin:0; }
 
     /* === LEAD FORM (Quick-Anfrage) === */
     .st-lead { padding:5rem 1.25rem; background:#FBF6E9; }
@@ -196,28 +196,6 @@
       </div>
     </div>
   </header>
-
-  <!-- TRUST-BAR -->
-  <section class="st-trustbar">
-    <div class="st-trustbar__wrap">
-      <div class="st-trustbar__item">
-        <span class="st-trustbar__ico"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2 9.4 8.6 2 9l5.7 4.7L5.8 22 12 18.3 18.2 22l-1.9-8.3L22 9l-7.4-.4Z"/></svg></span>
-        <div class="st-trustbar__tx"><div class="st-trustbar__n">4,9 / 5</div><div class="st-trustbar__l">Bewertung</div></div>
-      </div>
-      <div class="st-trustbar__item">
-        <span class="st-trustbar__ico"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.1V12a10 10 0 1 1-5.9-9.1"/><path d="m9 11 3 3L22 4"/></svg></span>
-        <div class="st-trustbar__tx"><div class="st-trustbar__n">500+ Projekte</div><div class="st-trustbar__l">Im Bergischen</div></div>
-      </div>
-      <div class="st-trustbar__item">
-        <span class="st-trustbar__ico"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
-        <div class="st-trustbar__tx"><div class="st-trustbar__n">1 bis 3 Tage</div><div class="st-trustbar__l">Montagedauer</div></div>
-      </div>
-      <div class="st-trustbar__item">
-        <span class="st-trustbar__ico"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg></span>
-        <div class="st-trustbar__tx"><div class="st-trustbar__n">0 €</div><div class="st-trustbar__l">Anzahlung</div></div>
-      </div>
-    </div>
-  </section>
 
   <!-- WARUM SOLAWERT (Vertrauen Cards) -->
   <section class="st-warum">
