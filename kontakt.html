@@ -20,8 +20,8 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"SolaWert","image":"img/einsatz-team.jpg","telephone":"+4915205999900","email":"info@solawert.de","address":{"@type":"PostalAddress","streetAddress":"Friedrich-Ebert-Str. 55","postalCode":"42103","addressLocality":"Wuppertal","addressCountry":"DE"},"geo":{"@type":"GeoCoordinates","latitude":51.2562,"longitude":7.1508},"openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"08:00","closes":"18:00"}}</script>
   <style>
     /* === Kontakt === */
-    .kt-hero { position:relative; overflow:hidden; padding:9rem 1.25rem 3rem; color:#fff; background:#14171C; }
-    @media (min-width:768px){ .kt-hero { padding:10.5rem 2rem 3.5rem; } }
+    .kt-hero { position:relative; overflow:hidden; padding:8rem 1.25rem 2rem; color:#fff; background:#14171C; }
+    @media (min-width:768px){ .kt-hero { padding:9.5rem 2rem 2.5rem; } }
     .kt-hero__glow { position:absolute; top:-200px; left:50%; transform:translateX(-50%); width:780px; height:520px; border-radius:50%; background:radial-gradient(ellipse, rgba(245,179,1,.16) 0%, rgba(245,179,1,0) 60%); pointer-events:none; }
     .kt-hero__wrap { position:relative; z-index:2; max-width:54rem; margin:0 auto; text-align:center; }
     .kt-eyebrow { display:inline-flex; align-items:center; gap:.55rem; padding:.45rem 1rem; border-radius:999px; background:rgba(245,179,1,.12); border:1px solid rgba(245,179,1,.28); color:#FFDD66; font-family:'Inter',sans-serif; font-size:13px; font-weight:600; letter-spacing:.02em; margin-bottom:1.4rem; }
@@ -32,19 +32,19 @@
     .kt-lead { color:rgba(255,255,255,.78); font-size:clamp(1.05rem,1.4vw,1.18rem); line-height:1.65; max-width:38rem; margin:0 auto; }
 
     /* Kontakt-Cards */
-    .kt-cards { padding:3.5rem 1.25rem 1rem; background:#14171C; }
-    @media (min-width:768px){ .kt-cards { padding:4rem 2rem 1.5rem; } }
-    .kt-cards__wrap { max-width:72rem; margin:0 auto; display:grid; grid-template-columns:1fr; gap:1rem; }
+    .kt-cards { padding:2rem 1.25rem 2.5rem; background:#14171C; }
+    @media (min-width:768px){ .kt-cards { padding:2.5rem 2rem 3rem; } }
+    .kt-cards__wrap { max-width:72rem; margin:0 auto; display:grid; grid-template-columns:1fr; gap:.85rem; }
     @media (min-width:640px){ .kt-cards__wrap { grid-template-columns:repeat(2,1fr); } }
-    @media (min-width:1024px){ .kt-cards__wrap { grid-template-columns:repeat(4,1fr); gap:1.2rem; } }
-    .kt-card { padding:2.3rem 1.6rem 2rem; border-radius:18px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); transition:background .25s ease, border-color .25s ease, transform .25s ease; display:flex; flex-direction:column; }
+    @media (min-width:1024px){ .kt-cards__wrap { grid-template-columns:repeat(4,1fr); gap:1rem; } }
+    .kt-card { padding:1.5rem 1.35rem 1.4rem; border-radius:16px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); transition:background .25s ease, border-color .25s ease, transform .25s ease; display:flex; flex-direction:column; }
     .kt-card:hover { background:rgba(255,255,255,.09); border-color:rgba(245,179,1,.3); transform:translateY(-3px); }
-    .kt-card__ico { width:50px; height:50px; border-radius:13px; background:linear-gradient(180deg,#FFDD66,#F5B301); color:#1A1402; display:flex; align-items:center; justify-content:center; margin-bottom:1.5rem; }
-    .kt-card__lbl { font-family:'Archivo',sans-serif; font-weight:700; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.55); margin-bottom:.55rem; }
-    .kt-card__val { font-family:'Archivo',sans-serif; font-weight:800; font-size:1.1rem; line-height:1.4; color:#fff; margin-bottom:auto; }
+    .kt-card__ico { width:42px; height:42px; border-radius:11px; background:linear-gradient(180deg,#FFDD66,#F5B301); color:#1A1402; display:flex; align-items:center; justify-content:center; margin-bottom:1rem; }
+    .kt-card__lbl { font-family:'Archivo',sans-serif; font-weight:700; font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.55); margin-bottom:.4rem; }
+    .kt-card__val { font-family:'Archivo',sans-serif; font-weight:800; font-size:1rem; line-height:1.35; color:#fff; margin-bottom:auto; }
     .kt-card__val a { color:#fff; }
     .kt-card__val a:hover { color:#F5B301; }
-    .kt-card__sub { font-family:'Inter',sans-serif; font-size:12.5px; color:rgba(255,255,255,.55); margin-top:1.1rem; padding-top:.85rem; border-top:1px solid rgba(255,255,255,.07); }
+    .kt-card__sub { font-family:'Inter',sans-serif; font-size:12px; color:rgba(255,255,255,.55); margin-top:.85rem; padding-top:.7rem; border-top:1px solid rgba(255,255,255,.07); }
 
     /* Karte + Form */
     .kt-mainsplit { padding:5rem 1.25rem; background:#FBF6E9; }
