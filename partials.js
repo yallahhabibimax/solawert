@@ -291,6 +291,16 @@
     var SUB_R = [["PV-Kosten 2026","ratgeber-pv-kosten.html","euro","Preise & wann es sich rechnet"],["PV + Wärmepumpe","ratgeber-pv-waermepumpe.html","flame","Strom und Heizung kombinieren"],["Speicher richtig wählen","ratgeber-stromspeicher-groesse.html","bolt","Wie groß muss er sein?"],["PV-Förderung 2026","ratgeber-pv-foerderung.html","shield","Zuschüsse & KfW-Programme"],["Anlagengröße planen","ratgeber-pv-groesse.html","search","kWp richtig auswählen"],["Eigenverbrauch maximieren","ratgeber-eigenverbrauch.html","sun","Mehr Sonne, weniger Netz"],["Alle Ratgeber","ratgeber.html","combo","Übersicht aller Artikel","all"]];
     function ddItem(s){ return (s[4]?'<div class="sw-dd-divider"></div>':'') + '<a href="'+s[1]+'" class="sw-dd-item'+(s[4]?' sw-dd-all':'')+'"><span class="sw-dd-ico">'+svg(s[2],19)+'</span><span class="sw-dd-tx"><span class="sw-dd-tt">'+s[0]+'</span><span class="sw-dd-sub">'+s[3]+'</span></span><span class="sw-dd-arrow">'+svg('arrow',16)+'</span></a>'; }
     var L = [["Start","index.html#top",null],["Leistungen","leistungen.html",SUB],["Einsatzgebiete","einsatzgebiete.html",SUB_E],["Ratgeber","ratgeber.html",SUB_R],["Über uns","index.html#ueber-uns",null],["Kontakt","index.html#kontakt",null]];
+    /* Aktive Seite ermitteln: matched gegen die Hub-URL + alle Sub-Page-Slugs */
+    var curPath = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+    function isActive(x){
+      if (curPath === 'index.html' || curPath === '') return x[0] === 'Start';
+      if (x[1] && x[1].split('#')[0].toLowerCase() === curPath) return true;
+      if (x[2]) { for (var i=0; i<x[2].length; i++) { if (x[2][i][1].toLowerCase() === curPath) return true; } }
+      /* Ratgeber-Unterseiten: alle die mit "ratgeber-" beginnen */
+      if (x[0] === 'Ratgeber' && curPath.indexOf('ratgeber-') === 0) return true;
+      return false;
+    }
     var caret = '<svg class="sw-caret" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>';
     var burger = '<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>';
     return '' +
@@ -301,9 +311,9 @@
           '<span class="font-heading leading-none" style="font-size:23px;font-weight:900;letter-spacing:-.03em"><span style="color:#fff">Sola</span><span style="background:linear-gradient(180deg,#FFDD66 0%,#F5B301 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent">Wert</span></span>' +
         '</a>' +
         '<div class="sw-navlinks hidden lg:flex">' +
-          L.map(function(x){ return x[2]
-            ? '<div class="sw-navitem"><a href="'+x[1]+'" class="sw-navlink sw-navlink--has">'+x[0]+caret+'</a><div class="sw-dropdown"><div class="sw-dd-head">Unsere '+x[0]+'</div>'+x[2].map(ddItem).join('')+'</div></div>'
-            : '<a href="'+x[1]+'" class="sw-navlink">'+x[0]+'</a>'; }).join('') +
+          L.map(function(x){ var act = isActive(x) ? ' active' : ''; return x[2]
+            ? '<div class="sw-navitem"><a href="'+x[1]+'" class="sw-navlink sw-navlink--has'+act+'">'+x[0]+caret+'</a><div class="sw-dropdown"><div class="sw-dd-head">Unsere '+x[0]+'</div>'+x[2].map(ddItem).join('')+'</div></div>'
+            : '<a href="'+x[1]+'" class="sw-navlink'+act+'">'+x[0]+'</a>'; }).join('') +
         '</div>' +
         '<div class="flex items-center gap-3">' +
           '<a href="#anfrage" class="sw-nav-cta hidden lg:inline-flex">Angebot anfragen <i>'+svg('arrow',14)+'</i></a>' +
