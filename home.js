@@ -1575,7 +1575,7 @@ const Contact = () => {
   }, "Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Daten gemäß unserer ", /*#__PURE__*/React.createElement("a", {
     href: "datenschutz",
     className: "underline hover:text-brand"
-  }, "Datenschutzerklärung"), " zu.")))))));
+  }, "Datenschutzerklärung"), " zu.")))))));
 };
 
 /* ── Sticky mobile call bar ── */
