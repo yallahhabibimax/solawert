@@ -339,7 +339,7 @@
     '<nav class="sw-navwrap" data-sw-nav>' +
       '<div class="sw-navpill2"><div class="sw-navinner">' +
         '<a href="index.html" class="flex items-center shrink-0">' +
-          '<img src="img/logo-sw-light.png?v=1782141000" alt="SW Photovoltaik & Solar Wuppertal" class="sw-navlogo" style="height:64px;width:auto;filter:drop-shadow(0 2px 6px rgba(0,0,0,.55)) drop-shadow(0 0 18px rgba(245,179,1,.18))">' +
+          '<img src="img/logo-sw-light.png?v=1782141000" alt="SW Photovoltaik & Solar Wuppertal" class="sw-navlogo" style="height:64px;width:auto;transform:translate(-6px,-6px);filter:drop-shadow(0 2px 6px rgba(0,0,0,.55)) drop-shadow(0 0 18px rgba(245,179,1,.18))">' +
         '</a>' +
         '<div class="sw-navlinks hidden lg:flex">' +
           L.map(function(x){ var act = isActive(x) ? ' active' : ''; return x[2]

@@ -396,7 +396,7 @@ const Navbar = () => {
     src: "img/logo-sw-light.png?v=1782141000",
     alt: "SW Photovoltaik & Solar Wuppertal",
     className: "sw-navlogo",
-    style: { height: "64px", width: "auto", filter: "drop-shadow(0 2px 6px rgba(0,0,0,.55)) drop-shadow(0 0 18px rgba(245,179,1,.18))" }
+    style: { height: "64px", width: "auto", transform: "translate(-6px,-6px)", filter: "drop-shadow(0 2px 6px rgba(0,0,0,.55)) drop-shadow(0 0 18px rgba(245,179,1,.18))" }
   })), /*#__PURE__*/React.createElement("div", {
     className: "sw-navlinks hidden lg:flex"
   }, links.map(([t, h, sub], i) => sub ? /*#__PURE__*/React.createElement("div", {
