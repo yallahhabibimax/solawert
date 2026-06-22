@@ -253,7 +253,7 @@ const LeadQuiz = () => {
     h("div", { className: "nq-wrap" },
       h("div", { className: "nq-head" },
         h("div", { className: "nq-eyebrow" }, h("span", { className: "nq-dot" }), "Kostenlos & unverbindlich"),
-        h("h2", { className: "nq-title font-heading" }, "Ihre Solar-Einschätzung in ", h("span", null, "2 Minuten")),
+        h("h2", { className: "nq-title font-heading" }, "Ihre Solareinschätzung in", h("br", null), h("span", null, "2 Minuten")),
         h("p", { className: "nq-lead" }, "Ein paar kurze Fragen – ehrliche Einschätzung, fairer Festpreis.")),
       main,
       h("div", { className: "nq-trust" }, [["check", "100% kostenlos"], ["shield", "DSGVO-konform"], ["clock", "Antwort in 24 h"], ["euro", "Faire Festpreise"]].map(function (it, i) { return h("span", { key: i, className: "nq-trust__i" }, h("span", { className: "nq-trust__ic" }, h(Svg, { size: 15, sw: 2 }, ICO[it[0]])), it[1]); }))));
