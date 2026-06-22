@@ -17,12 +17,12 @@
   <link rel="icon" href="img/logo.png">
   <link rel="preload" as="font" type="font/woff2" crossorigin href="fonts/inter-latin.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin href="fonts/archivo-latin.woff2">
-  <link rel="stylesheet" href="tailwind.css?v=1782134154">
-  <link rel="stylesheet" href="styles.css?v=1782134154">
+  <link rel="stylesheet" href="tailwind.css?v=1782134459">
+  <link rel="stylesheet" href="styles.css?v=1782134459">
   <style>
     /* ── Hub-Hero ── */
-    .rh-hero { background:#FBF6E9; padding:9rem 1.25rem 3.5rem; position:relative; overflow:hidden; }
-    @media (min-width:768px){ .rh-hero { padding-left:2rem; padding-right:2rem; padding-bottom:4.5rem; } }
+    .rh-hero { background:#FBF6E9; padding:6.5rem 1.25rem 2.5rem; position:relative; overflow:hidden; }
+    @media (min-width:768px){ .rh-hero { padding:7rem 2rem 3rem; } }
     .rh-hero__wrap { max-width:80rem; margin:0 auto; position:relative; z-index:1; }
     .rh-hero__crumbs { font-family:'Archivo',sans-serif; font-weight:600; font-size:13px; color:rgba(20,23,28,.5); display:flex; gap:.5rem; align-items:center; margin-bottom:1.4rem; }
     .rh-hero__crumbs a { color:rgba(20,23,28,.5); transition:color .2s ease; }
@@ -30,7 +30,7 @@
     .rh-hero__crumbs svg { opacity:.4; }
     .rh-hero__pill { display:inline-flex; align-items:center; gap:.55rem; padding:.5rem 1rem; background:rgba(245,179,1,.16); border:1px solid rgba(245,179,1,.45); border-radius:999px; font-family:'Archivo',sans-serif; font-weight:800; font-size:11.5px; letter-spacing:.16em; text-transform:uppercase; color:#8A5E00; }
     .rh-hero__pill .dot { width:7px; height:7px; border-radius:50%; background:#F5B301; }
-    .rh-hero__h1 { font-family:'Archivo',sans-serif; font-weight:900; line-height:1.02; letter-spacing:-.03em; font-size:clamp(2.6rem,6.5vw,5rem); margin:1.2rem 0 1.5rem; color:#14171C; max-width:24ch; }
+    .rh-hero__h1 { font-family:'Archivo',sans-serif; font-weight:900; line-height:1.05; letter-spacing:-.025em; font-size:clamp(1.85rem,3.6vw,3rem); margin:1rem 0 1.1rem; color:#14171C; max-width:28ch; }
     .rh-hero__h1 .accent { color:#F5B301; }
     .rh-hero__lead { color:#525A64; font-size:clamp(1.02rem,1.5vw,1.18rem); line-height:1.65; max-width:42rem; }
 
@@ -85,15 +85,15 @@
     @media (min-width:640px){ .rh-grid { grid-template-columns:repeat(2,1fr); } }
     @media (min-width:1280px){ .rh-grid { gap:1.5rem; } }
 
-    .rh-card { display:flex; flex-direction:column; background:#fff; border:1px solid rgba(20,23,28,.07); border-radius:20px; overflow:hidden; box-shadow:0 18px 40px -28px rgba(20,23,28,.3); transition:transform .35s cubic-bezier(.16,1,.3,1), box-shadow .35s ease, border-color .35s ease; }
-    .rh-card:hover { transform:translateY(-4px); border-color:rgba(245,179,1,.4); box-shadow:0 30px 60px -28px rgba(20,23,28,.4); }
-    .rh-card__imgwrap { position:relative; aspect-ratio:16/9; overflow:hidden; }
-    .rh-card__img { width:100%; height:100%; object-fit:cover; transition:transform .5s cubic-bezier(.16,1,.3,1); }
+    .rh-card { display:flex; flex-direction:row; align-items:stretch; background:#fff; border:1px solid rgba(20,23,28,.07); border-radius:18px; overflow:hidden; box-shadow:0 18px 40px -28px rgba(20,23,28,.3); transition:transform .35s cubic-bezier(.16,1,.3,1), box-shadow .35s ease, border-color .35s ease; min-height:140px; }
+    .rh-card:hover { transform:translateY(-3px); border-color:rgba(245,179,1,.4); box-shadow:0 28px 56px -28px rgba(20,23,28,.4); }
+    .rh-card__imgwrap { position:relative; flex-shrink:0; width:38%; max-width:180px; overflow:hidden; }
+    .rh-card__img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform .5s cubic-bezier(.16,1,.3,1); }
     .rh-card:hover .rh-card__img { transform:scale(1.05); }
-    .rh-card__cat { position:absolute; top:.9rem; left:.9rem; padding:.32rem .7rem; border-radius:999px; background:rgba(255,255,255,.92); backdrop-filter:blur(8px); font-family:'Archivo',sans-serif; font-weight:800; font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:#8A5E00; }
-    .rh-card__body { padding:1.1rem 1.2rem 1.3rem; flex:1; display:flex; flex-direction:column; }
-    .rh-card__t { font-family:'Archivo',sans-serif; font-weight:900; font-size:1.12rem; line-height:1.2; color:#14171C; letter-spacing:-.01em; margin-bottom:.55rem; }
-    .rh-card__s { font-family:'Inter',sans-serif; font-size:13.5px; line-height:1.55; color:#525A64; margin-bottom:.95rem; flex:1; }
+    .rh-card__cat { position:absolute; top:.7rem; left:.7rem; padding:.28rem .6rem; border-radius:999px; background:rgba(255,255,255,.94); backdrop-filter:blur(8px); font-family:'Archivo',sans-serif; font-weight:800; font-size:9.5px; letter-spacing:.14em; text-transform:uppercase; color:#8A5E00; }
+    .rh-card__body { padding:1rem 1.15rem 1.05rem; flex:1; display:flex; flex-direction:column; justify-content:center; min-width:0; }
+    .rh-card__t { font-family:'Archivo',sans-serif; font-weight:900; font-size:1rem; line-height:1.22; color:#14171C; letter-spacing:-.01em; margin-bottom:.4rem; }
+    .rh-card__s { font-family:'Inter',sans-serif; font-size:13px; line-height:1.5; color:#525A64; margin-bottom:.65rem; flex:0 1 auto; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
     .rh-card__more { display:inline-flex; align-items:center; gap:.35rem; font-family:'Archivo',sans-serif; font-weight:700; font-size:13px; color:#8A5E00; }
     .rh-card:hover .rh-card__more { color:#F5B301; }
     .rh-card__more svg { transition:transform .3s ease; }
@@ -311,7 +311,7 @@
 
   <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-  <script src="leadquiz.js?v=1782134154"></script>
-  <script src="partials.js?v=1782134154"></script>
+  <script src="leadquiz.js?v=1782134459"></script>
+  <script src="partials.js?v=1782134459"></script>
 </body>
 </html>
