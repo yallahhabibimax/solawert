@@ -280,7 +280,41 @@
   }
 
   /* ═══ Init / Auto-Inject ═══ */
+  /* ═══ NAVBAR (geteilt fuer Unterseiten; Home nutzt eigene React-Nav) ═══ */
+  function navHTML() {
+    var L = [["Start","index.html#top"],["Über uns","index.html#ueber-uns"],["Leistungen","index.html#leistungen","active"],["Ratgeber","index.html#ratgeber"],["Team","index.html#bewertungen"],["Kontakt","index.html#kontakt"]];
+    var burger = '<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>';
+    return '' +
+    '<nav class="sw-navwrap" data-sw-nav>' +
+      '<div class="sw-navpill2"><div class="sw-navinner">' +
+        '<a href="index.html" class="flex items-center shrink-0" style="gap:.2rem">' +
+          '<img src="img/logo-icon-v4.png" alt="SolaWert Wuppertal" class="sw-navlogo">' +
+          '<span class="font-heading leading-none" style="font-size:23px;font-weight:900;letter-spacing:-.03em"><span style="color:#fff">Sola</span><span style="background:linear-gradient(180deg,#FFDD66 0%,#F5B301 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent">Wert</span></span>' +
+        '</a>' +
+        '<div class="sw-navlinks hidden lg:flex">' +
+          L.map(function(x){return '<a href="'+x[1]+'" class="sw-navlink'+(x[2]?' '+x[2]:'')+'">'+x[0]+'</a>';}).join('') +
+        '</div>' +
+        '<div class="flex items-center gap-3">' +
+          '<a href="#anfrage" class="sw-nav-cta hidden lg:inline-flex">Angebot anfragen <i>'+svg('arrow',14)+'</i></a>' +
+          '<button class="lg:hidden sw-navburger" aria-label="Menü" data-sw-burger>'+burger+'</button>' +
+        '</div>' +
+      '</div></div>' +
+      '<div class="sw-mobilemenu" data-sw-mobile>' +
+        L.map(function(x){return '<a href="'+x[1]+'" class="sw-mobilelink">'+x[0]+'</a>';}).join('') +
+        '<div class="flex gap-3 mt-3"><a href="tel:'+TEL+'" class="flex-1 btn-dark rounded-full py-3 text-center font-heading font-semibold text-sm">Anrufen</a><a href="#anfrage" class="flex-1 btn-primary rounded-full py-3 text-center font-heading text-sm">Angebot anfragen</a></div>' +
+      '</div>' +
+    '</nav>';
+  }
+
   function init() {
+    document.querySelectorAll('[data-kaefer="nav"]').forEach(function (el) {
+      if (el.getAttribute('data-kf-done')) return; el.setAttribute('data-kf-done','1'); el.innerHTML = navHTML();
+      var nav = el.querySelector('[data-sw-nav]');
+      var burger = el.querySelector('[data-sw-burger]');
+      var mobile = el.querySelector('[data-sw-mobile]');
+      if (burger && mobile) burger.addEventListener('click', function () { mobile.classList.toggle('open'); });
+      if (nav) { var sf = function () { nav.classList.toggle('scrolled', window.scrollY > 80); }; sf(); window.addEventListener('scroll', sf, { passive: true }); }
+    });
     document.querySelectorAll('[data-kaefer="footer"]').forEach(function (el) {
       if (el.getAttribute('data-kf-done')) return; el.setAttribute('data-kf-done','1'); el.innerHTML = footerHTML();
     });
