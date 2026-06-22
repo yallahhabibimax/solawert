@@ -23,8 +23,8 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin href="fonts/inter-latin.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin href="fonts/archivo-latin.woff2">
 
-  <link rel="stylesheet" href="tailwind.css?v=1782136072">
-  <link rel="stylesheet" href="styles.css?v=1782136072">
+  <link rel="stylesheet" href="tailwind.css?v=1782136384">
+  <link rel="stylesheet" href="styles.css?v=1782136384">
   <style>
     .lp-section { padding: clamp(3.5rem, 7vw, 6rem) 1.25rem; }
     @media (min-width:768px){ .lp-section { padding-left: 2rem; padding-right: 2rem; } }
@@ -33,8 +33,11 @@
     .lp-h2 { font-family:'Archivo',sans-serif; font-weight:900; line-height:1.08; letter-spacing:-.02em; font-size:clamp(1.9rem,4vw,2.9rem); }
     .lp-card { border-radius:22px; padding:1.6rem 1.5rem; background:#fff; border:1px solid rgba(20,23,28,.08); box-shadow:0 24px 50px -34px rgba(20,23,28,.35); }
     .lp-ico { width:46px; height:46px; border-radius:13px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
-    .lp-list-i { display:flex; align-items:flex-start; gap:.85rem; }
-    .lp-check { width:24px; height:24px; border-radius:50%; background:rgba(245,179,1,.16); color:#8A5E00; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px; }
+    .lp-list-i { display:flex; align-items:flex-start; gap:1rem; padding:1.1rem 1.2rem; border-radius:16px; background:#FBF6E9; border:1px solid rgba(20,23,28,.06); transition:transform .3s cubic-bezier(.16,1,.3,1), border-color .3s ease, box-shadow .3s ease; }
+    .lp-list-i:hover { transform:translateY(-2px); border-color:rgba(245,179,1,.4); box-shadow:0 18px 36px -24px rgba(20,23,28,.3), 0 0 30px -14px rgba(245,179,1,.35); }
+    .lp-check { width:38px; height:38px; border-radius:11px; background:linear-gradient(180deg,#FFDD66,#F5B301); color:#1A1402; display:flex; align-items:center; justify-content:center; flex-shrink:0; box-shadow:0 8px 18px -8px rgba(245,179,1,.55); transition:transform .3s cubic-bezier(.16,1,.3,1); }
+    .lp-check svg { width:18px; height:18px; }
+    .lp-list-i:hover .lp-check { transform:translateY(-1px) rotate(-3deg); }
   </style>
 </head>
 <body class="font-body antialiased overflow-x-hidden" style="background:#FFFFFF;color:#14171C">
@@ -44,7 +47,7 @@
 
   <!-- HERO -->
   <header style="position:relative; overflow:hidden; background:#2A2E36; padding:9rem 1.25rem 3.5rem;">
-    <img src="img/pv-hero.jpg?v=1782136072" alt="Nahaufnahme von Photovoltaik-Zellen" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
+    <img src="img/pv-hero.jpg?v=1782136384" alt="Nahaufnahme von Photovoltaik-Zellen" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
     <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(15,18,22,.72) 0%, rgba(15,18,22,.6) 38%, rgba(15,18,22,.92) 100%);"></div>
     <div class="lp-wrap" style="position:relative; z-index:2; color:#fff;">
       <span class="lp-eyebrow" style="color:#F5B301; margin-bottom:1rem;">
@@ -99,7 +102,7 @@
         <span class="lp-eyebrow" style="color:#8A5E00; margin-bottom:.7rem;">Alles aus einer Hand</span>
         <h2 class="lp-h2 text-content" style="margin-top:.5rem;">Das ist bei „schlüsselfertig" alles dabei</h2>
       </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-5">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <!-- items -->
         <div class="lp-list-i"><span class="lp-check"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4.5 4.5L19 7"/></svg></span><div><div class="font-heading font-bold text-content" style="font-size:15.5px;">Beratung & Dachcheck</div><div style="font-size:13.5px;color:#525A64;line-height:1.5;">Unverbindlich und kostenlos vor Ort.</div></div></div>
         <div class="lp-list-i"><span class="lp-check"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4.5 4.5L19 7"/></svg></span><div><div class="font-heading font-bold text-content" style="font-size:15.5px;">Planung & String-Verteilung</div><div style="font-size:13.5px;color:#525A64;line-height:1.5;">Exakt auf Dach und Verbrauch berechnet.</div></div></div>
@@ -142,10 +145,11 @@
           <h3 class="font-heading font-bold" style="font-size:1.18rem; margin-bottom:.5rem;">30 Jahre Garantie</h3>
           <p style="color:rgba(255,255,255,.62); font-size:14.5px; line-height:1.65;">Auf die Module 30 Jahre, auf Wechselrichter und Speicher jeweils 10 bis 15 Jahre.</p>
         </div>
-        <div style="border-radius:22px; padding:1.75rem; background:#22331E; border:1px solid rgba(245,179,1,.4);">
-          <div class="lp-ico" style="background:#F5B301; color:#1A1402; margin-bottom:1.1rem;"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 0 1 4.6 1c0 1.7-2.6 2.5-2.6 2.5"/><path d="M12 17h.01"/></svg></div>
-          <h3 class="font-heading font-bold" style="font-size:1.18rem; margin-bottom:.5rem;">Keine Anzahlung</h3>
-          <p style="color:rgba(255,255,255,.7); font-size:14.5px; line-height:1.65;">Sie zahlen erst, wenn Ihre Anlage vollständig läuft und wir sie Ihnen vorgeführt haben.</p>
+        <div style="position:relative; overflow:hidden; border-radius:22px; padding:1.75rem; background:linear-gradient(155deg,rgba(245,179,1,.14) 0%,rgba(245,179,1,.04) 100%),#2A2E36; border:1px solid rgba(245,179,1,.55); box-shadow:0 0 50px -16px rgba(245,179,1,.4), inset 0 1px 0 rgba(255,255,255,.05);">
+          <span aria-hidden="true" style="position:absolute; top:-45%; right:-25%; width:240px; height:240px; background:radial-gradient(circle,rgba(245,179,1,.22) 0%,transparent 65%); pointer-events:none;"></span>
+          <div class="lp-ico" style="background:linear-gradient(180deg,#FFDD66,#F5B301); color:#1A1402; margin-bottom:1.1rem; position:relative; box-shadow:0 10px 24px -8px rgba(245,179,1,.6);"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 0 1 4.6 1c0 1.7-2.6 2.5-2.6 2.5"/><path d="M12 17h.01"/></svg></div>
+          <h3 class="font-heading font-bold" style="font-size:1.18rem; margin-bottom:.5rem; position:relative;">Keine Anzahlung</h3>
+          <p style="color:rgba(255,255,255,.72); font-size:14.5px; line-height:1.65; position:relative;">Sie zahlen erst, wenn Ihre Anlage vollständig läuft und wir sie Ihnen vorgeführt haben.</p>
         </div>
         <div style="border-radius:22px; padding:1.75rem; background:#2A2E36; border:1px solid rgba(245,179,1,.18);">
           <div class="lp-ico" style="background:#F5B301; color:#1A1402; margin-bottom:1.1rem;"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l2.5 2"/></svg></div>
@@ -180,7 +184,7 @@
 
   <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-  <script src="leadquiz.js?v=1782136072"></script>
-  <script src="partials.js?v=1782136072"></script>
+  <script src="leadquiz.js?v=1782136384"></script>
+  <script src="partials.js?v=1782136384"></script>
 </body>
 </html>
