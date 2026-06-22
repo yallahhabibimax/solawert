@@ -5,24 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Photovoltaik & Wärmepumpe in Haan | SolaWert</title>
   <meta http-equiv="Cache-Control" content="no-store">
-  <meta name="description" content="Photovoltaik, Wärmepumpe und Stromspeicher in Haan (Gartenstadt im Bergischen): Inhabergeführt aus Wuppertal, schlüsselfertig, ohne Anzahlung. Nur 15 km vom Hauptstandort.">
+  <meta name="description" content="Photovoltaik, Wärmepumpe und Stromspeicher in Haan (Gartenstadt im Bergischen). Inhabergeführter Solarbetrieb aus Wuppertal, nur 15 km. Festpreis, ohne Anzahlung.">
   <meta name="robots" content="index, follow">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Photovoltaik & Wärmepumpe in Haan | SolaWert">
-  <meta property="og:description" content="Schlüsselfertige Solaranlagen in Haan. Inhabergeführter Solarbetrieb mit Hauptstandort in Wuppertal.">
-  <meta property="og:image" content="img/firmendach.jpg">
+  <meta property="og:description" content="Schlüsselfertige Photovoltaik-Anlagen in Haan. Inhabergeführt aus Wuppertal, nur 15 km.">
+  <meta property="og:image" content="img/wuppertal-hero.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="img/firmendach.jpg">
+  <meta name="twitter:image" content="img/wuppertal-hero.jpg">
   <meta name="theme-color" content="#15181D">
   <link rel="icon" href="img/logo.png">
   <link rel="preload" as="font" type="font/woff2" crossorigin href="fonts/inter-latin.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin href="fonts/archivo-latin.woff2">
-  <link rel="stylesheet" href="tailwind.css?v=1782143000">
-  <link rel="stylesheet" href="styles.css?v=1782143000">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"SolaWert","image":"img/firmendach.jpg","telephone":"+4915205999900","email":"info@solawert.de","address":{"@type":"PostalAddress","streetAddress":"Friedrich-Ebert-Str. 55","postalCode":"42103","addressLocality":"Wuppertal","addressCountry":"DE"},"areaServed":["Haan","Wuppertal","Solingen","Remscheid","Velbert","Mettmann","Haan","Nordrhein-Westfalen"],"openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"08:00","closes":"18:00"}}</script>
+  <link rel="stylesheet" href="tailwind.css?v=1782145500">
+  <link rel="stylesheet" href="styles.css?v=1782145500">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"SolaWert","image":"img/wuppertal-hero.jpg","telephone":"+4915205999900","email":"info@solawert.de","address":{"@type":"PostalAddress","streetAddress":"Friedrich-Ebert-Str. 55","postalCode":"42103","addressLocality":"Wuppertal","addressCountry":"DE"},"areaServed":["Haan","Wuppertal","Solingen","Remscheid","Velbert","Mettmann","Nordrhein-Westfalen"],"openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"08:00","closes":"18:00"}}</script>
   <style>
-    .st-hero { position:relative; overflow:hidden; padding:9rem 1.25rem 4rem; color:#fff; }
-    @media (min-width:768px){ .st-hero { padding:10rem 2rem 4.5rem; } }
+    /* === HERO === */
+    .st-hero { position:relative; overflow:hidden; padding:8.5rem 1.25rem 3rem; color:#fff; }
+    @media (min-width:768px){ .st-hero { padding:10rem 2rem 3.5rem; } }
     .st-hero__img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
     .st-hero__veil { position:absolute; inset:0; background:linear-gradient(180deg, rgba(15,18,22,.5) 0%, rgba(15,18,22,.55) 35%, rgba(15,18,22,.92) 100%); }
     .st-hero__wrap { position:relative; z-index:2; max-width:52rem; margin:0 auto; }
@@ -30,26 +31,179 @@
     .st-hero__main-pill svg { color:#1A1402; }
     .st-hero__h1 { font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(2.1rem,4.6vw,3.6rem); line-height:1.05; letter-spacing:-.025em; margin:1rem 0 1.1rem; text-shadow:0 2px 30px rgba(0,0,0,.4); }
     .st-hero__h1 .accent { color:#F5B301; }
-    .st-hero__lead { color:rgba(255,255,255,.8); font-size:clamp(1.02rem,1.5vw,1.18rem); line-height:1.6; max-width:40rem; text-shadow:0 1px 12px rgba(0,0,0,.4); }
+    .st-hero__lead { color:rgba(255,255,255,.82); font-size:clamp(1.02rem,1.5vw,1.18rem); line-height:1.6; max-width:40rem; text-shadow:0 1px 12px rgba(0,0,0,.4); }
+    .st-hero__cta-row { display:flex; flex-wrap:wrap; gap:.6rem; margin-top:1.6rem; }
+    .st-hero__cta { display:inline-flex; align-items:center; gap:.55rem; padding:1rem 1.55rem; border-radius:999px; background:linear-gradient(180deg,#FFDD66,#F5B301); color:#1A1402; font-family:'Archivo',sans-serif; font-weight:800; font-size:1.02rem; box-shadow:0 14px 34px -14px rgba(245,179,1,.55); transition:transform .25s ease, box-shadow .25s ease; }
+    .st-hero__cta:hover { transform:translateY(-2px); box-shadow:0 20px 42px -14px rgba(245,179,1,.7); }
+    .st-hero__ghost { display:inline-flex; align-items:center; gap:.5rem; padding:.98rem 1.45rem; border-radius:999px; border:1px solid rgba(255,255,255,.25); color:#fff; font-family:'Archivo',sans-serif; font-weight:700; font-size:1rem; transition:background .25s ease, border-color .25s ease, transform .25s ease; }
+    .st-hero__ghost:hover { background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.5); transform:translateY(-2px); }
 
-    .st-info { display:grid; grid-template-columns:1fr; gap:1rem; margin:1.7rem 0 0; }
-    @media (min-width:640px){ .st-info { grid-template-columns:repeat(3,1fr); } }
-    .st-info__card { display:flex; align-items:center; gap:.85rem; padding:.85rem 1rem; border-radius:14px; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.12); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); }
-    .st-info__ico { width:38px; height:38px; border-radius:11px; flex-shrink:0; display:flex; align-items:center; justify-content:center; background:linear-gradient(180deg,#FFDD66,#F5B301); color:#1A1402; }
-    .st-info__tx { display:flex; flex-direction:column; min-width:0; }
-    .st-info__lbl { font-family:'Archivo',sans-serif; font-weight:700; font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.55); }
-    .st-info__val { font-family:'Archivo',sans-serif; font-weight:700; font-size:14px; color:#fff; line-height:1.25; }
-    .st-info__val a { color:#fff; }
-    .st-info__val a:hover { color:#F5B301; }
+    /* Mini-Stats unter Hero */
+    .st-trustbar { position:relative; z-index:2; padding:1.5rem 1.25rem 0; background:linear-gradient(180deg,#14171C 0%,#14171C 100%); margin-top:-1px; }
+    @media (min-width:768px){ .st-trustbar { padding:1.5rem 2rem 0; } }
+    .st-trustbar__wrap { max-width:72rem; margin:0 auto; display:grid; grid-template-columns:repeat(2,1fr); gap:.7rem; }
+    @media (min-width:768px){ .st-trustbar__wrap { grid-template-columns:repeat(4,1fr); gap:1rem; } }
+    .st-trustbar__item { display:flex; align-items:center; gap:.7rem; padding:.85rem 1rem; border-radius:14px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); }
+    .st-trustbar__ico { width:34px; height:34px; flex-shrink:0; border-radius:10px; background:linear-gradient(180deg,#FFDD66,#F5B301); color:#1A1402; display:flex; align-items:center; justify-content:center; }
+    .st-trustbar__tx { display:flex; flex-direction:column; min-width:0; }
+    .st-trustbar__n { font-family:'Archivo',sans-serif; font-weight:900; font-size:.95rem; color:#fff; line-height:1.15; }
+    .st-trustbar__l { font-family:'Inter',sans-serif; font-size:11px; color:rgba(255,255,255,.55); letter-spacing:.08em; text-transform:uppercase; font-weight:600; margin-top:.15rem; }
+
+    /* === WARUM WIR (Cards) === */
+    .st-warum { padding:5rem 1.25rem; background:#fff; color:#14171C; }
+    @media (min-width:768px){ .st-warum { padding:6rem 2rem; } }
+    .st-warum__wrap { max-width:72rem; margin:0 auto; }
+    .st-warum__head { text-align:center; margin-bottom:2.8rem; }
+    .st-eyebrow { display:inline-flex; align-items:center; gap:.5rem; padding:.42rem 1rem; border-radius:999px; background:rgba(245,179,1,.12); color:#a37700; font-family:'Inter',sans-serif; font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; margin-bottom:1rem; }
+    .st-warum__h2 { font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(1.75rem,3.2vw,2.5rem); line-height:1.12; letter-spacing:-.02em; margin:0 0 .7rem; color:#14171C; }
+    .st-warum__h2 .accent { color:#F5B301; }
+    .st-warum__sub { font-family:'Inter',sans-serif; font-size:1.02rem; line-height:1.6; color:#3D444E; max-width:36rem; margin:0 auto; }
+    .st-warum__grid { display:grid; grid-template-columns:1fr; gap:1rem; }
+    @media (min-width:640px){ .st-warum__grid { grid-template-columns:repeat(2,1fr); } }
+    @media (min-width:1024px){ .st-warum__grid { grid-template-columns:repeat(4,1fr); gap:1.2rem; } }
+    .st-warum__c { padding:1.6rem 1.4rem; background:#FBF6E9; border:1px solid rgba(20,23,28,.06); border-radius:18px; transition:background .3s ease, border-color .3s ease, transform .3s ease, box-shadow .3s ease; }
+    .st-warum__c:hover { background:#fff; border-color:rgba(245,179,1,.35); transform:translateY(-3px); box-shadow:0 18px 40px -22px rgba(245,179,1,.4); }
+    .st-warum__c-ico { width:44px; height:44px; border-radius:12px; background:linear-gradient(180deg,#FFDD66,#F5B301); color:#1A1402; display:flex; align-items:center; justify-content:center; margin-bottom:1rem; }
+    .st-warum__c-h { font-family:'Archivo',sans-serif; font-weight:800; font-size:1.1rem; line-height:1.25; margin:0 0 .45rem; color:#14171C; }
+    .st-warum__c-p { font-family:'Inter',sans-serif; font-size:14.5px; line-height:1.6; color:#3D444E; margin:0; }
+
+    /* === LEAD FORM (Quick-Anfrage) === */
+    .st-lead { padding:5rem 1.25rem; background:#FBF6E9; }
+    @media (min-width:768px){ .st-lead { padding:6rem 2rem; } }
+    .st-lead__wrap { max-width:46rem; margin:0 auto; background:#fff; border-radius:24px; padding:2.2rem 1.7rem; border:1px solid rgba(20,23,28,.06); box-shadow:0 22px 60px -28px rgba(20,23,28,.2); }
+    @media (min-width:768px){ .st-lead__wrap { padding:3rem 2.5rem; } }
+    .st-lead__head { text-align:center; margin-bottom:1.8rem; }
+    .st-lead__eyebrow { display:inline-flex; align-items:center; gap:.4rem; padding:.35rem .85rem; border-radius:999px; background:rgba(245,179,1,.12); color:#a37700; font-family:'Inter',sans-serif; font-size:11.5px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; margin-bottom:.85rem; }
+    .st-lead__eyebrow .dot { width:6px; height:6px; border-radius:50%; background:#F5B301; animation:stDot 1.8s ease-out infinite; }
+    @keyframes stDot { 0%,100%{opacity:1;} 50%{opacity:.4;} }
+    .st-lead__h2 { font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(1.45rem,2.5vw,1.95rem); line-height:1.15; letter-spacing:-.02em; color:#14171C; margin:0 0 .5rem; }
+    .st-lead__sub { font-family:'Inter',sans-serif; font-size:14.5px; color:#3D444E; margin:0; }
+    .st-lead__field { margin-bottom:.95rem; }
+    .st-lead__field label { display:block; font-family:'Archivo',sans-serif; font-weight:700; font-size:11.5px; letter-spacing:.05em; color:#14171C; margin-bottom:.35rem; text-transform:uppercase; }
+    .st-lead__field input, .st-lead__field select, .st-lead__field textarea { width:100%; padding:.85rem 1rem; border-radius:11px; border:1px solid rgba(20,23,28,.14); background:#FBF6E9; font-family:'Inter',sans-serif; font-size:15px; color:#14171C; transition:border-color .25s ease, background .25s ease; }
+    .st-lead__field input:focus, .st-lead__field select:focus, .st-lead__field textarea:focus { outline:none; border-color:#F5B301; background:#fff; }
+    .st-lead__row { display:grid; grid-template-columns:1fr; gap:.95rem; }
+    @media (min-width:560px){ .st-lead__row { grid-template-columns:1fr 1fr; } }
+    .st-lead__submit { display:inline-flex; align-items:center; justify-content:center; gap:.5rem; width:100%; padding:1.1rem 1.7rem; border-radius:999px; background:linear-gradient(180deg,#FFDD66,#F5B301); color:#1A1402; font-family:'Archivo',sans-serif; font-weight:800; font-size:1.05rem; box-shadow:0 14px 36px -14px rgba(245,179,1,.55); transition:transform .25s ease, box-shadow .25s ease; border:0; cursor:pointer; margin-top:.5rem; }
+    .st-lead__submit:hover { transform:translateY(-2px); box-shadow:0 20px 44px -14px rgba(245,179,1,.7); }
+    .st-lead__meta { font-family:'Inter',sans-serif; font-size:12px; color:#3D444E; text-align:center; margin-top:.9rem; line-height:1.5; }
+
+    /* === ÜBER UNS MINI === */
+    .st-about { padding:3.5rem 1.25rem; background:#fff; }
+    @media (min-width:768px){ .st-about { padding:4.5rem 2rem; } }
+    .st-about__wrap { max-width:68rem; margin:0 auto; display:grid; grid-template-columns:1fr; gap:2rem; align-items:center; }
+    @media (min-width:768px){ .st-about__wrap { grid-template-columns:1.05fr 1fr; gap:3rem; } }
+    .st-about__imgwrap { position:relative; border-radius:22px; overflow:hidden; aspect-ratio:5/4; background:#2A2E36; box-shadow:0 18px 50px -28px rgba(20,23,28,.25); }
+    .st-about__imgwrap img { width:100%; height:100%; object-fit:cover; }
+    .st-about__eyebrow { font-family:'Archivo',sans-serif; font-weight:800; font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:#a37700; margin-bottom:.85rem; }
+    .st-about__h2 { font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(1.6rem,2.8vw,2.2rem); line-height:1.15; letter-spacing:-.02em; color:#14171C; margin:0 0 1rem; }
+    .st-about__h2 .accent { color:#F5B301; }
+    .st-about__p { font-family:'Inter',sans-serif; font-size:1rem; line-height:1.65; color:#3D444E; margin:0 0 1rem; }
+    .st-about__inhaber { display:flex; align-items:center; gap:.85rem; margin-top:1.4rem; padding-top:1.4rem; border-top:1px solid rgba(20,23,28,.08); }
+    .st-about__inhaber-img { width:48px; height:48px; border-radius:50%; overflow:hidden; flex-shrink:0; background:#2A2E36; }
+    .st-about__inhaber-img img { width:100%; height:100%; object-fit:cover; object-position:center top; }
+    .st-about__inhaber-tx { display:flex; flex-direction:column; line-height:1.25; }
+    .st-about__inhaber-name { font-family:'Archivo',sans-serif; font-weight:800; font-size:15px; color:#14171C; }
+    .st-about__inhaber-role { font-family:'Inter',sans-serif; font-size:13px; color:#3D444E; margin-top:1px; }
+
+    /* === VOR ORT (Text + Bild Split) === */
+    .st-vorort { padding:3.5rem 1.25rem; background:#F4F5F7; }
+    @media (min-width:768px){ .st-vorort { padding:5rem 2rem; } }
+    .st-vorort__wrap { max-width:72rem; margin:0 auto; display:grid; grid-template-columns:1fr; gap:2.2rem; align-items:center; }
+    @media (min-width:900px){ .st-vorort__wrap { grid-template-columns:1fr 1.1fr; gap:3.2rem; } }
+    .st-vorort__eyebrow { font-family:'Archivo',sans-serif; font-weight:800; font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:#a37700; margin-bottom:.85rem; }
+    .st-vorort__h2 { font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(1.65rem,2.9vw,2.3rem); line-height:1.15; letter-spacing:-.02em; color:#14171C; margin:0 0 1.1rem; }
+    .st-vorort__h2 .accent { color:#F5B301; }
+    .st-vorort__p { font-family:'Inter',sans-serif; font-size:1rem; line-height:1.65; color:#3D444E; margin:0 0 1rem; }
+    .st-vorort__p a { color:#a37700; text-decoration:underline; text-underline-offset:3px; text-decoration-thickness:1.5px; text-decoration-color:rgba(245,179,1,.5); font-weight:600; }
+    .st-vorort__p a:hover { color:#F5B301; text-decoration-color:#F5B301; }
+    .st-vorort__bullets { list-style:none; padding:0; margin:1.4rem 0 0; display:grid; gap:.7rem; }
+    .st-vorort__bullets li { display:flex; align-items:center; gap:.7rem; font-family:'Inter',sans-serif; font-size:14.5px; color:#14171C; }
+    .st-vorort__bullets li svg { flex-shrink:0; color:#F5B301; }
+    .st-vorort__imgwrap { border-radius:22px; overflow:hidden; aspect-ratio:5/4; background:#2A2E36; box-shadow:0 18px 50px -28px rgba(20,23,28,.25); }
+    .st-vorort__imgwrap img { width:100%; height:100%; object-fit:cover; }
+
+    /* === LEISTUNGS-CARDS === */
+    .st-leist { padding:5rem 1.25rem; background:#fff; }
+    @media (min-width:768px){ .st-leist { padding:6rem 2rem; } }
+    .st-leist__wrap { max-width:72rem; margin:0 auto; }
+    .st-leist__head { text-align:center; margin-bottom:2.5rem; }
+    .st-leist__h2 { font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(1.65rem,2.9vw,2.3rem); line-height:1.15; letter-spacing:-.02em; color:#14171C; margin:0; }
+    .st-leist__grid { display:grid; grid-template-columns:1fr; gap:1rem; }
+    @media (min-width:640px){ .st-leist__grid { grid-template-columns:repeat(2,1fr); } }
+    @media (min-width:1024px){ .st-leist__grid { grid-template-columns:repeat(4,1fr); gap:1.2rem; } }
+    .st-leist__c { padding:1.7rem 1.5rem; background:linear-gradient(180deg,#FBF6E9 0%,#fff 100%); border:1px solid rgba(20,23,28,.06); border-radius:18px; display:flex; flex-direction:column; transition:transform .3s ease, box-shadow .3s ease; }
+    .st-leist__c:hover { transform:translateY(-3px); box-shadow:0 18px 40px -22px rgba(245,179,1,.4); }
+    .st-leist__c-ico { width:46px; height:46px; border-radius:13px; background:linear-gradient(180deg,#FFDD66,#F5B301); color:#1A1402; display:flex; align-items:center; justify-content:center; margin-bottom:1.1rem; }
+    .st-leist__c-h { font-family:'Archivo',sans-serif; font-weight:800; font-size:1.1rem; line-height:1.25; color:#14171C; margin:0 0 .5rem; }
+    .st-leist__c-p { font-family:'Inter',sans-serif; font-size:14px; line-height:1.6; color:#3D444E; margin:0 0 1rem; flex:1; }
+    .st-leist__c-link { color:#a37700; font-family:'Archivo',sans-serif; font-weight:800; font-size:13px; display:inline-flex; align-items:center; gap:.3rem; }
+    .st-leist__c-link:hover { color:#F5B301; }
+
+    /* === FAQ (Split Layout) === */
+    .st-faq { position:relative; overflow:hidden; padding:4rem 1.25rem; background:#14171C; color:#fff; }
+    @media (min-width:768px){ .st-faq { padding:5.5rem 2rem; } }
+    .st-faq__glow { position:absolute; top:-180px; right:-180px; width:520px; height:520px; border-radius:50%; background:radial-gradient(circle, rgba(245,179,1,.13) 0%, rgba(245,179,1,0) 65%); pointer-events:none; }
+    .st-faq__wrap { position:relative; z-index:1; max-width:72rem; margin:0 auto; display:grid; grid-template-columns:1fr; gap:2.2rem; align-items:start; }
+    @media (min-width:900px){ .st-faq__wrap { grid-template-columns:.85fr 1.15fr; gap:3.2rem; } }
+    .st-faq__eyebrow { font-family:'Archivo',sans-serif; font-weight:800; font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:#FFDD66; margin-bottom:.85rem; }
+    .st-faq__h2 { font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(1.7rem,3vw,2.4rem); line-height:1.15; letter-spacing:-.02em; color:#fff; margin:0 0 1rem; }
+    .st-faq__lead { font-family:'Inter',sans-serif; font-size:.98rem; line-height:1.6; color:rgba(255,255,255,.65); margin:0 0 1.6rem; max-width:24rem; }
+    .st-faq__phone { display:inline-flex; align-items:center; gap:.55rem; padding:.95rem 1.6rem; border-radius:999px; background:linear-gradient(180deg,#FFDD66,#F5B301); color:#1A1402; font-family:'Archivo',sans-serif; font-weight:800; font-size:.95rem; box-shadow:0 14px 34px -14px rgba(245,179,1,.55); transition:transform .25s ease, box-shadow .25s ease; }
+    .st-faq__phone:hover { transform:translateY(-2px); box-shadow:0 20px 42px -14px rgba(245,179,1,.7); }
+    .st-faq__phone svg { color:#1A1402; }
+    .st-faq__list { display:grid; gap:.85rem; }
+    .st-faq__item { background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); border-radius:14px; transition:border-color .25s ease, background .25s ease; }
+    .st-faq__item[open] { border-color:rgba(245,179,1,.4); background:rgba(255,255,255,.06); }
+    .st-faq__item summary { list-style:none; cursor:pointer; padding:1.05rem 1.25rem; display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+    .st-faq__item summary::-webkit-details-marker { display:none; }
+    .st-faq__q { font-family:'Archivo',sans-serif; font-weight:800; font-size:.97rem; line-height:1.35; color:#fff; }
+    .st-faq__ic { width:28px; height:28px; flex-shrink:0; border-radius:50%; display:flex; align-items:center; justify-content:center; background:rgba(245,179,1,.15); color:#FFDD66; transition:transform .25s ease, background .25s ease; }
+    .st-faq__item[open] .st-faq__ic { transform:rotate(45deg); background:linear-gradient(180deg,#FFDD66,#F5B301); color:#1A1402; }
+    .st-faq__a { padding:0 1.25rem 1.15rem; font-family:'Inter',sans-serif; font-size:14px; line-height:1.65; color:rgba(255,255,255,.7); }
+
+    /* === RATGEBER CARDS === */
+    .st-ratg { padding:5rem 1.25rem; background:#FBF6E9; }
+    @media (min-width:768px){ .st-ratg { padding:6rem 2rem; } }
+    .st-ratg__wrap { max-width:72rem; margin:0 auto; }
+    .st-ratg__head { text-align:center; margin-bottom:2.5rem; }
+    .st-ratg__h2 { font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(1.65rem,2.9vw,2.3rem); line-height:1.15; letter-spacing:-.02em; color:#14171C; margin:0; }
+    .st-ratg__grid { display:grid; grid-template-columns:1fr; gap:1rem; }
+    @media (min-width:768px){ .st-ratg__grid { grid-template-columns:repeat(3,1fr); gap:1.2rem; } }
+    .st-ratg__c { background:#fff; border:1px solid rgba(20,23,28,.06); border-radius:18px; overflow:hidden; display:flex; flex-direction:column; transition:transform .3s ease, box-shadow .3s ease; text-decoration:none; }
+    .st-ratg__c:hover { transform:translateY(-3px); box-shadow:0 18px 40px -22px rgba(20,23,28,.18); }
+    .st-ratg__c-img { aspect-ratio:16/9; overflow:hidden; background:#2A2E36; }
+    .st-ratg__c-img img { width:100%; height:100%; object-fit:cover; transition:transform .5s ease; }
+    .st-ratg__c:hover .st-ratg__c-img img { transform:scale(1.04); }
+    .st-ratg__c-body { padding:1.3rem 1.4rem 1.5rem; display:flex; flex-direction:column; flex:1; }
+    .st-ratg__c-cat { font-family:'Archivo',sans-serif; font-weight:700; font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:#a37700; margin-bottom:.55rem; }
+    .st-ratg__c-h { font-family:'Archivo',sans-serif; font-weight:800; font-size:1.05rem; line-height:1.3; color:#14171C; margin:0 0 .45rem; }
+    .st-ratg__c-p { font-family:'Inter',sans-serif; font-size:13.5px; line-height:1.55; color:#3D444E; margin:0 0 .85rem; flex:1; }
+    .st-ratg__c-arrow { color:#a37700; font-family:'Archivo',sans-serif; font-weight:800; font-size:12.5px; display:inline-flex; align-items:center; gap:.3rem; }
+
+    /* === FINAL CTA === */
+    .st-finalcta { position:relative; overflow:hidden; padding:5.5rem 1.25rem; background:#14171C; color:#fff; text-align:center; }
+    @media (min-width:768px){ .st-finalcta { padding:7rem 2rem; } }
+    .st-finalcta__glow { position:absolute; top:-200px; left:50%; transform:translateX(-50%); width:780px; height:520px; border-radius:50%; background:radial-gradient(ellipse, rgba(245,179,1,.18) 0%, rgba(245,179,1,0) 60%); pointer-events:none; }
+    .st-finalcta__wrap { position:relative; z-index:2; max-width:46rem; margin:0 auto; }
+    .st-finalcta__h2 { font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(1.8rem,3.4vw,2.6rem); line-height:1.1; letter-spacing:-.02em; margin:0 0 .9rem; color:#fff; }
+    .st-finalcta__h2 .accent { background:linear-gradient(180deg,#FFDD66 0%,#F5B301 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:transparent; }
+    .st-finalcta__sub { font-family:'Inter',sans-serif; font-size:1.05rem; line-height:1.65; color:rgba(255,255,255,.75); margin:0 0 2rem; }
+    .st-finalcta__btns { display:flex; flex-wrap:wrap; gap:.7rem; justify-content:center; }
+    .st-finalcta__primary { display:inline-flex; align-items:center; gap:.55rem; padding:1.1rem 1.85rem; border-radius:999px; background:linear-gradient(180deg,#FFDD66,#F5B301); color:#1A1402; font-family:'Archivo',sans-serif; font-weight:800; font-size:1.06rem; box-shadow:0 14px 36px -14px rgba(245,179,1,.6); transition:transform .25s ease, box-shadow .25s ease; }
+    .st-finalcta__primary:hover { transform:translateY(-2px); box-shadow:0 20px 44px -14px rgba(245,179,1,.75); }
+    .st-finalcta__ghost { display:inline-flex; align-items:center; gap:.5rem; padding:1.05rem 1.6rem; border-radius:999px; border:1px solid rgba(255,255,255,.25); color:#fff; font-family:'Archivo',sans-serif; font-weight:700; font-size:1.02rem; transition:background .25s ease, border-color .25s ease, transform .25s ease; }
+    .st-finalcta__ghost:hover { background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.5); transform:translateY(-2px); }
   </style>
 </head>
 <body class="font-body antialiased overflow-x-hidden" style="background:#FFFFFF;color:#14171C">
 
   <div data-kaefer="nav"></div>
 
+  <!-- HERO -->
   <header class="st-hero">
-    <img class="st-hero__img" src="img/firmendach.jpg?v=1782143000" alt="Haan mit Gartenstadt-Wohnbebauung">
-    <div class="st-hero__veil" style="background:linear-gradient(180deg, rgba(15,18,22,.45) 0%, rgba(15,18,22,.55) 35%, rgba(15,18,22,.92) 100%);"></div>
+    <img class="st-hero__img" src="img/firmendach.jpg?v=1782145500" alt="Photovoltaik in Haan">
+    <div class="st-hero__veil"></div>
     <div class="st-hero__wrap">
       <div class="rg-crumbs">
         <a href="index.html">Start</a>
@@ -60,164 +214,260 @@
       </div>
       <span class="st-hero__main-pill"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>Einsatzgebiet · 15 km</span>
       <h1 class="st-hero__h1">Photovoltaik & Wärmepumpe in <span class="accent">Haan</span></h1>
-      <p class="st-hero__lead">Inhabergeführter Solarbetrieb aus Wuppertal, nur 15 km entfernt. Schlüsselfertig, ohne Anzahlung. Wir planen, bauen und betreuen Anlagen in der Gartenstadt im Bergischen.</p>
-
-      <div class="st-info">
-        <div class="st-info__card">
-          <span class="st-info__ico"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
-          <span class="st-info__tx"><span class="st-info__lbl">Anfahrt</span><span class="st-info__val">15 km · ca. 18 Min.<br>aus Wuppertal</span></span>
-        </div>
-        <div class="st-info__card">
-          <span class="st-info__ico"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
-          <span class="st-info__tx"><span class="st-info__lbl">Telefon</span><span class="st-info__val"><a href="tel:+4915205999900">0152 5999900</a></span></span>
-        </div>
-        <div class="st-info__card">
-          <span class="st-info__ico"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
-          <span class="st-info__tx"><span class="st-info__lbl">Erreichbar</span><span class="st-info__val">Mo bis Sa<br>8 bis 18 Uhr</span></span>
-        </div>
+      <p class="st-hero__lead">Inhabergeführter Solarbetrieb aus Wuppertal, nur 15 km von Haan entfernt. Schlüsselfertig, ohne Anzahlung, mit festem Ansprechpartner.</p>
+      <div class="st-hero__cta-row">
+        <a href="#anfrage" class="st-hero__cta">Kostenlose Beratung <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        <a href="tel:+4915205999900" class="st-hero__ghost"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>0152 5999900</a>
       </div>
     </div>
   </header>
 
-  <section class="rg-body">
-    <article class="rg-body__wrap">
-
-      <h2>Photovoltaik in Haan: kurze Wege aus Wuppertal</h2>
-      <p>Unser Hauptstandort liegt in Wuppertal, 15 km von Haan entfernt. Für die Beratung vor Ort, den Dachcheck und Nachjustierungen nach Inbetriebnahme bedeutet das: schnelle Termine, kurze Wege, ein fester Ansprechpartner. Keine Anfahrtspauschale.</p>
-      <p>Haan ist Gartenstadt: überwiegend Einfamilienhäuser, gepflegte Wohnviertel, viele Bestandsbauten mit klassischen Walmdächern. Ideales Terrain für saubere, schlüsselfertige Photovoltaik mit optionaler Wärmepumpe. Wir bedienen alle Stadtteile von Haan: Mitte, Gruiten und Ellscheid.</p>
-
-      <h2>Was wir in Haan anbieten</h2>
-      <ul>
-        <li><strong>Photovoltaik schlüsselfertig:</strong> Planung, Montage, Elektrik, Anmeldung beim Netzbetreiber. Ein Ansprechpartner, ein Festpreis.</li>
-        <li><strong>Stromspeicher:</strong> Passend dimensioniert oder bei Bestandsanlagen nachgerüstet. Bei uns oft 60 Prozent mehr Speicher zum gleichen Preis.</li>
-        <li><strong>Wärmepumpen:</strong> Komplette Heizungsumstellung, ideal in Kombination mit eigener Photovoltaik.</li>
-        <li><strong>Monitoring und Wartung:</strong> Wir prüfen Ihre Anlage über Jahre und feilen an der Effizienz nach.</li>
-        <li><strong>Beratung und Anmeldung:</strong> Wir kümmern uns um Netzbetreiber, Marktstammdatenregister und Förderanträge.</li>
-      </ul>
-
-      <h2>Photovoltaik in der Gartenstadt: ruhige Dächer, klare Ertragsplanung</h2>
-      <p>Haan ist überwiegend Wohnbebauung mit Einfamilienhäusern und Walmdächern. Das macht die Planung angenehm: meist freistehende Dächer ohne grobe Verschattung und mit guter Süd- oder Süd-West-Ausrichtung. Wir planen so, dass die Anlage optisch dezent bleibt und gleichzeitig maximalen Ertrag bringt.</p>
-
-      <div class="rg-pull">15 km vom Hauptstandort: kurze Wege, keine Anfahrtspauschale, schnelle Termine und ein Team, das das Bergische Land kennt.</div>
-
-      <h2>So läuft Ihr Projekt in Haan</h2>
-      <p>Vom ersten Anruf bis zur fertigen Anlage vergehen typischerweise 2 bis 4 Wochen. Innerhalb dieser Zeit:</p>
-      <ul>
-        <li><strong>Tag 1 bis 3:</strong> Kostenlose Vor-Ort-Beratung mit Dachcheck und Verbrauchsanalyse.</li>
-        <li><strong>Woche 1:</strong> Detaillierte Planung mit Festpreisangebot, schwarz auf weiß.</li>
-        <li><strong>Woche 2 bis 4:</strong> Materialbestellung, Termin-Fixierung, Vorbereitung der Anmeldung.</li>
-        <li><strong>Montagetag:</strong> Aufbau in 1 bis 3 Tagen, je nach Anlagengröße.</li>
-        <li><strong>Inbetriebnahme:</strong> Anlage geht ans Netz, Sie sehen die Funktion live.</li>
-        <li><strong>Erste Woche danach:</strong> Wir feinjustieren die Einstellungen auf Ihren Verbrauch. Erst danach wird gezahlt.</li>
-      </ul>
-
-      <h2>Förderung in Haan und NRW</h2>
-      <p>Aktuell gilt für private Photovoltaik-Anlagen weiterhin der <strong>Nullsteuersatz</strong>, also keine Mehrwertsteuer auf Module, Speicher und Montage. Dazu kommt die Einspeisevergütung für überschüssigen Strom. Für Wärmepumpen sind über die BEG-Förderung bei Bestandsbauten je nach Konstellation bis zu 70 Prozent Zuschuss möglich. Wir prüfen die Förderfähigkeit gleich beim Beratungstermin und übernehmen auf Wunsch auch die Antragstellung für Sie.</p>
-
-      <!-- FAQ -->
-      <section class="rg-faq" aria-label="Häufige Fragen aus Haan">
-        <h2 class="rg-faq__h2">Häufige Fragen aus Haan</h2>
-
-        <details class="rg-faq__item">
-          <summary class="rg-faq__sum">
-            <span class="rg-faq__q">Welche Stadtteile von Haan bedienen Sie?</span>
-            <span class="rg-faq__ic"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
-          </summary>
-          <div class="rg-faq__a">Alle. Von Mitte, Gruiten und Ellscheid. Da wir aus dem nahen Wuppertal anrücken, fallen weder Anfahrtspauschalen noch lange Wartezeiten an, die andere Anbieter aus Düsseldorf oder Köln häufig haben.</div>
-        </details>
-
-        <details class="rg-faq__item">
-          <summary class="rg-faq__sum">
-            <span class="rg-faq__q">Wie schnell sind Sie nach der Anfrage vor Ort?</span>
-            <span class="rg-faq__ic"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
-          </summary>
-          <div class="rg-faq__a">In Haan in der Regel innerhalb von 2 bis 5 Werktagen. Den Beratungstermin selbst legen wir flexibel und kostenlos. Vom Termin bis zur fertigen Anlage rechnen Sie mit 2 bis 4 Wochen, die Montage selbst dauert meist 1 bis 3 Tage.</div>
-        </details>
-
-        <details class="rg-faq__item">
-          <summary class="rg-faq__sum">
-            <span class="rg-faq__q">Fallen Anfahrtskosten für Haan an?</span>
-            <span class="rg-faq__ic"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
-          </summary>
-          <div class="rg-faq__a">Nein. Haan liegt nur 15 km von unserem Hauptstandort entfernt, im selben Einsatzgebiet wie Wuppertal selbst. Die Anfahrt ist im Festpreis enthalten, unabhängig davon, wie oft wir kommen müssen, bis die Anlage perfekt läuft.</div>
-        </details>
-
-        <details class="rg-faq__item">
-          <summary class="rg-faq__sum">
-            <span class="rg-faq__q">Lohnt sich Photovoltaik im Bergischen Land?</span>
-            <span class="rg-faq__ic"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
-          </summary>
-          <div class="rg-faq__a">Ja. Der Solarertrag liegt in Haan und Umgebung bei rund 950 bis 1.050 kWh pro kWp installierter Leistung, vergleichbar mit Köln oder Düsseldorf. Mit moderner Technik und einer ehrlich geplanten Speichergröße amortisiert sich die Anlage genauso wie überall sonst.</div>
-        </details>
-
-        <details class="rg-faq__item">
-          <summary class="rg-faq__sum">
-            <span class="rg-faq__q">Brauche ich in Haan eine Baugenehmigung?</span>
-            <span class="rg-faq__ic"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
-          </summary>
-          <div class="rg-faq__a">In aller Regel nicht. Für die meisten Photovoltaik-Anlagen auf bestehenden Häusern genügt die Anmeldung beim Netzbetreiber und im Marktstammdatenregister. Bei denkmalgeschützten Gebäuden oder Sonderfällen klären wir das vorher mit Ihnen ab und übernehmen auf Wunsch auch die Kommunikation mit der Stadt Haan.</div>
-        </details>
-      </section>
-
-      <div class="rg-cta">
-        <div class="rg-cta__t">Vor-Ort-Beratung in Haan, kostenlos und unverbindlich.</div>
-        <a href="index.html#kontakt" class="rg-cta__btn">Termin vereinbaren <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+  <!-- WARUM SOLAWERT (Vertrauen Cards) -->
+  <section class="st-warum">
+    <div class="st-warum__wrap">
+      <div class="st-warum__head">
+        <span class="st-eyebrow">Warum SolaWert</span>
+        <h2 class="st-warum__h2">Solar in Haan, <span class="accent">ehrlich gerechnet</span>.</h2>
+        <p class="st-warum__sub">Was uns von Düsseldorfer Vertrieblern und Online-Plattformen in Haan unterscheidet: kurze Wege, fester Ansprechpartner, klare Festpreise.</p>
       </div>
-
-      <a href="einsatzgebiete.html" class="rg-back"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>Zurück zu den Einsatzgebieten</a>
-    </article>
+      <div class="st-warum__grid">
+        <div class="st-warum__c">
+          <span class="st-warum__c-ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-12V5l-8-3-8 3v5c0 8 8 12 8 12z"/></svg></span>
+          <h3 class="st-warum__c-h">Festpreis vorab</h3>
+          <p class="st-warum__c-p">Schwarz auf weiß, ohne Anzahlung. Sie zahlen erst, wenn die Anlage läuft.</p>
+        </div>
+        <div class="st-warum__c">
+          <span class="st-warum__c-ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+          <h3 class="st-warum__c-h">Inhabergeführt</h3>
+          <p class="st-warum__c-p">Ein Ansprechpartner vom ersten Anruf bis Jahre nach der Inbetriebnahme.</p>
+        </div>
+        <div class="st-warum__c">
+          <span class="st-warum__c-ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9l-3.8 3.8z"/></svg></span>
+          <h3 class="st-warum__c-h">Schlüsselfertig</h3>
+          <p class="st-warum__c-p">Planung, Montage, Elektrik, Anmeldung. Alles aus einer Hand, ein Festpreis.</p>
+        </div>
+        <div class="st-warum__c">
+          <span class="st-warum__c-ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+          <h3 class="st-warum__c-h">Aus Wuppertal · 18 Min</h3>
+          <p class="st-warum__c-p">Hauptstandort 15 km entfernt. Wir kennen Haaner Walmdächer und Wohnviertel.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- VERWANDTE STANDORTE -->
-  <section class="rg-related">
-    <div class="rg-related__wrap">
-      <div class="rg-related__head">
-        <h2 class="rg-related__h">Weitere Standorte im Umland</h2>
-        <span class="rg-related__count">3 Städte</span>
+  <!-- LEAD FORM (Schnellanfrage) -->
+  <section class="st-lead" id="anfrage">
+    <div class="st-lead__wrap">
+      <div class="st-lead__head">
+        <span class="st-lead__eyebrow"><span class="dot"></span>Antwort innerhalb eines Werktags</span>
+        <h2 class="st-lead__h2">Kostenlose Beratung in Haan</h2>
+        <p class="st-lead__sub">Schildern Sie kurz Ihr Vorhaben, wir melden uns mit den nächsten Schritten.</p>
       </div>
-      <div class="rg-related__grid">
-        <a href="mettmann.html" class="rg-rel">
-          <div class="rg-rel__imgwrap">
-            <img class="rg-rel__img" src="img/einsatz-team.jpg" alt="Mettmann">
-            <span class="rg-rel__cat">ca. 25 Min.</span>
+      <form action="#" method="post" onsubmit="event.preventDefault(); alert('Vielen Dank, wir melden uns innerhalb eines Werktags.');">
+        <div class="st-lead__row">
+          <div class="st-lead__field">
+            <label for="st-name">Name</label>
+            <input id="st-name" name="name" type="text" required placeholder="Vor- und Nachname" autocomplete="name">
           </div>
-          <div class="rg-rel__body">
-            <h3 class="rg-rel__t">Photovoltaik in Mettmann</h3>
-            <p class="rg-rel__s">25 km von Wuppertal. Schlüsselfertige Anlagen für Eigenheim und Gewerbe.</p>
+          <div class="st-lead__field">
+            <label for="st-phone">Telefon</label>
+            <input id="st-phone" name="phone" type="tel" placeholder="0202 1234567" autocomplete="tel">
+          </div>
+        </div>
+        <div class="st-lead__field">
+          <label for="st-email">E-Mail</label>
+          <input id="st-email" name="email" type="email" required placeholder="ihre@adresse.de" autocomplete="email">
+        </div>
+        <div class="st-lead__row">
+          <div class="st-lead__field">
+            <label for="st-topic">Thema</label>
+            <select id="st-topic" name="topic">
+              <option>Photovoltaik (neu)</option>
+              <option>Stromspeicher</option>
+              <option>Wärmepumpe</option>
+              <option>PV + Wärmepumpe</option>
+              <option>Allgemeine Frage</option>
+            </select>
+          </div>
+          <div class="st-lead__field">
+            <label for="st-plz">PLZ in Haan</label>
+            <input id="st-plz" name="plz" type="text" placeholder="PLZ Haan">
+          </div>
+        </div>
+        <button type="submit" class="st-lead__submit">Beratung anfragen <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+        <p class="st-lead__meta">Ihre Daten landen direkt bei uns, nicht in einem CRM-Trichter.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ÜBER UNS MINI -->
+  <section class="st-about">
+    <div class="st-about__wrap">
+      <div class="st-about__imgwrap">
+        <img src="img/einsatz-team.jpg" alt="SolaWert Team aus Wuppertal">
+      </div>
+      <div>
+        <div class="st-about__eyebrow">Über uns</div>
+        <h2 class="st-about__h2">Inhabergeführt aus <span class="accent">Wuppertal</span> für Haan</h2>
+        <p class="st-about__p">SolaWert ist ein inhabergeführter Solarbetrieb aus Wuppertal. Mit eigenem Team und eigenem Material bauen wir Anlagen in Haan und im gesamten Bergischen Land, ohne Subunternehmer, ohne Zwischenhändler.</p>
+        <p class="st-about__p">Über 500 abgeschlossene Projekte stehen für saubere Arbeit, faire Festpreise ohne versteckte Kosten und einen festen Ansprechpartner vom ersten Anruf bis Jahre nach der Inbetriebnahme.</p>
+        <div class="st-about__inhaber">
+          <div class="st-about__inhaber-img"><img src="img/inhaber.png" alt="Gegam Sargsian"></div>
+          <div class="st-about__inhaber-tx">
+            <span class="st-about__inhaber-name">Gegam Sargsian</span>
+            <span class="st-about__inhaber-role">Inhaber, persönlich für Sie da</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VOR ORT IN WUPPERTAL -->
+  <section class="st-vorort">
+    <div class="st-vorort__wrap">
+      <div>
+        <div class="st-vorort__eyebrow">Vor Ort in Haan</div>
+        <h2 class="st-vorort__h2">Ihr verlässlicher Partner für Solar in <span class="accent">Haan</span></h2>
+        <p class="st-vorort__p">Ob <a href="photovoltaik.html">Photovoltaik</a>, Wärmepumpe oder Stromspeicher: In Haan planen wir individuell, montieren sauber und kümmern uns um die Anmeldung beim Netzbetreiber. Sie haben einen festen Ansprechpartner und einen schriftlichen Festpreis ohne versteckte Kosten.</p>
+        <p class="st-vorort__p">Haan ist Gartenstadt: überwiegend Einfamilienhäuser mit klassischen Walmdächern, gepflegte Wohnviertel, oft gute Süd- oder Süd-West-Ausrichtung. Ideales Terrain für saubere, schlüsselfertige PV-Anlagen mit optionaler Wärmepumpe. Auch in <a href="mettmann.html">Mettmann</a> und Solingen sind wir regelmäßig im Einsatz.</p>
+        <ul class="st-vorort__bullets">
+          <li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Fester Ansprechpartner, kostenlose Vor-Ort-Beratung</li>
+          <li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Eigenes Montageteam, keine Subunternehmer</li>
+          <li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Festpreis ohne Anzahlung, Sie zahlen erst nach Inbetriebnahme</li>
+        </ul>
+      </div>
+      <div class="st-vorort__imgwrap">
+        <img src="img/leistung-pv.jpg" alt="Photovoltaik-Montage in Haan">
+      </div>
+    </div>
+  </section>
+
+  <!-- LEISTUNGS-CARDS -->
+  <section class="st-leist">
+    <div class="st-leist__wrap">
+      <div class="st-leist__head">
+        <h2 class="st-leist__h2">Photovoltaik, Wärmepumpe und Speicher in Haan</h2>
+      </div>
+      <div class="st-leist__grid">
+        <a href="photovoltaik.html" class="st-leist__c">
+          <span class="st-leist__c-ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></span>
+          <h3 class="st-leist__c-h">Photovoltaik in Haan</h3>
+          <p class="st-leist__c-p">Schlüsselfertige PV-Anlagen für Eigenheime in Haan. Festpreis ohne Anzahlung.</p>
+          <span class="st-leist__c-link">Photovoltaik ansehen <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </a>
+        <a href="waermepumpe.html" class="st-leist__c">
+          <span class="st-leist__c-ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg></span>
+          <h3 class="st-leist__c-h">Wärmepumpe in Haan</h3>
+          <p class="st-leist__c-p">Komplette Heizungsumstellung, ideal kombiniert mit PV. Bis 70 % Förderung.</p>
+          <span class="st-leist__c-link">Wärmepumpe ansehen <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </a>
+        <a href="leistungen.html" class="st-leist__c">
+          <span class="st-leist__c-ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.8 2.2a2 2 0 0 0-1.6 0L2.6 6.1a1 1 0 0 0 0 1.8l8.6 3.9a2 2 0 0 0 1.6 0l8.6-3.9a1 1 0 0 0 0-1.8Z"/><path d="m22 17.6-9.2 4.2a2 2 0 0 1-1.6 0L2 17.6"/><path d="m22 12.6-9.2 4.2a2 2 0 0 1-1.6 0L2 12.6"/></svg></span>
+          <h3 class="st-leist__c-h">Stromspeicher in Haan</h3>
+          <p class="st-leist__c-p">Passend dimensioniert oder nachgerüstet. Oft 60 % mehr Speicher zum gleichen Preis.</p>
+          <span class="st-leist__c-link">Speicher ansehen <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </a>
+        <a href="leistungen.html" class="st-leist__c">
+          <span class="st-leist__c-ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9l-3.8 3.8z"/></svg></span>
+          <h3 class="st-leist__c-h">Wartung in Haan</h3>
+          <p class="st-leist__c-p">Wir prüfen Ihre Anlage über Jahre und feilen am Ertrag nach. Auch für Fremdanlagen.</p>
+          <span class="st-leist__c-link">Leistungen ansehen <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="st-faq">
+    <div class="st-faq__glow"></div>
+    <div class="st-faq__wrap">
+      <div>
+        <div class="st-faq__eyebrow">FAQ</div>
+        <h2 class="st-faq__h2">Häufige Fragen aus Haan</h2>
+        <p class="st-faq__lead">Noch offene Fragen zu Ihrer Anlage in Haan? Rufen Sie an, wir beraten Sie gern.</p>
+        <a href="tel:+4915205999900" class="st-faq__phone"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>0152 5999900</a>
+      </div>
+      <div class="st-faq__list">
+        <details class="st-faq__item">
+          <summary><span class="st-faq__q">Was kostet eine Photovoltaik-Anlage in Haan?</span><span class="st-faq__ic"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+          <div class="st-faq__a">Für ein Einfamilienhaus in Haan liegen schlüsselfertige Anlagen typischerweise zwischen 12.000 und 22.000 €. Die gute Süd-Ausrichtung vieler Haaner Walmdächer macht PV besonders ertragreich. Beim kostenlosen Beratungstermin bekommen Sie einen schriftlichen Festpreis.</div>
+        </details>
+        <details class="st-faq__item">
+          <summary><span class="st-faq__q">Wie schnell sind Sie nach der Anfrage in Haan vor Ort?</span><span class="st-faq__ic"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+          <div class="st-faq__a">In Haan in der Regel innerhalb von 2 bis 5 Werktagen. Anfahrt aus Wuppertal dauert ca. 18 Minuten. Vom Termin bis zur fertigen Anlage 2 bis 4 Wochen, Montage 1 bis 3 Tage.</div>
+        </details>
+        <details class="st-faq__item">
+          <summary><span class="st-faq__q">Welche Leistungen bieten Sie in Haan an?</span><span class="st-faq__ic"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+          <div class="st-faq__a">Photovoltaik schlüsselfertig, Stromspeicher, Wärmepumpen, Monitoring und Wartung. In allen Haaner Stadtteilen, inhabergeführt, ohne Subunternehmer.</div>
+        </details>
+        <details class="st-faq__item">
+          <summary><span class="st-faq__q">Fallen für Haan zusätzliche Anfahrtskosten an?</span><span class="st-faq__ic"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+          <div class="st-faq__a">Nein. Haan ist nur 15 km von Wuppertal entfernt und gehört zum Kerneinsatzgebiet. Anfahrt im Festpreis enthalten.</div>
+        </details>
+        <details class="st-faq__item">
+          <summary><span class="st-faq__q">Wie vereinbare ich einen Termin in Haan?</span><span class="st-faq__ic"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+          <div class="st-faq__a">Telefonisch unter 0152 5999900, per Mail oder über das Formular weiter oben. Antwort innerhalb eines Werktags.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- RATGEBER CARDS -->
+  <section class="st-ratg">
+    <div class="st-ratg__wrap">
+      <div class="st-ratg__head">
+        <span class="st-eyebrow" style="background:rgba(245,179,1,.14);border-color:transparent;color:#a37700;">Ratgeber</span>
+        <h2 class="st-ratg__h2" style="margin-top:1rem;">Ratgeber für Ihre Solarentscheidung in Haan</h2>
+      </div>
+      <div class="st-ratg__grid">
+        <a href="ratgeber-pv-kosten.html" class="st-ratg__c">
+          <div class="st-ratg__c-img"><img src="img/leistung-pv.jpg" alt="PV-Kosten 2026"></div>
+          <div class="st-ratg__c-body">
+            <div class="st-ratg__c-cat">Kosten</div>
+            <h3 class="st-ratg__c-h">Was kostet eine PV-Anlage 2026?</h3>
+            <p class="st-ratg__c-p">Preise, Förderung und wann sich Ihre Anlage rechnet.</p>
+            <span class="st-ratg__c-arrow">Artikel lesen <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
           </div>
         </a>
-
-        <a href="solingen.html" class="rg-rel">
-          <div class="rg-rel__imgwrap">
-            <img class="rg-rel__img" src="img/leistung-pv.jpg" alt="Solingen">
-            <span class="rg-rel__cat">ca. 15 Min.</span>
-          </div>
-          <div class="rg-rel__body">
-            <h3 class="rg-rel__t">Photovoltaik in Solingen</h3>
-            <p class="rg-rel__s">13 km von Wuppertal. Schlüsselfertige Anlagen für Eigenheim und Gewerbe.</p>
+        <a href="ratgeber-pv-waermepumpe.html" class="st-ratg__c">
+          <div class="st-ratg__c-img"><img src="img/leistung-effizienz.jpg" alt="PV + Wärmepumpe"></div>
+          <div class="st-ratg__c-body">
+            <div class="st-ratg__c-cat">Kombi</div>
+            <h3 class="st-ratg__c-h">PV + Wärmepumpe richtig kombinieren</h3>
+            <p class="st-ratg__c-p">Strom und Heizung in einem System gedacht.</p>
+            <span class="st-ratg__c-arrow">Artikel lesen <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
           </div>
         </a>
-
-        <a href="wuppertal.html" class="rg-rel">
-          <div class="rg-rel__imgwrap">
-            <img class="rg-rel__img" src="img/wuppertal-hero.jpg" alt="Wuppertal">
-            <span class="rg-rel__cat">Hauptstandort</span>
-          </div>
-          <div class="rg-rel__body">
-            <h3 class="rg-rel__t">Photovoltaik in Wuppertal</h3>
-            <p class="rg-rel__s">Hauptstandort SolaWert. Inhabergeführt vor Ort.</p>
+        <a href="ratgeber-stromspeicher-groesse.html" class="st-ratg__c">
+          <div class="st-ratg__c-img"><img src="img/leistung-speicher.jpg" alt="Speichergröße"></div>
+          <div class="st-ratg__c-body">
+            <div class="st-ratg__c-cat">Speicher</div>
+            <h3 class="st-ratg__c-h">Wie groß muss der Speicher sein?</h3>
+            <p class="st-ratg__c-p">Faustregeln und ehrliche Empfehlungen.</p>
+            <span class="st-ratg__c-arrow">Artikel lesen <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
           </div>
         </a>
       </div>
     </div>
   </section>
 
-  <div data-leadquiz></div>
+  <!-- FINAL CTA -->
+  <section class="st-finalcta">
+    <div class="st-finalcta__glow"></div>
+    <div class="st-finalcta__wrap">
+      <h2 class="st-finalcta__h2">Bereit für Ihr Solarprojekt in <span class="accent">Haan</span>?</h2>
+      <p class="st-finalcta__sub">Kostenlose Vor-Ort-Beratung in Haan, schriftlicher Festpreis, keine Anzahlung. Anfahrt aus Wuppertal nur 18 Min.</p>
+      <div class="st-finalcta__btns">
+        <a href="#anfrage" class="st-finalcta__primary">Termin vereinbaren <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        <a href="tel:+4915205999900" class="st-finalcta__ghost"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>0152 5999900</a>
+      </div>
+    </div>
+  </section>
+
   <div data-kaefer="footer"></div>
 
   <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-  <script src="leadquiz.js?v=1782143000"></script>
-  <script src="partials.js?v=1782143000"></script>
+  <script src="partials.js?v=1782145500"></script>
 </body>
 </html>
