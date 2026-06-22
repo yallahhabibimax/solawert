@@ -40,6 +40,54 @@
     });
   })();
 
+  /* ═══ AUTO-REVEAL fuer Sektionen auf Unterseiten ═══
+     Selbe Optik wie der GSAP-Reveal auf der Homepage (Fade + TranslateY + Blur),
+     aber CSS-only via IntersectionObserver. Greift NUR wenn die Seite kein
+     GSAP-ScrollTrigger nutzt (Homepage setzt 'gsap-on' und ist damit ausgeklammert). */
+  (function setupSubpageReveal(){
+    if (document.documentElement.classList.contains('gsap-on')) return;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    function init() {
+      /* Auf der Homepage kein doppel-init (gsap setzt die Klasse ggf spaeter) */
+      if (document.documentElement.classList.contains('gsap-on')) return;
+
+      /* Auto-tag aller <section> Elemente (Header / Hero bleiben unangetastet,
+         damit der Above-the-fold Content sofort sichtbar ist). Bereits manuell
+         vergebene .reveal*-Klassen werden respektiert. */
+      var sections = document.querySelectorAll('section');
+      sections.forEach(function(s) {
+        if (s.classList.contains('reveal') || s.classList.contains('reveal-scale') || s.classList.contains('reveal-left') || s.classList.contains('reveal-right')) return;
+        s.classList.add('reveal');
+      });
+
+      var revealTargets = document.querySelectorAll('.reveal, .reveal-scale, .reveal-left, .reveal-right');
+      if (!revealTargets.length) return;
+
+      if (!('IntersectionObserver' in window)) {
+        revealTargets.forEach(function(el){ el.classList.add('active'); });
+        return;
+      }
+
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if (e.isIntersecting) {
+            e.target.classList.add('active');
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.06, rootMargin: '0px 0px -50px 0px' });
+
+      revealTargets.forEach(function(el){ io.observe(el); });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+
   /* ═══ FOOTER ═══ */
   function footerHTML() {
     return '' +
