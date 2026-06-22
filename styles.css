@@ -275,6 +275,14 @@ section[id] { scroll-margin-top: 96px; }
 }
 .case-step__dot { position:absolute; left:1px; top:3px; width:9px; height:9px; border-radius:9999px; z-index:1; box-shadow:0 0 0 3px #fff; }
 .case-step:not(:last-child)::before { content:""; position:absolute; left:5px; top:7px; bottom:-1rem; width:2px; background:#16A34A; }
+/* Referenz-Cards: zentriert, volle Breite, ohne Timeline-Rail */
+.case-card .case-head { text-align: center; }
+.case-card .case-steps { gap: 1.15rem; }
+.case-card .case-step { padding-left: 0; text-align: center; }
+.case-card .case-step__dot, .case-card .case-step:not(:last-child)::before { display: none; }
+.case-card .case-step__body { width: 100%; }
+.case-card .case-step__body p { font-size: 14px; }
+.case-card .case-step__body > span { letter-spacing: .12em; }
 
 /* ─── Marquee (trust strip) ────────────────────────────── */
 .marquee { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
@@ -354,17 +362,17 @@ details > summary::-webkit-details-marker { display: none; }
 .faq-list::after { bottom: 1px; border-radius: 0 0 24px 24px; background: linear-gradient(0deg, rgba(245,179,1,.20) 0%, rgba(245,179,1,.05) 45%, transparent 100%); }
 .faq-item { border-top: 1px solid rgba(255,255,255,.10); }
 .faq-item:first-child { border-top: none; }
-.faq-head { display: flex; align-items: center; gap: 1.25rem; padding: 50px 4px; }
-.faq-num { width: 38px; flex-shrink: 0; font-weight: 700; font-size: 14px; letter-spacing: .04em; color: rgba(255,255,255,.34); transition: color .3s ease; }
-.faq-q { flex: 1; min-width: 0; font-weight: 800; font-size: 25px; line-height: 1.2; color: #fff; transition: color .3s ease; }
+.faq-head { display: flex; align-items: center; gap: .95rem; padding: 24px 4px; }
+.faq-num { width: 30px; flex-shrink: 0; font-weight: 700; font-size: 13px; letter-spacing: .04em; color: rgba(255,255,255,.34); transition: color .3s ease; }
+.faq-q { flex: 1; min-width: 0; font-weight: 800; font-size: 17.5px; line-height: 1.25; color: #fff; transition: color .3s ease; }
 .faq-icon { flex-shrink: 0; display: flex; align-items: center; justify-content: center; color: var(--accent); transition: transform .35s cubic-bezier(.16,1,.3,1); }
 .faq-item:hover .faq-q { color: var(--accent); }
 .faq-item:hover .faq-num { color: rgba(245,179,1,.7); }
 details[open] > summary .faq-icon { transform: rotate(45deg); }
 details[open] > summary .faq-q, details[open] > summary .faq-num { color: var(--accent); }
 .faq-body {
-  margin: 0 4px 28px 56px;
-  padding: 16px 20px;
+  margin: 0 4px 20px 44px;
+  padding: 13px 16px;
   border: 1px solid rgba(245,179,1,.28);
   border-left: 3px solid var(--accent);
   border-radius: 14px;
@@ -785,7 +793,8 @@ html { interpolate-size: allow-keywords; }
 @media (prefers-reduced-motion: reduce){ .lq-card2, .lq-ans, .lq-cta, .lq-optbtn { animation:none !important; transition:none !important; } .lq-cta:hover, .lq-optbtn:hover { transform:none; } }
 
 /* === Hero Rework === */
-.hero-kw { display: inline-block; color: #1A1402; background: linear-gradient(180deg,#FFD45A 0%,#F5B301 100%); border: 2px solid rgba(255,236,178,.55); border-radius: .16em; padding: 0 .2em .07em; line-height: 1; box-shadow: 0 16px 46px -14px rgba(245,179,1,.6), inset 0 2px 0 rgba(255,255,255,.45); animation: heroKwGlow 3.4s ease-in-out infinite; }
+.hero-kw { display: inline-block; position: relative; color: inherit; background: none; border: none; border-radius: 0; padding: 0 .02em; line-height: inherit; box-shadow: none; }
+.hero-kw::after { content: ""; position: absolute; left: 0; right: 0; bottom: -0.04em; height: .12em; border-radius: 4px; background: linear-gradient(90deg,#FFD45A 0%,#F5B301 100%); box-shadow: 0 6px 18px -6px rgba(245,179,1,.7); }
 @keyframes heroKwGlow {
   0%, 100% { box-shadow: 0 14px 40px -16px rgba(245,179,1,.45), inset 0 2px 0 rgba(255,255,255,.4); }
   50% { box-shadow: 0 22px 58px -12px rgba(245,179,1,.72), inset 0 2px 0 rgba(255,255,255,.5); }
