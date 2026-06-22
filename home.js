@@ -1105,10 +1105,10 @@ const RegionBand = () => {
     className: "px-3 md:px-5 pt-10 md:pt-12 pb-12 md:pb-16 bg-ink"
   }, /*#__PURE__*/React.createElement("div", {
     className: "mx-auto",
-    style: { maxWidth: "1760px" }
+    style: { maxWidth: "1280px" }
   }, /*#__PURE__*/React.createElement("div", {
     className: "relative rounded-[28px] overflow-hidden reveal-scale",
-    style: { minHeight: "clamp(300px, 38vh, 400px)", display: "flex", alignItems: "center" }
+    style: { minHeight: "clamp(380px, 46vh, 500px)", display: "flex", alignItems: "center" }
   }, /*#__PURE__*/React.createElement("img", {
     src: "img/einsatz-team.jpg?v=1782000017",
     alt: "SolaWert montiert eine Photovoltaik-Anlage in NRW",

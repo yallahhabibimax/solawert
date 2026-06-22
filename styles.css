@@ -277,9 +277,11 @@ section[id] { scroll-margin-top: 96px; }
 .case-step:not(:last-child)::before { content:""; position:absolute; left:5px; top:7px; bottom:-1rem; width:2px; background:#16A34A; }
 /* Referenz-Cards: zentriert, volle Breite, ohne Timeline-Rail */
 .case-card .case-head { text-align: center; }
-.case-card .case-steps { gap: 1.15rem; }
+.case-card .case-steps { gap: 1.6rem; }
 .case-card .case-step { padding-left: 0; text-align: center; }
 .case-card .case-step__dot, .case-card .case-step:not(:last-child)::before { display: none; }
+/* zentrierter Verbindungs-Strich: Problem (rot) -> Loesung (gruen) */
+.case-card .case-step:not(:last-child)::after { content: ""; position: absolute; left: 50%; transform: translateX(-50%); bottom: -1.6rem; width: 2px; height: 1.6rem; border-radius: 2px; background: linear-gradient(180deg, #EF4444 0%, #16A34A 100%); }
 .case-card .case-step__body { width: 100%; }
 .case-card .case-step__body p { font-size: 14px; }
 .case-card .case-step__body > span { letter-spacing: .12em; }
