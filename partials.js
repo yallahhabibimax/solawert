@@ -282,7 +282,9 @@
   /* ═══ Init / Auto-Inject ═══ */
   /* ═══ NAVBAR (geteilt fuer Unterseiten; Home nutzt eigene React-Nav) ═══ */
   function navHTML() {
-    var L = [["Start","index.html#top"],["Über uns","index.html#ueber-uns"],["Leistungen","index.html#leistungen","active"],["Ratgeber","index.html#ratgeber"],["Team","index.html#bewertungen"],["Kontakt","index.html#kontakt"]];
+    var SUB = [["Photovoltaik","photovoltaik.html"],["Wärmepumpe","waermepumpe.html"],["Stromspeicher","stromspeicher.html"]];
+    var L = [["Start","index.html#top",null],["Leistungen","index.html#leistungen",SUB],["Einsatzgebiete","index.html#einzugsgebiet",null],["Ratgeber","index.html#ratgeber",null],["Über uns","index.html#ueber-uns",null],["Kontakt","index.html#kontakt",null]];
+    var caret = '<svg class="sw-caret" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>';
     var burger = '<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>';
     return '' +
     '<nav class="sw-navwrap" data-sw-nav>' +
@@ -292,7 +294,9 @@
           '<span class="font-heading leading-none" style="font-size:23px;font-weight:900;letter-spacing:-.03em"><span style="color:#fff">Sola</span><span style="background:linear-gradient(180deg,#FFDD66 0%,#F5B301 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent">Wert</span></span>' +
         '</a>' +
         '<div class="sw-navlinks hidden lg:flex">' +
-          L.map(function(x){return '<a href="'+x[1]+'" class="sw-navlink'+(x[2]?' '+x[2]:'')+'">'+x[0]+'</a>';}).join('') +
+          L.map(function(x){ return x[2]
+            ? '<div class="sw-navitem"><a href="'+x[1]+'" class="sw-navlink sw-navlink--has">'+x[0]+caret+'</a><div class="sw-dropdown">'+x[2].map(function(s){return '<a href="'+s[1]+'">'+s[0]+'</a>';}).join('')+'</div></div>'
+            : '<a href="'+x[1]+'" class="sw-navlink">'+x[0]+'</a>'; }).join('') +
         '</div>' +
         '<div class="flex items-center gap-3">' +
           '<a href="#anfrage" class="sw-nav-cta hidden lg:inline-flex">Angebot anfragen <i>'+svg('arrow',14)+'</i></a>' +
@@ -300,7 +304,7 @@
         '</div>' +
       '</div></div>' +
       '<div class="sw-mobilemenu" data-sw-mobile>' +
-        L.map(function(x){return '<a href="'+x[1]+'" class="sw-mobilelink">'+x[0]+'</a>';}).join('') +
+        L.map(function(x){ var base = '<a href="'+x[1]+'" class="sw-mobilelink">'+x[0]+'</a>'; return x[2] ? base + x[2].map(function(s){return '<a href="'+s[1]+'" class="sw-mobilelink sw-mobilelink--sub">'+s[0]+'</a>';}).join('') : base; }).join('') +
         '<div class="flex gap-3 mt-3"><a href="tel:'+TEL+'" class="flex-1 btn-dark rounded-full py-3 text-center font-heading font-semibold text-sm">Anrufen</a><a href="#anfrage" class="flex-1 btn-primary rounded-full py-3 text-center font-heading text-sm">Angebot anfragen</a></div>' +
       '</div>' +
     '</nav>';

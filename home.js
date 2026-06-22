@@ -376,7 +376,8 @@ const Navbar = () => {
     });
     return () => window.removeEventListener('scroll', f);
   }, []);
-  const links = [["Start", "#top"], ["Über uns", "#ueber-uns"], ["Leistungen", "#leistungen"], ["Ratgeber", "#ratgeber"], ["Team", "#bewertungen"], ["Kontakt", "#kontakt"]];
+  const leistSub = [["Photovoltaik", "photovoltaik.html"], ["Wärmepumpe", "waermepumpe.html"], ["Stromspeicher", "stromspeicher.html"]];
+  const links = [["Start", "#top"], ["Leistungen", "#leistungen", leistSub], ["Einsatzgebiete", "#einzugsgebiet"], ["Ratgeber", "#ratgeber"], ["Über uns", "#ueber-uns"], ["Kontakt", "#kontakt"]];
   return /*#__PURE__*/React.createElement("nav", {
     className: "sw-navwrap" + (scrolled ? " scrolled" : "")
   }, /*#__PURE__*/React.createElement("div", {
@@ -406,7 +407,30 @@ const Navbar = () => {
     style: { background: "linear-gradient(180deg, #FFDD66 0%, #F5B301 100%)", WebkitBackgroundClip: "text", backgroundClip: "text", WebkitTextFillColor: "transparent", color: "transparent" }
   }, "Wert"))), /*#__PURE__*/React.createElement("div", {
     className: "sw-navlinks hidden lg:flex"
-  }, links.map(([t, h], i) => /*#__PURE__*/React.createElement("a", {
+  }, links.map(([t, h, sub], i) => sub ? /*#__PURE__*/React.createElement("div", {
+    key: h,
+    className: "sw-navitem"
+  }, /*#__PURE__*/React.createElement("a", {
+    href: h,
+    className: "sw-navlink sw-navlink--has"
+  }, t, /*#__PURE__*/React.createElement("svg", {
+    className: "sw-caret",
+    viewBox: "0 0 24 24",
+    width: 14,
+    height: 14,
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: 2.4,
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "m6 9 6 6 6-6"
+  }))), /*#__PURE__*/React.createElement("div", {
+    className: "sw-dropdown"
+  }, sub.map(([st, sh]) => /*#__PURE__*/React.createElement("a", {
+    key: sh,
+    href: sh
+  }, st)))) : /*#__PURE__*/React.createElement("a", {
     key: h,
     href: h,
     className: "sw-navlink" + (i === 0 ? " active" : "")
@@ -426,12 +450,17 @@ const Navbar = () => {
     size: 24
   }, open ? ICO.close : ICO.menu))))), /*#__PURE__*/React.createElement("div", {
     className: "sw-mobilemenu" + (open ? " open" : "")
-  }, links.map(([t, h]) => /*#__PURE__*/React.createElement("a", {
+  }, links.flatMap(([t, h, sub]) => [/*#__PURE__*/React.createElement("a", {
     key: h,
     href: h,
     onClick: () => setOpen(false),
     className: "sw-mobilelink"
-  }, t)), /*#__PURE__*/React.createElement("div", {
+  }, t)].concat(sub ? sub.map(([st, sh]) => /*#__PURE__*/React.createElement("a", {
+    key: sh,
+    href: sh,
+    onClick: () => setOpen(false),
+    className: "sw-mobilelink sw-mobilelink--sub"
+  }, st)) : [])), /*#__PURE__*/React.createElement("div", {
     className: "flex gap-3 mt-3"
   }, /*#__PURE__*/React.createElement("a", {
     href: "tel:" + PHONE_FEST_TEL,
