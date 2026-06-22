@@ -106,20 +106,22 @@
     .st-about__inhaber-name { font-family:'Archivo',sans-serif; font-weight:800; font-size:15px; color:#14171C; }
     .st-about__inhaber-role { font-family:'Inter',sans-serif; font-size:13px; color:#3D444E; margin-top:1px; }
 
-    /* === STANDORT CARDS === */
-    .st-ortcards { padding:5rem 1.25rem; background:#F4F5F7; }
-    @media (min-width:768px){ .st-ortcards { padding:6rem 2rem; } }
-    .st-ortcards__wrap { max-width:72rem; margin:0 auto; }
-    .st-ortcards__head { text-align:center; margin-bottom:2.5rem; }
-    .st-ortcards__h2 { font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(1.65rem,2.9vw,2.3rem); line-height:1.15; letter-spacing:-.02em; color:#14171C; margin:0; }
-    .st-ortcards__h2 .accent { color:#F5B301; }
-    .st-ortcards__grid { display:grid; grid-template-columns:1fr; gap:1rem; }
-    @media (min-width:640px){ .st-ortcards__grid { grid-template-columns:repeat(3,1fr); gap:1.2rem; } }
-    .st-ortcards__c { padding:1.6rem 1.4rem; background:#fff; border:1px solid rgba(20,23,28,.07); border-radius:18px; transition:transform .3s ease, box-shadow .3s ease; }
-    .st-ortcards__c:hover { transform:translateY(-3px); box-shadow:0 18px 40px -22px rgba(20,23,28,.18); }
-    .st-ortcards__c-ico { width:42px; height:42px; border-radius:12px; background:rgba(245,179,1,.14); color:#a37700; display:flex; align-items:center; justify-content:center; margin-bottom:.95rem; }
-    .st-ortcards__c-h { font-family:'Archivo',sans-serif; font-weight:800; font-size:1.05rem; line-height:1.25; color:#14171C; margin:0 0 .4rem; }
-    .st-ortcards__c-p { font-family:'Inter',sans-serif; font-size:14px; line-height:1.6; color:#3D444E; margin:0; }
+    /* === VOR ORT (Text + Bild Split) === */
+    .st-vorort { padding:3.5rem 1.25rem; background:#F4F5F7; }
+    @media (min-width:768px){ .st-vorort { padding:5rem 2rem; } }
+    .st-vorort__wrap { max-width:72rem; margin:0 auto; display:grid; grid-template-columns:1fr; gap:2.2rem; align-items:center; }
+    @media (min-width:900px){ .st-vorort__wrap { grid-template-columns:1fr 1.1fr; gap:3.2rem; } }
+    .st-vorort__eyebrow { font-family:'Archivo',sans-serif; font-weight:800; font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:#a37700; margin-bottom:.85rem; }
+    .st-vorort__h2 { font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(1.65rem,2.9vw,2.3rem); line-height:1.15; letter-spacing:-.02em; color:#14171C; margin:0 0 1.1rem; }
+    .st-vorort__h2 .accent { color:#F5B301; }
+    .st-vorort__p { font-family:'Inter',sans-serif; font-size:1rem; line-height:1.65; color:#3D444E; margin:0 0 1rem; }
+    .st-vorort__p a { color:#a37700; text-decoration:underline; text-underline-offset:3px; text-decoration-thickness:1.5px; text-decoration-color:rgba(245,179,1,.5); font-weight:600; }
+    .st-vorort__p a:hover { color:#F5B301; text-decoration-color:#F5B301; }
+    .st-vorort__bullets { list-style:none; padding:0; margin:1.4rem 0 0; display:grid; gap:.7rem; }
+    .st-vorort__bullets li { display:flex; align-items:center; gap:.7rem; font-family:'Inter',sans-serif; font-size:14.5px; color:#14171C; }
+    .st-vorort__bullets li svg { flex-shrink:0; color:#F5B301; }
+    .st-vorort__imgwrap { border-radius:22px; overflow:hidden; aspect-ratio:5/4; background:#2A2E36; box-shadow:0 18px 50px -28px rgba(20,23,28,.25); }
+    .st-vorort__imgwrap img { width:100%; height:100%; object-fit:cover; }
 
     /* === LEISTUNGS-CARDS === */
     .st-leist { padding:5rem 1.25rem; background:#fff; }
@@ -298,28 +300,22 @@
     </div>
   </section>
 
-  <!-- STANDORT-CARDS (Was Wuppertal besonders macht) -->
-  <section class="st-ortcards">
-    <div class="st-ortcards__wrap">
-      <div class="st-ortcards__head">
-        <h2 class="st-ortcards__h2">Was bei Photovoltaik in <span class="accent">Wuppertal</span> zählt</h2>
+  <!-- VOR ORT IN WUPPERTAL -->
+  <section class="st-vorort">
+    <div class="st-vorort__wrap">
+      <div>
+        <div class="st-vorort__eyebrow">Vor Ort in Wuppertal</div>
+        <h2 class="st-vorort__h2">Ihr verlässlicher Partner für Solar in <span class="accent">Wuppertal</span></h2>
+        <p class="st-vorort__p">Ob <a href="photovoltaik.html">Photovoltaik</a>, <a href="waermepumpe.html">Wärmepumpe</a> oder Stromspeicher: In Wuppertal planen wir individuell, montieren sauber und kümmern uns um Anmeldung beim Netzbetreiber. Sie haben einen festen Ansprechpartner, einen schriftlichen Festpreis und keine versteckten Kosten.</p>
+        <p class="st-vorort__p">Inhabergeführt, mit eigenem Montageteam, ohne Subunternehmer. Wir kennen die Hanglagen im Bergischen, die Schiefer- und Pfannendächer in den älteren Stadtteilen und wissen, wie man das Maximum aus jedem Wuppertaler Dach holt. Über Wuppertal hinaus sind wir regelmäßig auch in <a href="solingen.html">Solingen</a> und <a href="remscheid.html">Remscheid</a> im Einsatz.</p>
+        <ul class="st-vorort__bullets">
+          <li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Fester Ansprechpartner, kostenlose Vor-Ort-Beratung</li>
+          <li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Eigenes Montageteam, keine Subunternehmer</li>
+          <li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Festpreis ohne Anzahlung, Sie zahlen erst nach Inbetriebnahme</li>
+        </ul>
       </div>
-      <div class="st-ortcards__grid">
-        <div class="st-ortcards__c">
-          <span class="st-ortcards__c-ico"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12 9 6l5 5 7-7"/><path d="M14 4h7v7"/></svg></span>
-          <h3 class="st-ortcards__c-h">Hanglagen & Verschattung</h3>
-          <p class="st-ortcards__c-p">Optimierte String-Verteilung und auf Wunsch Modul-Optimierer für die hügeligen Stadtteile.</p>
-        </div>
-        <div class="st-ortcards__c">
-          <span class="st-ortcards__c-ico"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s4-8 10-8 10 8 10 8-4 8-10 8S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span>
-          <h3 class="st-ortcards__c-h">Bergisches Wetter</h3>
-          <p class="st-ortcards__c-p">Wechselrichter und Speicher passend dimensioniert: gute Tage konservieren für graue Tage.</p>
-        </div>
-        <div class="st-ortcards__c">
-          <span class="st-ortcards__c-ico"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></span>
-          <h3 class="st-ortcards__c-h">Alle Stadtteile</h3>
-          <p class="st-ortcards__c-p">Elberfeld, Barmen, Vohwinkel, Cronenberg, Ronsdorf, Beyenburg. Schiefer- und Pfannendach.</p>
-        </div>
+      <div class="st-vorort__imgwrap">
+        <img src="img/leistung-pv.jpg" alt="Photovoltaik-Montage in Wuppertal">
       </div>
     </div>
   </section>
