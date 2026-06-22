@@ -37,14 +37,14 @@
     .kt-cards__wrap { max-width:72rem; margin:0 auto; display:grid; grid-template-columns:1fr; gap:1rem; }
     @media (min-width:640px){ .kt-cards__wrap { grid-template-columns:repeat(2,1fr); } }
     @media (min-width:1024px){ .kt-cards__wrap { grid-template-columns:repeat(4,1fr); gap:1.2rem; } }
-    .kt-card { padding:1.5rem 1.4rem; border-radius:18px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); transition:background .25s ease, border-color .25s ease, transform .25s ease; }
+    .kt-card { padding:2.3rem 1.6rem 2rem; border-radius:18px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); transition:background .25s ease, border-color .25s ease, transform .25s ease; display:flex; flex-direction:column; }
     .kt-card:hover { background:rgba(255,255,255,.09); border-color:rgba(245,179,1,.3); transform:translateY(-3px); }
-    .kt-card__ico { width:44px; height:44px; border-radius:12px; background:linear-gradient(180deg,#FFDD66,#F5B301); color:#1A1402; display:flex; align-items:center; justify-content:center; margin-bottom:1rem; }
-    .kt-card__lbl { font-family:'Archivo',sans-serif; font-weight:700; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.55); margin-bottom:.45rem; }
-    .kt-card__val { font-family:'Archivo',sans-serif; font-weight:800; font-size:1.05rem; line-height:1.35; color:#fff; }
+    .kt-card__ico { width:50px; height:50px; border-radius:13px; background:linear-gradient(180deg,#FFDD66,#F5B301); color:#1A1402; display:flex; align-items:center; justify-content:center; margin-bottom:1.5rem; }
+    .kt-card__lbl { font-family:'Archivo',sans-serif; font-weight:700; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.55); margin-bottom:.55rem; }
+    .kt-card__val { font-family:'Archivo',sans-serif; font-weight:800; font-size:1.1rem; line-height:1.4; color:#fff; margin-bottom:auto; }
     .kt-card__val a { color:#fff; }
     .kt-card__val a:hover { color:#F5B301; }
-    .kt-card__sub { font-family:'Inter',sans-serif; font-size:12.5px; color:rgba(255,255,255,.55); margin-top:.4rem; }
+    .kt-card__sub { font-family:'Inter',sans-serif; font-size:12.5px; color:rgba(255,255,255,.55); margin-top:1.1rem; padding-top:.85rem; border-top:1px solid rgba(255,255,255,.07); }
 
     /* Karte + Form */
     .kt-mainsplit { padding:5rem 1.25rem; background:#FBF6E9; }
@@ -112,7 +112,6 @@
     <div class="kt-hero__wrap">
       <span class="kt-eyebrow"><span class="dot"></span>Wir melden uns innerhalb eines Werktags</span>
       <h1 class="kt-h1">Schreiben oder <span class="accent">anrufen</span>. Wir freuen uns.</h1>
-      <p class="kt-lead">Egal ob Erstberatung, Festpreis-Angebot oder eine spezifische Frage zur Wärmepumpe, wir sind direkt erreichbar. Kein Callcenter, kein Bot. Ein fester Ansprechpartner.</p>
     </div>
   </header>
 
