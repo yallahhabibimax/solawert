@@ -379,7 +379,7 @@ const Navbar = () => {
   const leistSub = [["Photovoltaik", "photovoltaik.html", "sun", "Eigener Strom vom Dach"], ["Wärmepumpe", "waermepumpe.html", "flame", "Effizient heizen mit Strom"], ["Stromspeicher", "stromspeicher.html", "bolt", "Mehr Speicher inklusive"], ["Alle Leistungen", "leistungen.html", "combo", "Überblick aller Leistungen", "all"]];
   const einsatzSub = [["Wuppertal", "wuppertal.html", "home", "Hauptstandort"], ["Solingen", "solingen.html", "pin", "13 km · ca. 15 Min."], ["Remscheid", "remscheid.html", "pin", "16 km · ca. 20 Min."], ["Velbert", "velbert.html", "pin", "18 km · ca. 20 Min."], ["Mettmann", "mettmann.html", "pin", "20 km · ca. 25 Min."], ["Haan", "haan.html", "pin", "12 km · ca. 15 Min."], ["Alle Einsatzgebiete", "einsatzgebiete.html", "combo", "Übersicht aller Städte", "all"]];
   const ratgeberSub = [["PV-Kosten 2026", "ratgeber-pv-kosten.html", "euro", "Preise & wann es sich rechnet"], ["PV + Wärmepumpe", "ratgeber-pv-waermepumpe.html", "flame", "Strom und Heizung kombinieren"], ["Speicher richtig wählen", "ratgeber-stromspeicher-groesse.html", "bolt", "Wie groß muss er sein?"], ["PV-Förderung 2026", "ratgeber-pv-foerderung.html", "shield", "Zuschüsse & KfW-Programme"], ["Anlagengröße planen", "ratgeber-pv-groesse.html", "search", "kWp richtig auswählen"], ["Eigenverbrauch maximieren", "ratgeber-eigenverbrauch.html", "sun", "Mehr Sonne, weniger Netz"], ["Alle Ratgeber", "ratgeber.html", "combo", "Übersicht aller Artikel", "all"]];
-  const links = [["Start", "#top"], ["Leistungen", "leistungen.html", leistSub], ["Einsatzgebiete", "einsatzgebiete.html", einsatzSub], ["Ratgeber", "ratgeber.html", ratgeberSub], ["Über uns", "#ueber-uns"], ["Kontakt", "#kontakt"]];
+  const links = [["Start", "#top"], ["Leistungen", "leistungen.html", leistSub], ["Einsatzgebiete", "einsatzgebiete.html", einsatzSub], ["Ratgeber", "ratgeber.html", ratgeberSub], ["Über uns", "ueber-uns.html"], ["Kontakt", "kontakt.html"]];
   return /*#__PURE__*/React.createElement("nav", {
     className: "sw-navwrap" + (scrolled ? " scrolled" : "")
   }, /*#__PURE__*/React.createElement("div", {
@@ -792,12 +792,33 @@ const SonneSlider = () => {
     foot: "Zum Festpreis",
     sub: "Zahlung nach Abnahme"
   }, {
+    img: "img/leistung-speicher2.png?v=1782000018",
+    name: "Stromspeicher mit mehr Kapazität",
+    tag: "Mehr Speicher",
+    desc: "Deutlich mehr Speicher zum gleichen Preis, exakt auf Ihren Verbrauch dimensioniert. So nutzen Sie Ihren Solarstrom auch abends und nachts.",
+    foot: "+60 %",
+    sub: "mehr Speicher inklusive"
+  }, {
     img: "img/leistung-monitoring.png?v=1782000016",
     name: "Monitoring & Feintuning",
     tag: "Inklusive",
     desc: "Wir überwachen Ihre Anlage und stimmen die Einstellungen auf Ihr Verbrauchsverhalten ab. So holen wir aus jeder Kilowattstunde das Maximum.",
     foot: "1 Woche",
     sub: "Nachoptimierung inklusive"
+  }, {
+    img: "img/leistung-effizienz-haus.jpg?v=1782000017",
+    name: "Effizienz-Planung & String-Optimierung",
+    tag: "Festpreis",
+    desc: "Spannung und Strom genau berechnet, Module optimal verteilt, Wechselrichter mit Reserve geplant. Das bringt mehr Ertrag und längere Lebensdauer.",
+    foot: "Festpreis",
+    sub: "ohne versteckte Kosten"
+  }, {
+    img: "img/leistung-inbetriebnahme.jpg?v=1782000017",
+    name: "Inbetriebnahme, Anmeldung & Wartung",
+    tag: "Rundum",
+    desc: "Wir übernehmen die komplette Anmeldung und optimieren die Anlage nach der Fertigstellung gemeinsam mit Ihnen. Auf Wunsch dauerhaft betreut.",
+    foot: "Komplett",
+    sub: "aus einer Hand"
   }];
   const W = a => "rgba(255,255,255," + a + ")";
   const row = (s, idx) => /*#__PURE__*/React.createElement("div", {

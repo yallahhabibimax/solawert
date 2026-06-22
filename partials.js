@@ -68,11 +68,11 @@
           '<div class="sw-fcol">' +
             '<h4 class="font-heading font-bold text-sm uppercase tracking-wider text-white mb-4">Navigation</h4>' +
             '<ul class="space-y-2.5 text-sm text-white">' +
-              '<li><a href="/#ueber-uns" class="hover:text-brand">Über uns</a></li>' +
+              '<li><a href="ueber-uns.html" class="hover:text-brand">Über uns</a></li>' +
               '<li><a href="/#referenzen" class="hover:text-brand">Referenzen</a></li>' +
               '<li><a href="/#bewertungen" class="hover:text-brand">Bewertungen</a></li>' +
               '<li><a href="/#faq" class="hover:text-brand">FAQ</a></li>' +
-              '<li><a href="/#kontakt" class="hover:text-brand">Kontakt</a></li>' +
+              '<li><a href="kontakt.html" class="hover:text-brand">Kontakt</a></li>' +
             '</ul>' +
           '</div>' +
           '<div class="sw-fcol">' +
@@ -322,7 +322,7 @@
     var SUB_E = [["Wuppertal","wuppertal.html","home","Hauptstandort"],["Solingen","solingen.html","pin","13 km · ca. 15 Min."],["Remscheid","remscheid.html","pin","16 km · ca. 20 Min."],["Velbert","velbert.html","pin","18 km · ca. 20 Min."],["Mettmann","mettmann.html","pin","20 km · ca. 25 Min."],["Haan","haan.html","pin","12 km · ca. 15 Min."],["Alle Einsatzgebiete","einsatzgebiete.html","combo","Übersicht aller Städte","all"]];
     var SUB_R = [["PV-Kosten 2026","ratgeber-pv-kosten.html","euro","Preise & wann es sich rechnet"],["PV + Wärmepumpe","ratgeber-pv-waermepumpe.html","flame","Strom und Heizung kombinieren"],["Speicher richtig wählen","ratgeber-stromspeicher-groesse.html","bolt","Wie groß muss er sein?"],["PV-Förderung 2026","ratgeber-pv-foerderung.html","shield","Zuschüsse & KfW-Programme"],["Anlagengröße planen","ratgeber-pv-groesse.html","search","kWp richtig auswählen"],["Eigenverbrauch maximieren","ratgeber-eigenverbrauch.html","sun","Mehr Sonne, weniger Netz"],["Alle Ratgeber","ratgeber.html","combo","Übersicht aller Artikel","all"]];
     function ddItem(s){ return (s[4]?'<div class="sw-dd-divider"></div>':'') + '<a href="'+s[1]+'" class="sw-dd-item'+(s[4]?' sw-dd-all':'')+'"><span class="sw-dd-ico">'+svg(s[2],19)+'</span><span class="sw-dd-tx"><span class="sw-dd-tt">'+s[0]+'</span><span class="sw-dd-sub">'+s[3]+'</span></span><span class="sw-dd-arrow">'+svg('arrow',16)+'</span></a>'; }
-    var L = [["Start","index.html#top",null],["Leistungen","leistungen.html",SUB],["Einsatzgebiete","einsatzgebiete.html",SUB_E],["Ratgeber","ratgeber.html",SUB_R],["Über uns","index.html#ueber-uns",null],["Kontakt","index.html#kontakt",null]];
+    var L = [["Start","index.html#top",null],["Leistungen","leistungen.html",SUB],["Einsatzgebiete","einsatzgebiete.html",SUB_E],["Ratgeber","ratgeber.html",SUB_R],["Über uns","ueber-uns.html",null],["Kontakt","kontakt.html",null]];
     /* Aktive Seite ermitteln: matched gegen die Hub-URL + alle Sub-Page-Slugs */
     var curPath = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
     function isActive(x){

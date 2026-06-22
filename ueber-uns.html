@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Über uns | SolaWert · Photovoltaik & Wärmepumpe Wuppertal</title>
+  <meta http-equiv="Cache-Control" content="no-store">
+  <meta name="description" content="Inhabergeführter Solarbetrieb aus Wuppertal: Wer wir sind, wie wir arbeiten und warum Festpreis ohne Anzahlung für uns selbstverständlich ist.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Über uns | SolaWert">
+  <meta property="og:description" content="Inhabergeführt, transparent, schlüsselfertig. Lernen Sie das Team hinter SolaWert kennen.">
+  <meta property="og:image" content="img/einsatz-team.jpg">
+  <meta name="theme-color" content="#15181D">
+  <link rel="icon" href="img/logo.png">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="fonts/inter-latin.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="fonts/archivo-latin.woff2">
+  <link rel="stylesheet" href="tailwind.css?v=1782143500">
+  <link rel="stylesheet" href="styles.css?v=1782143500">
+  <style>
+    /* === Über-uns === */
+    .au-hero { position:relative; overflow:hidden; padding:9rem 1.25rem 4.5rem; color:#fff; background:#14171C; }
+    @media (min-width:768px){ .au-hero { padding:10.5rem 2rem 5.5rem; } }
+    .au-hero__glow1 { position:absolute; top:-200px; left:-200px; width:580px; height:580px; border-radius:50%; background:radial-gradient(circle, rgba(245,179,1,.16) 0%, rgba(245,179,1,0) 65%); pointer-events:none; }
+    .au-hero__glow2 { position:absolute; bottom:-220px; right:-180px; width:620px; height:620px; border-radius:50%; background:radial-gradient(circle, rgba(245,179,1,.11) 0%, rgba(245,179,1,0) 65%); pointer-events:none; }
+    .au-hero__wrap { position:relative; z-index:2; max-width:54rem; margin:0 auto; text-align:center; }
+    .au-eyebrow { display:inline-flex; align-items:center; gap:.55rem; padding:.45rem 1rem; border-radius:999px; background:rgba(245,179,1,.12); border:1px solid rgba(245,179,1,.28); color:#FFDD66; font-family:'Inter',sans-serif; font-size:13px; font-weight:600; letter-spacing:.02em; margin-bottom:1.4rem; }
+    .au-eyebrow .dot { width:7px; height:7px; border-radius:50%; background:#F5B301; }
+    .au-h1 { font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(2.1rem,4.6vw,3.6rem); line-height:1.06; letter-spacing:-.025em; margin:0 0 1.1rem; color:#fff; }
+    .au-h1 .accent { background:linear-gradient(180deg,#FFDD66 0%,#F5B301 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:transparent; }
+    .au-lead { color:rgba(255,255,255,.78); font-size:clamp(1.05rem,1.4vw,1.18rem); line-height:1.65; max-width:42rem; margin:0 auto; }
+
+    .au-stats { display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; margin:2.5rem auto 0; max-width:48rem; }
+    @media (min-width:640px){ .au-stats { grid-template-columns:repeat(4,1fr); } }
+    .au-stat { padding:1.1rem 1rem; border-radius:14px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); text-align:center; }
+    .au-stat__n { font-family:'Archivo',sans-serif; font-weight:900; font-size:1.55rem; color:#F5B301; line-height:1; }
+    .au-stat__l { font-family:'Inter',sans-serif; font-size:11.5px; color:rgba(255,255,255,.62); letter-spacing:.08em; text-transform:uppercase; margin-top:.45rem; font-weight:600; }
+
+    /* Story Section */
+    .au-story { padding:5rem 1.25rem; background:#FBF6E9; }
+    @media (min-width:768px){ .au-story { padding:7rem 2rem; } }
+    .au-story__wrap { max-width:54rem; margin:0 auto; }
+    .au-story__h2 { font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(1.7rem,3vw,2.4rem); line-height:1.15; letter-spacing:-.02em; color:#14171C; margin:0 0 1.5rem; }
+    .au-story__h2:not(:first-child) { margin-top:2.8rem; }
+    .au-story__p { font-family:'Inter',sans-serif; font-size:1.06rem; line-height:1.75; color:#3D444E; margin:0 0 1.15rem; }
+    .au-story__p strong { color:#14171C; font-weight:700; }
+    .au-pull { margin:2.2rem 0; padding:1.5rem 1.7rem; border-left:3px solid #F5B301; background:rgba(245,179,1,.07); font-family:'Archivo',sans-serif; font-weight:700; font-size:1.15rem; line-height:1.45; color:#14171C; border-radius:0 12px 12px 0; }
+
+    /* Inhaber Card */
+    .au-inhaber { padding:5rem 1.25rem; background:#FFF; }
+    @media (min-width:768px){ .au-inhaber { padding:6rem 2rem; } }
+    .au-inhaber__wrap { max-width:62rem; margin:0 auto; display:grid; grid-template-columns:1fr; gap:2.5rem; align-items:center; }
+    @media (min-width:768px){ .au-inhaber__wrap { grid-template-columns:1fr 1.2fr; gap:3.5rem; } }
+    .au-inhaber__imgwrap { position:relative; border-radius:24px; overflow:hidden; background:#2A2E36; aspect-ratio:4/5; }
+    .au-inhaber__imgwrap img { width:100%; height:100%; object-fit:cover; object-position:center top; }
+    .au-inhaber__badge { position:absolute; bottom:1rem; left:1rem; padding:.4rem .85rem; border-radius:999px; background:rgba(20,23,28,.85); backdrop-filter:blur(10px); color:#FFDD66; font-family:'Archivo',sans-serif; font-weight:700; font-size:12px; letter-spacing:.05em; }
+    .au-inhaber__name { font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(1.6rem,2.6vw,2.1rem); line-height:1.1; letter-spacing:-.02em; color:#14171C; margin:0 0 .35rem; }
+    .au-inhaber__role { font-family:'Inter',sans-serif; font-size:14px; color:#F5B301; font-weight:600; letter-spacing:.08em; text-transform:uppercase; margin:0 0 1.3rem; }
+    .au-inhaber__q { font-family:'Inter',sans-serif; font-size:1.07rem; line-height:1.7; color:#3D444E; margin:0 0 1.1rem; }
+    .au-inhaber__sig { font-family:'Archivo',sans-serif; font-weight:700; font-size:14px; color:#14171C; margin-top:1.5rem; }
+    .au-inhaber__sig::before { content:''; display:inline-block; width:32px; height:2px; background:#F5B301; vertical-align:middle; margin-right:.6rem; }
+
+    /* Werte */
+    .au-werte { padding:5rem 1.25rem; background:#F4F5F7; }
+    @media (min-width:768px){ .au-werte { padding:6rem 2rem; } }
+    .au-werte__wrap { max-width:72rem; margin:0 auto; }
+    .au-werte__head { text-align:center; margin-bottom:3rem; }
+    .au-werte__eyebrow { display:inline-flex; align-items:center; gap:.5rem; padding:.4rem 1rem; border-radius:999px; background:rgba(245,179,1,.1); color:#a37700; font-family:'Inter',sans-serif; font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; margin-bottom:1rem; }
+    .au-werte__h2 { font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(1.7rem,3vw,2.4rem); line-height:1.15; letter-spacing:-.02em; color:#14171C; margin:0; }
+    .au-werte__grid { display:grid; grid-template-columns:1fr; gap:1rem; }
+    @media (min-width:640px){ .au-werte__grid { grid-template-columns:repeat(2,1fr); } }
+    @media (min-width:1024px){ .au-werte__grid { grid-template-columns:repeat(4,1fr); gap:1.2rem; } }
+    .au-wert { padding:1.7rem 1.5rem; background:#fff; border-radius:18px; border:1px solid rgba(20,23,28,.06); transition:transform .3s ease, box-shadow .3s ease; }
+    .au-wert:hover { transform:translateY(-3px); box-shadow:0 18px 40px -20px rgba(20,23,28,.18); }
+    .au-wert__ico { width:46px; height:46px; border-radius:13px; background:linear-gradient(180deg,#FFDD66,#F5B301); color:#1A1402; display:flex; align-items:center; justify-content:center; margin-bottom:1.1rem; }
+    .au-wert__h { font-family:'Archivo',sans-serif; font-weight:800; font-size:1.13rem; line-height:1.25; color:#14171C; margin:0 0 .5rem; }
+    .au-wert__p { font-family:'Inter',sans-serif; font-size:14.5px; line-height:1.6; color:#3D444E; margin:0; }
+
+    /* Team Image */
+    .au-team { padding:5rem 1.25rem; background:#14171C; color:#fff; }
+    @media (min-width:768px){ .au-team { padding:6.5rem 2rem; } }
+    .au-team__wrap { max-width:72rem; margin:0 auto; display:grid; grid-template-columns:1fr; gap:2.5rem; align-items:center; }
+    @media (min-width:768px){ .au-team__wrap { grid-template-columns:1.1fr 1fr; gap:3.5rem; } }
+    .au-team__txt h2 { font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(1.7rem,3vw,2.4rem); line-height:1.15; letter-spacing:-.02em; margin:0 0 1.1rem; }
+    .au-team__txt h2 .accent { color:#F5B301; }
+    .au-team__txt p { font-family:'Inter',sans-serif; font-size:1.05rem; line-height:1.7; color:rgba(255,255,255,.78); margin:0 0 1rem; }
+    .au-team__img { border-radius:20px; overflow:hidden; aspect-ratio:5/4; }
+    .au-team__img img { width:100%; height:100%; object-fit:cover; }
+
+    /* CTA */
+    .au-cta { padding:5rem 1.25rem; background:#FBF6E9; text-align:center; }
+    @media (min-width:768px){ .au-cta { padding:6.5rem 2rem; } }
+    .au-cta__wrap { max-width:46rem; margin:0 auto; }
+    .au-cta h2 { font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(1.7rem,3vw,2.4rem); line-height:1.15; letter-spacing:-.02em; color:#14171C; margin:0 0 1rem; }
+    .au-cta p { font-family:'Inter',sans-serif; font-size:1.05rem; line-height:1.65; color:#3D444E; margin:0 0 2rem; }
+    .au-cta__btns { display:flex; flex-wrap:wrap; gap:.7rem; justify-content:center; }
+    .au-cta__primary { display:inline-flex; align-items:center; gap:.6rem; padding:1.05rem 1.75rem; border-radius:999px; background:linear-gradient(180deg,#FFDD66,#F5B301); color:#1A1402; font-family:'Archivo',sans-serif; font-weight:800; font-size:1.05rem; box-shadow:0 14px 36px -14px rgba(245,179,1,.6); transition:transform .25s ease, box-shadow .25s ease; }
+    .au-cta__primary:hover { transform:translateY(-2px); box-shadow:0 20px 44px -14px rgba(245,179,1,.75); }
+    .au-cta__ghost { display:inline-flex; align-items:center; gap:.55rem; padding:1.02rem 1.55rem; border-radius:999px; border:1px solid rgba(20,23,28,.18); color:#14171C; font-family:'Archivo',sans-serif; font-weight:700; font-size:1.02rem; transition:background .25s ease, border-color .25s ease, transform .25s ease; }
+    .au-cta__ghost:hover { background:rgba(20,23,28,.05); border-color:rgba(20,23,28,.4); transform:translateY(-2px); }
+  </style>
+</head>
+<body class="font-body antialiased overflow-x-hidden" style="background:#FFFFFF;color:#14171C">
+
+  <div data-kaefer="nav"></div>
+
+  <!-- HERO -->
+  <header class="au-hero">
+    <div class="au-hero__glow1"></div>
+    <div class="au-hero__glow2"></div>
+    <div class="au-hero__wrap">
+      <span class="au-eyebrow"><span class="dot"></span>Über SolaWert</span>
+      <h1 class="au-h1">Inhabergeführt aus <span class="accent">Wuppertal</span> — seit Jahren ehrlich Solar.</h1>
+      <p class="au-lead">Wir sind kein Franchise und keine Filiale. Wir sind ein eigenständiger Solarbetrieb mit Hauptstandort in Wuppertal. Was wir versprechen, halten wir. Was wir nicht halten können, versprechen wir gar nicht erst.</p>
+
+      <div class="au-stats">
+        <div class="au-stat"><div class="au-stat__n">500+</div><div class="au-stat__l">Projekte</div></div>
+        <div class="au-stat"><div class="au-stat__n">4,9</div><div class="au-stat__l">Bewertung</div></div>
+        <div class="au-stat"><div class="au-stat__n">1–3 Tage</div><div class="au-stat__l">Montage</div></div>
+        <div class="au-stat"><div class="au-stat__n">0 €</div><div class="au-stat__l">Anzahlung</div></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- STORY -->
+  <section class="au-story">
+    <div class="au-story__wrap">
+      <h2 class="au-story__h2">Wer wir sind</h2>
+      <p class="au-story__p">SolaWert ist ein <strong>inhabergeführter Solarbetrieb aus Wuppertal</strong>. Wir planen, bauen und betreuen Photovoltaik-Anlagen, Stromspeicher und Wärmepumpen für Privathaushalte und kleine Gewerbe im gesamten Bergischen Land und in NRW.</p>
+      <p class="au-story__p">Was uns von vielen Mitbewerbern unterscheidet: Wir verkaufen nicht. Wir planen. Wenn Photovoltaik auf Ihrem Dach keinen Sinn ergibt, sagen wir das vor dem Vertrag. Wenn ein kleinerer Speicher reicht als der, den der Wettbewerber vorschlägt, sagen wir Ihnen auch das. Das mag bei uns für ein paar Anlagen weniger sorgen, dafür kommen unsere Kunden zurück und empfehlen uns weiter.</p>
+
+      <h2 class="au-story__h2">Wie wir arbeiten</h2>
+      <p class="au-story__p">Jeder Auftrag bekommt einen festen Ansprechpartner — von der ersten Beratung bis Jahre nach der Inbetriebnahme. Sie haben keine Hotline, keinen Callcenter-Agenten und keine 14 Mail-Adressen, sondern <strong>eine Person, die Ihre Anlage kennt</strong>.</p>
+      <p class="au-story__p">Wir arbeiten ausschließlich mit Festpreisen, schriftlich, vor Auftragsbeginn. Keine Anzahlung. Sie zahlen erst, wenn die Anlage steht und nachweislich liefert. Versteckte Posten, Aufpreise nach dem Bau oder Klauseln im Kleingedruckten gibt es bei uns nicht.</p>
+
+      <div class="au-pull">Festpreis. Keine Anzahlung. Erst zahlen, wenn die Anlage liefert.</div>
+
+      <h2 class="au-story__h2">Warum aus Wuppertal</h2>
+      <p class="au-story__p">Wuppertal liegt im Herzen des Bergischen Lands. Von hier aus erreichen wir Solingen, Remscheid, Velbert, Mettmann und Haan in unter 25 Minuten. Das bedeutet für unsere Kunden: <strong>kurze Wege, schnelle Termine und keine Anfahrtspauschalen</strong>. Egal ob Erstbesichtigung, Montage oder Nachjustierung — wir sind in der Regel innerhalb weniger Tage bei Ihnen.</p>
+    </div>
+  </section>
+
+  <!-- INHABER -->
+  <section class="au-inhaber">
+    <div class="au-inhaber__wrap">
+      <div class="au-inhaber__imgwrap">
+        <img src="img/inhaber.png" alt="Gegam Sargsian, Inhaber SolaWert">
+        <span class="au-inhaber__badge">Inhaber & Geschäftsführer</span>
+      </div>
+      <div>
+        <h2 class="au-inhaber__name">Gegam Sargsian</h2>
+        <div class="au-inhaber__role">Inhaber · Geschäftsführer</div>
+        <p class="au-inhaber__q">„Ich bin in Wuppertal groß geworden und kenne hier jede Straße. Als ich vor ein paar Jahren bei einem Solarbetrieb gesehen habe, wie schludrig dort geplant und gebaut wurde — Anlagen ohne richtige Verschattungsanalyse, Speicher viel zu groß verkauft, Anzahlungen ohne Sicherheit — habe ich gedacht: Das geht besser."</p>
+        <p class="au-inhaber__q">„Heute steht SolaWert für genau das Gegenteil: Wir planen jede Anlage individuell, wir verkaufen nur, was Sinn macht, und wir lassen uns erst bezahlen, wenn die Anlage nachweislich läuft. Das ist mein Verständnis von Handwerk."</p>
+        <div class="au-inhaber__sig">Gegam Sargsian</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WERTE -->
+  <section class="au-werte">
+    <div class="au-werte__wrap">
+      <div class="au-werte__head">
+        <span class="au-werte__eyebrow">Unsere Werte</span>
+        <h2 class="au-werte__h2">Vier Prinzipien, die wir nie brechen</h2>
+      </div>
+      <div class="au-werte__grid">
+        <div class="au-wert">
+          <span class="au-wert__ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-12V5l-8-3-8 3v5c0 8 8 12 8 12z"/></svg></span>
+          <h3 class="au-wert__h">Festpreis, keine Anzahlung</h3>
+          <p class="au-wert__p">Sie zahlen erst, wenn die Anlage läuft. Vorher unterschreiben Sie keinen einzigen Euro.</p>
+        </div>
+        <div class="au-wert">
+          <span class="au-wert__ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s4-8 10-8 10 8 10 8-4 8-10 8S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span>
+          <h3 class="au-wert__h">Ehrlich planen</h3>
+          <p class="au-wert__p">Wir verkaufen nur, was Sinn macht. Wenn kleiner reicht, sagen wir kleiner.</p>
+        </div>
+        <div class="au-wert">
+          <span class="au-wert__ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7L9 18l-5-5"/></svg></span>
+          <h3 class="au-wert__h">Schlüsselfertig</h3>
+          <p class="au-wert__p">Von Planung bis Anmeldung beim Netzbetreiber alles aus einer Hand. Ein Ansprechpartner.</p>
+        </div>
+        <div class="au-wert">
+          <span class="au-wert__ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.1V12a10 10 0 1 1-5.9-9.1"/><path d="M22 4 12 14.01l-3-3"/></svg></span>
+          <h3 class="au-wert__h">Nachher genauso gut</h3>
+          <p class="au-wert__p">Wartung, Monitoring, Nachjustierung. Wir verschwinden nicht nach der Montage.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="au-team">
+    <div class="au-team__wrap">
+      <div class="au-team__txt">
+        <h2>Ein Team aus dem <span class="accent">Bergischen</span>, für das Bergische.</h2>
+        <p>Unser Montagetrupp besteht aus erfahrenen Elektrikern und Dachdeckern aus der Region. Wir setzen auf festes Personal, kein Subunternehmer-Karussell. Das heißt: Sie bekommen Tag 1 und Tag 100 dieselben Gesichter.</p>
+        <p>Weiterbildung läuft kontinuierlich: Neue Speicher-Generationen, Wärmepumpen-Updates, KfW-Förderprogramme — wir bleiben am Ball, damit unsere Beratung am Stand der Dinge ist.</p>
+      </div>
+      <div class="au-team__img">
+        <img src="img/einsatz-team.jpg" alt="Das SolaWert-Team bei der Arbeit">
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="au-cta">
+    <div class="au-cta__wrap">
+      <h2>Lust auf eine ehrliche Beratung?</h2>
+      <p>Wir kommen kostenlos vorbei, schauen uns Ihr Dach an und sagen Ihnen offen, ob und wie sich Photovoltaik bei Ihnen lohnt. Ohne Verkaufsdruck, ohne Anzahlung, ohne Kleingedrucktes.</p>
+      <div class="au-cta__btns">
+        <a href="kontakt.html" class="au-cta__primary">Termin vereinbaren <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        <a href="tel:+4915205999900" class="au-cta__ghost"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>0152 5999900</a>
+      </div>
+    </div>
+  </section>
+
+  <div data-kaefer="footer"></div>
+
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="partials.js?v=1782143500"></script>
+</body>
+</html>
