@@ -1040,3 +1040,37 @@ body.nav-solid .sw-navlogo { height:60px; }
 @media (prefers-reduced-motion: reduce) {
   ::view-transition-old(root), ::view-transition-new(root) { animation: none !important; }
 }
+
+/* ── Ratgeber-Article 2-Spalten-Layout (linke Sticky-Sidebar) ── */
+.rg-2col { background:#fff; padding:0 1.25rem 4rem; }
+@media (min-width:768px){ .rg-2col { padding:0 2rem 5.5rem; } }
+.rg-2col__wrap { max-width:80rem; margin:0 auto; display:grid; grid-template-columns:1fr; gap:2.5rem; align-items:start; padding-top:2.5rem; }
+@media (min-width:1024px){ .rg-2col__wrap { grid-template-columns:280px 1fr; gap:3rem; padding-top:3rem; } }
+.rg-side-stack { display:flex; flex-direction:column; gap:1.25rem; }
+@media (min-width:1024px){ .rg-side-stack { position:sticky; top:7rem; } }
+.rg-toc { background:#fff; border:1px solid rgba(20,23,28,.08); border-radius:18px; padding:1.1rem 1rem 1.15rem; }
+.rg-toc__h { font-family:'Archivo',sans-serif; font-weight:800; font-size:10.5px; letter-spacing:.2em; text-transform:uppercase; color:rgba(20,23,28,.45); padding:0 .35rem .85rem; border-bottom:1px solid rgba(20,23,28,.07); margin:0 0 .5rem; }
+.rg-toc__link { display:block; padding:.55rem .8rem; border-radius:10px; font-family:'Archivo',sans-serif; font-weight:600; font-size:13.5px; line-height:1.35; color:rgba(20,23,28,.7); transition:background .15s ease, color .15s ease; }
+.rg-toc__link:hover { background:rgba(245,179,1,.1); color:#8A5E00; }
+.rg-toc__link.is-on { background:linear-gradient(180deg,#FFDD66,#F5B301); color:#1A1402; }
+.rg-side-cta { position:relative; overflow:hidden; padding:1.4rem 1.3rem 1.5rem; border-radius:18px; background:linear-gradient(150deg,#22262F 0%,#181B21 70%); color:#fff; border:1px solid rgba(245,179,1,.22); box-shadow:0 24px 50px -30px rgba(0,0,0,.55); }
+.rg-side-cta::after { content:''; position:absolute; top:-50%; right:-30%; width:220px; height:220px; background:radial-gradient(circle,rgba(245,179,1,.22) 0%,transparent 70%); pointer-events:none; }
+.rg-side-cta__lbl { font-family:'Archivo',sans-serif; font-weight:800; font-size:10.5px; letter-spacing:.18em; text-transform:uppercase; color:#F5B301; margin-bottom:.55rem; position:relative; }
+.rg-side-cta__t { font-family:'Archivo',sans-serif; font-weight:900; font-size:1.15rem; line-height:1.2; margin-bottom:.45rem; position:relative; }
+.rg-side-cta__s { font-family:'Inter',sans-serif; font-size:13px; line-height:1.5; color:rgba(255,255,255,.65); margin-bottom:1rem; position:relative; }
+.rg-side-cta__btn { display:inline-flex; align-items:center; gap:.45rem; padding:.65rem 1.15rem; border-radius:999px; background:linear-gradient(180deg,#FFDD66,#F5B301); color:#1A1402; font-family:'Archivo',sans-serif; font-weight:800; font-size:13.5px; transition:transform .25s ease; position:relative; }
+.rg-side-cta__btn:hover { transform:translateY(-2px); }
+.rg-author { background:#fff; border:1px solid rgba(20,23,28,.08); border-radius:18px; padding:1.25rem 1.25rem 1.35rem; display:flex; flex-direction:column; gap:.85rem; }
+.rg-author__top { display:flex; align-items:center; gap:.85rem; }
+.rg-author__img { width:48px; height:48px; border-radius:50%; object-fit:cover; flex-shrink:0; background:#FBF6E9; }
+.rg-author__name { font-family:'Archivo',sans-serif; font-weight:800; font-size:15px; color:#14171C; line-height:1.2; }
+.rg-author__role { font-family:'Inter',sans-serif; font-size:12px; color:rgba(20,23,28,.55); margin-top:2px; }
+.rg-author__quote { font-family:'Inter',sans-serif; font-size:13.5px; line-height:1.55; color:#3D444E; font-style:italic; border-left:2px solid #F5B301; padding-left:.85rem; }
+.rg-art-col { min-width:0; }
+.rg-art-col h2 { font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(1.5rem,2.5vw,1.95rem); line-height:1.15; letter-spacing:-.015em; color:#14171C; margin:2.5rem 0 1rem; scroll-margin-top:7rem; }
+.rg-art-col h2:first-child { margin-top:0; }
+.rg-art-col p { font-family:'Inter',sans-serif; font-size:1.04rem; line-height:1.7; color:#3D444E; margin:0 0 1.1rem; }
+.rg-art-col ul { margin:0 0 1.3rem; padding:0; list-style:none; }
+.rg-art-col li { position:relative; padding-left:1.7rem; margin:0 0 .55rem; font-size:1.02rem; line-height:1.65; color:#3D444E; }
+.rg-art-col li::before { content:''; position:absolute; left:0; top:.55rem; width:8px; height:8px; border-radius:50%; background:#F5B301; }
+.rg-art-col strong { color:#14171C; font-weight:700; }
