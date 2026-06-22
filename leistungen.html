@@ -21,8 +21,8 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin href="fonts/inter-latin.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin href="fonts/archivo-latin.woff2">
 
-  <link rel="stylesheet" href="tailwind.css?v=1782129726">
-  <link rel="stylesheet" href="styles.css?v=1782129726">
+  <link rel="stylesheet" href="tailwind.css?v=1782130299">
+  <link rel="stylesheet" href="styles.css?v=1782130299">
   <style>
     .lp-section { padding: clamp(3rem, 6vw, 5rem) 1.25rem; }
     @media (min-width:768px){ .lp-section { padding-left: 2rem; padding-right: 2rem; } }
@@ -132,6 +132,36 @@
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section id="faq" class="relative px-5 md:px-8 py-12 md:py-16" style="background:#2A2E36;">
+    <div aria-hidden="true" class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div class="absolute" style="top:-18%;left:-12%;width:640px;height:640px;background:radial-gradient(circle,rgba(245,179,1,0.12) 0%,transparent 62%);"></div>
+    </div>
+    <div class="max-w-7xl mx-auto relative z-10 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div class="faq-left">
+        <h2 class="font-heading" style="color:#fff;font-weight:900;font-size:clamp(2rem,4vw,3rem);line-height:1.06;letter-spacing:-.01em;margin:0 0 1.1rem;">Häufige <span style="color:#F5B301;">Fragen</span> und unsere Antworten</h2>
+        <p class="font-body" style="color:rgba(255,255,255,.62);font-size:1.02rem;line-height:1.6;max-width:24rem;margin-bottom:2rem;">Sieben Antworten auf die Fragen, die vor fast jedem Projekt kommen. Fehlt eine? Fragen Sie uns direkt.</p>
+        <a href="#anfrage" class="faq-cta group">
+          <div style="display:flex;flex-direction:column;gap:3px;">
+            <span class="faq-cta-label">Bleibt eine Frage?</span>
+            <span class="faq-cta-title font-heading">Direkt mit uns sprechen</span>
+            <span class="faq-cta-sub font-body">Erstgespräch · unverbindlich</span>
+          </div>
+          <span class="faq-cta-arrow"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </a>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item"><summary class="faq-head"><span class="faq-num font-heading">01</span><span class="faq-q font-heading">Bekomme ich vorab einen festen Preis?</span><span class="faq-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="faq-body font-body">Ja. Nach der Beratung erhalten Sie einen klaren Festpreis, schwarz auf weiß. Keine versteckten Posten und keine Nachforderungen, nachdem die Anlage läuft.</div></details>
+        <details class="faq-item"><summary class="faq-head"><span class="faq-num font-heading">02</span><span class="faq-q font-heading">Wie schnell bekomme ich einen Termin für den Baubeginn?</span><span class="faq-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="faq-body font-body">In der Regel ist jede Baustelle innerhalb von 2 bis 4 Wochen terminiert und fertig gebaut. Wir nennen Ihnen bei der Beratung einen konkreten Zeitrahmen.</div></details>
+        <details class="faq-item"><summary class="faq-head"><span class="faq-num font-heading">03</span><span class="faq-q font-heading">Wie lange dauert die Montage?</span><span class="faq-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="faq-body font-body">Je nach Anlage und Umständen wie Wetter dauert die Montage meist nur 1 bis 3 Tage. Sie haben also nur kurz eine Baustelle am Haus.</div></details>
+        <details class="faq-item"><summary class="faq-head"><span class="faq-num font-heading">04</span><span class="faq-q font-heading">Welche Garantien gibt es?</span><span class="faq-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="faq-body font-body">Auf die Solarmodule erhalten Sie 30 Jahre Garantie, auf Wechselrichter und Batteriespeicher jeweils 10 bis 15 Jahre. Sie sind also langfristig abgesichert.</div></details>
+        <details class="faq-item"><summary class="faq-head"><span class="faq-num font-heading">05</span><span class="faq-q font-heading">Bauen Sie auch Wärmepumpen?</span><span class="faq-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="faq-body font-body">Ja. Wir bauen Wärmepumpen genauso schlüsselfertig wie Photovoltaik und bringen beides sinnvoll zusammen, damit Sie mit Ihrem eigenen Strom heizen.</div></details>
+        <details class="faq-item"><summary class="faq-head"><span class="faq-num font-heading">06</span><span class="faq-q font-heading">Warum bekomme ich bei Ihnen mehr Speicher?</span><span class="faq-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="faq-body font-body">Der Speicher ist der entscheidende Effizienzfaktor einer Anlage. Viele bieten bewusst zu wenig an, um ihre Marge zu erhöhen. Wir machen das Gegenteil und geben Ihnen oft rund 60 Prozent mehr Speicher zum gleichen Preis.</div></details>
+        <details class="faq-item"><summary class="faq-head"><span class="faq-num font-heading">07</span><span class="faq-q font-heading">In welchem Gebiet sind Sie tätig?</span><span class="faq-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="faq-body font-body">Unser Fokus liegt auf Nordrhein-Westfalen, von Wuppertal über Solingen und Remscheid bis Düsseldorf und Köln. Auf Wunsch sind wir aber in ganz Deutschland für Sie unterwegs.</div></details>
+      </div>
+    </div>
+  </section>
+
   <!-- LEAD-FORMULAR (geteilt) -->
   <div data-leadquiz></div>
 
@@ -140,7 +170,7 @@
 
   <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-  <script src="leadquiz.js?v=1782129726"></script>
-  <script src="partials.js?v=1782129726"></script>
+  <script src="leadquiz.js?v=1782130299"></script>
+  <script src="partials.js?v=1782130299"></script>
 </body>
 </html>
