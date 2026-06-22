@@ -1033,12 +1033,23 @@ body.nav-solid .sw-navlogo { height:60px; }
 .rg-back:hover svg { transform:translateX(-3px); }
 
 /* ─── Page-Transitions (JS-getrieben in partials.js, browserunabhaengig) ── */
-@keyframes sw-page-in { from { opacity:0; } to { opacity:1; } }
-body { animation: sw-page-in .38s cubic-bezier(.16,1,.3,1) both; }
-html.page-leaving body { opacity:0; transition: opacity .22s ease; animation: none; }
+@keyframes sw-page-in {
+  0%   { opacity:0; filter: blur(14px) saturate(85%); transform: scale(.985); }
+  60%  { opacity:1; }
+  100% { opacity:1; filter: blur(0) saturate(100%); transform: scale(1); }
+}
+body { animation: sw-page-in .58s cubic-bezier(.22,1,.36,1) both; transform-origin: 50% 30%; }
+html.page-leaving body {
+  opacity:0;
+  filter: blur(12px) saturate(85%);
+  transform: scale(.992);
+  transition: opacity .3s cubic-bezier(.4,0,.6,1), filter .3s cubic-bezier(.4,0,.6,1), transform .3s cubic-bezier(.4,0,.6,1);
+  animation: none;
+}
+html.page-leaving { background:#FBF6E9; }
 @media (prefers-reduced-motion: reduce) {
   body { animation: none; }
-  html.page-leaving body { transition: none; opacity:1; }
+  html.page-leaving body { transition: none; opacity:1; filter:none; transform:none; }
 }
 
 /* ── Ratgeber-Article 2-Spalten-Layout (linke Sticky-Sidebar) ── */

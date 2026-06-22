@@ -32,7 +32,7 @@
       e.preventDefault();
       document.documentElement.classList.add('page-leaving');
       var dest = a.href;
-      setTimeout(function () { location.href = dest; }, 230);
+      setTimeout(function () { location.href = dest; }, 320);
     }, true); /* capture phase, damit andere Handler nichts blockieren */
     /* Wenn Nutzer per Back-Button zurueckkommt: leaving-Klasse entfernen */
     window.addEventListener('pageshow', function () {
