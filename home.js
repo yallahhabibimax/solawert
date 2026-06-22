@@ -377,7 +377,8 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', f);
   }, []);
   const leistSub = [["Photovoltaik", "photovoltaik.html", "sun", "Eigener Strom vom Dach"], ["Wärmepumpe", "waermepumpe.html", "flame", "Effizient heizen mit Strom"], ["Stromspeicher", "stromspeicher.html", "bolt", "Mehr Speicher inklusive"], ["Alle Leistungen", "leistungen.html", "combo", "Überblick aller Leistungen", "all"]];
-  const links = [["Start", "#top"], ["Leistungen", "leistungen.html", leistSub], ["Einsatzgebiete", "#einzugsgebiet"], ["Ratgeber", "#ratgeber"], ["Über uns", "#ueber-uns"], ["Kontakt", "#kontakt"]];
+  const einsatzSub = [["Wuppertal", "wuppertal.html", "home", "Hauptstandort"], ["Solingen", "solingen.html", "pin", "13 km · ca. 15 Min."], ["Remscheid", "remscheid.html", "pin", "16 km · ca. 20 Min."], ["Velbert", "velbert.html", "pin", "18 km · ca. 20 Min."], ["Mettmann", "mettmann.html", "pin", "20 km · ca. 25 Min."], ["Haan", "haan.html", "pin", "12 km · ca. 15 Min."], ["Alle Einsatzgebiete", "einsatzgebiete.html", "combo", "Übersicht aller Städte", "all"]];
+  const links = [["Start", "#top"], ["Leistungen", "leistungen.html", leistSub], ["Einsatzgebiete", "einsatzgebiete.html", einsatzSub], ["Ratgeber", "#ratgeber"], ["Über uns", "#ueber-uns"], ["Kontakt", "#kontakt"]];
   return /*#__PURE__*/React.createElement("nav", {
     className: "sw-navwrap" + (scrolled ? " scrolled" : "")
   }, /*#__PURE__*/React.createElement("div", {
@@ -429,7 +430,7 @@ const Navbar = () => {
     className: "sw-dropdown"
   }, /*#__PURE__*/React.createElement("div", {
     className: "sw-dd-head"
-  }, "Unsere Leistungen"), sub.map(([st, sh, ico, ssub, all]) => /*#__PURE__*/React.createElement(React.Fragment, {
+  }, "Unsere " + t), sub.map(([st, sh, ico, ssub, all]) => /*#__PURE__*/React.createElement(React.Fragment, {
     key: sh
   }, all ? /*#__PURE__*/React.createElement("div", {
     className: "sw-dd-divider"
