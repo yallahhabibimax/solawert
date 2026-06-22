@@ -376,7 +376,7 @@ const Navbar = () => {
     });
     return () => window.removeEventListener('scroll', f);
   }, []);
-  const leistSub = [["Photovoltaik", "photovoltaik.html"], ["Wärmepumpe", "waermepumpe.html"], ["Stromspeicher", "stromspeicher.html"]];
+  const leistSub = [["Photovoltaik", "photovoltaik.html", "sun", "Eigener Strom vom Dach"], ["Wärmepumpe", "waermepumpe.html", "flame", "Effizient heizen mit Strom"], ["Stromspeicher", "stromspeicher.html", "bolt", "Mehr Speicher inklusive"], ["Alle Leistungen", "#leistungen", "combo", "Überblick aller Leistungen", "all"]];
   const links = [["Start", "#top"], ["Leistungen", "#leistungen", leistSub], ["Einsatzgebiete", "#einzugsgebiet"], ["Ratgeber", "#ratgeber"], ["Über uns", "#ueber-uns"], ["Kontakt", "#kontakt"]];
   return /*#__PURE__*/React.createElement("nav", {
     className: "sw-navwrap" + (scrolled ? " scrolled" : "")
@@ -427,10 +427,32 @@ const Navbar = () => {
     d: "m6 9 6 6 6-6"
   }))), /*#__PURE__*/React.createElement("div", {
     className: "sw-dropdown"
-  }, sub.map(([st, sh]) => /*#__PURE__*/React.createElement("a", {
-    key: sh,
-    href: sh
-  }, st)))) : /*#__PURE__*/React.createElement("a", {
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "sw-dd-head"
+  }, "Unsere Leistungen"), sub.map(([st, sh, ico, ssub, all]) => /*#__PURE__*/React.createElement(React.Fragment, {
+    key: sh
+  }, all ? /*#__PURE__*/React.createElement("div", {
+    className: "sw-dd-divider"
+  }) : null, /*#__PURE__*/React.createElement("a", {
+    href: sh,
+    className: "sw-dd-item" + (all ? " sw-dd-all" : "")
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "sw-dd-ico"
+  }, /*#__PURE__*/React.createElement(Svg, {
+    size: 19,
+    sw: 2
+  }, ICO[ico])), /*#__PURE__*/React.createElement("span", {
+    className: "sw-dd-tx"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "sw-dd-tt"
+  }, st), /*#__PURE__*/React.createElement("span", {
+    className: "sw-dd-sub"
+  }, ssub)), /*#__PURE__*/React.createElement("span", {
+    className: "sw-dd-arrow"
+  }, /*#__PURE__*/React.createElement(Svg, {
+    size: 16,
+    sw: 2.2
+  }, ICO.arrow))))))) : /*#__PURE__*/React.createElement("a", {
     key: h,
     href: h,
     className: "sw-navlink" + (i === 0 ? " active" : "")

@@ -71,6 +71,10 @@
       pin: '<path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/>',
       check: '<path d="m5 12 4.5 4.5L19 7"/>',
       arrow: '<path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>',
+      sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
+      flame: '<path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.07-2.14-.22-4.05 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.15.43-2.29 1-3a2.5 2.5 0 0 0 2.5 2.5Z"/>',
+      bolt: '<path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/>',
+      combo: '<path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="M2 12l8.58 3.91a2 2 0 0 0 1.66 0L21 12"/><path d="M2 17l8.58 3.91a2 2 0 0 0 1.66 0L21 17"/>',
       wa: '',
       home: '<path d="M4 11.5 12 4l8 7.5"/><path d="M6 10v9h12v-9"/><path d="M10 19v-5h4v5"/>',
       building: '<rect x="5" y="3" width="14" height="18" rx="1.5"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2"/>',
@@ -282,7 +286,8 @@
   /* ═══ Init / Auto-Inject ═══ */
   /* ═══ NAVBAR (geteilt fuer Unterseiten; Home nutzt eigene React-Nav) ═══ */
   function navHTML() {
-    var SUB = [["Photovoltaik","photovoltaik.html"],["Wärmepumpe","waermepumpe.html"],["Stromspeicher","stromspeicher.html"]];
+    var SUB = [["Photovoltaik","photovoltaik.html","sun","Eigener Strom vom Dach"],["Wärmepumpe","waermepumpe.html","flame","Effizient heizen mit Strom"],["Stromspeicher","stromspeicher.html","bolt","Mehr Speicher inklusive"],["Alle Leistungen","index.html#leistungen","combo","Überblick aller Leistungen","all"]];
+    function ddItem(s){ return (s[4]?'<div class="sw-dd-divider"></div>':'') + '<a href="'+s[1]+'" class="sw-dd-item'+(s[4]?' sw-dd-all':'')+'"><span class="sw-dd-ico">'+svg(s[2],19)+'</span><span class="sw-dd-tx"><span class="sw-dd-tt">'+s[0]+'</span><span class="sw-dd-sub">'+s[3]+'</span></span><span class="sw-dd-arrow">'+svg('arrow',16)+'</span></a>'; }
     var L = [["Start","index.html#top",null],["Leistungen","index.html#leistungen",SUB],["Einsatzgebiete","index.html#einzugsgebiet",null],["Ratgeber","index.html#ratgeber",null],["Über uns","index.html#ueber-uns",null],["Kontakt","index.html#kontakt",null]];
     var caret = '<svg class="sw-caret" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>';
     var burger = '<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>';
@@ -295,7 +300,7 @@
         '</a>' +
         '<div class="sw-navlinks hidden lg:flex">' +
           L.map(function(x){ return x[2]
-            ? '<div class="sw-navitem"><a href="'+x[1]+'" class="sw-navlink sw-navlink--has">'+x[0]+caret+'</a><div class="sw-dropdown">'+x[2].map(function(s){return '<a href="'+s[1]+'">'+s[0]+'</a>';}).join('')+'</div></div>'
+            ? '<div class="sw-navitem"><a href="'+x[1]+'" class="sw-navlink sw-navlink--has">'+x[0]+caret+'</a><div class="sw-dropdown"><div class="sw-dd-head">Unsere Leistungen</div>'+x[2].map(ddItem).join('')+'</div></div>'
             : '<a href="'+x[1]+'" class="sw-navlink">'+x[0]+'</a>'; }).join('') +
         '</div>' +
         '<div class="flex items-center gap-3">' +
