@@ -286,9 +286,9 @@
   /* ═══ Init / Auto-Inject ═══ */
   /* ═══ NAVBAR (geteilt fuer Unterseiten; Home nutzt eigene React-Nav) ═══ */
   function navHTML() {
-    var SUB = [["Photovoltaik","photovoltaik.html","sun","Eigener Strom vom Dach"],["Wärmepumpe","waermepumpe.html","flame","Effizient heizen mit Strom"],["Stromspeicher","stromspeicher.html","bolt","Mehr Speicher inklusive"],["Alle Leistungen","index.html#leistungen","combo","Überblick aller Leistungen","all"]];
+    var SUB = [["Photovoltaik","photovoltaik.html","sun","Eigener Strom vom Dach"],["Wärmepumpe","waermepumpe.html","flame","Effizient heizen mit Strom"],["Stromspeicher","stromspeicher.html","bolt","Mehr Speicher inklusive"],["Alle Leistungen","leistungen.html","combo","Überblick aller Leistungen","all"]];
     function ddItem(s){ return (s[4]?'<div class="sw-dd-divider"></div>':'') + '<a href="'+s[1]+'" class="sw-dd-item'+(s[4]?' sw-dd-all':'')+'"><span class="sw-dd-ico">'+svg(s[2],19)+'</span><span class="sw-dd-tx"><span class="sw-dd-tt">'+s[0]+'</span><span class="sw-dd-sub">'+s[3]+'</span></span><span class="sw-dd-arrow">'+svg('arrow',16)+'</span></a>'; }
-    var L = [["Start","index.html#top",null],["Leistungen","index.html#leistungen",SUB],["Einsatzgebiete","index.html#einzugsgebiet",null],["Ratgeber","index.html#ratgeber",null],["Über uns","index.html#ueber-uns",null],["Kontakt","index.html#kontakt",null]];
+    var L = [["Start","index.html#top",null],["Leistungen","leistungen.html",SUB],["Einsatzgebiete","index.html#einzugsgebiet",null],["Ratgeber","index.html#ratgeber",null],["Über uns","index.html#ueber-uns",null],["Kontakt","index.html#kontakt",null]];
     var caret = '<svg class="sw-caret" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>';
     var burger = '<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>';
     return '' +

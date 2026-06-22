@@ -376,8 +376,8 @@ const Navbar = () => {
     });
     return () => window.removeEventListener('scroll', f);
   }, []);
-  const leistSub = [["Photovoltaik", "photovoltaik.html", "sun", "Eigener Strom vom Dach"], ["Wärmepumpe", "waermepumpe.html", "flame", "Effizient heizen mit Strom"], ["Stromspeicher", "stromspeicher.html", "bolt", "Mehr Speicher inklusive"], ["Alle Leistungen", "#leistungen", "combo", "Überblick aller Leistungen", "all"]];
-  const links = [["Start", "#top"], ["Leistungen", "#leistungen", leistSub], ["Einsatzgebiete", "#einzugsgebiet"], ["Ratgeber", "#ratgeber"], ["Über uns", "#ueber-uns"], ["Kontakt", "#kontakt"]];
+  const leistSub = [["Photovoltaik", "photovoltaik.html", "sun", "Eigener Strom vom Dach"], ["Wärmepumpe", "waermepumpe.html", "flame", "Effizient heizen mit Strom"], ["Stromspeicher", "stromspeicher.html", "bolt", "Mehr Speicher inklusive"], ["Alle Leistungen", "leistungen.html", "combo", "Überblick aller Leistungen", "all"]];
+  const links = [["Start", "#top"], ["Leistungen", "leistungen.html", leistSub], ["Einsatzgebiete", "#einzugsgebiet"], ["Ratgeber", "#ratgeber"], ["Über uns", "#ueber-uns"], ["Kontakt", "#kontakt"]];
   return /*#__PURE__*/React.createElement("nav", {
     className: "sw-navwrap" + (scrolled ? " scrolled" : "")
   }, /*#__PURE__*/React.createElement("div", {
