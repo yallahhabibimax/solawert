@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unsere Einsatzgebiete | SolaWert Wuppertal & NRW</title>
+  <meta http-equiv="Cache-Control" content="no-store">
+  <meta name="description" content="SolaWert ist in Wuppertal zu Hause und montiert Photovoltaik, Wärmepumpe und Stromspeicher in ganz NRW. Unsere Standorte auf einen Blick.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Unsere Einsatzgebiete | SolaWert">
+  <meta property="og:description" content="SolaWert ist in Wuppertal zu Hause und montiert in ganz NRW. Unsere Standorte auf einen Blick.">
+  <meta property="og:image" content="img/einsatz-team.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="img/einsatz-team.jpg">
+  <meta name="theme-color" content="#15181D">
+  <link rel="icon" href="img/logo.png">
+  <link rel="apple-touch-icon" href="img/logo.png">
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="fonts/inter-latin.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="fonts/archivo-latin.woff2">
+
+  <link rel="stylesheet" href="tailwind.css?v=1782133150">
+  <link rel="stylesheet" href="styles.css?v=1782133150">
+  <style>
+    .lp-section { padding: clamp(3rem, 6vw, 5rem) 1.25rem; }
+    @media (min-width:768px){ .lp-section { padding-left: 2rem; padding-right: 2rem; } }
+    .lp-wrap { max-width: 80rem; margin: 0 auto; }
+    .lp-eyebrow { display:inline-flex; align-items:center; gap:.5rem; font-family:'Archivo',sans-serif; font-weight:800; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#F5B301; }
+
+    /* 6 quadratische Standort-Widgets */
+    .ezg-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; margin-top:1.5rem; }
+    @media (min-width:640px){ .ezg-grid { grid-template-columns:repeat(3,1fr); gap:1.25rem; } }
+    @media (min-width:1024px){ .ezg-grid { gap:1.5rem; } }
+
+    .ezg-card { position:relative; display:flex; flex-direction:column; justify-content:space-between; aspect-ratio:1/1; border-radius:24px; padding:1.4rem; overflow:hidden; background:#2A2E36; border:1px solid rgba(255,255,255,.08); box-shadow:0 24px 50px -32px rgba(0,0,0,.6); transition:transform .4s cubic-bezier(.16,1,.3,1), box-shadow .4s ease, border-color .4s ease; }
+    .ezg-card:hover { transform:translateY(-6px); border-color:rgba(245,179,1,.4); box-shadow:0 36px 70px -32px rgba(0,0,0,.7), 0 0 40px -14px rgba(245,179,1,.35); }
+    .ezg-card__glow { position:absolute; top:-40%; right:-25%; width:220px; height:220px; background:radial-gradient(circle,rgba(245,179,1,.10) 0%,transparent 65%); pointer-events:none; }
+    .ezg-card__top { display:flex; align-items:flex-start; justify-content:space-between; gap:.75rem; position:relative; }
+    .ezg-card__ico { width:42px; height:42px; border-radius:12px; display:flex; align-items:center; justify-content:center; background:rgba(255,255,255,.07); color:#F5B301; border:1px solid rgba(255,255,255,.09); transition:background .25s ease, color .25s ease, border-color .25s ease, transform .25s ease; }
+    .ezg-card:hover .ezg-card__ico { background:linear-gradient(180deg,#FFDD66,#F5B301); color:#1A1402; border-color:transparent; transform:translateY(-2px); }
+    .ezg-card__pill { font-family:'Archivo',sans-serif; font-weight:700; font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.5); padding:.3rem .55rem; border-radius:999px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.08); }
+    .ezg-card__name { font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(1.45rem,2.4vw,1.85rem); line-height:1; letter-spacing:-.02em; color:#fff; margin:1rem 0 .35rem; position:relative; }
+    .ezg-card__meta { font-family:'Inter',sans-serif; font-size:13.5px; color:rgba(255,255,255,.62); margin-bottom:1rem; position:relative; }
+    .ezg-card__more { display:inline-flex; align-items:center; gap:.4rem; font-family:'Archivo',sans-serif; font-weight:700; font-size:13px; color:#F5B301; position:relative; }
+    .ezg-card__more svg { transition:transform .3s ease; }
+    .ezg-card:hover .ezg-card__more svg { transform:translateX(4px); }
+
+    /* Wuppertal = Hauptstandort: golden */
+    .ezg-card--main { background:linear-gradient(155deg,#FFE07A 0%,#F5B301 60%,#D49A00 100%); border:1px solid rgba(255,236,178,.55); box-shadow:0 30px 60px -22px rgba(245,179,1,.6), inset 0 1px 0 rgba(255,255,255,.4); }
+    .ezg-card--main .ezg-card__glow { background:radial-gradient(circle,rgba(255,255,255,.35) 0%,transparent 65%); }
+    .ezg-card--main .ezg-card__ico { background:rgba(26,20,2,.85); color:#FFE07A; border-color:rgba(26,20,2,.3); }
+    .ezg-card--main:hover .ezg-card__ico { background:#1A1402; color:#FFE07A; border-color:transparent; }
+    .ezg-card--main .ezg-card__pill { color:#1A1402; background:rgba(26,20,2,.18); border-color:rgba(26,20,2,.2); }
+    .ezg-card--main .ezg-card__name { color:#1A1402; }
+    .ezg-card--main .ezg-card__meta { color:rgba(26,20,2,.78); }
+    .ezg-card--main .ezg-card__more { color:#1A1402; }
+    .ezg-card--main:hover { border-color:rgba(26,20,2,.4); box-shadow:0 40px 80px -22px rgba(245,179,1,.75), inset 0 1px 0 rgba(255,255,255,.5); }
+
+    /* CTA-Rechteck (gleich wie leistungen.html) */
+    .lp-banner { display:flex; flex-direction:column; gap:1.5rem; align-items:flex-start; margin-top:2.5rem; padding:clamp(1.6rem,3vw,2.4rem) clamp(1.6rem,3vw,2.6rem); border-radius:26px; background:linear-gradient(150deg,#22262F 0%,#181B21 70%); border:1px solid rgba(245,179,1,.2); box-shadow:0 30px 70px -40px rgba(0,0,0,.7); position:relative; overflow:hidden; }
+    .lp-banner::after { content:''; position:absolute; top:-50%; right:-8%; width:280px; height:280px; background:radial-gradient(circle,rgba(245,179,1,.16) 0%,transparent 70%); pointer-events:none; }
+    @media (min-width:860px){ .lp-banner { flex-direction:row; align-items:center; justify-content:space-between; gap:2.5rem; } }
+    .lp-banner__t { font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(1.4rem,2.6vw,1.95rem); color:#fff; line-height:1.12; letter-spacing:-.02em; position:relative; }
+    .lp-banner__s { color:rgba(255,255,255,.6); font-size:15px; line-height:1.55; margin-top:.55rem; max-width:32rem; position:relative; }
+    .lp-banner__btns { display:flex; flex-wrap:wrap; gap:.75rem; flex-shrink:0; position:relative; }
+  </style>
+</head>
+<body class="font-body antialiased overflow-x-hidden" style="background:#FFFFFF;color:#14171C">
+
+  <!-- NAVBAR (geteilt) -->
+  <div data-kaefer="nav"></div>
+
+  <!-- INTRO -->
+  <section class="lp-section" style="background:linear-gradient(180deg,#23272F 0%,#181B21 100%); padding-top:9rem; position:relative; overflow:hidden;">
+    <div aria-hidden="true" style="position:absolute; top:-15%; left:-8%; width:520px; height:520px; background:radial-gradient(circle,rgba(245,179,1,0.12) 0%,transparent 65%); pointer-events:none;"></div>
+    <div class="lp-wrap" style="position:relative;">
+      <div style="max-width:46rem;">
+        <span class="lp-eyebrow" style="margin-bottom:1rem;">
+          <span style="width:7px;height:7px;border-radius:50%;background:#F5B301;display:inline-block;"></span>
+          Einsatzgebiete
+        </span>
+        <h1 class="font-heading" style="font-weight:900; line-height:1.04; letter-spacing:-.03em; font-size:clamp(2.5rem,6vw,4.2rem); margin:1rem 0 1.1rem; color:#fff;">
+          In <span style="color:#F5B301;">Wuppertal</span> zu Hause, in ganz NRW im Einsatz
+        </h1>
+        <p style="color:rgba(255,255,255,.68); font-size:clamp(1.02rem,1.5vw,1.2rem); line-height:1.6; max-width:38rem;">
+          Unseren Sitz haben wir in Wuppertal. Geplant und montiert wird in ganz Nordrhein-Westfalen, auf Wunsch sind wir auch deutschlandweit für Sie unterwegs.
+        </p>
+      </div>
+
+      <!-- Section-Header über den Widgets -->
+      <div style="display:flex; align-items:baseline; gap:.85rem; margin-top:3rem; padding-bottom:1.05rem; border-bottom:2px solid rgba(255,255,255,.18);">
+        <h2 class="font-heading" style="color:#fff; font-weight:900; font-size:clamp(1.5rem,2.4vw,2rem); letter-spacing:-.02em; line-height:1; margin:0;">Unsere Einsatzgebiete</h2>
+        <span class="font-heading" style="color:rgba(255,255,255,.55); font-weight:600; font-size:14px; letter-spacing:.02em;">6 Standorte</span>
+      </div>
+
+      <!-- 6 quadratische Widgets -->
+      <div class="ezg-grid">
+
+        <a href="wuppertal.html" class="ezg-card ezg-card--main">
+          <span class="ezg-card__glow"></span>
+          <div class="ezg-card__top">
+            <span class="ezg-card__ico"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11.5 12 4l8 7.5"/><path d="M6 10v9h12v-9"/><path d="M10 19v-5h4v5"/></svg></span>
+            <span class="ezg-card__pill">Hauptstandort</span>
+          </div>
+          <div>
+            <div class="ezg-card__name">Wuppertal</div>
+            <div class="ezg-card__meta">Zentrale · von hier in ganz NRW</div>
+            <span class="ezg-card__more">Standort ansehen <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+          </div>
+        </a>
+
+        <a href="solingen.html" class="ezg-card">
+          <span class="ezg-card__glow"></span>
+          <div class="ezg-card__top">
+            <span class="ezg-card__ico"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+            <span class="ezg-card__pill">ca. 15 Min.</span>
+          </div>
+          <div>
+            <div class="ezg-card__name">Solingen</div>
+            <div class="ezg-card__meta">13 km von Wuppertal</div>
+            <span class="ezg-card__more">Standort ansehen <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+          </div>
+        </a>
+
+        <a href="remscheid.html" class="ezg-card">
+          <span class="ezg-card__glow"></span>
+          <div class="ezg-card__top">
+            <span class="ezg-card__ico"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+            <span class="ezg-card__pill">ca. 20 Min.</span>
+          </div>
+          <div>
+            <div class="ezg-card__name">Remscheid</div>
+            <div class="ezg-card__meta">16 km von Wuppertal</div>
+            <span class="ezg-card__more">Standort ansehen <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+          </div>
+        </a>
+
+        <a href="velbert.html" class="ezg-card">
+          <span class="ezg-card__glow"></span>
+          <div class="ezg-card__top">
+            <span class="ezg-card__ico"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+            <span class="ezg-card__pill">ca. 20 Min.</span>
+          </div>
+          <div>
+            <div class="ezg-card__name">Velbert</div>
+            <div class="ezg-card__meta">18 km von Wuppertal</div>
+            <span class="ezg-card__more">Standort ansehen <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+          </div>
+        </a>
+
+        <a href="mettmann.html" class="ezg-card">
+          <span class="ezg-card__glow"></span>
+          <div class="ezg-card__top">
+            <span class="ezg-card__ico"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+            <span class="ezg-card__pill">ca. 25 Min.</span>
+          </div>
+          <div>
+            <div class="ezg-card__name">Mettmann</div>
+            <div class="ezg-card__meta">20 km von Wuppertal</div>
+            <span class="ezg-card__more">Standort ansehen <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+          </div>
+        </a>
+
+        <a href="haan.html" class="ezg-card">
+          <span class="ezg-card__glow"></span>
+          <div class="ezg-card__top">
+            <span class="ezg-card__ico"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+            <span class="ezg-card__pill">ca. 15 Min.</span>
+          </div>
+          <div>
+            <div class="ezg-card__name">Haan</div>
+            <div class="ezg-card__meta">12 km von Wuppertal</div>
+            <span class="ezg-card__more">Standort ansehen <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- CTA-Rechteck -->
+      <div class="lp-banner">
+        <div>
+          <h3 class="lp-banner__t">Ihre Stadt nicht dabei?</h3>
+          <p class="lp-banner__s">Kein Problem. Wir sind in ganz NRW und auf Wunsch deutschlandweit für Sie unterwegs. Rufen Sie uns an oder schicken Sie uns Ihre Anfrage.</p>
+        </div>
+        <div class="lp-banner__btns">
+          <a href="tel:+4915205999900" class="rounded-full font-heading inline-flex items-center gap-2.5" style="padding:.9rem 1.5rem; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.18); color:#fff; font-weight:700;">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            0152 5999900
+          </a>
+          <a href="index.html#kontakt" class="btn-primary cta-pulse rounded-full font-heading inline-flex items-center gap-2.5" style="padding:.9rem 1.7rem; font-weight:700;">
+            Angebot anfragen
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEAD-FORMULAR (geteilt) -->
+  <div data-leadquiz></div>
+
+  <!-- FAQ (gleicher Verlauf wie Intro) -->
+  <section id="faq" class="relative px-5 md:px-8 py-12 md:py-16" style="background:linear-gradient(180deg,#23272F 0%,#181B21 100%);">
+    <div aria-hidden="true" class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div class="absolute" style="top:-18%;left:-12%;width:640px;height:640px;background:radial-gradient(circle,rgba(245,179,1,0.12) 0%,transparent 62%);"></div>
+    </div>
+    <div class="max-w-7xl mx-auto relative z-10 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div class="faq-left">
+        <h2 class="font-heading" style="color:#fff;font-weight:900;font-size:clamp(2rem,4vw,3rem);line-height:1.06;letter-spacing:-.01em;margin:0 0 1.1rem;">Häufige <span style="color:#F5B301;">Fragen</span> und unsere Antworten</h2>
+        <p class="font-body" style="color:rgba(255,255,255,.62);font-size:1.02rem;line-height:1.6;max-width:24rem;margin-bottom:2rem;">Sieben Antworten auf die Fragen, die vor fast jedem Projekt kommen. Fehlt eine? Fragen Sie uns direkt.</p>
+        <a href="index.html#kontakt" class="faq-cta group">
+          <div style="display:flex;flex-direction:column;gap:3px;">
+            <span class="faq-cta-label">Bleibt eine Frage?</span>
+            <span class="faq-cta-title font-heading">Direkt mit uns sprechen</span>
+            <span class="faq-cta-sub font-body">Erstgespräch · unverbindlich</span>
+          </div>
+          <span class="faq-cta-arrow"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </a>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item"><summary class="faq-head"><span class="faq-num font-heading">01</span><span class="faq-q font-heading">Bekomme ich vorab einen festen Preis?</span><span class="faq-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="faq-body font-body">Ja. Nach der Beratung erhalten Sie einen klaren Festpreis, schwarz auf weiß. Keine versteckten Posten und keine Nachforderungen, nachdem die Anlage läuft.</div></details>
+        <details class="faq-item"><summary class="faq-head"><span class="faq-num font-heading">02</span><span class="faq-q font-heading">Wie schnell bekomme ich einen Termin für den Baubeginn?</span><span class="faq-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="faq-body font-body">In der Regel ist jede Baustelle innerhalb von 2 bis 4 Wochen terminiert und fertig gebaut. Wir nennen Ihnen bei der Beratung einen konkreten Zeitrahmen.</div></details>
+        <details class="faq-item"><summary class="faq-head"><span class="faq-num font-heading">03</span><span class="faq-q font-heading">Wie lange dauert die Montage?</span><span class="faq-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="faq-body font-body">Je nach Anlage und Umständen wie Wetter dauert die Montage meist nur 1 bis 3 Tage. Sie haben also nur kurz eine Baustelle am Haus.</div></details>
+        <details class="faq-item"><summary class="faq-head"><span class="faq-num font-heading">04</span><span class="faq-q font-heading">Welche Garantien gibt es?</span><span class="faq-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="faq-body font-body">Auf die Solarmodule erhalten Sie 30 Jahre Garantie, auf Wechselrichter und Batteriespeicher jeweils 10 bis 15 Jahre. Sie sind also langfristig abgesichert.</div></details>
+        <details class="faq-item"><summary class="faq-head"><span class="faq-num font-heading">05</span><span class="faq-q font-heading">Bauen Sie auch Wärmepumpen?</span><span class="faq-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="faq-body font-body">Ja. Wir bauen Wärmepumpen genauso schlüsselfertig wie Photovoltaik und bringen beides sinnvoll zusammen, damit Sie mit Ihrem eigenen Strom heizen.</div></details>
+        <details class="faq-item"><summary class="faq-head"><span class="faq-num font-heading">06</span><span class="faq-q font-heading">Warum bekomme ich bei Ihnen mehr Speicher?</span><span class="faq-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="faq-body font-body">Der Speicher ist der entscheidende Effizienzfaktor einer Anlage. Viele bieten bewusst zu wenig an, um ihre Marge zu erhöhen. Wir machen das Gegenteil und geben Ihnen oft rund 60 Prozent mehr Speicher zum gleichen Preis.</div></details>
+        <details class="faq-item"><summary class="faq-head"><span class="faq-num font-heading">07</span><span class="faq-q font-heading">In welchem Gebiet sind Sie tätig?</span><span class="faq-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="faq-body font-body">Unser Fokus liegt auf Nordrhein-Westfalen, von Wuppertal über Solingen und Remscheid bis Düsseldorf und Köln. Auf Wunsch sind wir aber in ganz Deutschland für Sie unterwegs.</div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER (geteilt) -->
+  <div data-kaefer="footer"></div>
+
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="leadquiz.js?v=1782133150"></script>
+  <script src="partials.js?v=1782133150"></script>
+</body>
+</html>
