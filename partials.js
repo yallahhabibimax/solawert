@@ -48,7 +48,7 @@
         '<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 pb-12 border-b border-white/10 items-start">' +
           '<div>' +
             '<a href="#top" style="display:inline-flex;align-items:center;gap:4px;text-decoration:none;margin-bottom:1rem">' +
-              '<img src="img/logo-icon-v4.png?v=1782000021" alt="SolaWert" class="w-auto" style="height:60px">' +
+              '<img src="img/logo-sw-light.png?v=1782141000" alt="SW Photovoltaik & Solar Wuppertal" class="w-auto" style="height:48px">' +
             '</a>' +
             '<p class="text-white text-sm leading-relaxed max-w-xs mb-5">Ihr inhabergeführter Partner für Photovoltaik und Wärmepumpen in Wuppertal und ganz NRW. Effizient, ehrlich und fair.</p>' +
             '<div style="display:grid;grid-template-columns:max-content max-content;justify-content:start;justify-items:start;gap:.5rem">' +
@@ -338,9 +338,8 @@
     return '' +
     '<nav class="sw-navwrap" data-sw-nav>' +
       '<div class="sw-navpill2"><div class="sw-navinner">' +
-        '<a href="index.html" class="flex items-center shrink-0" style="gap:.2rem">' +
-          '<img src="img/logo-icon-v4.png" alt="SolaWert Wuppertal" class="sw-navlogo">' +
-          '<span class="font-heading leading-none" style="font-size:23px;font-weight:900;letter-spacing:-.03em"><span style="color:#fff">Sola</span><span style="background:linear-gradient(180deg,#FFDD66 0%,#F5B301 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent">Wert</span></span>' +
+        '<a href="index.html" class="flex items-center shrink-0">' +
+          '<img src="img/logo-sw-light.png?v=1782141000" alt="SW Photovoltaik & Solar Wuppertal" class="sw-navlogo" style="height:46px;width:auto">' +
         '</a>' +
         '<div class="sw-navlinks hidden lg:flex">' +
           L.map(function(x){ var act = isActive(x) ? ' active' : ''; return x[2]

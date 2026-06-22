@@ -393,21 +393,11 @@ const Navbar = () => {
       gap: "0.2rem"
     }
   }, /*#__PURE__*/React.createElement("img", {
-    src: "img/logo-icon-v4.png?v=1782000021",
-    alt: "SolaWert Wuppertal",
-    className: "sw-navlogo"
-  }), /*#__PURE__*/React.createElement("span", {
-    className: "font-heading leading-none",
-    style: {
-      fontSize: "23px",
-      fontWeight: 900,
-      letterSpacing: "-0.03em"
-    }
-  }, /*#__PURE__*/React.createElement("span", {
-    style: { color: "#fff" }
-  }, "Sola"), /*#__PURE__*/React.createElement("span", {
-    style: { background: "linear-gradient(180deg, #FFDD66 0%, #F5B301 100%)", WebkitBackgroundClip: "text", backgroundClip: "text", WebkitTextFillColor: "transparent", color: "transparent" }
-  }, "Wert"))), /*#__PURE__*/React.createElement("div", {
+    src: "img/logo-sw-light.png?v=1782141000",
+    alt: "SW Photovoltaik & Solar Wuppertal",
+    className: "sw-navlogo",
+    style: { height: "46px", width: "auto" }
+  })), /*#__PURE__*/React.createElement("div", {
     className: "sw-navlinks hidden lg:flex"
   }, links.map(([t, h, sub], i) => sub ? /*#__PURE__*/React.createElement("div", {
     key: h,
