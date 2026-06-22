@@ -587,7 +587,7 @@ body.nav-solid .sw-navlogo { height:60px; }
 /* Hero: linke + rechte Spalte vertikal zentriert, rechte Spalte = Karten-Breite */
 @media (min-width:1024px){
   .sw-hero__bottom { align-items:center; }
-  .sw-hero__right { max-width:27rem; margin-top:3rem; }
+  .sw-hero__right { max-width:27rem; margin-top:6rem; }
   .sw-hero__left { margin-top:0; align-self:center; }
 }
 .sw-hero__left { align-self:center; }
