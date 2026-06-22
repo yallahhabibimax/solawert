@@ -1114,9 +1114,10 @@ const RegionBand = () => {
     alt: "SolaWert montiert eine Photovoltaik-Anlage in NRW",
     className: "absolute inset-0 w-full h-full object-cover"
   }), /*#__PURE__*/React.createElement("div", {
-    className: "absolute inset-0 bg-gradient-to-r from-ink/95 via-ink/80 to-ink/20"
+    className: "absolute inset-0",
+    style: { background: "linear-gradient(180deg, rgba(21,24,29,.5) 0%, rgba(21,24,29,.8) 100%)" }
   }), /*#__PURE__*/React.createElement("div", {
-    className: "relative z-10 px-8 md:px-14 py-10 md:py-14 max-w-xl text-white"
+    className: "relative z-10 px-8 md:px-14 py-10 md:py-14 max-w-2xl mx-auto text-center text-white"
   }, /*#__PURE__*/React.createElement("span", {
     className: "text-brand font-heading font-semibold tracking-[0.16em] uppercase text-xs mb-3 block"
   }, "Einsatzgebiet"), /*#__PURE__*/React.createElement("h2", {
@@ -1124,7 +1125,7 @@ const RegionBand = () => {
   }, "In ", React.createElement("span", { style: { color: "#F5B301" } }, "Wuppertal"), " zu Hause, in ganz NRW im Einsatz"), /*#__PURE__*/React.createElement("p", {
     className: "text-white/75 text-lg leading-relaxed mb-8"
   }, "Unseren Sitz haben wir in Wuppertal. Geplant und montiert wird in ganz Nordrhein-Westfalen, auf Wunsch sind wir auch deutschlandweit für Sie unterwegs."), /*#__PURE__*/React.createElement("div", {
-    className: "flex flex-wrap items-center gap-3"
+    className: "flex flex-wrap items-center justify-center gap-3"
   }, /*#__PURE__*/React.createElement("a", {
     href: "tel:" + PHONE_FEST_TEL,
     className: "btn-primary cta-pulse rounded-full px-7 py-4 font-heading inline-flex items-center gap-2.5"
@@ -1348,7 +1349,7 @@ const FAQ = () => {
   const faqs = [{"q": "Bekomme ich vorab einen festen Preis?", "a": "Ja. Nach der Beratung erhalten Sie einen klaren Festpreis, schwarz auf weiß. Keine versteckten Posten und keine Nachforderungen, nachdem die Anlage läuft."}, {"q": "Wie schnell bekomme ich einen Termin für den Baubeginn?", "a": "In der Regel ist jede Baustelle innerhalb von 2 bis 4 Wochen terminiert und fertig gebaut. Wir nennen Ihnen bei der Beratung einen konkreten Zeitrahmen."}, {"q": "Wie lange dauert die Montage?", "a": "Je nach Anlage und Umständen wie Wetter dauert die Montage meist nur 1 bis 3 Tage. Sie haben also nur kurz eine Baustelle am Haus."}, {"q": "Welche Garantien gibt es?", "a": "Auf die Solarmodule erhalten Sie 30 Jahre Garantie, auf Wechselrichter und Batteriespeicher jeweils 10 bis 15 Jahre. Sie sind also langfristig abgesichert."}, {"q": "Bauen Sie auch Wärmepumpen?", "a": "Ja. Wir bauen Wärmepumpen genauso schlüsselfertig wie Photovoltaik und bringen beides sinnvoll zusammen, damit Sie mit Ihrem eigenen Strom heizen."}, {"q": "Warum bekomme ich bei Ihnen mehr Speicher?", "a": "Der Speicher ist der entscheidende Effizienzfaktor einer Anlage. Viele bieten bewusst zu wenig an, um ihre Marge zu erhöhen. Wir machen das Gegenteil und geben Ihnen oft rund 60 Prozent mehr Speicher zum gleichen Preis."}, {"q": "In welchem Gebiet sind Sie tätig?", "a": "Unser Fokus liegt auf Nordrhein-Westfalen, von Wuppertal über Solingen und Remscheid bis Düsseldorf und Köln. Auf Wunsch sind wir aber in ganz Deutschland für Sie unterwegs."}];
   return React.createElement("section", {
     id: "faq",
-    className: "relative px-5 md:px-8 py-20 md:py-28",
+    className: "relative px-5 md:px-8 py-12 md:py-16",
     style: { background: "#2A2E36" }
   }, React.createElement("div", {
     "aria-hidden": "true",
@@ -1362,7 +1363,7 @@ const FAQ = () => {
     className: "reveal-left faq-left"
   }, React.createElement("h2", {
     className: "font-heading",
-    style: { color: "#ffffff", fontWeight: 900, fontSize: "clamp(2.4rem,5vw,3.9rem)", lineHeight: "1.04", letterSpacing: "-0.01em", margin: "0 0 1.1rem" }
+    style: { color: "#ffffff", fontWeight: 900, fontSize: "clamp(2rem,4vw,3rem)", lineHeight: "1.06", letterSpacing: "-0.01em", margin: "0 0 1.1rem" }
   }, "Häufige ", React.createElement("span", { style: { color: "#F5B301" } }, "Fragen"), " und unsere Antworten"), React.createElement("p", {
     className: "font-body",
     style: { color: "rgba(255,255,255,0.62)", fontSize: "1.02rem", lineHeight: "1.6", maxWidth: "24rem", marginBottom: "2rem" }
