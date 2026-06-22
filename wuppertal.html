@@ -140,6 +140,27 @@
     .st-leist__c-link { color:#a37700; font-family:'Archivo',sans-serif; font-weight:800; font-size:13px; display:inline-flex; align-items:center; gap:.3rem; }
     .st-leist__c-link:hover { color:#F5B301; }
 
+    /* === FAQ (Split Layout) === */
+    .st-faq { padding:3.5rem 1.25rem; background:#fff; }
+    @media (min-width:768px){ .st-faq { padding:5rem 2rem; } }
+    .st-faq__wrap { max-width:72rem; margin:0 auto; display:grid; grid-template-columns:1fr; gap:2.2rem; align-items:start; }
+    @media (min-width:900px){ .st-faq__wrap { grid-template-columns:.85fr 1.15fr; gap:3.2rem; } }
+    .st-faq__eyebrow { font-family:'Archivo',sans-serif; font-weight:800; font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:#a37700; margin-bottom:.85rem; }
+    .st-faq__h2 { font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(1.7rem,3vw,2.4rem); line-height:1.15; letter-spacing:-.02em; color:#14171C; margin:0 0 1rem; }
+    .st-faq__lead { font-family:'Inter',sans-serif; font-size:.98rem; line-height:1.6; color:#3D444E; margin:0 0 1.6rem; max-width:24rem; }
+    .st-faq__phone { display:inline-flex; align-items:center; gap:.55rem; padding:.95rem 1.6rem; border-radius:999px; background:#14171C; color:#fff; font-family:'Archivo',sans-serif; font-weight:800; font-size:.95rem; transition:transform .25s ease, background .25s ease; }
+    .st-faq__phone:hover { transform:translateY(-2px); background:#1f242c; }
+    .st-faq__phone svg { color:#F5B301; }
+    .st-faq__list { display:grid; gap:.85rem; }
+    .st-faq__item { background:#fff; border:1px solid rgba(20,23,28,.1); border-radius:14px; transition:border-color .25s ease, box-shadow .25s ease; }
+    .st-faq__item[open] { border-color:rgba(245,179,1,.45); box-shadow:0 12px 30px -18px rgba(20,23,28,.15); }
+    .st-faq__item summary { list-style:none; cursor:pointer; padding:1.05rem 1.25rem; display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+    .st-faq__item summary::-webkit-details-marker { display:none; }
+    .st-faq__q { font-family:'Archivo',sans-serif; font-weight:800; font-size:.97rem; line-height:1.35; color:#14171C; }
+    .st-faq__ic { width:28px; height:28px; flex-shrink:0; border-radius:50%; display:flex; align-items:center; justify-content:center; background:rgba(245,179,1,.15); color:#a37700; transition:transform .25s ease, background .25s ease; }
+    .st-faq__item[open] .st-faq__ic { transform:rotate(45deg); background:linear-gradient(180deg,#FFDD66,#F5B301); color:#1A1402; }
+    .st-faq__a { padding:0 1.25rem 1.15rem; font-family:'Inter',sans-serif; font-size:14px; line-height:1.65; color:#3D444E; }
+
     /* === RATGEBER CARDS === */
     .st-ratg { padding:5rem 1.25rem; background:#FBF6E9; }
     @media (min-width:768px){ .st-ratg { padding:6rem 2rem; } }
@@ -351,6 +372,40 @@
           <p class="st-leist__c-p">Wir prüfen Ihre Anlage über Jahre und feilen am Ertrag nach. Auch für Fremdanlagen.</p>
           <span class="st-leist__c-link">Mehr erfahren <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="st-faq">
+    <div class="st-faq__wrap">
+      <div>
+        <div class="st-faq__eyebrow">FAQ</div>
+        <h2 class="st-faq__h2">Häufige Fragen aus Wuppertal</h2>
+        <p class="st-faq__lead">Noch offene Fragen? Rufen Sie uns an, wir beraten Sie gern und unverbindlich.</p>
+        <a href="tel:+4915205999900" class="st-faq__phone"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>0152 5999900</a>
+      </div>
+      <div class="st-faq__list">
+        <details class="st-faq__item">
+          <summary><span class="st-faq__q">Was kostet eine Photovoltaik-Anlage in Wuppertal?</span><span class="st-faq__ic"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+          <div class="st-faq__a">Eine schlüsselfertige Anlage für ein Einfamilienhaus liegt typischerweise zwischen 12.000 und 22.000 €, abhängig von Größe, Speicher und Dachsituation. Beim Beratungstermin bekommen Sie einen schriftlichen Festpreis ohne versteckte Posten.</div>
+        </details>
+        <details class="st-faq__item">
+          <summary><span class="st-faq__q">Wie schnell sind Sie nach der Anfrage vor Ort?</span><span class="st-faq__ic"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+          <div class="st-faq__a">In Wuppertal in der Regel innerhalb von 2 bis 5 Werktagen. Vom Termin bis zur fertigen Anlage rechnen Sie mit 2 bis 4 Wochen, die Montage selbst dauert meist 1 bis 3 Tage.</div>
+        </details>
+        <details class="st-faq__item">
+          <summary><span class="st-faq__q">Welche Leistungen bieten Sie in Wuppertal an?</span><span class="st-faq__ic"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+          <div class="st-faq__a">Photovoltaik-Anlagen schlüsselfertig, Stromspeicher (auch nachgerüstet), Wärmepumpen, Monitoring und Wartung. Alles inhabergeführt, ohne Subunternehmer.</div>
+        </details>
+        <details class="st-faq__item">
+          <summary><span class="st-faq__q">Fallen für Wuppertal zusätzliche Anfahrtskosten an?</span><span class="st-faq__ic"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+          <div class="st-faq__a">Nein. Wuppertal ist unser Hauptstandort. Die Anfahrt ist im Festpreis enthalten, unabhängig davon, wie oft wir kommen müssen, bis die Anlage perfekt läuft.</div>
+        </details>
+        <details class="st-faq__item">
+          <summary><span class="st-faq__q">Wie vereinbare ich einen Termin in Wuppertal?</span><span class="st-faq__ic"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+          <div class="st-faq__a">Telefonisch unter 0152 5999900, per Mail an info@solawert.de oder direkt über das Formular weiter oben auf dieser Seite. Wir melden uns innerhalb eines Werktags.</div>
+        </details>
       </div>
     </div>
   </section>
