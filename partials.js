@@ -114,7 +114,9 @@
       clock: '<circle cx="12" cy="12" r="8"/><path d="M12 8v4l2.5 2"/>',
       search: '<circle cx="11" cy="11" r="6"/><path d="m20 20-3.2-3.2"/>',
       user: '<circle cx="12" cy="8" r="4"/><path d="M5.5 21a7.5 7.5 0 0 1 13 0"/>',
-      edit: '<path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/>'
+      edit: '<path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/>',
+      euro: '<path d="M15.5 8.2A5 5 0 0 0 7 12a5 5 0 0 0 8.5 3.8"/><path d="M5.5 10.6h6M5.5 13.4h5"/>',
+      shield: '<path d="M12 3 5 6v5.5c0 4.3 3 7.4 7 8.5 4-1.1 7-4.2 7-8.5V6l-7-3Z"/><path d="m9 11.5 2 2 4-4.2"/>'
     }[name] || '';
     return '<svg viewBox="0 0 24 24" width="'+s+'" height="'+s+'" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">'+p+'</svg>';
   }
