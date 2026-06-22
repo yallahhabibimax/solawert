@@ -274,19 +274,8 @@ section[id] { scroll-margin-top: 96px; }
   .case-problem { min-height: 5.6rem; }  /* bis zu 4 Zeilen Problemtext */
 }
 .case-step__dot { position:absolute; left:1px; top:3px; width:9px; height:9px; border-radius:9999px; z-index:1; box-shadow:0 0 0 3px #fff; }
-.case-step:not(:last-child)::before { content:""; position:absolute; left:5px; top:7px; bottom:-1rem; width:2px; background:#16A34A; }
-/* Referenz-Cards: zentriert, volle Breite, ohne Timeline-Rail */
-.case-card .case-head { text-align: center; }
-.case-card .case-steps { gap: 1.1rem; }
-.case-card .case-step { padding-left: 0; text-align: center; }
-.case-card .case-step__dot, .case-card .case-step:not(:last-child)::before { display: none; }
-/* zentrierter Connector: roter Kreis oben, gruene Linie, gruener Kreis unten */
-.case-card .case-conn { display: flex; flex-direction: column; align-items: center; gap: 5px; }
-.case-card .case-conn__dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
-.case-card .case-conn__line { width: 2px; height: 16px; border-radius: 2px; background: #16A34A; }
-.case-card .case-step__body { width: 100%; }
+.case-step:not(:last-child)::before { content:""; position:absolute; left:5px; top:14px; bottom:-1rem; width:2px; background:#16A34A; }
 .case-card .case-step__body p { font-size: 14px; }
-.case-card .case-step__body > span { letter-spacing: .12em; }
 
 /* ─── Marquee (trust strip) ────────────────────────────── */
 .marquee { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }

@@ -1059,17 +1059,6 @@ const CaseStudies = () => {
   }, "Problem"), React.createElement("p", {
     className: "text-content-secondary text-[13.5px] leading-relaxed case-problem"
   }, c.p))), React.createElement("div", {
-    className: "case-conn",
-    "aria-hidden": "true"
-  }, React.createElement("span", {
-    className: "case-conn__dot",
-    style: { background: "#EF4444" }
-  }), React.createElement("span", {
-    className: "case-conn__line"
-  }), React.createElement("span", {
-    className: "case-conn__dot",
-    style: { background: "#16A34A" }
-  })), React.createElement("div", {
     className: "case-step"
   }, React.createElement("span", {
     className: "case-step__dot",
