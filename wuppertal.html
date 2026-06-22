@@ -89,21 +89,22 @@
     .st-lead__meta { font-family:'Inter',sans-serif; font-size:12px; color:#3D444E; text-align:center; margin-top:.9rem; line-height:1.5; }
 
     /* === ÜBER UNS MINI === */
-    .st-about { padding:5rem 1.25rem; background:#fff; }
-    @media (min-width:768px){ .st-about { padding:6rem 2rem; } }
-    .st-about__wrap { max-width:64rem; margin:0 auto; display:grid; grid-template-columns:1fr; gap:2.2rem; align-items:center; }
-    @media (min-width:768px){ .st-about__wrap { grid-template-columns:.85fr 1.15fr; gap:3rem; } }
-    .st-about__imgwrap { position:relative; border-radius:22px; overflow:hidden; aspect-ratio:4/5; background:#2A2E36; }
-    .st-about__imgwrap img { width:100%; height:100%; object-fit:cover; object-position:center top; }
-    .st-about__badge { position:absolute; bottom:1rem; left:1rem; padding:.4rem .85rem; border-radius:999px; background:rgba(20,23,28,.85); backdrop-filter:blur(10px); color:#FFDD66; font-family:'Archivo',sans-serif; font-weight:700; font-size:11.5px; letter-spacing:.05em; }
+    .st-about { padding:3.5rem 1.25rem; background:#fff; }
+    @media (min-width:768px){ .st-about { padding:4.5rem 2rem; } }
+    .st-about__wrap { max-width:68rem; margin:0 auto; display:grid; grid-template-columns:1fr; gap:2rem; align-items:center; }
+    @media (min-width:768px){ .st-about__wrap { grid-template-columns:1.05fr 1fr; gap:3rem; } }
+    .st-about__imgwrap { position:relative; border-radius:22px; overflow:hidden; aspect-ratio:5/4; background:#2A2E36; box-shadow:0 18px 50px -28px rgba(20,23,28,.25); }
+    .st-about__imgwrap img { width:100%; height:100%; object-fit:cover; }
+    .st-about__eyebrow { font-family:'Archivo',sans-serif; font-weight:800; font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:#a37700; margin-bottom:.85rem; }
     .st-about__h2 { font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(1.6rem,2.8vw,2.2rem); line-height:1.15; letter-spacing:-.02em; color:#14171C; margin:0 0 1rem; }
     .st-about__h2 .accent { color:#F5B301; }
-    .st-about__p { font-family:'Inter',sans-serif; font-size:1.04rem; line-height:1.7; color:#3D444E; margin:0 0 1rem; }
-    .st-about__bullets { list-style:none; padding:0; margin:1.2rem 0 1.6rem; display:grid; gap:.55rem; }
-    .st-about__bullets li { display:flex; align-items:flex-start; gap:.65rem; font-family:'Inter',sans-serif; font-size:14.5px; color:#14171C; }
-    .st-about__bullets li svg { flex-shrink:0; margin-top:2px; color:#F5B301; }
-    .st-about__link { display:inline-flex; align-items:center; gap:.4rem; color:#a37700; font-family:'Archivo',sans-serif; font-weight:800; font-size:14.5px; text-decoration:underline; text-underline-offset:4px; text-decoration-thickness:2px; text-decoration-color:rgba(245,179,1,.5); transition:color .25s ease; }
-    .st-about__link:hover { color:#F5B301; text-decoration-color:#F5B301; }
+    .st-about__p { font-family:'Inter',sans-serif; font-size:1rem; line-height:1.65; color:#3D444E; margin:0 0 1rem; }
+    .st-about__inhaber { display:flex; align-items:center; gap:.85rem; margin-top:1.4rem; padding-top:1.4rem; border-top:1px solid rgba(20,23,28,.08); }
+    .st-about__inhaber-img { width:48px; height:48px; border-radius:50%; overflow:hidden; flex-shrink:0; background:#2A2E36; }
+    .st-about__inhaber-img img { width:100%; height:100%; object-fit:cover; object-position:center top; }
+    .st-about__inhaber-tx { display:flex; flex-direction:column; line-height:1.25; }
+    .st-about__inhaber-name { font-family:'Archivo',sans-serif; font-weight:800; font-size:15px; color:#14171C; }
+    .st-about__inhaber-role { font-family:'Inter',sans-serif; font-size:13px; color:#3D444E; margin-top:1px; }
 
     /* === STANDORT CARDS === */
     .st-ortcards { padding:5rem 1.25rem; background:#F4F5F7; }
@@ -279,18 +280,20 @@
   <section class="st-about">
     <div class="st-about__wrap">
       <div class="st-about__imgwrap">
-        <img src="img/inhaber.png" alt="Gegam Sargsian, Inhaber SolaWert">
-        <span class="st-about__badge">Inhaber Gegam Sargsian</span>
+        <img src="img/einsatz-team.jpg" alt="SolaWert Team aus Wuppertal">
       </div>
       <div>
-        <h2 class="st-about__h2">Vor Ort aus <span class="accent">Wuppertal</span>, nicht aus dem Callcenter.</h2>
-        <p class="st-about__p">SolaWert ist inhabergeführt und sitzt mitten in Wuppertal. Wir planen, bauen und betreuen Solaranlagen für Eigenheime und kleine Gewerbe im Bergischen Land. Was wir versprechen, halten wir. Was wir nicht halten können, sagen wir vorher.</p>
-        <ul class="st-about__bullets">
-          <li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Fester Ansprechpartner statt Hotline</li>
-          <li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Eigenes Montageteam, keine Subunternehmer</li>
-          <li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Hauptstandort vor Ort, kurze Wege</li>
-        </ul>
-        <a href="ueber-uns.html" class="st-about__link">Mehr über SolaWert <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        <div class="st-about__eyebrow">Über uns</div>
+        <h2 class="st-about__h2">Inhabergeführt aus <span class="accent">Wuppertal</span></h2>
+        <p class="st-about__p">SolaWert ist ein inhabergeführter Solarbetrieb aus Wuppertal. Mit eigenem Team und eigenem Material bauen wir Anlagen in der Stadt und im Bergischen Land, ohne Subunternehmer, ohne Zwischenhändler.</p>
+        <p class="st-about__p">Über 500 abgeschlossene Projekte stehen für saubere Arbeit, faire Festpreise ohne versteckte Kosten und einen festen Ansprechpartner vom ersten Anruf bis Jahre nach der Inbetriebnahme.</p>
+        <div class="st-about__inhaber">
+          <div class="st-about__inhaber-img"><img src="img/inhaber.png" alt="Gegam Sargsian"></div>
+          <div class="st-about__inhaber-tx">
+            <span class="st-about__inhaber-name">Gegam Sargsian</span>
+            <span class="st-about__inhaber-role">Inhaber, persönlich für Sie da</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
