@@ -36,15 +36,27 @@
     .au-stat__n { font-family:'Archivo',sans-serif; font-weight:900; font-size:1.55rem; color:#F5B301; line-height:1; }
     .au-stat__l { font-family:'Inter',sans-serif; font-size:11.5px; color:rgba(255,255,255,.62); letter-spacing:.08em; text-transform:uppercase; margin-top:.45rem; font-weight:600; }
 
-    /* Story Section */
+    /* Story Section (Cards) */
     .au-story { padding:5rem 1.25rem; background:#FBF6E9; }
-    @media (min-width:768px){ .au-story { padding:7rem 2rem; } }
-    .au-story__wrap { max-width:54rem; margin:0 auto; text-align:center; }
-    .au-story__h2 { font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(1.7rem,3vw,2.4rem); line-height:1.15; letter-spacing:-.02em; color:#14171C; margin:0 0 1.5rem; }
-    .au-story__h2:not(:first-child) { margin-top:2.8rem; }
-    .au-story__p { font-family:'Inter',sans-serif; font-size:1.06rem; line-height:1.75; color:#3D444E; margin:0 auto 1.15rem; max-width:44rem; }
-    .au-story__p strong { color:#14171C; font-weight:700; }
-    .au-pull { margin:2.2rem auto; padding:1.5rem 1.7rem; border-left:3px solid #F5B301; background:rgba(245,179,1,.07); font-family:'Archivo',sans-serif; font-weight:700; font-size:1.15rem; line-height:1.45; color:#14171C; border-radius:12px; text-align:center; max-width:42rem; }
+    @media (min-width:768px){ .au-story { padding:6rem 2rem; } }
+    .au-story__wrap { max-width:72rem; margin:0 auto; }
+    .au-story__head { text-align:center; margin-bottom:2.8rem; }
+    .au-story__eyebrow { display:inline-flex; align-items:center; gap:.5rem; padding:.4rem 1rem; border-radius:999px; background:rgba(245,179,1,.14); color:#a37700; font-family:'Inter',sans-serif; font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; margin-bottom:1rem; }
+    .au-story__h2 { font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(1.7rem,3vw,2.4rem); line-height:1.15; letter-spacing:-.02em; color:#14171C; margin:0 0 .6rem; }
+    .au-story__h2 .accent { color:#F5B301; }
+    .au-story__sub { font-family:'Inter',sans-serif; font-size:1.02rem; line-height:1.6; color:#3D444E; max-width:36rem; margin:0 auto; }
+    .au-story__grid { display:grid; grid-template-columns:1fr; gap:1rem; }
+    @media (min-width:640px){ .au-story__grid { grid-template-columns:repeat(2,1fr); gap:1.1rem; } }
+    @media (min-width:1024px){ .au-story__grid { grid-template-columns:repeat(3,1fr); gap:1.2rem; } }
+    .au-story__c { padding:1.75rem 1.5rem; background:#fff; border:1px solid rgba(20,23,28,.06); border-radius:18px; transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease; }
+    .au-story__c:hover { transform:translateY(-3px); border-color:rgba(245,179,1,.35); box-shadow:0 18px 40px -22px rgba(245,179,1,.4); }
+    .au-story__c-ico { width:46px; height:46px; border-radius:13px; background:linear-gradient(180deg,#FFDD66,#F5B301); color:#1A1402; display:flex; align-items:center; justify-content:center; margin-bottom:1rem; }
+    .au-story__c-h { font-family:'Archivo',sans-serif; font-weight:800; font-size:1.08rem; line-height:1.25; color:#14171C; margin:0 0 .5rem; }
+    .au-story__c-p { font-family:'Inter',sans-serif; font-size:14.5px; line-height:1.6; color:#3D444E; margin:0; }
+    .au-pull { margin:2.5rem auto 0; padding:1.7rem 2rem; background:#14171C; color:#fff; font-family:'Archivo',sans-serif; font-weight:800; font-size:clamp(1.05rem,1.7vw,1.35rem); line-height:1.35; border-radius:18px; text-align:center; max-width:48rem; box-shadow:0 22px 60px -28px rgba(20,23,28,.35); position:relative; }
+    .au-pull::before { content:''; position:absolute; left:50%; top:0; transform:translate(-50%,-50%); width:42px; height:42px; border-radius:50%; background:linear-gradient(180deg,#FFDD66,#F5B301); display:flex; align-items:center; justify-content:center; }
+    .au-pull::after { content:'"'; position:absolute; left:50%; top:0; transform:translate(-50%,-58%); color:#1A1402; font-family:'Archivo',sans-serif; font-weight:900; font-size:30px; line-height:1; }
+    .au-pull .accent { background:linear-gradient(180deg,#FFDD66 0%,#F5B301 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:transparent; }
 
     /* Inhaber Card */
     .au-inhaber { padding:5rem 1.25rem; background:#FFF; }
@@ -122,21 +134,54 @@
     </div>
   </header>
 
-  <!-- STORY -->
+  <!-- STORY (Cards) -->
   <section class="au-story">
     <div class="au-story__wrap">
-      <h2 class="au-story__h2">Wer wir sind</h2>
-      <p class="au-story__p">SolaWert ist ein <strong>inhabergeführter Solarbetrieb aus Wuppertal</strong>. Wir planen, bauen und betreuen Photovoltaik-Anlagen, Stromspeicher und Wärmepumpen für Privathaushalte und kleine Gewerbe im gesamten Bergischen Land und in NRW.</p>
-      <p class="au-story__p">Was uns von vielen Mitbewerbern unterscheidet: Wir verkaufen nicht. Wir planen. Wenn Photovoltaik auf Ihrem Dach keinen Sinn ergibt, sagen wir das vor dem Vertrag. Wenn ein kleinerer Speicher reicht als der, den der Wettbewerber vorschlägt, sagen wir Ihnen auch das. Das mag bei uns für ein paar Anlagen weniger sorgen, dafür kommen unsere Kunden zurück und empfehlen uns weiter.</p>
+      <div class="au-story__head">
+        <span class="au-story__eyebrow">Unsere Philosophie</span>
+        <h2 class="au-story__h2">Wer wir sind, wie wir <span class="accent">arbeiten</span>.</h2>
+        <p class="au-story__sub">Sechs Prinzipien, die SolaWert von Vertrieb-getriebenen Anbietern unterscheiden.</p>
+      </div>
 
-      <h2 class="au-story__h2">Wie wir arbeiten</h2>
-      <p class="au-story__p">Jeder Auftrag bekommt einen festen Ansprechpartner, von der ersten Beratung bis Jahre nach der Inbetriebnahme. Sie haben keine Hotline, keinen Callcenter-Agenten und keine 14 Mail-Adressen, sondern <strong>eine Person, die Ihre Anlage kennt</strong>.</p>
-      <p class="au-story__p">Wir arbeiten ausschließlich mit Festpreisen, schriftlich, vor Auftragsbeginn. Keine Anzahlung. Sie zahlen erst, wenn die Anlage steht und nachweislich liefert. Versteckte Posten, Aufpreise nach dem Bau oder Klauseln im Kleingedruckten gibt es bei uns nicht.</p>
+      <div class="au-story__grid">
+        <div class="au-story__c">
+          <span class="au-story__c-ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></span>
+          <h3 class="au-story__c-h">Inhabergeführt aus Wuppertal</h3>
+          <p class="au-story__c-p">Kein Franchise, keine Filiale. Wir sitzen mitten im Bergischen, planen und betreuen Anlagen für Privat und kleine Gewerbe in NRW.</p>
+        </div>
+
+        <div class="au-story__c">
+          <span class="au-story__c-ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s4-8 10-8 10 8 10 8-4 8-10 8S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span>
+          <h3 class="au-story__c-h">Wir verkaufen nicht, wir planen</h3>
+          <p class="au-story__c-p">Wenn Photovoltaik auf Ihrem Dach keinen Sinn ergibt, sagen wir das vor dem Vertrag. Lieber eine Anlage weniger als eine falsche.</p>
+        </div>
+
+        <div class="au-story__c">
+          <span class="au-story__c-ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+          <h3 class="au-story__c-h">Fester Ansprechpartner</h3>
+          <p class="au-story__c-p">Keine Hotline, kein Callcenter, keine 14 Mail-Adressen. Eine Person, die Ihre Anlage kennt, von Tag eins bis Jahre nach der Inbetriebnahme.</p>
+        </div>
+
+        <div class="au-story__c">
+          <span class="au-story__c-ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-12V5l-8-3-8 3v5c0 8 8 12 8 12z"/></svg></span>
+          <h3 class="au-story__c-h">Festpreis ohne Anzahlung</h3>
+          <p class="au-story__c-p">Schwarz auf weiß, schriftlich, vor Auftragsbeginn. Keine versteckten Posten, keine Aufpreise nach dem Bau, kein Kleingedrucktes.</p>
+        </div>
+
+        <div class="au-story__c">
+          <span class="au-story__c-ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.1V12a10 10 0 1 1-5.9-9.1"/><path d="m9 11 3 3L22 4"/></svg></span>
+          <h3 class="au-story__c-h">Zahlen nach Inbetriebnahme</h3>
+          <p class="au-story__c-p">Sie zahlen erst, wenn die Anlage nachweislich liefert. Unser Risiko, dass alles funktioniert, nicht Ihres.</p>
+        </div>
+
+        <div class="au-story__c">
+          <span class="au-story__c-ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+          <h3 class="au-story__c-h">Kurze Wege im Bergischen</h3>
+          <p class="au-story__c-p">Solingen, Remscheid, Velbert, Mettmann, Haan in unter 25 Minuten. Schnelle Termine, keine Anfahrtspauschale.</p>
+        </div>
+      </div>
 
       <div class="au-pull">Festpreis. Keine Anzahlung. Erst zahlen, wenn die Anlage liefert.</div>
-
-      <h2 class="au-story__h2">Warum aus Wuppertal</h2>
-      <p class="au-story__p">Wuppertal liegt im Herzen des Bergischen Lands. Von hier aus erreichen wir Solingen, Remscheid, Velbert, Mettmann und Haan in unter 25 Minuten. Das bedeutet für unsere Kunden: <strong>kurze Wege, schnelle Termine und keine Anfahrtspauschalen</strong>. Egal ob Erstbesichtigung, Montage oder Nachjustierung, wir sind in der Regel innerhalb weniger Tage bei Ihnen.</p>
     </div>
   </section>
 
@@ -193,7 +238,7 @@
   <section class="au-team">
     <div class="au-team__wrap">
       <div class="au-team__txt">
-        <h2>Ihr <span class="accent">Photovoltaik-Team</span> aus Wuppertal für das Bergische Land</h2>
+        <h2>Ein Team aus dem <span class="accent">Bergischen</span>, für das Bergische.</h2>
         <p>Unser Montagetrupp besteht aus erfahrenen Elektrikern und Dachdeckern aus der Region. Wir setzen auf festes Personal, kein Subunternehmer-Karussell. Das heißt: Sie bekommen Tag 1 und Tag 100 dieselben Gesichter.</p>
         <p>Weiterbildung läuft kontinuierlich: Neue Speicher-Generationen, Wärmepumpen-Updates, KfW-Förderprogramme. Wir bleiben am Ball, damit unsere Beratung am Stand der Dinge ist.</p>
       </div>
