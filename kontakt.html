@@ -52,18 +52,35 @@
     .kt-mainsplit__wrap { max-width:72rem; margin:0 auto; display:grid; grid-template-columns:1fr; gap:2.5rem; }
     @media (min-width:1024px){ .kt-mainsplit__wrap { grid-template-columns:1fr 1.1fr; gap:3rem; align-items:start; } }
 
+    .kt-leftcol { display:flex; flex-direction:column; gap:1.5rem; }
     .kt-map { border-radius:20px; overflow:hidden; position:relative; background:#2A2E36; }
-    .kt-map iframe { width:100%; height:100%; min-height:380px; border:0; display:block; }
-    @media (min-width:1024px){ .kt-map iframe { min-height:560px; } }
+    .kt-map iframe { width:100%; height:100%; min-height:360px; border:0; display:block; }
+    @media (min-width:1024px){ .kt-map iframe { min-height:420px; } }
     .kt-map__overlay { position:absolute; left:1rem; bottom:1rem; padding:.85rem 1.1rem; background:rgba(20,23,28,.92); backdrop-filter:blur(10px); border-radius:14px; color:#fff; }
     .kt-map__overlay strong { font-family:'Archivo',sans-serif; font-weight:800; font-size:14px; }
     .kt-map__overlay div { font-family:'Inter',sans-serif; font-size:12.5px; color:rgba(255,255,255,.7); margin-top:.2rem; }
     .kt-map__route { display:inline-flex; align-items:center; gap:.4rem; margin-top:.6rem; padding:.4rem .8rem; border-radius:999px; background:linear-gradient(180deg,#FFDD66,#F5B301); color:#1A1402; font-family:'Archivo',sans-serif; font-weight:700; font-size:12px; }
 
+    .kt-side-cta { position:relative; overflow:hidden; border-radius:20px; padding:1.75rem 1.6rem; background:linear-gradient(155deg,#1F232B 0%,#14171C 100%); color:#fff; border:1px solid rgba(245,179,1,.25); box-shadow:0 18px 50px -28px rgba(20,23,28,.4); }
+    .kt-side-cta__glow { position:absolute; top:-40%; right:-25%; width:340px; height:340px; background:radial-gradient(circle,rgba(245,179,1,.2) 0%,transparent 65%); pointer-events:none; }
+    .kt-side-cta__eyebrow { position:relative; display:inline-flex; align-items:center; gap:.5rem; font-family:'Archivo',sans-serif; font-weight:800; font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:#F5B301; margin-bottom:.7rem; }
+    .kt-side-cta__eyebrow .dot { width:7px; height:7px; border-radius:50%; background:#F5B301; }
+    .kt-side-cta__h { position:relative; font-family:'Archivo',sans-serif; font-weight:900; font-size:1.35rem; line-height:1.18; letter-spacing:-.02em; margin:0 0 .55rem; }
+    .kt-side-cta__s { position:relative; font-family:'Inter',sans-serif; font-size:14px; line-height:1.55; color:rgba(255,255,255,.7); margin:0 0 1.25rem; }
+    .kt-side-cta__btns { position:relative; display:flex; flex-wrap:wrap; gap:.6rem; }
+    .kt-side-cta__primary { display:inline-flex; align-items:center; gap:.55rem; padding:.85rem 1.3rem; border-radius:999px; background:linear-gradient(180deg,#FFDD66,#F5B301); color:#1A1402; font-family:'Archivo',sans-serif; font-weight:800; font-size:14px; box-shadow:0 12px 30px -12px rgba(245,179,1,.55); transition:transform .25s ease; }
+    .kt-side-cta__primary:hover { transform:translateY(-2px); }
+    .kt-side-cta__ghost { display:inline-flex; align-items:center; gap:.55rem; padding:.85rem 1.2rem; border-radius:999px; background:rgba(255,255,255,.08); color:#fff; font-family:'Archivo',sans-serif; font-weight:700; font-size:14px; border:1px solid rgba(255,255,255,.16); transition:background .25s ease, border-color .25s ease; }
+    .kt-side-cta__ghost:hover { background:rgba(255,255,255,.12); border-color:rgba(245,179,1,.4); }
+    .kt-side-cta__trust { position:relative; display:flex; flex-direction:column; gap:.55rem; margin-top:1.4rem; padding-top:1.2rem; border-top:1px solid rgba(255,255,255,.08); }
+    .kt-side-cta__ti { display:flex; align-items:center; gap:.6rem; font-family:'Inter',sans-serif; font-size:13px; color:rgba(255,255,255,.78); }
+    .kt-side-cta__ti svg { color:#F5B301; flex-shrink:0; }
+
     .kt-form { background:#fff; border-radius:20px; padding:2rem 1.7rem; border:1px solid rgba(20,23,28,.06); box-shadow:0 18px 50px -28px rgba(20,23,28,.18); }
     @media (min-width:768px){ .kt-form { padding:2.5rem 2.2rem; } }
+    .kt-form__head { text-align:center; margin-bottom:1.6rem; }
     .kt-form__h { font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(1.4rem,2.4vw,1.9rem); line-height:1.2; letter-spacing:-.02em; color:#14171C; margin:0 0 .5rem; }
-    .kt-form__s { font-family:'Inter',sans-serif; font-size:14.5px; color:#3D444E; margin:0 0 1.6rem; }
+    .kt-form__s { font-family:'Inter',sans-serif; font-size:14.5px; color:#3D444E; margin:0 auto; max-width:32rem; }
     .kt-field { margin-bottom:1rem; }
     .kt-field label { display:block; font-family:'Archivo',sans-serif; font-weight:700; font-size:12px; letter-spacing:.04em; color:#14171C; margin-bottom:.4rem; }
     .kt-field input, .kt-field textarea, .kt-field select { width:100%; padding:.85rem 1rem; border-radius:11px; border:1px solid rgba(20,23,28,.14); background:#FBF6E9; font-family:'Inter',sans-serif; font-size:15px; color:#14171C; transition:border-color .25s ease, background .25s ease; }
@@ -71,9 +88,10 @@
     .kt-field textarea { min-height:120px; resize:vertical; }
     .kt-row { display:grid; grid-template-columns:1fr; gap:1rem; }
     @media (min-width:560px){ .kt-row { grid-template-columns:1fr 1fr; } }
+    .kt-form__foot { text-align:center; margin-top:1.5rem; }
     .kt-submit { display:inline-flex; align-items:center; gap:.6rem; padding:1.05rem 1.7rem; border-radius:999px; background:linear-gradient(180deg,#FFDD66,#F5B301); color:#1A1402; font-family:'Archivo',sans-serif; font-weight:800; font-size:1.02rem; box-shadow:0 14px 36px -14px rgba(245,179,1,.55); transition:transform .25s ease, box-shadow .25s ease; border:0; cursor:pointer; }
     .kt-submit:hover { transform:translateY(-2px); box-shadow:0 20px 44px -14px rgba(245,179,1,.7); }
-    .kt-meta { font-family:'Inter',sans-serif; font-size:12.5px; color:#3D444E; margin-top:.9rem; line-height:1.5; }
+    .kt-meta { font-family:'Inter',sans-serif; font-size:12.5px; color:#3D444E; margin:.9rem auto 0; line-height:1.5; max-width:32rem; }
 
     /* FAQ */
     .kt-faqsec { padding:5rem 1.25rem; background:#fff; }
@@ -133,18 +151,38 @@
   <!-- KARTE + FORMULAR -->
   <section class="kt-mainsplit">
     <div class="kt-mainsplit__wrap">
-      <div class="kt-map">
-        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=7.137%2C51.252%2C7.164%2C51.262&layer=mapnik&marker=51.2562%2C7.1508" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Karte SolaWert Wuppertal"></iframe>
-        <div class="kt-map__overlay">
-          <strong>SolaWert · Wuppertal</strong>
-          <div>Friedrich-Ebert-Str. 55, 42103 Wuppertal</div>
-          <a href="https://www.google.com/maps/dir/?api=1&destination=Friedrich-Ebert-Str.+55,+42103+Wuppertal" target="_blank" rel="noopener" class="kt-map__route"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>Route planen</a>
+      <div class="kt-leftcol">
+        <div class="kt-map">
+          <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=7.137%2C51.252%2C7.164%2C51.262&layer=mapnik&marker=51.2562%2C7.1508" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Karte SolaWert Wuppertal"></iframe>
+          <div class="kt-map__overlay">
+            <strong>SolaWert · Wuppertal</strong>
+            <div>Friedrich-Ebert-Str. 55, 42103 Wuppertal</div>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Friedrich-Ebert-Str.+55,+42103+Wuppertal" target="_blank" rel="noopener" class="kt-map__route"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>Route planen</a>
+          </div>
+        </div>
+
+        <div class="kt-side-cta">
+          <span class="kt-side-cta__glow" aria-hidden="true"></span>
+          <span class="kt-side-cta__eyebrow"><span class="dot"></span>Direkt zum Inhaber</span>
+          <h3 class="kt-side-cta__h">Lieber kurz anrufen?</h3>
+          <p class="kt-side-cta__s">Gegam ist persönlich am Telefon. Kein Callcenter, keine Hotline, kein Bot. Einfach kurz durchklingeln, wir melden uns am selben Werktag zurück.</p>
+          <div class="kt-side-cta__btns">
+            <a href="tel:+4915205999900" class="kt-side-cta__primary"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>0152 5999900</a>
+            <a href="mailto:info@solawert.de" class="kt-side-cta__ghost"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-10 5L2 7"/></svg>E-Mail schreiben</a>
+          </div>
+          <div class="kt-side-cta__trust">
+            <div class="kt-side-cta__ti"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4.5 4.5L19 7"/></svg>Antwort innerhalb eines Werktags</div>
+            <div class="kt-side-cta__ti"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4.5 4.5L19 7"/></svg>Beratung vor Ort kostenlos und unverbindlich</div>
+            <div class="kt-side-cta__ti"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4.5 4.5L19 7"/></svg>Festpreis vor Auftragsbeginn, keine Anzahlung</div>
+          </div>
         </div>
       </div>
 
       <form class="kt-form" action="#" method="post" onsubmit="event.preventDefault(); alert('Vielen Dank! Wir melden uns innerhalb eines Werktags.');">
-        <h2 class="kt-form__h">Nachricht schreiben</h2>
-        <p class="kt-form__s">Schildern Sie kurz Ihr Vorhaben: Dachform, ungefähre Größe, Zeitrahmen. Wir melden uns innerhalb eines Werktags mit den nächsten Schritten.</p>
+        <div class="kt-form__head">
+          <h2 class="kt-form__h">Nachricht schreiben</h2>
+          <p class="kt-form__s">Schildern Sie kurz Ihr Vorhaben: Dachform, ungefähre Größe, Zeitrahmen. Wir melden uns innerhalb eines Werktags mit den nächsten Schritten.</p>
+        </div>
 
         <div class="kt-row">
           <div class="kt-field">
@@ -184,8 +222,10 @@
           <textarea id="kt-msg" name="message" placeholder="Kurz zur Dachform, ungefähre Größe, Wunschtermin ..."></textarea>
         </div>
 
-        <button type="submit" class="kt-submit">Nachricht senden <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
-        <p class="kt-meta">Ihre Daten landen direkt bei uns, nicht in einem CRM-Trichter. Wir nutzen sie nur, um Ihnen zu antworten. Datenschutz selbstverständlich.</p>
+        <div class="kt-form__foot">
+          <button type="submit" class="kt-submit">Nachricht senden <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+          <p class="kt-meta">Ihre Daten landen direkt bei uns, nicht in einem CRM-Trichter. Wir nutzen sie nur, um Ihnen zu antworten. Datenschutz selbstverständlich.</p>
+        </div>
       </form>
     </div>
   </section>
