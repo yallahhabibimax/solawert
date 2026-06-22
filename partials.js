@@ -48,7 +48,7 @@
         '<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 pb-12 border-b border-white/10 items-start">' +
           '<div>' +
             '<a href="#top" style="display:inline-flex;align-items:center;gap:4px;text-decoration:none;margin-bottom:1rem">' +
-              '<img src="img/logo-sw-light.png?v=1782141000" alt="SW Photovoltaik & Solar Wuppertal" class="w-auto" style="height:48px">' +
+              '<img src="img/logo-sw-light.png?v=1782141000" alt="SW Photovoltaik & Solar Wuppertal" class="w-auto" style="height:72px;filter:drop-shadow(0 2px 8px rgba(0,0,0,.6)) drop-shadow(0 0 22px rgba(245,179,1,.18))">' +
             '</a>' +
             '<p class="text-white text-sm leading-relaxed max-w-xs mb-5">Ihr inhabergeführter Partner für Photovoltaik und Wärmepumpen in Wuppertal und ganz NRW. Effizient, ehrlich und fair.</p>' +
             '<div style="display:grid;grid-template-columns:max-content max-content;justify-content:start;justify-items:start;gap:.5rem">' +
@@ -339,7 +339,7 @@
     '<nav class="sw-navwrap" data-sw-nav>' +
       '<div class="sw-navpill2"><div class="sw-navinner">' +
         '<a href="index.html" class="flex items-center shrink-0">' +
-          '<img src="img/logo-sw-light.png?v=1782141000" alt="SW Photovoltaik & Solar Wuppertal" class="sw-navlogo" style="height:46px;width:auto">' +
+          '<img src="img/logo-sw-light.png?v=1782141000" alt="SW Photovoltaik & Solar Wuppertal" class="sw-navlogo" style="height:64px;width:auto;filter:drop-shadow(0 2px 6px rgba(0,0,0,.55)) drop-shadow(0 0 18px rgba(245,179,1,.18))">' +
         '</a>' +
         '<div class="sw-navlinks hidden lg:flex">' +
           L.map(function(x){ var act = isActive(x) ? ' active' : ''; return x[2]
