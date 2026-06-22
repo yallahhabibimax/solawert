@@ -21,8 +21,8 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin href="fonts/inter-latin.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin href="fonts/archivo-latin.woff2">
 
-  <link rel="stylesheet" href="tailwind.css?v=1782130299">
-  <link rel="stylesheet" href="styles.css?v=1782130299">
+  <link rel="stylesheet" href="tailwind.css?v=1782130659">
+  <link rel="stylesheet" href="styles.css?v=1782130659">
   <style>
     .lp-section { padding: clamp(3rem, 6vw, 5rem) 1.25rem; }
     @media (min-width:768px){ .lp-section { padding-left: 2rem; padding-right: 2rem; } }
@@ -132,8 +132,11 @@
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section id="faq" class="relative px-5 md:px-8 py-12 md:py-16" style="background:#2A2E36;">
+  <!-- LEAD-FORMULAR (geteilt) -->
+  <div data-leadquiz></div>
+
+  <!-- FAQ (ganz unten, Hub-Verlauf statt Footer-Ton) -->
+  <section id="faq" class="relative px-5 md:px-8 py-12 md:py-16" style="background:linear-gradient(180deg,#23272F 0%,#181B21 100%);">
     <div aria-hidden="true" class="absolute inset-0 overflow-hidden pointer-events-none">
       <div class="absolute" style="top:-18%;left:-12%;width:640px;height:640px;background:radial-gradient(circle,rgba(245,179,1,0.12) 0%,transparent 62%);"></div>
     </div>
@@ -162,15 +165,12 @@
     </div>
   </section>
 
-  <!-- LEAD-FORMULAR (geteilt) -->
-  <div data-leadquiz></div>
-
   <!-- FOOTER (geteilt) -->
   <div data-kaefer="footer"></div>
 
   <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-  <script src="leadquiz.js?v=1782130299"></script>
-  <script src="partials.js?v=1782130299"></script>
+  <script src="leadquiz.js?v=1782130659"></script>
+  <script src="partials.js?v=1782130659"></script>
 </body>
 </html>
