@@ -8,6 +8,38 @@
   var TEL = "+4915205999900", TELD = "0152 5999900";
   var MAIL = "info@solawert.de";
 
+  /* ═══ PAGE-TRANSITIONS (browseruebergreifend, fade per body-class) ═══ */
+  (function setupPageTransitions(){
+    if (!window.matchMedia) return;
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) return;
+    /* Klick auf interne Links abfangen und Fade-Out durchfuehren */
+    document.addEventListener('click', function (e) {
+      if (e.defaultPrevented) return;
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+      var a = e.target.closest && e.target.closest('a[href]');
+      if (!a) return;
+      if (a.target && a.target !== '' && a.target !== '_self') return;
+      if (a.hasAttribute('download')) return;
+      var raw = a.getAttribute('href');
+      if (!raw) return;
+      if (raw.charAt(0) === '#') return; /* same-page Anker: kein Fade */
+      if (/^(mailto:|tel:|javascript:|sms:)/i.test(raw)) return;
+      var url; try { url = new URL(a.href, location.href); } catch (e2) { return; }
+      if (url.origin !== location.origin) return;
+      /* gleicher Pfad + nur Hash-Wechsel → kein Fade (smooth scroll) */
+      if (url.pathname === location.pathname && url.search === location.search && url.hash) return;
+      e.preventDefault();
+      document.documentElement.classList.add('page-leaving');
+      var dest = a.href;
+      setTimeout(function () { location.href = dest; }, 230);
+    }, true); /* capture phase, damit andere Handler nichts blockieren */
+    /* Wenn Nutzer per Back-Button zurueckkommt: leaving-Klasse entfernen */
+    window.addEventListener('pageshow', function () {
+      document.documentElement.classList.remove('page-leaving');
+    });
+  })();
+
   /* ═══ FOOTER ═══ */
   function footerHTML() {
     return '' +
