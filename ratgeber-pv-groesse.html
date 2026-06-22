@@ -3,256 +3,86 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wie groß muss meine Photovoltaik-Anlage sein? | SolaWert Ratgeber</title>
+  <title>PV-Anlage richtig dimensionieren: wieviel kWp? | SolaWert Ratgeber</title>
   <meta http-equiv="Cache-Control" content="no-store">
-  <meta name="description" content="PV-Anlage richtig dimensionieren: Verbrauch, Dachfläche und kWp passend zusammenbringen. Faustregeln, Beispielrechnung und typische Fehler.">
+  <meta name="description" content="Wie groß muss meine Photovoltaik-Anlage sein? Faustregeln, kWp-Berechnung und ehrliche Empfehlungen für Eigenheim, Wärmepumpe und E-Auto.">
   <meta name="robots" content="index, follow">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Wie groß muss meine Photovoltaik-Anlage sein?">
-  <meta property="og:description" content="Verbrauch, Dachfläche und kWp richtig zusammenbringen, damit nichts verschenkt wird.">
-  <meta property="og:image" content="img/leistung-effizienz-haus.jpg">
+  <meta property="og:title" content="PV-Anlage richtig dimensionieren: wieviel kWp brauche ich?">
+  <meta property="og:description" content="Faustregeln, kWp-Berechnung und ehrliche Empfehlungen je nach Verbrauch und Dach.">
+  <meta property="og:image" content="img/leistung-pv.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="img/leistung-effizienz-haus.jpg">
+  <meta name="twitter:image" content="img/leistung-pv.jpg">
   <meta name="theme-color" content="#15181D">
   <link rel="icon" href="img/logo.png">
   <link rel="preload" as="font" type="font/woff2" crossorigin href="fonts/inter-latin.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin href="fonts/archivo-latin.woff2">
-  <link rel="stylesheet" href="tailwind.css?v=1782138036">
-  <link rel="stylesheet" href="styles.css?v=1782138036">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Wie groß muss meine Photovoltaik-Anlage sein?","description":"PV-Anlage richtig dimensionieren auf Verbrauch, Dachfläche und kWp.","image":"img/leistung-effizienz-haus.jpg","author":{"@type":"Person","name":"Gegam Sargsian","jobTitle":"Inhaber SolaWert"},"publisher":{"@type":"Organization","name":"SolaWert","logo":{"@type":"ImageObject","url":"img/logo.png"}},"datePublished":"2026-06-22","dateModified":"2026-06-22"}</script>
-  <style>
-    .rga-hero { background:linear-gradient(180deg,#23272F 0%,#181B21 100%); padding:8.5rem 1.25rem 3rem; color:#fff; position:relative; overflow:hidden; }
-    @media (min-width:768px){ .rga-hero { padding:9.5rem 2rem 3.5rem; } }
-    .rga-hero__glow { position:absolute; top:-15%; left:-10%; width:520px; height:520px; background:radial-gradient(circle,rgba(245,179,1,.13) 0%,transparent 65%); pointer-events:none; }
-    .rga-hero__wrap { position:relative; max-width:80rem; margin:0 auto; }
-    .rga-hero__h1 { font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(2.1rem,4.4vw,3.4rem); line-height:1.04; letter-spacing:-.025em; margin:1rem 0 1.1rem; max-width:28ch; }
-    .rga-hero__h1 .accent { color:#F5B301; }
-    .rga-hero__lead { color:rgba(255,255,255,.74); font-size:clamp(1.02rem,1.4vw,1.18rem); line-height:1.6; max-width:42rem; }
-    .rga-hero__meta { display:flex; flex-wrap:wrap; gap:1rem 1.6rem; margin-top:1.4rem; font-size:13.5px; color:rgba(255,255,255,.58); }
-    .rga-hero__meta span { display:inline-flex; align-items:center; gap:.4rem; }
-    .rga-hero__meta svg { color:#F5B301; }
-  </style>
+  <link rel="stylesheet" href="tailwind.css?v=1782146000">
+  <link rel="stylesheet" href="styles.css?v=1782146000">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"PV-Anlage richtig dimensionieren: wieviel kWp brauche ich?","description":"Faustregeln, kWp-Berechnung und ehrliche Empfehlungen für Eigenheim, Wärmepumpe und E-Auto.","image":"img/leistung-pv.jpg","author":{"@type":"Person","name":"Gegam Sargsian","jobTitle":"Inhaber SolaWert"},"publisher":{"@type":"Organization","name":"SolaWert","logo":{"@type":"ImageObject","url":"img/logo.png"}},"datePublished":"2026-06-23","dateModified":"2026-06-23"}</script>
 </head>
 <body class="font-body antialiased overflow-x-hidden" style="background:#FFFFFF;color:#14171C">
 
   <div data-kaefer="nav"></div>
 
-  <header class="rga-hero">
-    <div class="rga-hero__glow"></div>
-    <div class="rga-hero__wrap">
-      <div class="rg-crumbs">
-        <a href="index.html">Start</a>
-        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m9 6 6 6-6 6"/></svg>
-        <a href="ratgeber.html">Ratgeber</a>
-        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m9 6 6 6-6 6"/></svg>
-        <span>PV-Größe</span>
-      </div>
+  <header class="rg-hero">
+    <div class="rg-hero__glow"></div>
+    <div class="rg-hero__wrap">
       <span class="rg-hero__eyebrow"><span class="dot"></span>Ratgeber · Planung</span>
-      <h1 class="rga-hero__h1">Wie <span class="accent">groß</span> muss meine Photovoltaik-Anlage sein?</h1>
-      <p class="rga-hero__lead">Verbrauch, Dachfläche und kWp richtig zusammenbringen, damit nichts verschenkt wird.</p>
-      <div class="rga-hero__meta">
+      <h1 class="rg-hero__h1">Wie groß muss meine <span class="accent">PV-Anlage</span> sein?</h1>
+      <p class="rg-hero__lead">Faustregeln, kWp-Berechnung und ehrliche Empfehlungen, je nach Verbrauch, Dach und Zukunftsplänen.</p>
+      <div class="rg-hero__meta">
         <span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>5 Minuten Lesezeit</span>
         <span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18M8 2v4M16 2v4"/></svg>Aktualisiert Juni 2026</span>
       </div>
     </div>
   </header>
 
-  <section class="rg-2col">
-    <div class="rg-2col__wrap">
+  <section class="rg-body">
+    <article class="rg-body__wrap">
+      <h2>Faustregel: 1 kWp pro 1.000 kWh Verbrauch</h2>
+      <p>Eine grobe Orientierung: <strong>Pro 1.000 kWh Jahresverbrauch sollten Sie etwa 1 kWp installierte Leistung einplanen.</strong> Ein typisches Einfamilienhaus mit 4.000 kWh Verbrauch braucht also rund 4 kWp — wobei wir in der Praxis meist deutlich darüber dimensionieren.</p>
+      <p>Warum mehr als die Faustregel? Weil Sie nur einen Bruchteil des Stroms direkt verbrauchen. Den Rest verkaufen Sie ans Netz oder laden den Speicher damit. Eine größere Anlage erhöht den Eigenverbrauchs-Anteil und macht die Anlage rentabler.</p>
 
-      <aside class="rg-side-stack">
-        <nav class="rg-toc" aria-label="Inhaltsverzeichnis">
-          <h4 class="rg-toc__h">Inhalt</h4>
-          <a class="rg-toc__link" href="#faustregel">Die Faustregel für die Anlagengröße</a>
-          <a class="rg-toc__link" href="#dachflaeche">Wieviel Dachfläche brauche ich</a>
-          <a class="rg-toc__link" href="#beispiel">Beispiel: typisches Einfamilienhaus</a>
-          <a class="rg-toc__link" href="#zukunft">Mit Reserve für die Zukunft planen</a>
-          <a class="rg-toc__link" href="#fehler">Typische Fehler bei der Dimensionierung</a>
-          <a class="rg-toc__link" href="#faq">Häufige Fragen</a>
-        </nav>
+      <h2>Verbrauchsschätzung nach Haushaltsgröße</h2>
+      <ul>
+        <li><strong>1-2 Personen ohne E-Auto:</strong> 2.000 bis 3.000 kWh pro Jahr → 4 bis 6 kWp empfohlen.</li>
+        <li><strong>3-4 Personen Familie:</strong> 3.500 bis 5.000 kWh → 7 bis 10 kWp.</li>
+        <li><strong>5+ Personen oder großes Haus:</strong> 5.500 bis 7.000 kWh → 10 bis 14 kWp.</li>
+        <li><strong>Mit Wärmepumpe:</strong> Plus 3.000 bis 5.000 kWh für Heizen → +3 bis 5 kWp dazurechnen.</li>
+        <li><strong>Mit E-Auto (15.000 km/Jahr):</strong> Plus rund 2.500 kWh → +2,5 bis 3 kWp.</li>
+      </ul>
 
-        <div class="rg-side-cta">
-          <div class="rg-side-cta__lbl">Anlagengröße kostenlos berechnen</div>
-          <div class="rg-side-cta__t">Wir berechnen die passende kWp für Ihr Dach.</div>
-          <p class="rg-side-cta__s">Festpreis. Keine Anzahlung. Sie zahlen erst nach Abnahme.</p>
-          <a href="index.html#kontakt" class="rg-side-cta__btn">Jetzt berechnen <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
-        </div>
+      <h2>So viel Fläche brauchen Sie auf dem Dach</h2>
+      <p>Eine grobe Daumenregel: <strong>1 kWp entspricht etwa 5 m² Dachfläche</strong>. Eine 10-kWp-Anlage braucht also rund 50 m² nutzbare Fläche. Auf einem Satteldach mit Süd-Ausrichtung passen typischerweise 6 bis 10 kWp problemlos, oft auch deutlich mehr.</p>
+      <p>Faktoren, die die nutzbare Fläche reduzieren: Dachfenster, Kamine, Lüftungsrohre, Schornsteine, Verschattung durch Bäume oder Nachbarhäuser. Beim Vor-Ort-Termin messen wir das exakt aus.</p>
 
-        <div class="rg-author">
-          <div class="rg-author__top">
-            <img class="rg-author__img" src="img/portrait.jpg" alt="Gegam Sargsian, Inhaber SolaWert">
-            <div>
-              <div class="rg-author__name">Gegam Sargsian</div>
-              <div class="rg-author__role">Inhaber · SolaWert Wuppertal</div>
-            </div>
-          </div>
-          <p class="rg-author__quote">Wer die Anlage zu klein plant, lässt jedes Jahr Geld liegen. Wir planen so, dass aus Ihrem Dach das Maximum herauskommt.</p>
-        </div>
-      </aside>
+      <div class="rg-pull">Lieber etwas größer planen als knapp. Anlagen wachsen nicht mit, der Verbrauch oft schon — Stichwort Wärmepumpe oder E-Auto.</div>
 
-      <article class="rg-art-col">
-        <h2 id="faustregel">Die Faustregel für die Anlagengröße</h2>
-        <p>Eine einfache Orientierung: <strong>Pro 1.000 Kilowattstunden Jahresverbrauch etwa 1 bis 1,2 Kilowattpeak Anlagenleistung</strong>. Für ein Einfamilienhaus mit 4.500 kWh Jahresverbrauch sind das also 5 bis 6 kWp als Mindestgröße, wenn nur der Haushaltsstrom abgedeckt werden soll.</p>
-        <p>In der Praxis planen wir die Anlage meist deutlich größer, häufig <strong>8 bis 12 kWp</strong>, weil dann auch Wärmepumpe, E-Auto oder zukünftige Verbrauchssteigerungen Platz haben. Dank Nullsteuersatz und sinkender Modulpreise ist die Mehrinvestition oft kleiner als gedacht, der Mehrertrag aber über 25 Jahre erheblich.</p>
+      <h2>Wann lohnt sich eine größere Anlage?</h2>
+      <ul>
+        <li><strong>Sie planen eine Wärmepumpe</strong> in den nächsten 5 Jahren — kalkulieren Sie schon jetzt mit ein.</li>
+        <li><strong>Sie haben oder planen ein E-Auto</strong> — Eigenstrom-Laden senkt Ihre Strom-Kosten massiv.</li>
+        <li><strong>Ihr Dach ist gut nutzbar</strong> (Süd-Ausrichtung, wenig Verschattung) — verschenken Sie keine Fläche.</li>
+        <li><strong>Sie wollen Strom mit Nachbarn teilen</strong> (Gemeinschaftliches Erzeugen, Mieterstrom-Modelle) — größere Anlagen erlauben das.</li>
+      </ul>
 
-        <h2 id="dachflaeche">Wieviel Dachfläche brauche ich</h2>
-        <p>Pro Kilowattpeak rechnet man mit ungefähr <strong>5 bis 6 Quadratmetern Dachfläche</strong>. Eine 10-kWp-Anlage braucht also rund 50 bis 60 Quadratmeter, eine 12-kWp-Anlage etwa 60 bis 72 Quadratmeter. Auf einem typischen Einfamilienhaus-Dach mit Süd- oder Süd-Ost/Süd-West-Ausrichtung passen damit problemlos 8 bis 14 kWp.</p>
-        <p>Auch Ost-West-Dächer funktionieren sehr gut, sogar besser für den Eigenverbrauch, weil sie morgens und abends Strom liefern, wenn der Verbrauch hoch ist. Reine Nord-Ausrichtung lohnt sich dagegen selten.</p>
+      <h2>Speicher passend dimensionieren</h2>
+      <p>Der Speicher macht aus jeder kWh produzierten Stroms eine kWh selbstgenutzten Stroms. Faustregel: <strong>Speicher-Kapazität entspricht 1 bis 1,5 kWh pro kWp Anlagenleistung</strong>. Bei 10 kWp also 10 bis 15 kWh Speicher. Bei Wärmepumpen-Kombi etwas mehr.</p>
 
-        <div class="rg-pull">Wer heute zu klein plant, zahlt morgen zweimal. Module sind günstig geworden, jede zusätzlich verlegte Reihe bringt deutlich mehr Ertrag.</div>
-
-        <h2 id="beispiel">Beispiel: typisches Einfamilienhaus</h2>
-        <p>Nehmen wir ein Einfamilienhaus mit 4 Personen, 4.500 kWh Jahresverbrauch, einer Wärmepumpe in Planung und einem E-Auto in Aussicht:</p>
-        <ul>
-          <li><strong>Haushaltsstrom:</strong> 4.500 kWh pro Jahr</li>
-          <li><strong>Wärmepumpe:</strong> zusätzlich rund 3.500 kWh pro Jahr</li>
-          <li><strong>E-Auto:</strong> zusätzlich rund 2.500 kWh pro Jahr</li>
-          <li><strong>Gesamt-Strombedarf:</strong> rund 10.500 kWh pro Jahr</li>
-          <li><strong>Empfohlene PV-Größe:</strong> 11 bis 13 kWp</li>
-          <li><strong>Empfohlene Speichergröße:</strong> 10 bis 14 kWh</li>
-        </ul>
-        <p>Mit dieser Konfiguration decken Sie im Jahresschnitt einen sehr großen Teil Ihres Verbrauchs aus eigenem Strom und müssen nur in den Wintermonaten in nennenswertem Umfang zukaufen.</p>
-
-        <h2 id="zukunft">Mit Reserve für die Zukunft planen</h2>
-        <p>Drei Dinge erhöhen Ihren Strombedarf später häufig: Wärmepumpe, Elektroauto, größere Familie oder Homeoffice. Wer heute knapp plant, muss in 5 bis 10 Jahren erweitern, was im Nachhinein meist teurer ist. Deshalb dimensionieren wir den Wechselrichter bewusst etwas größer, damit nachträglich problemlos weitere Module ergänzt werden können.</p>
-
-        <h2 id="fehler">Typische Fehler bei der Dimensionierung</h2>
-        <ul>
-          <li><strong>Nur auf den heutigen Verbrauch schauen:</strong> Strombedarf steigt fast immer. Eine Anlage soll 20 Jahre passen, nicht nur 2.</li>
-          <li><strong>Wechselrichter zu klein wählen:</strong> Spart kurzfristig 200 €, blockiert aber spätere Erweiterungen.</li>
-          <li><strong>Speicher vergessen:</strong> Eine große Anlage ohne ausreichend Speicher speist zu viel günstig ein, statt selbst zu nutzen.</li>
-          <li><strong>Nicht aufs Lastprofil schauen:</strong> Wer tagsüber wenig zuhause ist, profitiert besonders von Wärmepumpe und E-Auto, die den Tagstrom abnehmen.</li>
-        </ul>
-
-        <section class="rg-faq" id="faq" aria-label="Häufige Fragen zur PV-Anlagengröße">
-          <h2 class="rg-faq__h2">Häufige Fragen zur Anlagengröße</h2>
-
-          <details class="rg-faq__item">
-            <summary class="rg-faq__sum">
-              <span class="rg-faq__q">Wieviel kWp brauche ich für ein typisches Einfamilienhaus?</span>
-              <span class="rg-faq__ic"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
-            </summary>
-            <div class="rg-faq__a">Ohne Wärmepumpe und E-Auto reichen 6 bis 8 kWp. Mit Wärmepumpe planen wir 10 bis 14 kWp, mit zusätzlichem E-Auto eher 12 bis 16 kWp. Die genaue Größe rechnen wir kostenlos für Sie aus.</div>
-          </details>
-
-          <details class="rg-faq__item">
-            <summary class="rg-faq__sum">
-              <span class="rg-faq__q">Wieviel Strom produziert 1 kWp im Jahr?</span>
-              <span class="rg-faq__ic"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
-            </summary>
-            <div class="rg-faq__a">In NRW rechnet man mit rund 900 bis 1.000 kWh pro kWp und Jahr bei guter Ausrichtung. Eine 10-kWp-Anlage produziert also etwa 9.000 bis 10.000 kWh, das deckt den Stromverbrauch eines Einfamilienhauses gut ab.</div>
-          </details>
-
-          <details class="rg-faq__item">
-            <summary class="rg-faq__sum">
-              <span class="rg-faq__q">Was ist besser: Süddach oder Ost-West?</span>
-              <span class="rg-faq__ic"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
-            </summary>
-            <div class="rg-faq__a">Süddach bringt absolut den höchsten Jahresertrag. Ost-West liefert dafür mehr Strom morgens und abends, wenn der Verbrauch hoch ist. Für den Eigenverbrauch ist Ost-West oft sogar attraktiver, weil mehr Strom direkt im Haus genutzt wird.</div>
-          </details>
-
-          <details class="rg-faq__item">
-            <summary class="rg-faq__sum">
-              <span class="rg-faq__q">Kann ich die Anlage später erweitern?</span>
-              <span class="rg-faq__ic"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
-            </summary>
-            <div class="rg-faq__a">Ja, wenn der Wechselrichter Reserve hat. Genau deshalb planen wir den Wechselrichter bewusst etwas größer als nötig, damit später Module einfach ergänzt werden können, ohne den Wechselrichter zu tauschen.</div>
-          </details>
-
-          <details class="rg-faq__item">
-            <summary class="rg-faq__sum">
-              <span class="rg-faq__q">Lohnt sich eine Anlage über 10 kWp wegen Steuer noch?</span>
-              <span class="rg-faq__ic"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
-            </summary>
-            <div class="rg-faq__a">Ja. Die einkommensteuerliche Befreiung gilt bis 30 kWp pro Wohneinheit, der Nullsteuersatz ebenso. Erst über 30 kWp wird es steuerlich komplexer. Bis dahin haben Sie also vollen Spielraum für eine gut dimensionierte Anlage.</div>
-          </details>
-        </section>
-
-        <a href="ratgeber.html" class="rg-back"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>Zurück zum Ratgeber</a>
-      </article>
-
-    </div>
-  </section>
-
-  <section class="rg-related">
-    <div class="rg-related__wrap">
-      <div class="rg-related__head">
-        <h2 class="rg-related__h">Verwandte Artikel</h2>
-        <span class="rg-related__count">3 Beiträge</span>
+      <div class="rg-cta">
+        <div class="rg-cta__t">Wir rechnen Ihre Anlage individuell durch.</div>
+        <a href="kontakt.html" class="rg-cta__btn">Beratungstermin vereinbaren <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
       </div>
-      <div class="rg-related__grid">
-
-        <a href="ratgeber-pv-kosten.html" class="rg-rel">
-          <div class="rg-rel__imgwrap">
-            <img class="rg-rel__img" src="img/leistung-pv.jpg" alt="PV-Kosten 2026">
-            <span class="rg-rel__cat">Kosten</span>
-          </div>
-          <div class="rg-rel__body">
-            <h3 class="rg-rel__t">Was kostet eine Photovoltaik-Anlage 2026?</h3>
-            <p class="rg-rel__s">Preise, Förderung und ab wann sich Ihre Anlage rechnet, transparent erklärt.</p>
-          </div>
-        </a>
-
-        <a href="ratgeber-stromspeicher-groesse.html" class="rg-rel">
-          <div class="rg-rel__imgwrap">
-            <img class="rg-rel__img" src="img/leistung-speicher.jpg" alt="Wie viel Stromspeicher brauche ich wirklich">
-            <span class="rg-rel__cat">Speicher</span>
-          </div>
-          <div class="rg-rel__body">
-            <h3 class="rg-rel__t">Wie viel Stromspeicher brauche ich wirklich?</h3>
-            <p class="rg-rel__s">Den Speicher richtig dimensionieren, damit der Sonnenstrom auch abends reicht.</p>
-          </div>
-        </a>
-
-        <a href="ratgeber-eigenverbrauch.html" class="rg-rel">
-          <div class="rg-rel__imgwrap">
-            <img class="rg-rel__img" src="img/leistung-monitoring.png" alt="Eigenverbrauch maximieren">
-            <span class="rg-rel__cat">Wirtschaftlichkeit</span>
-          </div>
-          <div class="rg-rel__body">
-            <h3 class="rg-rel__t">Eigenverbrauch maximieren: Mehr aus Ihrer PV-Anlage</h3>
-            <p class="rg-rel__s">Wie Sie mit Speicher, Wärmepumpe und Steuerung mehr Sonnenstrom selbst nutzen.</p>
-          </div>
-        </a>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="rh-fullcta">
-    <div class="rh-fullcta__glow1"></div>
-    <div class="rh-fullcta__glow2"></div>
-    <div class="rh-fullcta__wrap">
-      <span class="rh-fullcta__eyebrow"><span class="dot"></span>Festpreis · Ohne Anzahlung</span>
-      <h2 class="rh-fullcta__h">Die passende <span class="accent">Anlagengröße</span> für Ihr Dach</h2>
-      <p class="rh-fullcta__s">Wir berechnen Verbrauch, Dachfläche und Reserve passgenau für Sie. Kostenlos, transparent und ohne Verpflichtung.</p>
-      <div class="rh-fullcta__btns">
-        <a href="index.html#kontakt" class="rh-fullcta__primary">Kostenloses Angebot anfragen <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
-        <a href="tel:+4915205999900" class="rh-fullcta__ghost"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>0152 5999900</a>
-      </div>
-    </div>
+    </article>
   </section>
 
   <div data-leadquiz></div>
   <div data-kaefer="footer"></div>
 
-  <script>
-    (function(){
-      var links = document.querySelectorAll('.rg-toc__link');
-      var ids = [].slice.call(links).map(function(a){ return a.getAttribute('href').slice(1); });
-      var sections = ids.map(function(id){ return document.getElementById(id); }).filter(Boolean);
-      if (!('IntersectionObserver' in window) || !sections.length) return;
-      function setActive(id){ links.forEach(function(a){ a.classList.toggle('is-on', a.getAttribute('href') === '#' + id); }); }
-      var io = new IntersectionObserver(function(entries){
-        entries.forEach(function(e){ if (e.isIntersecting) setActive(e.target.id); });
-      }, { rootMargin: '-120px 0px -55% 0px', threshold: 0 });
-      sections.forEach(function(s){ io.observe(s); });
-    })();
-  </script>
-
   <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-  <script src="leadquiz.js?v=1782138036"></script>
-  <script src="partials.js?v=1782138036"></script>
+  <script src="leadquiz.js?v=1782146000"></script>
+  <script src="partials.js?v=1782146000"></script>
 </body>
 </html>
