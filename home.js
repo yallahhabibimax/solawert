@@ -378,7 +378,8 @@ const Navbar = () => {
   }, []);
   const leistSub = [["Photovoltaik", "photovoltaik.html", "sun", "Eigener Strom vom Dach"], ["Wärmepumpe", "waermepumpe.html", "flame", "Effizient heizen mit Strom"], ["Stromspeicher", "stromspeicher.html", "bolt", "Mehr Speicher inklusive"], ["Alle Leistungen", "leistungen.html", "combo", "Überblick aller Leistungen", "all"]];
   const einsatzSub = [["Wuppertal", "wuppertal.html", "home", "Hauptstandort"], ["Solingen", "solingen.html", "pin", "13 km · ca. 15 Min."], ["Remscheid", "remscheid.html", "pin", "16 km · ca. 20 Min."], ["Velbert", "velbert.html", "pin", "18 km · ca. 20 Min."], ["Mettmann", "mettmann.html", "pin", "20 km · ca. 25 Min."], ["Haan", "haan.html", "pin", "12 km · ca. 15 Min."], ["Alle Einsatzgebiete", "einsatzgebiete.html", "combo", "Übersicht aller Städte", "all"]];
-  const links = [["Start", "#top"], ["Leistungen", "leistungen.html", leistSub], ["Einsatzgebiete", "einsatzgebiete.html", einsatzSub], ["Ratgeber", "#ratgeber"], ["Über uns", "#ueber-uns"], ["Kontakt", "#kontakt"]];
+  const ratgeberSub = [["PV-Kosten 2026", "ratgeber-pv-kosten.html", "euro", "Preise & wann es sich rechnet"], ["PV + Wärmepumpe", "ratgeber-pv-waermepumpe.html", "flame", "Strom und Heizung kombinieren"], ["Speicher richtig wählen", "ratgeber-stromspeicher-groesse.html", "bolt", "Wie groß muss er sein?"], ["PV-Förderung 2026", "ratgeber-pv-foerderung.html", "shield", "Zuschüsse & KfW-Programme"], ["Anlagengröße planen", "ratgeber-pv-groesse.html", "search", "kWp richtig auswählen"], ["Eigenverbrauch maximieren", "ratgeber-eigenverbrauch.html", "sun", "Mehr Sonne, weniger Netz"], ["Alle Ratgeber", "ratgeber.html", "combo", "Übersicht aller Artikel", "all"]];
+  const links = [["Start", "#top"], ["Leistungen", "leistungen.html", leistSub], ["Einsatzgebiete", "einsatzgebiete.html", einsatzSub], ["Ratgeber", "ratgeber.html", ratgeberSub], ["Über uns", "#ueber-uns"], ["Kontakt", "#kontakt"]];
   return /*#__PURE__*/React.createElement("nav", {
     className: "sw-navwrap" + (scrolled ? " scrolled" : "")
   }, /*#__PURE__*/React.createElement("div", {
@@ -1195,9 +1196,12 @@ const RegionBand = () => {
 /* ── Blog / Ratgeber-Teaser ── */
 const BlogTeaser = () => {
   const posts = [
-    ["Was kostet eine Photovoltaik-Anlage 2026?", "Preise, Förderung und ab wann sich Ihre Anlage rechnet, transparent erklärt.", "Kosten", "img/leistung-pv.jpg"],
-    ["Photovoltaik und Wärmepumpe kombinieren", "Warum beides zusammen am meisten bringt und wie Sie mit eigenem Strom heizen.", "Wärmepumpe", "img/leistung-waermepumpe.png"],
-    ["Wie viel Stromspeicher brauche ich wirklich?", "Den Speicher richtig dimensionieren, damit der Sonnenstrom auch abends reicht.", "Speicher", "img/leistung-speicher.jpg"]
+    ["Was kostet eine Photovoltaik-Anlage 2026?", "Preise, Förderung und ab wann sich Ihre Anlage rechnet, transparent erklärt.", "Kosten", "img/leistung-pv.jpg", "ratgeber-pv-kosten.html"],
+    ["Photovoltaik und Wärmepumpe kombinieren", "Warum beides zusammen am meisten bringt und wie Sie mit eigenem Strom heizen.", "Wärmepumpe", "img/leistung-waermepumpe.png", "ratgeber-pv-waermepumpe.html"],
+    ["Wie viel Stromspeicher brauche ich wirklich?", "Den Speicher richtig dimensionieren, damit der Sonnenstrom auch abends reicht.", "Speicher", "img/leistung-speicher.jpg", "ratgeber-stromspeicher-groesse.html"],
+    ["Photovoltaik-Förderung 2026: Welche Zuschüsse gibt es?", "KfW, Einspeisevergütung und steuerliche Vorteile, übersichtlich für Eigenheim und Gewerbe.", "Förderung", "img/leistung-effizienz.jpg", "ratgeber-pv-foerderung.html"],
+    ["Wie groß muss meine Photovoltaik-Anlage sein?", "Verbrauch, Dachfläche und kWp richtig zusammenbringen, damit nichts verschenkt wird.", "Planung", "img/leistung-effizienz-haus.jpg", "ratgeber-pv-groesse.html"],
+    ["Eigenverbrauch maximieren: Mehr aus Ihrer PV-Anlage", "Wie Sie mit Speicher, Wärmepumpe und Steuerung mehr Sonnenstrom selbst nutzen.", "Wirtschaftlichkeit", "img/leistung-monitoring.png", "ratgeber-eigenverbrauch.html"]
   ];
   return React.createElement("section", {
     id: "ratgeber",
@@ -1214,8 +1218,8 @@ const BlogTeaser = () => {
   }, "Wissen rund um ", React.createElement("span", { style: { color: "#F5B301" } }, "Photovoltaik"))), React.createElement("div", {
     className: "grid sm:grid-cols-2 lg:grid-cols-3 gap-5"
   }, posts.map(function (post, i) {
-    var t = post[0], d = post[1], cat = post[2], img = post[3];
-    return React.createElement("a", { key: i, href: "#anfrage", className: "rg-card reveal" }, React.createElement("div", { className: "rg-inner" }, React.createElement("div", { className: "rg-imgwrap" }, React.createElement("img", { src: img, alt: t, className: "rg-img" }), React.createElement("div", { className: "rg-shade" }), React.createElement("span", { className: "rg-cat" }, cat), React.createElement("span", { className: "rg-go" }, React.createElement(Svg, { size: 18, sw: 2.4 }, ICO.arrow))), React.createElement("div", { className: "rg-body" }, React.createElement("h3", { className: "rg-title font-heading" }, t), React.createElement("p", { className: "rg-text" }, d), React.createElement("span", { className: "rg-more font-heading" }, "Weiterlesen ", React.createElement("span", { className: "rg-arr" }, React.createElement(Svg, { size: 16, sw: 2.2 }, ICO.arrow))))));
+    var t = post[0], d = post[1], cat = post[2], img = post[3], href = post[4] || "#anfrage";
+    return React.createElement("a", { key: i, href: href, className: "rg-card reveal" }, React.createElement("div", { className: "rg-inner" }, React.createElement("div", { className: "rg-imgwrap" }, React.createElement("img", { src: img, alt: t, className: "rg-img" }), React.createElement("div", { className: "rg-shade" }), React.createElement("span", { className: "rg-cat" }, cat), React.createElement("span", { className: "rg-go" }, React.createElement(Svg, { size: 18, sw: 2.4 }, ICO.arrow))), React.createElement("div", { className: "rg-body" }, React.createElement("h3", { className: "rg-title font-heading" }, t), React.createElement("p", { className: "rg-text" }, d), React.createElement("span", { className: "rg-more font-heading" }, "Weiterlesen ", React.createElement("span", { className: "rg-arr" }, React.createElement(Svg, { size: 16, sw: 2.2 }, ICO.arrow))))));
   }))));
 };
 

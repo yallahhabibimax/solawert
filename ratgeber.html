@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ratgeber rund um Photovoltaik & Wärmepumpe | SolaWert</title>
+  <meta http-equiv="Cache-Control" content="no-store">
+  <meta name="description" content="Ratgeber rund um Photovoltaik, Wärmepumpe und Stromspeicher. Übersichtlich nach Thema sortiert: Kosten, Förderung, Planung, Wirtschaftlichkeit und ehrliche Antworten aus der Praxis.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ratgeber rund um Photovoltaik & Wärmepumpe | SolaWert">
+  <meta property="og:description" content="Übersichtlich nach Thema sortiert: Kosten, Förderung, Planung, Wirtschaftlichkeit. Ehrliche Antworten aus der Praxis.">
+  <meta property="og:image" content="img/leistung-pv.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="img/leistung-pv.jpg">
+  <meta name="theme-color" content="#15181D">
+  <link rel="icon" href="img/logo.png">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="fonts/inter-latin.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="fonts/archivo-latin.woff2">
+  <link rel="stylesheet" href="tailwind.css?v=1782134154">
+  <link rel="stylesheet" href="styles.css?v=1782134154">
+  <style>
+    /* ── Hub-Hero ── */
+    .rh-hero { background:#FBF6E9; padding:9rem 1.25rem 3.5rem; position:relative; overflow:hidden; }
+    @media (min-width:768px){ .rh-hero { padding-left:2rem; padding-right:2rem; padding-bottom:4.5rem; } }
+    .rh-hero__wrap { max-width:80rem; margin:0 auto; position:relative; z-index:1; }
+    .rh-hero__crumbs { font-family:'Archivo',sans-serif; font-weight:600; font-size:13px; color:rgba(20,23,28,.5); display:flex; gap:.5rem; align-items:center; margin-bottom:1.4rem; }
+    .rh-hero__crumbs a { color:rgba(20,23,28,.5); transition:color .2s ease; }
+    .rh-hero__crumbs a:hover { color:#F5B301; }
+    .rh-hero__crumbs svg { opacity:.4; }
+    .rh-hero__pill { display:inline-flex; align-items:center; gap:.55rem; padding:.5rem 1rem; background:rgba(245,179,1,.16); border:1px solid rgba(245,179,1,.45); border-radius:999px; font-family:'Archivo',sans-serif; font-weight:800; font-size:11.5px; letter-spacing:.16em; text-transform:uppercase; color:#8A5E00; }
+    .rh-hero__pill .dot { width:7px; height:7px; border-radius:50%; background:#F5B301; }
+    .rh-hero__h1 { font-family:'Archivo',sans-serif; font-weight:900; line-height:1.02; letter-spacing:-.03em; font-size:clamp(2.6rem,6.5vw,5rem); margin:1.2rem 0 1.5rem; color:#14171C; max-width:24ch; }
+    .rh-hero__h1 .accent { color:#F5B301; }
+    .rh-hero__lead { color:#525A64; font-size:clamp(1.02rem,1.5vw,1.18rem); line-height:1.65; max-width:42rem; }
+
+    /* ── Body Grid ── */
+    .rh-body { background:#FBF6E9; padding:.5rem 1.25rem 4rem; position:relative; }
+    @media (min-width:768px){ .rh-body { padding-left:2rem; padding-right:2rem; padding-bottom:6rem; } }
+    .rh-body__wrap { max-width:80rem; margin:0 auto; display:grid; grid-template-columns:1fr; gap:2rem; align-items:start; }
+    @media (min-width:1024px){ .rh-body__wrap { grid-template-columns:300px 1fr; gap:3rem; } }
+
+    /* ── Sidebar (sticky) ── */
+    .rh-side { display:flex; flex-direction:column; gap:1.25rem; }
+    @media (min-width:1024px){ .rh-side { position:sticky; top:7rem; } }
+    .rh-search { position:relative; }
+    .rh-search input { width:100%; padding:.85rem 1rem .85rem 2.6rem; border-radius:14px; border:1px solid rgba(20,23,28,.12); background:#fff; font-family:'Inter',sans-serif; font-size:14.5px; color:#14171C; outline:none; transition:border-color .2s ease, box-shadow .2s ease; }
+    .rh-search input::placeholder { color:rgba(20,23,28,.4); }
+    .rh-search input:focus { border-color:#F5B301; box-shadow:0 0 0 3px rgba(245,179,1,.16); }
+    .rh-search svg { position:absolute; left:1rem; top:50%; transform:translateY(-50%); color:rgba(20,23,28,.4); }
+
+    .rh-topics { background:#fff; border:1px solid rgba(20,23,28,.08); border-radius:18px; padding:1.1rem 1rem 1.15rem; }
+    .rh-topics__h { font-family:'Archivo',sans-serif; font-weight:800; font-size:10.5px; letter-spacing:.2em; text-transform:uppercase; color:rgba(20,23,28,.45); padding:0 .35rem .85rem; border-bottom:1px solid rgba(20,23,28,.07); margin-bottom:.5rem; }
+    .rh-topic { display:flex; align-items:center; justify-content:space-between; padding:.6rem .8rem; border-radius:11px; font-family:'Archivo',sans-serif; font-weight:600; font-size:14.5px; color:#14171C; cursor:pointer; transition:background .15s ease, color .15s ease; border:none; background:transparent; width:100%; text-align:left; }
+    .rh-topic__count { font-size:12px; color:rgba(20,23,28,.45); font-weight:700; padding:.15rem .55rem; border-radius:999px; background:rgba(20,23,28,.05); transition:background .15s ease, color .15s ease; }
+    .rh-topic:hover { background:rgba(245,179,1,.08); color:#8A5E00; }
+    .rh-topic.is-on { background:linear-gradient(180deg,#FFDD66,#F5B301); color:#1A1402; }
+    .rh-topic.is-on .rh-topic__count { background:rgba(26,20,2,.18); color:#1A1402; }
+
+    .rh-sidecta { position:relative; overflow:hidden; padding:1.4rem 1.3rem 1.5rem; border-radius:18px; background:linear-gradient(150deg,#22262F 0%,#181B21 70%); color:#fff; border:1px solid rgba(245,179,1,.22); box-shadow:0 24px 50px -30px rgba(0,0,0,.55); }
+    .rh-sidecta::after { content:''; position:absolute; top:-50%; right:-30%; width:220px; height:220px; background:radial-gradient(circle,rgba(245,179,1,.22) 0%,transparent 70%); pointer-events:none; }
+    .rh-sidecta__eyebrow { font-family:'Archivo',sans-serif; font-weight:800; font-size:10.5px; letter-spacing:.18em; text-transform:uppercase; color:#F5B301; margin-bottom:.55rem; position:relative; }
+    .rh-sidecta__t { font-family:'Archivo',sans-serif; font-weight:900; font-size:1.15rem; line-height:1.2; margin-bottom:.45rem; position:relative; }
+    .rh-sidecta__s { font-family:'Inter',sans-serif; font-size:13px; line-height:1.5; color:rgba(255,255,255,.65); margin-bottom:1rem; position:relative; }
+    .rh-sidecta__btn { display:inline-flex; align-items:center; gap:.45rem; padding:.65rem 1.15rem; border-radius:999px; background:linear-gradient(180deg,#FFDD66,#F5B301); color:#1A1402; font-family:'Archivo',sans-serif; font-weight:800; font-size:13.5px; transition:transform .25s ease; position:relative; }
+    .rh-sidecta__btn:hover { transform:translateY(-2px); }
+
+    /* ── Featured-Card ── */
+    .rh-feat { display:block; position:relative; border-radius:24px; overflow:hidden; box-shadow:0 30px 70px -34px rgba(20,23,28,.45); transition:transform .4s cubic-bezier(.16,1,.3,1), box-shadow .4s ease; }
+    .rh-feat:hover { transform:translateY(-4px); box-shadow:0 44px 90px -36px rgba(20,23,28,.55); }
+    .rh-feat__img { width:100%; aspect-ratio:16/9; object-fit:cover; transition:transform .55s cubic-bezier(.16,1,.3,1); }
+    .rh-feat:hover .rh-feat__img { transform:scale(1.04); }
+    .rh-feat__veil { position:absolute; inset:0; background:linear-gradient(180deg,transparent 35%,rgba(15,18,22,.55) 75%,rgba(15,18,22,.92) 100%); pointer-events:none; }
+    .rh-feat__pill { position:absolute; top:1.1rem; left:1.1rem; display:inline-flex; align-items:center; gap:.45rem; padding:.42rem .85rem; border-radius:999px; background:linear-gradient(180deg,#FFDD66,#F5B301); color:#1A1402; font-family:'Archivo',sans-serif; font-weight:800; font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; }
+    .rh-feat__body { position:absolute; left:0; right:0; bottom:0; padding:1.4rem 1.5rem 1.6rem; color:#fff; }
+    @media (min-width:768px){ .rh-feat__body { padding:2rem 2.2rem 2.2rem; } }
+    .rh-feat__t { font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(1.4rem,2.6vw,2.1rem); line-height:1.12; letter-spacing:-.015em; margin-bottom:.6rem; max-width:30ch; }
+    .rh-feat__s { font-family:'Inter',sans-serif; font-size:14.5px; line-height:1.55; color:rgba(255,255,255,.78); max-width:48ch; margin-bottom:1rem; }
+    .rh-feat__more { display:inline-flex; align-items:center; gap:.4rem; font-family:'Archivo',sans-serif; font-weight:700; font-size:13.5px; color:#F5B301; }
+    .rh-feat__more svg { transition:transform .3s ease; }
+    .rh-feat:hover .rh-feat__more svg { transform:translateX(4px); }
+
+    /* ── Artikel-Grid ── */
+    .rh-grid { display:grid; grid-template-columns:1fr; gap:1.25rem; margin-top:1.5rem; }
+    @media (min-width:640px){ .rh-grid { grid-template-columns:repeat(2,1fr); } }
+    @media (min-width:1280px){ .rh-grid { gap:1.5rem; } }
+
+    .rh-card { display:flex; flex-direction:column; background:#fff; border:1px solid rgba(20,23,28,.07); border-radius:20px; overflow:hidden; box-shadow:0 18px 40px -28px rgba(20,23,28,.3); transition:transform .35s cubic-bezier(.16,1,.3,1), box-shadow .35s ease, border-color .35s ease; }
+    .rh-card:hover { transform:translateY(-4px); border-color:rgba(245,179,1,.4); box-shadow:0 30px 60px -28px rgba(20,23,28,.4); }
+    .rh-card__imgwrap { position:relative; aspect-ratio:16/9; overflow:hidden; }
+    .rh-card__img { width:100%; height:100%; object-fit:cover; transition:transform .5s cubic-bezier(.16,1,.3,1); }
+    .rh-card:hover .rh-card__img { transform:scale(1.05); }
+    .rh-card__cat { position:absolute; top:.9rem; left:.9rem; padding:.32rem .7rem; border-radius:999px; background:rgba(255,255,255,.92); backdrop-filter:blur(8px); font-family:'Archivo',sans-serif; font-weight:800; font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:#8A5E00; }
+    .rh-card__body { padding:1.1rem 1.2rem 1.3rem; flex:1; display:flex; flex-direction:column; }
+    .rh-card__t { font-family:'Archivo',sans-serif; font-weight:900; font-size:1.12rem; line-height:1.2; color:#14171C; letter-spacing:-.01em; margin-bottom:.55rem; }
+    .rh-card__s { font-family:'Inter',sans-serif; font-size:13.5px; line-height:1.55; color:#525A64; margin-bottom:.95rem; flex:1; }
+    .rh-card__more { display:inline-flex; align-items:center; gap:.35rem; font-family:'Archivo',sans-serif; font-weight:700; font-size:13px; color:#8A5E00; }
+    .rh-card:hover .rh-card__more { color:#F5B301; }
+    .rh-card__more svg { transition:transform .3s ease; }
+    .rh-card:hover .rh-card__more svg { transform:translateX(3px); }
+
+    .rh-empty { display:none; padding:2rem; border-radius:16px; background:rgba(255,255,255,.7); border:1px dashed rgba(20,23,28,.18); text-align:center; color:rgba(20,23,28,.55); font-family:'Inter',sans-serif; font-size:14.5px; margin-top:1rem; }
+    .rh-empty.is-on { display:block; }
+
+    /* ── Fullscreen CTA ── */
+    .rh-fullcta { position:relative; overflow:hidden; padding:clamp(3rem,7vw,5.5rem) 1.25rem; background:linear-gradient(150deg,#22262F 0%,#181B21 70%); color:#fff; text-align:center; }
+    @media (min-width:768px){ .rh-fullcta { padding-left:2rem; padding-right:2rem; } }
+    .rh-fullcta__glow1 { position:absolute; top:-30%; left:-10%; width:520px; height:520px; background:radial-gradient(circle,rgba(245,179,1,.16) 0%,transparent 60%); pointer-events:none; }
+    .rh-fullcta__glow2 { position:absolute; bottom:-40%; right:-15%; width:600px; height:600px; background:radial-gradient(circle,rgba(245,179,1,.12) 0%,transparent 60%); pointer-events:none; }
+    .rh-fullcta__wrap { max-width:48rem; margin:0 auto; position:relative; }
+    .rh-fullcta__eyebrow { display:inline-flex; align-items:center; gap:.55rem; font-family:'Archivo',sans-serif; font-weight:800; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#F5B301; margin-bottom:1.1rem; }
+    .rh-fullcta__eyebrow .dot { width:7px; height:7px; border-radius:50%; background:#F5B301; }
+    .rh-fullcta__h { font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(1.9rem,4.5vw,3.2rem); line-height:1.08; letter-spacing:-.02em; margin-bottom:1rem; }
+    .rh-fullcta__h .accent { color:#F5B301; }
+    .rh-fullcta__s { font-family:'Inter',sans-serif; color:rgba(255,255,255,.7); font-size:clamp(1rem,1.4vw,1.13rem); line-height:1.6; max-width:38rem; margin:0 auto 1.8rem; }
+    .rh-fullcta__btns { display:flex; flex-wrap:wrap; justify-content:center; gap:.75rem; }
+    .rh-fullcta__primary { display:inline-flex; align-items:center; gap:.6rem; padding:1rem 1.8rem; border-radius:999px; background:linear-gradient(180deg,#FFDD66,#F5B301); color:#1A1402; font-family:'Archivo',sans-serif; font-weight:800; font-size:1rem; transition:transform .25s ease, box-shadow .25s ease; box-shadow:0 14px 30px -10px rgba(245,179,1,.5); }
+    .rh-fullcta__primary:hover { transform:translateY(-2px); box-shadow:0 20px 40px -10px rgba(245,179,1,.7); }
+    .rh-fullcta__ghost { display:inline-flex; align-items:center; gap:.6rem; padding:1rem 1.7rem; border-radius:999px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.2); color:#fff; font-family:'Archivo',sans-serif; font-weight:700; font-size:1rem; transition:background .25s ease, border-color .25s ease; }
+    .rh-fullcta__ghost:hover { background:rgba(255,255,255,.15); border-color:rgba(255,255,255,.35); }
+  </style>
+</head>
+<body class="font-body antialiased overflow-x-hidden" style="background:#FBF6E9;color:#14171C">
+
+  <div data-kaefer="nav"></div>
+
+  <!-- HERO -->
+  <section class="rh-hero">
+    <div class="rh-hero__wrap">
+      <div class="rh-hero__crumbs">
+        <a href="index.html">Start</a>
+        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m9 6 6 6-6 6"/></svg>
+        <span>Ratgeber</span>
+      </div>
+      <span class="rh-hero__pill"><span class="dot"></span>SolaWert Ratgeber</span>
+      <h1 class="rh-hero__h1">Ratgeber rund um <span class="accent">Photovoltaik & Wärmepumpe</span></h1>
+      <p class="rh-hero__lead">Übersichtlich nach Thema sortiert: Kosten, Förderung, Planung, Wirtschaftlichkeit. Ehrliche Antworten aus der Praxis, klar erklärt für Eigenheim und Gewerbe.</p>
+    </div>
+  </section>
+
+  <!-- BODY (Sidebar + Articles) -->
+  <section class="rh-body">
+    <div class="rh-body__wrap">
+
+      <!-- SIDEBAR -->
+      <aside class="rh-side">
+        <div class="rh-search">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6"/><path d="m20 20-3.2-3.2"/></svg>
+          <input type="text" placeholder="Ratgeber durchsuchen ..." data-rh-search>
+        </div>
+
+        <nav class="rh-topics" aria-label="Themen">
+          <h4 class="rh-topics__h">Themen</h4>
+          <button class="rh-topic is-on" data-rh-filter="all">Alle Beiträge <span class="rh-topic__count">6</span></button>
+          <button class="rh-topic" data-rh-filter="Kosten">Kosten <span class="rh-topic__count">1</span></button>
+          <button class="rh-topic" data-rh-filter="Förderung">Förderung <span class="rh-topic__count">1</span></button>
+          <button class="rh-topic" data-rh-filter="Wärmepumpe">Wärmepumpe <span class="rh-topic__count">1</span></button>
+          <button class="rh-topic" data-rh-filter="Speicher">Speicher <span class="rh-topic__count">1</span></button>
+          <button class="rh-topic" data-rh-filter="Planung">Planung <span class="rh-topic__count">1</span></button>
+          <button class="rh-topic" data-rh-filter="Wirtschaftlichkeit">Wirtschaftlichkeit <span class="rh-topic__count">1</span></button>
+        </nav>
+
+        <div class="rh-sidecta">
+          <div class="rh-sidecta__eyebrow">Unsicher?</div>
+          <div class="rh-sidecta__t">Wir beraten Sie kostenlos.</div>
+          <p class="rh-sidecta__s">Lieber direkt mit jemandem sprechen? Ein kurzer Anruf klärt mehr als zehn Artikel.</p>
+          <a href="index.html#kontakt" class="rh-sidecta__btn">Beratung anfragen <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        </div>
+      </aside>
+
+      <!-- ARTICLES -->
+      <div class="rh-articles">
+
+        <!-- Featured -->
+        <a href="ratgeber-pv-kosten.html" class="rh-feat" data-rh-card data-cat="Kosten">
+          <img class="rh-feat__img" src="img/leistung-pv.jpg" alt="Was kostet eine Photovoltaik-Anlage 2026?">
+          <div class="rh-feat__veil"></div>
+          <span class="rh-feat__pill">Empfohlen · Kosten</span>
+          <div class="rh-feat__body">
+            <h2 class="rh-feat__t">Was kostet eine Photovoltaik-Anlage 2026?</h2>
+            <p class="rh-feat__s">Preise, Förderung und ab wann sich Ihre Anlage rechnet, transparent für Eigenheim und Gewerbe erklärt.</p>
+            <span class="rh-feat__more">Artikel lesen <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+          </div>
+        </a>
+
+        <div class="rh-grid">
+
+          <a href="ratgeber-pv-waermepumpe.html" class="rh-card" data-rh-card data-cat="Wärmepumpe">
+            <div class="rh-card__imgwrap">
+              <img class="rh-card__img" src="img/leistung-waermepumpe.png" alt="Photovoltaik und Wärmepumpe kombinieren">
+              <span class="rh-card__cat">Wärmepumpe</span>
+            </div>
+            <div class="rh-card__body">
+              <h3 class="rh-card__t">Photovoltaik und Wärmepumpe kombinieren</h3>
+              <p class="rh-card__s">Warum beides zusammen am meisten bringt und wie Sie mit eigenem Strom heizen.</p>
+              <span class="rh-card__more">Weiterlesen <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+            </div>
+          </a>
+
+          <a href="ratgeber-stromspeicher-groesse.html" class="rh-card" data-rh-card data-cat="Speicher">
+            <div class="rh-card__imgwrap">
+              <img class="rh-card__img" src="img/leistung-speicher.jpg" alt="Wie viel Stromspeicher brauche ich wirklich?">
+              <span class="rh-card__cat">Speicher</span>
+            </div>
+            <div class="rh-card__body">
+              <h3 class="rh-card__t">Wie viel Stromspeicher brauche ich wirklich?</h3>
+              <p class="rh-card__s">Den Speicher richtig dimensionieren, damit der Sonnenstrom auch abends reicht.</p>
+              <span class="rh-card__more">Weiterlesen <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+            </div>
+          </a>
+
+          <a href="ratgeber-pv-foerderung.html" class="rh-card" data-rh-card data-cat="Förderung">
+            <div class="rh-card__imgwrap">
+              <img class="rh-card__img" src="img/leistung-effizienz.jpg" alt="Photovoltaik-Förderung 2026">
+              <span class="rh-card__cat">Förderung</span>
+            </div>
+            <div class="rh-card__body">
+              <h3 class="rh-card__t">Photovoltaik-Förderung 2026: Welche Zuschüsse gibt es?</h3>
+              <p class="rh-card__s">KfW, Einspeisevergütung und steuerliche Vorteile, übersichtlich für Eigenheim und Gewerbe.</p>
+              <span class="rh-card__more">Weiterlesen <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+            </div>
+          </a>
+
+          <a href="ratgeber-pv-groesse.html" class="rh-card" data-rh-card data-cat="Planung">
+            <div class="rh-card__imgwrap">
+              <img class="rh-card__img" src="img/leistung-effizienz-haus.jpg" alt="Wie groß muss meine Photovoltaik-Anlage sein?">
+              <span class="rh-card__cat">Planung</span>
+            </div>
+            <div class="rh-card__body">
+              <h3 class="rh-card__t">Wie groß muss meine Photovoltaik-Anlage sein?</h3>
+              <p class="rh-card__s">Verbrauch, Dachfläche und kWp richtig zusammenbringen, damit nichts verschenkt wird.</p>
+              <span class="rh-card__more">Weiterlesen <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+            </div>
+          </a>
+
+          <a href="ratgeber-eigenverbrauch.html" class="rh-card" data-rh-card data-cat="Wirtschaftlichkeit">
+            <div class="rh-card__imgwrap">
+              <img class="rh-card__img" src="img/leistung-monitoring.png" alt="Eigenverbrauch maximieren">
+              <span class="rh-card__cat">Wirtschaftlichkeit</span>
+            </div>
+            <div class="rh-card__body">
+              <h3 class="rh-card__t">Eigenverbrauch maximieren: Mehr aus Ihrer PV-Anlage</h3>
+              <p class="rh-card__s">Wie Sie mit Speicher, Wärmepumpe und Steuerung mehr Sonnenstrom selbst nutzen.</p>
+              <span class="rh-card__more">Weiterlesen <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+            </div>
+          </a>
+
+        </div>
+
+        <div class="rh-empty" data-rh-empty>Keine Ratgeber-Artikel gefunden. Probieren Sie einen anderen Suchbegriff oder wählen Sie ein anderes Thema.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FULLSCREEN CTA -->
+  <section class="rh-fullcta">
+    <div class="rh-fullcta__glow1"></div>
+    <div class="rh-fullcta__glow2"></div>
+    <div class="rh-fullcta__wrap">
+      <span class="rh-fullcta__eyebrow"><span class="dot"></span>Persönliche Beratung</span>
+      <h2 class="rh-fullcta__h">Ihre Frage steht nicht im <span class="accent">Ratgeber</span>?</h2>
+      <p class="rh-fullcta__s">Wir nehmen uns Zeit für Ihr Projekt. Kostenlos, unverbindlich und mit ehrlicher Einschätzung, ob sich eine Anlage für Ihr Dach wirklich lohnt.</p>
+      <div class="rh-fullcta__btns">
+        <a href="index.html#kontakt" class="rh-fullcta__primary">Kostenloses Angebot anfragen <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        <a href="tel:+4915205999900" class="rh-fullcta__ghost"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>0152 5999900</a>
+      </div>
+    </div>
+  </section>
+
+  <div data-leadquiz></div>
+  <div data-kaefer="footer"></div>
+
+  <script>
+    (function(){
+      var topics = document.querySelectorAll('[data-rh-filter]');
+      var cards  = document.querySelectorAll('[data-rh-card]');
+      var search = document.querySelector('[data-rh-search]');
+      var empty  = document.querySelector('[data-rh-empty]');
+      var activeFilter = 'all';
+      var q = '';
+
+      function norm(s){ return (s||'').toLowerCase().replace(/[äöüß]/g, function(c){ return {ä:'a',ö:'o',ü:'u',ß:'ss'}[c]; }); }
+
+      function apply(){
+        var anyVisible = false;
+        cards.forEach(function(c){
+          var cat = c.getAttribute('data-cat') || '';
+          var txt = norm(c.innerText);
+          var passCat = (activeFilter === 'all' || cat === activeFilter);
+          var passQ = (!q || txt.indexOf(q) !== -1);
+          var on = passCat && passQ;
+          c.style.display = on ? '' : 'none';
+          if (on) anyVisible = true;
+        });
+        if (empty) empty.classList.toggle('is-on', !anyVisible);
+      }
+
+      topics.forEach(function(b){
+        b.addEventListener('click', function(){
+          topics.forEach(function(x){ x.classList.remove('is-on'); });
+          b.classList.add('is-on');
+          activeFilter = b.getAttribute('data-rh-filter');
+          apply();
+        });
+      });
+
+      if (search) search.addEventListener('input', function(){ q = norm(search.value.trim()); apply(); });
+    })();
+  </script>
+
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="leadquiz.js?v=1782134154"></script>
+  <script src="partials.js?v=1782134154"></script>
+</body>
+</html>
