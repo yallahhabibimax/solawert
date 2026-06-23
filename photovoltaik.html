@@ -268,36 +268,64 @@
   <!-- LEAD-FORMULAR (unter Ablauf) -->
   <div id="anfrage" data-leadquiz></div>
 
-  <!-- FAQ (vorletzte Section) -->
-  <section class="st-faq">
-    <div class="st-faq__glow"></div>
-    <div class="st-faq__wrap">
-      <div>
-        <div class="st-faq__eyebrow">FAQ</div>
-        <h2 class="st-faq__h2">Häufige Fragen zur Photovoltaik</h2>
-        <p class="st-faq__lead">Noch offene Fragen zu Ihrer PV-Anlage? Rufen Sie an, wir beraten Sie gern.</p>
-        <a href="tel:+4915205999900" class="st-faq__phone"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>0152 5999900</a>
+  <!-- FAQ (Homepage-Stil: numerierter Split-Layout) -->
+  <section id="faq" class="relative px-5 md:px-8 py-12 md:py-16" style="background:#2A2E36">
+    <div aria-hidden="true" class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div class="absolute" style="top:-18%;left:-12%;width:640px;height:640px;background:radial-gradient(circle,rgba(245,179,1,.12) 0%,transparent 62%);"></div>
+    </div>
+    <div class="max-w-7xl mx-auto relative z-10 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div class="faq-left">
+        <h2 class="font-heading" style="color:#fff;font-weight:900;font-size:clamp(2rem,4vw,3rem);line-height:1.06;letter-spacing:-.01em;margin:0 0 1.1rem;">Häufige <span style="color:#F5B301;">Fragen</span> zur Photovoltaik</h2>
+        <p class="font-body" style="color:rgba(255,255,255,.62);font-size:1.02rem;line-height:1.6;max-width:24rem;margin-bottom:2rem;">Fünf Antworten auf die Fragen, die vor fast jedem PV-Projekt kommen. Fehlt eine? Fragen Sie uns direkt.</p>
+        <a href="#anfrage" class="faq-cta group">
+          <div style="display:flex;flex-direction:column;gap:3px;">
+            <span class="faq-cta-label">Bleibt eine Frage?</span>
+            <span class="faq-cta-title font-heading">Direkt mit uns sprechen</span>
+            <span class="faq-cta-sub font-body">Erstgespräch · unverbindlich</span>
+          </div>
+          <span class="faq-cta-arrow"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </a>
       </div>
-      <div class="st-faq__list">
-        <details class="st-faq__item">
-          <summary><span class="st-faq__q">Was kostet eine Photovoltaik-Anlage?</span><span class="st-faq__ic"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-          <div class="st-faq__a">Eine schlüsselfertige Anlage für ein Einfamilienhaus liegt typischerweise zwischen 12.000 und 22.000 €, je nach Größe, Speicher und Dachsituation. Beim Beratungstermin bekommen Sie einen schriftlichen Festpreis ohne versteckte Posten.</div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary class="faq-head">
+            <span class="faq-num font-heading">01</span>
+            <span class="faq-q font-heading">Was kostet eine Photovoltaik-Anlage?</span>
+            <span class="faq-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+          </summary>
+          <div class="faq-body font-body">Eine schlüsselfertige Anlage für ein Einfamilienhaus liegt typischerweise zwischen 12.000 und 22.000 €, je nach Größe, Speicher und Dachsituation. Beim Beratungstermin bekommen Sie einen schriftlichen Festpreis ohne versteckte Posten.</div>
         </details>
-        <details class="st-faq__item">
-          <summary><span class="st-faq__q">Wie lange dauert die Montage?</span><span class="st-faq__ic"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-          <div class="st-faq__a">Die eigentliche Montage dauert in der Regel 1 bis 3 Tage. Vom Beratungstermin bis zur fertigen Anlage rechnen Sie mit 2 bis 4 Wochen, je nach Materialverfügbarkeit und Anmeldung beim Netzbetreiber.</div>
+        <details class="faq-item">
+          <summary class="faq-head">
+            <span class="faq-num font-heading">02</span>
+            <span class="faq-q font-heading">Wie lange dauert die Montage?</span>
+            <span class="faq-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+          </summary>
+          <div class="faq-body font-body">Die eigentliche Montage dauert in der Regel 1 bis 3 Tage. Vom Beratungstermin bis zur fertigen Anlage rechnen Sie mit 2 bis 4 Wochen, je nach Materialverfügbarkeit und Anmeldung beim Netzbetreiber.</div>
         </details>
-        <details class="st-faq__item">
-          <summary><span class="st-faq__q">Wie groß muss meine PV-Anlage sein?</span><span class="st-faq__ic"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-          <div class="st-faq__a">Faustregel: 1 kWp pro 1.000 kWh Jahresverbrauch. Wer Wärmepumpe oder E-Auto plant, dimensioniert größer. Wir rechnen das beim Termin auf Ihren tatsächlichen Verbrauch durch.</div>
+        <details class="faq-item">
+          <summary class="faq-head">
+            <span class="faq-num font-heading">03</span>
+            <span class="faq-q font-heading">Wie groß muss meine PV-Anlage sein?</span>
+            <span class="faq-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+          </summary>
+          <div class="faq-body font-body">Faustregel: 1 kWp pro 1.000 kWh Jahresverbrauch. Wer Wärmepumpe oder E-Auto plant, dimensioniert größer. Wir rechnen das beim Termin auf Ihren tatsächlichen Verbrauch durch.</div>
         </details>
-        <details class="st-faq__item">
-          <summary><span class="st-faq__q">Lohnt sich Photovoltaik in NRW trotz Wetter?</span><span class="st-faq__ic"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-          <div class="st-faq__a">Ja. Der Solarertrag liegt in NRW bei rund 950 bis 1.050 kWh pro kWp installierter Leistung. Mit moderner Technik und vernünftiger Speichergröße amortisiert sich die Anlage zuverlässig.</div>
+        <details class="faq-item">
+          <summary class="faq-head">
+            <span class="faq-num font-heading">04</span>
+            <span class="faq-q font-heading">Lohnt sich Photovoltaik in NRW trotz Wetter?</span>
+            <span class="faq-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+          </summary>
+          <div class="faq-body font-body">Ja. Der Solarertrag liegt in NRW bei rund 950 bis 1.050 kWh pro kWp installierter Leistung. Mit moderner Technik und vernünftiger Speichergröße amortisiert sich die Anlage zuverlässig.</div>
         </details>
-        <details class="st-faq__item">
-          <summary><span class="st-faq__q">Brauche ich eine Baugenehmigung?</span><span class="st-faq__ic"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-          <div class="st-faq__a">In aller Regel nicht. Für die meisten Anlagen auf bestehenden Häusern genügt die Anmeldung beim Netzbetreiber und im Marktstammdatenregister. Bei Denkmalschutz oder Sonderfällen klären wir das vorher.</div>
+        <details class="faq-item">
+          <summary class="faq-head">
+            <span class="faq-num font-heading">05</span>
+            <span class="faq-q font-heading">Brauche ich eine Baugenehmigung?</span>
+            <span class="faq-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+          </summary>
+          <div class="faq-body font-body">In aller Regel nicht. Für die meisten Anlagen auf bestehenden Häusern genügt die Anmeldung beim Netzbetreiber und im Marktstammdatenregister. Bei Denkmalschutz oder Sonderfällen klären wir das vorher.</div>
         </details>
       </div>
     </div>
