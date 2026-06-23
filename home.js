@@ -1266,21 +1266,16 @@ const About = () => /*#__PURE__*/React.createElement("section", {
 }, /*#__PURE__*/React.createElement("p", null, "Bei SW Photovoltaik entscheiden Effizienz und Wirtschaftlichkeit über jede Anlage. Inhaber Gegam Sargsian und sein Team planen so, dass aus Ihrem Dach das Maximum herauskommt, statt einfach Standard zu verbauen. Vorkasse gibt es bei uns nicht: Sie zahlen erst, wenn die Anlage läuft und wir Ihnen die volle Funktion vorgeführt haben."), /*#__PURE__*/React.createElement("p", null, "Drei Dinge machen bei uns den Unterschied: eine sauber berechnete String-Verteilung der Module, einen passend dimensionierten Markenspeicher und ein bewusst größer dimensionierter Wechselrichter mit Reserve für die Zukunft. Und während die meisten nach der Montage verschwinden, nehmen wir uns danach rund eine Woche Zeit und stellen die Anlage gemeinsam mit Ihnen auf Ihren Verbrauch ein.")), /*#__PURE__*/React.createElement("div", {
   className: "flex items-center gap-4 mt-7 p-4 rounded-2xl bg-white border border-black/5"
 }, /*#__PURE__*/React.createElement("img", {
-  src: "img/portrait.jpg",
-  alt: "Gegam Sargsian",
-  className: "w-14 h-14 rounded-full object-cover object-[center_20%]"
-}), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+  src: "img/logo-sw-dark.png",
+  alt: "SW Photovoltaik & Solar Wuppertal",
+  className: "h-12 w-auto"
+}), /*#__PURE__*/React.createElement("div", {
+  className: "ml-auto text-right"
+}, /*#__PURE__*/React.createElement("div", {
   className: "font-heading font-bold text-content"
 }, "Gegam Sargsian"), /*#__PURE__*/React.createElement("div", {
   className: "text-sm text-content-secondary"
-}, "Inhaber")), /*#__PURE__*/React.createElement("img", {
-  src: "img/_blank.png",
-  alt: "",
-  className: "h-10 w-auto ml-auto",
-  onError: e => {
-    e.target.style.display = 'none';
-  }
-})), /*#__PURE__*/React.createElement("div", {
+}, "Inhaber"))), /*#__PURE__*/React.createElement("div", {
   className: "grid grid-cols-3 gap-4 mt-7",
   style: { background: "rgba(255,255,255,0.6)", backdropFilter: "blur(16px) saturate(1.15)", WebkitBackdropFilter: "blur(16px) saturate(1.15)", border: "1px solid rgba(20,23,28,0.09)", borderRadius: "20px", padding: "1.3rem 1.6rem", boxShadow: "0 22px 46px -28px rgba(20,23,28,0.28), inset 0 1px 0 rgba(255,255,255,0.7)" }
 }, [["30 Jahre", "Garantie auf Module"], ["60 %", "mehr Speicher"], ["0 €", "Anzahlung"]].map(([n, l], i) => /*#__PURE__*/React.createElement("div", {
