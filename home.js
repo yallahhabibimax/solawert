@@ -1262,7 +1262,7 @@ const About = () => /*#__PURE__*/React.createElement("section", {
 
 /* ── Values ── */
 const Values = () => {
-  const vals = [{"ico": ICO.search, "t": "Effizienz zuerst", "d": "Mit optimierter Planung, exakter String-Verteilung und dem richtigen Speicher holen wir das Maximum aus jedem Dach. Wirtschaftlichkeit steht bei uns an erster Stelle."}, {"ico": ICO.euro, "t": "Ehrliche Preise", "d": "Faire Festpreise und keine versteckten Posten. Den Preis legen wir vorab fest, damit Sie von Anfang an genau wissen, woran Sie sind."}, {"ico": ICO.users, "t": "Betreuung statt Abschied", "d": "Nach der Montage sind wir nicht einfach weg. Eine Woche lang optimieren wir die Einstellungen gemeinsam mit Ihnen, bis wirklich alles passt."}];
+  const vals = [{"ico": ICO.search, "t": "Effizienz zuerst", "d": "Mit optimierter Planung und dem richtigen Speicher holen wir das Maximum aus jedem Dach. Wirtschaftlichkeit steht bei uns an erster Stelle."}, {"ico": ICO.euro, "t": "Ehrliche Preise", "d": "Faire Festpreise, keine versteckten Posten. Den Preis legen wir vorab schwarz auf weiß fest, damit Sie von Anfang an wissen, woran Sie sind."}, {"ico": ICO.users, "t": "Betreuung statt Abschied", "d": "Nach der Montage sind wir nicht weg. Eine Woche lang optimieren wir die Einstellungen mit Ihnen, bis wirklich alles perfekt sitzt."}];
   return /*#__PURE__*/React.createElement("section", {
     className: "py-20 md:py-28 px-5 md:px-8 text-white relative overflow-hidden",
     style: { background: "#181B21" }
