@@ -136,7 +136,7 @@
         '<div class="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 text-sm text-white">' +
           '<div>© ' + (new Date().getFullYear()) + ' SW Photovoltaik · Gegam Sargsian · Inhaber</div>' +
           '<a href="https://pstudio.io" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.6rem;opacity:.85;transition:opacity .25s ease" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.85"><span class="font-heading" style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.4)">Umgesetzt von</span><img src="img/pstudio-partner.webp?v=2" alt="PStudio" style="height:34px;width:auto;display:block"></a>' +
-          '<div class="flex items-center gap-5"><a href="impressum" class="hover:text-brand">Impressum</a><a href="datenschutz" class="hover:text-brand">Datenschutz</a></div>' +
+          '<div class="flex items-center gap-5"><a href="impressum.html" class="hover:text-brand">Impressum</a><a href="datenschutz.html" class="hover:text-brand">Datenschutz</a></div>' +
         '</div>' +
       '</div>' +
     '</footer>';
@@ -224,7 +224,7 @@
         + '<div><span class="flex items-center gap-1.5 text-[12px] font-heading font-semibold text-content-secondary mb-2" style="color:#8A929C">'+svg('clock',14)+' Am besten erreichbar (optional)</span><div class="flex flex-wrap gap-2">'
         + ['Morgens','Mittags','Abends','Ganztags'].map(function(t){return '<button type="button" data-reach="'+t+'" class="px-3.5 py-1.5 rounded-full border text-[12.5px] font-heading font-semibold transition-all '+(data.reachable===t?'choice-active text-content':'border-black/10 text-content-secondary hover:border-brand')+'">'+t+'</button>';}).join('')
         + '</div></div>'
-        + '<label class="flex items-start gap-2.5 text-[12.5px] text-content-secondary cursor-pointer pt-1"><input data-f="privacy" type="checkbox" '+(data.privacy?'checked':'')+' class="mt-0.5 w-4 h-4 accent-[#41a636] shrink-0"><span>Ich habe die <a href="datenschutz" target="_blank" rel="noopener" class="text-brand-deep underline hover:text-brand">Datenschutzbestimmungen</a> gelesen und stimme der Verarbeitung meiner Daten zu. *</span></label>'
+        + '<label class="flex items-start gap-2.5 text-[12.5px] text-content-secondary cursor-pointer pt-1"><input data-f="privacy" type="checkbox" '+(data.privacy?'checked':'')+' class="mt-0.5 w-4 h-4 accent-[#41a636] shrink-0"><span>Ich habe die <a href="datenschutz.html" target="_blank" rel="noopener" class="text-brand-deep underline hover:text-brand">Datenschutzbestimmungen</a> gelesen und stimme der Verarbeitung meiner Daten zu. *</span></label>'
         + '</div></div>';
     }
 
