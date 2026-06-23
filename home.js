@@ -177,7 +177,7 @@ const LeadQuiz = () => {
       { ico: ICO.flame, t: "Wärmepumpe", d: "Effizient heizen mit Umweltwärme. Niedrige Heizkosten, ideal kombiniert mit dem eigenen Solarstrom.", b: ["Bis zu 75 % weniger Heizkosten", "Staatlich förderfähig", "Heizen mit eigenem Strom"] },
       { ico: ICO.combo, t: "Beides / Komplettlösung", d: "Photovoltaik, Speicher und Wärmepumpe perfekt aufeinander abgestimmt, alles aus einer Hand.", b: ["Maximale Unabhängigkeit", "Ein Ansprechpartner", "Alles abgestimmt"] } ] },
     { key: "gebaeude", label: "Gebäude", q: ["Um was für ein ", "Gebäude", " geht es?"], hint: "Wählen Sie Ihren Gebäudetyp. Blättern Sie mit Zurück / Vor.", opts: [
-      { ico: ICO.home, t: "Einfamilienhaus", d: "Das eigene Dach optimal ausnutzen, von der ersten Planung bis zur fertigen Anlage.", b: ["Ideale Dachnutzung", "Schlüsselfertig montiert", "In 1 bis 3 Tagen"] },
+      { ico: ICO.home, t: "Einfamilienhaus", d: "Das eigene Dach optimal ausnutzen, von der ersten Planung bis zur fertigen Anlage.", b: ["Ideale Dachnutzung", "Schlüsselfertig montiert", "Zügig montiert"] },
       { ico: ICO.building, t: "Mehrfamilienhaus", d: "Sauberer Strom für mehrere Parteien, sinnvoll geplant und sauber umgesetzt.", b: ["Für mehrere Parteien", "Hohe Eigenverbrauchsquote", "Wirtschaftlich geplant"] },
       { ico: ICO.warehouse, t: "Gewerbe & Halle", d: "Große Dachflächen wirtschaftlich nutzen und die Energiekosten im Betrieb senken.", b: ["Große Flächen genutzt", "Strom, wenn er gebraucht wird", "Spürbar weniger Kosten"] } ] },
     { key: "eigentum", label: "Eigentum", q: ["Wie sind die ", "Eigentums", "verhältnisse?"], hint: "Wählen Sie aus. Blättern Sie mit Zurück / Vor.", opts: [
@@ -193,7 +193,7 @@ const LeadQuiz = () => {
           { ico: ICO.euro, t: "100 bis 200 €/Monat", d: "In diesem Bereich holen Sie mit eigener PV und Speicher das meiste heraus.", b: ["Hohes Sparpotenzial", "Mehr Speicher inklusive", "Schnelle Amortisation"] },
           { ico: ICO.euro, t: "Über 200 €/Monat", d: "Hoher Verbrauch heißt hohes Sparpotenzial. Hier rechnet sich eine Anlage besonders.", b: ["Maximale Ersparnis", "Große Anlage sinnvoll", "Schnellste Amortisation"] } ] },
     { key: "zeitpunkt", label: "Zeitpunkt", q: ["Wann ", "planen", " Sie die Umsetzung?"], hint: "Wählen Sie Ihren Zeitrahmen. Blättern Sie mit Zurück / Vor.", opts: [
-      { ico: ICO.bolt, t: "So schnell wie möglich", d: "Wir terminieren Ihre Baustelle in der Regel innerhalb weniger Wochen.", b: ["Schneller Baubeginn", "Termintreu", "Montage in 1 bis 3 Tagen"] },
+      { ico: ICO.bolt, t: "So schnell wie möglich", d: "Wir terminieren Ihre Baustelle in der Regel innerhalb weniger Wochen.", b: ["Schneller Baubeginn", "Termintreu", "Zügige Montage"] },
       { ico: ICO.clock, t: "In 3 bis 6 Monaten", d: "Genug Zeit für eine durchdachte Planung. Wir begleiten Sie von Anfang an.", b: ["Durchdachte Planung", "Fester Festpreis", "Alles aus einer Hand"] },
       { ico: ICO.search, t: "Erstmal nur informieren", d: "Völlig in Ordnung. Sie bekommen eine ehrliche Einschätzung, ganz unverbindlich.", b: ["Unverbindlich", "Ehrliche Einschätzung", "Kein Verkaufsdruck"] } ] },
     { key: "plz", label: "PLZ", q: ["Wie lautet Ihre ", "Postleitzahl", "?"], hint: "Wir prüfen, ob wir in Ihrer Region tätig sind.", type: "plz" },
@@ -254,7 +254,7 @@ const LeadQuiz = () => {
       h("div", { className: "nq-head" },
         h("div", { className: "nq-eyebrow" }, h("span", { className: "nq-dot" }), "Kostenlos & unverbindlich"),
         h("h2", { className: "nq-title font-heading" }, "Ihre Solareinschätzung in", h("br", null), h("span", null, "2 Minuten")),
-        h("p", { className: "nq-lead" }, "Ein paar kurze Fragen – ehrliche Einschätzung, fairer Festpreis.")),
+        h("p", { className: "nq-lead" }, "Ein paar kurze Fragen, eine ehrliche Einschätzung und am Ende ein fairer Festpreis ohne Kleingedrucktes.")),
       main,
       h("div", { className: "nq-trust" }, [["check", "100% kostenlos"], ["shield", "DSGVO-konform"], ["clock", "Antwort in 24 h"], ["euro", "Faire Festpreise"]].map(function (it, i) { return h("span", { key: i, className: "nq-trust__i" }, h("span", { className: "nq-trust__ic" }, h(Svg, { size: 15, sw: 2 }, ICO[it[0]])), it[1]); }))));
 };
@@ -609,7 +609,7 @@ const Hero = () => {
 
 /* ── Marquee ── */
 const Marquee = () => {
-  const items = ["Faire Festpreise", "Mehr Speicher zum gleichen Preis", "Photovoltaik & Wärmepumpe", "30 Jahre Garantie auf Module", "Montage in 1 bis 3 Tagen", "Eine Woche Nachoptimierung", "Schlüsselfertig aus einer Hand", "In ganz NRW im Einsatz"];
+  const items = ["Faire Festpreise", "Mehr Speicher zum gleichen Preis", "Photovoltaik & Wärmepumpe", "30 Jahre Garantie auf Module", "Zügige Montage", "Eine Woche Nachoptimierung", "Schlüsselfertig aus einer Hand", "In ganz NRW im Einsatz"];
   const row = [...items, ...items];
   return /*#__PURE__*/React.createElement("div", {
     className: "bg-ink py-4 border-y border-white/5"
@@ -679,7 +679,7 @@ const WerWirSind = () => {
   }, {
     ico: ICO.check,
     title: "Schlüsselfertige Montage",
-    desc: "Von der Anfrage bis zur Inbetriebnahme in meist nur 1 bis 3 Tagen."
+    desc: "Von der Anfrage bis zur Inbetriebnahme zügig erledigt."
   }, {
     ico: ICO.euro,
     title: "Zahlung nach Abnahme",
@@ -779,18 +779,18 @@ const WerWirSind = () => {
 const SonneSlider = () => {
   const slides = [{
     img: "img/leistung-pv.jpg?v=1782000016",
-    name: "Photovoltaik schlüsselfertig",
+    name: "Photovoltaik aus einer Hand",
     tag: "Privat & Gewerbe",
     desc: "Komplette PV-Anlage für Ihr Dach, von der Planung über die Montage bis zur Anmeldung. Am Ende nutzen Sie nur noch Ihren eigenen Strom.",
     foot: "Zum Festpreis",
     sub: "Zahlung nach Abnahme"
   }, {
     img: "img/leistung-waermepumpe.png?v=1782000016",
-    name: "Wärmepumpe schlüsselfertig",
+    name: "Wärmepumpe komplett installiert",
     tag: "Privat & Gewerbe",
     desc: "Moderne Wärmepumpen, komplett geplant und installiert. Heizung und Photovoltaik sinnvoll kombiniert, damit Sie mit eigenem Strom günstig heizen.",
-    foot: "Zum Festpreis",
-    sub: "Zahlung nach Abnahme"
+    foot: "Bis 70 %",
+    sub: "Förderung möglich"
   }, {
     img: "img/leistung-speicher2.png?v=1782000018",
     name: "Stromspeicher mit mehr Kapazität",
@@ -959,12 +959,12 @@ const Segments = () => {
     className: "seg-amp"
   }, "&"), " Geschäftskunden")), /*#__PURE__*/React.createElement("div", {
     className: "seg-grid reveal"
-  }, card(ICO.home, "Für Privatkunden", "Machen Sie Ihren eigenen Strom, heizen Sie mit der Wärmepumpe und werden Sie unabhängiger von steigenden Preisen.", ["Eigenheim, Doppelhaus & Neubau", "Photovoltaik, Speicher & Wärmepumpe", "Oft mehr Speicher zum gleichen Preis"], "img/privatkunden.jpg?v=1782170016"), card(ICO.building, "Für Geschäftskunden", "Senken Sie Ihre Energiekosten und nutzen Sie Ihre Dachflächen wirtschaftlich aus.", ["Gewerbe- & Industriedächer", "Hohe Eigenverbrauchsquote", "Wirtschaftlich durchgerechnet"], "img/firmendach.jpg?v=1782170099"))));
+  }, card(ICO.home, "Für Privatkunden", "Machen Sie Ihren eigenen Strom, heizen Sie mit der Wärmepumpe und werden Sie unabhängiger von steigenden Preisen.", ["Eigenheim, Doppelhaus & Neubau", "Photovoltaik, Speicher & Wärmepumpe", "Oft mehr Speicher zum gleichen Preis"], "img/privatkunden.jpg?v=1782170016"), card(ICO.building, "Für Geschäftskunden", "Senken Sie Ihre Energiekosten, nutzen Sie Ihre Dachflächen wirtschaftlich aus und sichern Sie sich gegen steigende Strompreise ab.", ["Gewerbe- & Industriedächer", "Hohe Eigenverbrauchsquote", "Wirtschaftlich durchgerechnet"], "img/firmendach.jpg?v=1782170099"))));
 };
 
 /* ── Process ── */
 const Process = () => {
-  const steps = [{"n": "01", "ico": ICO.phone, "t": "Beratung & Dachcheck", "d": "Wir schauen uns Ihr Dach und Ihren Verbrauch an und beraten Sie unverbindlich und kostenlos zu den Möglichkeiten."}, {"n": "02", "ico": ICO.search, "t": "Effizienz-Planung & Festpreis", "d": "String-Verteilung, Speicher und Wechselrichter werden exakt berechnet. Sie erhalten ein transparentes Festpreisangebot ohne versteckte Kosten."}, {"n": "03", "ico": ICO.home, "t": "Montage in 1 bis 3 Tagen", "d": "Innerhalb von 2 bis 4 Wochen ist Ihre Baustelle terminiert. Die Montage selbst dauert je nach Anlage meist nur 1 bis 3 Tage."}, {"n": "04", "ico": ICO.shield, "t": "Inbetriebnahme & Nachoptimierung", "d": "Wir nehmen die Anlage in Betrieb und feilen eine Woche lang gemeinsam mit Ihnen an den Einstellungen. Erst danach zahlen Sie."}];
+  const steps = [{"n": "01", "ico": ICO.phone, "t": "Beratung & Dachcheck", "d": "Wir schauen uns Ihr Dach und Ihren Verbrauch an und beraten Sie unverbindlich und kostenlos zu den Möglichkeiten."}, {"n": "02", "ico": ICO.search, "t": "Effizienz-Planung & Festpreis", "d": "String-Verteilung, Speicher und Wechselrichter werden exakt berechnet. Sie erhalten ein transparentes Festpreisangebot ohne versteckte Kosten."}, {"n": "03", "ico": ICO.home, "t": "Montage zügig erledigt", "d": "Innerhalb von 2 bis 4 Wochen ist Ihre Baustelle terminiert. Die Montage selbst läuft zügig, je nach Größe und Dachform unterschiedlich lang."}, {"n": "04", "ico": ICO.shield, "t": "Inbetriebnahme & Nachoptimierung", "d": "Wir nehmen die Anlage in Betrieb und feilen eine Woche lang gemeinsam mit Ihnen an den Einstellungen. Erst danach zahlen Sie."}];
   return /*#__PURE__*/React.createElement("section", {
     id: "ablauf",
     className: "py-20 md:py-28 px-5 md:px-8 bg-ink text-white relative overflow-hidden"
@@ -1013,7 +1013,7 @@ const Process = () => {
 const CaseStudies = () => {
   const cases = [{
     img: "img/cases/efh-pv.jpg", tag: "Einfamilienhaus", ort: "Wuppertal", t: "Einfamilienhaus in Wuppertal",
-    p: "Die Stromrechnung stieg Jahr für Jahr, während das große Satteldach ungenutzt in der Sonne lag.",
+    p: "Die Stromrechnung stieg Jahr für Jahr, während das große Satteldach ungenutzt in der Sonne lag und keinen Beitrag zum Haushalt leistete.",
     l: "Eine schlüsselfertige Anlage auf der Sonnenseite. Heute kommt der Großteil des Tagesstroms vom eigenen Dach."
   }, {
     img: "img/cases/komplett-pv.jpg", tag: "Schlüsselfertig", ort: "Remscheid", t: "Alles aus einer Hand in Remscheid",
@@ -1372,7 +1372,7 @@ const Testimonials = () => {
 
 /* ── FAQ ── */
 const FAQ = () => {
-  const faqs = [{"q": "Bekomme ich vorab einen festen Preis?", "a": "Ja. Nach der Beratung erhalten Sie einen klaren Festpreis, schwarz auf weiß. Keine versteckten Posten und keine Nachforderungen, nachdem die Anlage läuft."}, {"q": "Wie schnell bekomme ich einen Termin für den Baubeginn?", "a": "In der Regel ist jede Baustelle innerhalb von 2 bis 4 Wochen terminiert und fertig gebaut. Wir nennen Ihnen bei der Beratung einen konkreten Zeitrahmen."}, {"q": "Wie lange dauert die Montage?", "a": "Je nach Anlage und Umständen wie Wetter dauert die Montage meist nur 1 bis 3 Tage. Sie haben also nur kurz eine Baustelle am Haus."}, {"q": "Welche Garantien gibt es?", "a": "Auf die Solarmodule erhalten Sie 30 Jahre Garantie, auf Wechselrichter und Batteriespeicher jeweils 10 bis 15 Jahre. Sie sind also langfristig abgesichert."}, {"q": "Bauen Sie auch Wärmepumpen?", "a": "Ja. Wir bauen Wärmepumpen genauso schlüsselfertig wie Photovoltaik und bringen beides sinnvoll zusammen, damit Sie mit Ihrem eigenen Strom heizen."}, {"q": "Warum bekomme ich bei Ihnen mehr Speicher?", "a": "Der Speicher ist der entscheidende Effizienzfaktor einer Anlage. Viele bieten bewusst zu wenig an, um ihre Marge zu erhöhen. Wir machen das Gegenteil und geben Ihnen oft rund 60 Prozent mehr Speicher zum gleichen Preis."}, {"q": "In welchem Gebiet sind Sie tätig?", "a": "Unser Fokus liegt auf Nordrhein-Westfalen, von Wuppertal über Solingen und Remscheid bis Düsseldorf und Köln. Auf Wunsch sind wir aber in ganz Deutschland für Sie unterwegs."}];
+  const faqs = [{"q": "Bekomme ich vorab einen festen Preis?", "a": "Ja. Nach der Beratung erhalten Sie einen klaren Festpreis, schwarz auf weiß. Keine versteckten Posten und keine Nachforderungen, nachdem die Anlage läuft."}, {"q": "Wie schnell bekomme ich einen Termin für den Baubeginn?", "a": "In der Regel ist jede Baustelle innerhalb von 2 bis 4 Wochen terminiert und fertig gebaut. Wir nennen Ihnen bei der Beratung einen konkreten Zeitrahmen."}, {"q": "Wie lange dauert die Montage?", "a": "Die Dauer hängt von Anlagengröße, Dachform und Wetter ab. In der Regel arbeiten wir zügig und Sie haben nur kurz eine Baustelle am Haus. Beim Beratungstermin nennen wir Ihnen für Ihr Projekt einen konkreten Zeitrahmen."}, {"q": "Welche Garantien gibt es?", "a": "Auf die Solarmodule erhalten Sie 30 Jahre Garantie, auf Wechselrichter und Batteriespeicher jeweils 10 bis 15 Jahre. Sie sind also langfristig abgesichert."}, {"q": "Bauen Sie auch Wärmepumpen?", "a": "Ja. Wir bauen Wärmepumpen genauso schlüsselfertig wie Photovoltaik und bringen beides sinnvoll zusammen, damit Sie mit Ihrem eigenen Strom heizen."}, {"q": "Warum bekomme ich bei Ihnen mehr Speicher?", "a": "Der Speicher ist der entscheidende Effizienzfaktor einer Anlage. Viele bieten bewusst zu wenig an, um ihre Marge zu erhöhen. Wir machen das Gegenteil und geben Ihnen oft rund 60 Prozent mehr Speicher zum gleichen Preis."}, {"q": "In welchem Gebiet sind Sie tätig?", "a": "Unser Fokus liegt auf Nordrhein-Westfalen, von Wuppertal über Solingen und Remscheid bis Düsseldorf und Köln. Auf Wunsch sind wir aber in ganz Deutschland für Sie unterwegs."}];
   return React.createElement("section", {
     id: "faq",
     className: "relative px-5 md:px-8 py-12 md:py-16",
