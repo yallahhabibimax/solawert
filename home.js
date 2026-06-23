@@ -798,27 +798,6 @@ const SonneSlider = () => {
     desc: "Deutlich mehr Speicher zum gleichen Preis, exakt auf Ihren Verbrauch dimensioniert. So nutzen Sie Ihren Solarstrom auch abends und nachts.",
     foot: "+60 %",
     sub: "mehr Speicher inklusive"
-  }, {
-    img: "img/leistung-monitoring.png?v=1782000016",
-    name: "Monitoring & Feintuning",
-    tag: "Inklusive",
-    desc: "Wir überwachen Ihre Anlage und stimmen die Einstellungen auf Ihr Verbrauchsverhalten ab. So holen wir aus jeder Kilowattstunde das Maximum.",
-    foot: "1 Woche",
-    sub: "Nachoptimierung inklusive"
-  }, {
-    img: "img/leistung-effizienz-haus.jpg?v=1782000017",
-    name: "Effizienz-Planung & String-Optimierung",
-    tag: "Festpreis",
-    desc: "Spannung und Strom genau berechnet, Module optimal verteilt, Wechselrichter mit Reserve geplant. Das bringt mehr Ertrag und längere Lebensdauer.",
-    foot: "Festpreis",
-    sub: "ohne versteckte Kosten"
-  }, {
-    img: "img/leistung-inbetriebnahme.jpg?v=1782000017",
-    name: "Inbetriebnahme, Anmeldung & Wartung",
-    tag: "Rundum",
-    desc: "Wir übernehmen die komplette Anmeldung und optimieren die Anlage nach der Fertigstellung gemeinsam mit Ihnen. Auf Wunsch dauerhaft betreut.",
-    foot: "Komplett",
-    sub: "aus einer Hand"
   }];
   const W = a => "rgba(255,255,255," + a + ")";
   const row = (s, idx) => /*#__PURE__*/React.createElement("div", {
