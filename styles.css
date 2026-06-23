@@ -120,14 +120,14 @@ section[id] { scroll-margin-top: 96px; }
   opacity: 0;
   transform: translateY(42px) scale(.985);
   filter: blur(14px);
-  transition: opacity 1s cubic-bezier(.16,1,.3,1), transform 1.05s cubic-bezier(.16,1,.3,1), filter 1.05s cubic-bezier(.16,1,.3,1);
+  transition: opacity .5s cubic-bezier(.16,1,.3,1), transform .55s cubic-bezier(.16,1,.3,1), filter .55s cubic-bezier(.16,1,.3,1);
   will-change: opacity, transform, filter;
 }
 .reveal.active { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
-.reveal-left  { opacity: 0; transform: translateX(-48px); filter: blur(12px); transition: opacity 1s cubic-bezier(.16,1,.3,1), transform 1.1s cubic-bezier(.16,1,.3,1), filter 1.1s cubic-bezier(.16,1,.3,1); will-change: opacity, transform, filter; }
-.reveal-right { opacity: 0; transform: translateX(48px);  filter: blur(12px); transition: opacity 1s cubic-bezier(.16,1,.3,1), transform 1.1s cubic-bezier(.16,1,.3,1), filter 1.1s cubic-bezier(.16,1,.3,1); will-change: opacity, transform, filter; }
+.reveal-left  { opacity: 0; transform: translateX(-48px); filter: blur(12px); transition: opacity .5s cubic-bezier(.16,1,.3,1), transform .58s cubic-bezier(.16,1,.3,1), filter .58s cubic-bezier(.16,1,.3,1); will-change: opacity, transform, filter; }
+.reveal-right { opacity: 0; transform: translateX(48px);  filter: blur(12px); transition: opacity .5s cubic-bezier(.16,1,.3,1), transform .58s cubic-bezier(.16,1,.3,1), filter .58s cubic-bezier(.16,1,.3,1); will-change: opacity, transform, filter; }
 .reveal-left.active, .reveal-right.active { opacity: 1; transform: translateX(0); filter: blur(0); }
-.reveal-scale { opacity: 0; transform: scale(.92); filter: blur(18px); transition: opacity 1.05s cubic-bezier(.16,1,.3,1), transform 1.2s cubic-bezier(.16,1,.3,1), filter 1.2s cubic-bezier(.16,1,.3,1); will-change: opacity, transform, filter; }
+.reveal-scale { opacity: 0; transform: scale(.92); filter: blur(18px); transition: opacity .55s cubic-bezier(.16,1,.3,1), transform .62s cubic-bezier(.16,1,.3,1), filter .62s cubic-bezier(.16,1,.3,1); will-change: opacity, transform, filter; }
 .reveal-scale.active { opacity: 1; transform: scale(1); filter: blur(0); }
 /* Wenn GSAP ScrollTrigger den Reveal steuert: CSS-Transition aus, GSAP tweent inline */
 .gsap-on .reveal, .gsap-on .reveal-left, .gsap-on .reveal-right, .gsap-on .reveal-scale { transition: none !important; }

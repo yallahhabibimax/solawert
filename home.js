@@ -282,7 +282,7 @@ const App = () => {
           once: true,
           onEnter: b => gsap.to(b, {
             opacity: 1, x: 0, y: 0, scale: 1, filter: 'blur(0px)',
-            duration: 1.15, ease: EASE, stagger: { each: 0.13, from: 'start' }, overwrite: true
+            duration: 0.6, ease: EASE, stagger: { each: 0.07, from: 'start' }, overwrite: true
           })
         });
       };
@@ -298,9 +298,9 @@ const App = () => {
         const txt = card.querySelectorAll('.lz-text > *');
         if (img) gsap.set(img, { scale: 1.16, transformOrigin: 'center center' });
         const tl = gsap.timeline({ scrollTrigger: { trigger: card, start: 'top 82%', once: true } });
-        tl.from(card, { autoAlpha: 0, y: 44, filter: 'blur(14px)', duration: 1.15, ease: EASE }, 0);
-        if (txt.length) tl.from(txt, { autoAlpha: 0, y: 22, filter: 'blur(6px)', duration: 0.8, ease: EASE, stagger: 0.08 }, 0.25);
-        if (badge) tl.from(badge, { autoAlpha: 0, scale: 0.4, duration: 0.65, ease: 'back.out(2)' }, 0.35);
+        tl.from(card, { autoAlpha: 0, y: 44, filter: 'blur(14px)', duration: 0.65, ease: EASE }, 0);
+        if (txt.length) tl.from(txt, { autoAlpha: 0, y: 22, filter: 'blur(6px)', duration: 0.45, ease: EASE, stagger: 0.05 }, 0.15);
+        if (badge) tl.from(badge, { autoAlpha: 0, scale: 0.4, duration: 0.4, ease: 'back.out(2)' }, 0.2);
         if (img) gsap.fromTo(img, { yPercent: -6 }, {
           yPercent: 6, ease: 'none',
           scrollTrigger: { trigger: card, start: 'top bottom', end: 'bottom top', scrub: true }
