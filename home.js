@@ -270,7 +270,7 @@ const App = () => {
     if (reduce) {
       document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => el.classList.add('active'));
     } else if (hasST) {
-      /* Award-winning Reveal: GSAP ScrollTrigger.batch — Elemente, die zusammen in den
+      /* Award-winning Reveal: GSAP ScrollTrigger.batch, Elemente, die zusammen in den
          Viewport kommen, werden als Gruppe gestaffelt animiert (Blur + Fade + Rise),
          auch bei schnellem Scrollen sauber nachgezogen. */
       gsap.registerPlugin(ScrollTrigger);
@@ -573,7 +573,7 @@ const Hero = () => {
     className: "hero-kw"
   }, "Wärmepumpe"), /*#__PURE__*/React.createElement("br", null), "in Wuppertal"), /*#__PURE__*/React.createElement("p", {
     className: "hero-el sw-hero__lead"
-  }, "Photovoltaik und Wärmepumpe schlüsselfertig in Wuppertal und ganz NRW \u2014 fair, ehrlich, ohne Anzahlung."), /*#__PURE__*/React.createElement("div", {
+  }, "Photovoltaik und Wärmepumpe schlüsselfertig in Wuppertal und ganz NRW. Fair, ehrlich, ohne Anzahlung."), /*#__PURE__*/React.createElement("div", {
     className: "hero-el sw-cta-row"
   }, /*#__PURE__*/React.createElement("a", {
     href: "#anfrage",
