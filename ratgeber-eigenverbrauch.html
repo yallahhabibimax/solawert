@@ -10,85 +10,254 @@
   <meta property="og:type" content="article">
   <meta property="og:title" content="Eigenverbrauch maximieren: PV-Anlage richtig nutzen">
   <meta property="og:description" content="Mehr Eigenstrom, weniger Netzbezug — durch Speicher, Steuerung und smarte Kopplung.">
-  <meta property="og:image" content="img/leistung-speicher.jpg">
+  <meta property="og:image" content="img/leistung-monitoring.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="img/leistung-speicher.jpg">
+  <meta name="twitter:image" content="img/leistung-monitoring.png">
   <meta name="theme-color" content="#15181D">
   <link rel="icon" href="img/logo.png">
   <link rel="preload" as="font" type="font/woff2" crossorigin href="fonts/inter-latin.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin href="fonts/archivo-latin.woff2">
-  <link rel="stylesheet" href="tailwind.css?v=1782146000">
-  <link rel="stylesheet" href="styles.css?v=1782146000">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Eigenverbrauch maximieren: PV-Anlage richtig nutzen","description":"Mit Speicher, Smart-Steuerung, Wärmepumpe und E-Auto den Eigenverbrauch der PV-Anlage erhöhen.","image":"img/leistung-speicher.jpg","author":{"@type":"Person","name":"Gegam Sargsian","jobTitle":"Inhaber SolaWert"},"publisher":{"@type":"Organization","name":"SolaWert","logo":{"@type":"ImageObject","url":"img/logo.png"}},"datePublished":"2026-06-23","dateModified":"2026-06-23"}</script>
+  <link rel="stylesheet" href="tailwind.css?v=1782147500">
+  <link rel="stylesheet" href="styles.css?v=1782147500">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Eigenverbrauch maximieren: PV-Anlage richtig nutzen","description":"Mit Speicher, Smart-Steuerung, Wärmepumpe und E-Auto den Eigenverbrauch der PV-Anlage erhöhen.","image":"img/leistung-monitoring.png","author":{"@type":"Person","name":"Gegam Sargsian","jobTitle":"Inhaber SolaWert"},"publisher":{"@type":"Organization","name":"SolaWert","logo":{"@type":"ImageObject","url":"img/logo.png"}},"datePublished":"2026-06-23","dateModified":"2026-06-23"}</script>
+  <style>
+    .rga-hero { background:linear-gradient(180deg,#23272F 0%,#181B21 100%); padding:8.5rem 1.25rem 3rem; color:#fff; position:relative; overflow:hidden; }
+    @media (min-width:768px){ .rga-hero { padding:9.5rem 2rem 3.5rem; } }
+    .rga-hero__glow { position:absolute; top:-15%; left:-10%; width:520px; height:520px; background:radial-gradient(circle,rgba(245,179,1,.13) 0%,transparent 65%); pointer-events:none; }
+    .rga-hero__wrap { position:relative; max-width:80rem; margin:0 auto; }
+    .rga-hero__h1 { font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(2.1rem,4.4vw,3.4rem); line-height:1.04; letter-spacing:-.025em; margin:1rem 0 1.1rem; max-width:28ch; }
+    .rga-hero__h1 .accent { color:#F5B301; }
+    .rga-hero__lead { color:rgba(255,255,255,.74); font-size:clamp(1.02rem,1.4vw,1.18rem); line-height:1.6; max-width:42rem; }
+    .rga-hero__meta { display:flex; flex-wrap:wrap; gap:1rem 1.6rem; margin-top:1.4rem; font-size:13.5px; color:rgba(255,255,255,.58); }
+    .rga-hero__meta span { display:inline-flex; align-items:center; gap:.4rem; }
+    .rga-hero__meta svg { color:#F5B301; }
+  </style>
 </head>
 <body class="font-body antialiased overflow-x-hidden" style="background:#FFFFFF;color:#14171C">
 
   <div data-kaefer="nav"></div>
 
-  <header class="rg-hero">
-    <div class="rg-hero__glow"></div>
-    <div class="rg-hero__wrap">
+  <header class="rga-hero">
+    <div class="rga-hero__glow"></div>
+    <div class="rga-hero__wrap">
+      <div class="rg-crumbs">
+        <a href="index.html">Start</a>
+        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m9 6 6 6-6 6"/></svg>
+        <a href="ratgeber.html">Ratgeber</a>
+        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m9 6 6 6-6 6"/></svg>
+        <span>Eigenverbrauch maximieren</span>
+      </div>
       <span class="rg-hero__eyebrow"><span class="dot"></span>Ratgeber · Eigenverbrauch</span>
-      <h1 class="rg-hero__h1">Eigenverbrauch <span class="accent">maximieren</span> mit Ihrer PV-Anlage</h1>
-      <p class="rg-hero__lead">Wie Sie mehr Sonne selbst nutzen und weniger Strom aus dem Netz kaufen müssen. Mit Speicher, Steuerung, Wärmepumpe und E-Auto.</p>
-      <div class="rg-hero__meta">
+      <h1 class="rga-hero__h1">Eigenverbrauch <span class="accent">maximieren</span> mit Ihrer PV-Anlage</h1>
+      <p class="rga-hero__lead">Wie Sie mehr Sonne selbst nutzen und weniger Strom aus dem Netz kaufen müssen. Mit Speicher, Steuerung, Wärmepumpe und E-Auto.</p>
+      <div class="rga-hero__meta">
         <span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>6 Minuten Lesezeit</span>
         <span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18M8 2v4M16 2v4"/></svg>Aktualisiert Juni 2026</span>
       </div>
     </div>
   </header>
 
-  <section class="rg-body">
-    <article class="rg-body__wrap">
-      <h2>Warum Eigenverbrauch der wichtigste Hebel ist</h2>
-      <p>Eine Photovoltaik-Anlage produziert tagsüber Strom — meist genau dann, wenn niemand zu Hause ist. Ohne weitere Maßnahmen verbrauchen Haushalte typischerweise nur <strong>20 bis 30 Prozent</strong> des erzeugten Stroms selbst, der Rest wandert ins Netz und wird mit der Einspeisevergütung von rund 7,9 Cent pro kWh entlohnt.</p>
-      <p>Selbst genutzt ist jede kWh aber rund <strong>30 bis 40 Cent</strong> wert (so viel kostet Netzstrom). Jeder Prozentpunkt mehr Eigenverbrauch macht die Anlage also messbar profitabler. Mit den richtigen Maßnahmen schaffen Sie 60 bis 80 Prozent Eigenverbrauch und sparen jährlich mehrere hundert Euro.</p>
+  <section class="rg-2col">
+    <div class="rg-2col__wrap">
 
-      <h2>1. Stromspeicher — der wichtigste Faktor</h2>
-      <p>Ein passend dimensionierter Stromspeicher hebt den Eigenverbrauch typischerweise um <strong>30 bis 40 Prozentpunkte</strong>. Tagsüber produzierter Strom wird zwischengespeichert und abends bzw. nachts genutzt.</p>
-      <p>Faustregel: 1 kWh Speicher pro kWp Anlagenleistung als Untergrenze, 1,5 kWh pro kWp wenn Sie Wärmepumpe oder E-Auto haben.</p>
+      <aside class="rg-side-stack">
+        <nav class="rg-toc" aria-label="Inhaltsverzeichnis">
+          <h4 class="rg-toc__h">Inhalt</h4>
+          <a class="rg-toc__link" href="#warum">Warum Eigenverbrauch zählt</a>
+          <a class="rg-toc__link" href="#speicher">1. Speicher</a>
+          <a class="rg-toc__link" href="#smart">2. Smart-Steuerung</a>
+          <a class="rg-toc__link" href="#waermepumpe">3. Wärmepumpe</a>
+          <a class="rg-toc__link" href="#eauto">4. E-Auto laden</a>
+          <a class="rg-toc__link" href="#monitoring">5. Monitoring</a>
+          <a class="rg-toc__link" href="#quoten">Realistische Quoten</a>
+          <a class="rg-toc__link" href="#faq">Häufige Fragen</a>
+        </nav>
 
-      <h2>2. Smart-Steuerung & Verbrauchsverlagerung</h2>
-      <p>Moderne Wechselrichter und Energiemanagement-Systeme schalten Verbraucher automatisch an, wenn die Sonne scheint. Klassische Anwendungen:</p>
-      <ul>
-        <li><strong>Waschmaschine und Trockner</strong> tagsüber laufen lassen — über Smart-Plug oder Energiemanagement.</li>
-        <li><strong>Geschirrspüler</strong> mit Verzögerungstimer auf Mittagszeit programmieren.</li>
-        <li><strong>Warmwasser</strong> über Heizstab im Pufferspeicher: Sonnenstrom-Überschüsse wandern direkt in warmes Wasser.</li>
-        <li><strong>Pool- und Whirlpool-Heizung</strong> auf Sonnenstunden legen.</li>
-      </ul>
+        <div class="rg-side-cta">
+          <div class="rg-side-cta__lbl">Eigenverbrauch planen</div>
+          <div class="rg-side-cta__t">Wir holen das Maximum aus Ihrer Sonne.</div>
+          <p class="rg-side-cta__s">Speicher, Steuerung, Wärmepumpe – wir denken alles mit.</p>
+          <a href="kontakt.html" class="rg-side-cta__btn">Jetzt anfragen <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        </div>
 
-      <h2>3. Wärmepumpe als Eigenverbrauchs-Booster</h2>
-      <p>Eine Wärmepumpe verbraucht 2.500 bis 5.000 kWh pro Jahr. Wenn diese durch eine Smart-Steuerung bevorzugt bei Sonnenschein läuft (oder den Heizpuffer auflädt), wandert ein Großteil des Solarstroms direkt in die Heizung. Effekt: Eigenverbrauch kann auf <strong>70 bis 80 Prozent</strong> steigen.</p>
+        <div class="rg-author">
+          <div class="rg-author__top">
+            <img class="rg-author__img" src="img/portrait.jpg" alt="Gegam Sargsian, Inhaber SolaWert">
+            <div>
+              <div class="rg-author__name">Gegam Sargsian</div>
+              <div class="rg-author__role">Inhaber · SolaWert Wuppertal</div>
+            </div>
+          </div>
+          <p class="rg-author__quote">Eigenverbrauch ist 4 bis 5 mal so viel wert wie Einspeisung. Jede selbst genutzte kWh ist eine Mini-Rendite.</p>
+        </div>
+      </aside>
 
-      <div class="rg-pull">Eigenverbrauch ist 4 bis 5 mal so viel wert wie Einspeisung. Jede selbst genutzte kWh ist eine Mini-Rendite.</div>
+      <article class="rg-art-col">
+        <h2 id="warum">Warum Eigenverbrauch der wichtigste Hebel ist</h2>
+        <p>Eine Photovoltaik-Anlage produziert tagsüber Strom, meist genau dann, wenn niemand zu Hause ist. Ohne weitere Maßnahmen verbrauchen Haushalte typischerweise nur <strong>20 bis 30 Prozent</strong> des erzeugten Stroms selbst, der Rest wandert ins Netz und wird mit der Einspeisevergütung von rund 7,9 Cent pro kWh entlohnt.</p>
+        <p>Selbst genutzt ist jede kWh aber rund <strong>30 bis 40 Cent</strong> wert (so viel kostet Netzstrom). Jeder Prozentpunkt mehr Eigenverbrauch macht die Anlage also messbar profitabler. Mit den richtigen Maßnahmen schaffen Sie 60 bis 80 Prozent Eigenverbrauch und sparen jährlich mehrere hundert Euro.</p>
 
-      <h2>4. E-Auto: laden, wenn die Sonne scheint</h2>
-      <p>Ein E-Auto verbraucht bei 15.000 km Jahresfahrleistung rund 2.500 kWh. Mit einer Wallbox mit PV-Überschuss-Funktion lädt das Auto exakt dann, wenn überschüssiger Solarstrom verfügbar ist. Statt Tankstellen-Preis von 50 Cent pro kWh zahlen Sie effektiv die Erzeugungskosten Ihrer Anlage — oft unter 10 Cent.</p>
+        <h2 id="speicher">1. Stromspeicher: der wichtigste Faktor</h2>
+        <p>Ein passend dimensionierter Stromspeicher hebt den Eigenverbrauch typischerweise um <strong>30 bis 40 Prozentpunkte</strong>. Tagsüber produzierter Strom wird zwischengespeichert und abends bzw. nachts genutzt.</p>
+        <p>Faustregel: 1 kWh Speicher pro kWp Anlagenleistung als Untergrenze, 1,5 kWh pro kWp wenn Sie Wärmepumpe oder E-Auto haben. Details im <a href="ratgeber-stromspeicher-groesse.html">Speicher-Ratgeber</a>.</p>
 
-      <h2>5. Monitoring: Ihre Anlage messen und optimieren</h2>
-      <p>Ohne Daten ist Eigenverbrauch-Optimierung Raten. Ein modernes Monitoring zeigt Ihnen live, wann zu viel Strom ins Netz fließt und wann Sie nachregeln können. Wir richten die Monitoring-App bei jeder Anlage standardmäßig ein.</p>
+        <h2 id="smart">2. Smart-Steuerung & Verbrauchsverlagerung</h2>
+        <p>Moderne Wechselrichter und Energiemanagement-Systeme schalten Verbraucher automatisch an, wenn die Sonne scheint. Klassische Anwendungen:</p>
+        <ul>
+          <li><strong>Waschmaschine und Trockner</strong> tagsüber laufen lassen, über Smart-Plug oder Energiemanagement.</li>
+          <li><strong>Geschirrspüler</strong> mit Verzögerungstimer auf Mittagszeit programmieren.</li>
+          <li><strong>Warmwasser</strong> über Heizstab im Pufferspeicher: Sonnenstrom-Überschüsse wandern direkt in warmes Wasser.</li>
+          <li><strong>Pool- und Whirlpool-Heizung</strong> auf Sonnenstunden legen.</li>
+        </ul>
 
-      <h2>Realistische Eigenverbrauchs-Quoten</h2>
-      <ul>
-        <li><strong>PV ohne Speicher:</strong> 20 bis 30 Prozent.</li>
-        <li><strong>PV + Speicher:</strong> 55 bis 70 Prozent.</li>
-        <li><strong>PV + Speicher + Wärmepumpe:</strong> 65 bis 80 Prozent.</li>
-        <li><strong>PV + Speicher + Wärmepumpe + E-Auto:</strong> 75 bis 90 Prozent.</li>
-      </ul>
+        <h2 id="waermepumpe">3. Wärmepumpe als Eigenverbrauchs-Booster</h2>
+        <p>Eine Wärmepumpe verbraucht 2.500 bis 5.000 kWh pro Jahr. Wenn diese durch eine Smart-Steuerung bevorzugt bei Sonnenschein läuft (oder den Heizpuffer auflädt), wandert ein Großteil des Solarstroms direkt in die Heizung. Effekt: Eigenverbrauch kann auf <strong>70 bis 80 Prozent</strong> steigen. Mehr dazu im <a href="ratgeber-pv-waermepumpe.html">PV-Wärmepumpen-Ratgeber</a>.</p>
 
-      <div class="rg-cta">
-        <div class="rg-cta__t">Wir planen Ihre Anlage auf maximalen Eigenverbrauch.</div>
-        <a href="kontakt.html" class="rg-cta__btn">Beratungstermin vereinbaren <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        <div class="rg-pull">Eigenverbrauch ist 4 bis 5 mal so viel wert wie Einspeisung. Jede selbst genutzte kWh ist eine Mini-Rendite.</div>
+
+        <h2 id="eauto">4. E-Auto: laden, wenn die Sonne scheint</h2>
+        <p>Ein E-Auto verbraucht bei 15.000 km Jahresfahrleistung rund 2.500 kWh. Mit einer Wallbox mit PV-Überschuss-Funktion lädt das Auto exakt dann, wenn überschüssiger Solarstrom verfügbar ist. Statt Tankstellen-Preis von 50 Cent pro kWh zahlen Sie effektiv die Erzeugungskosten Ihrer Anlage, oft unter 10 Cent.</p>
+
+        <h2 id="monitoring">5. Monitoring: Ihre Anlage messen und optimieren</h2>
+        <p>Ohne Daten ist Eigenverbrauch-Optimierung Raten. Ein modernes Monitoring zeigt Ihnen live, wann zu viel Strom ins Netz fließt und wann Sie nachregeln können. Wir richten die Monitoring-App bei jeder Anlage standardmäßig ein.</p>
+
+        <h2 id="quoten">Realistische Eigenverbrauchs-Quoten</h2>
+        <ul>
+          <li><strong>PV ohne Speicher:</strong> 20 bis 30 Prozent.</li>
+          <li><strong>PV + Speicher:</strong> 55 bis 70 Prozent.</li>
+          <li><strong>PV + Speicher + Wärmepumpe:</strong> 65 bis 80 Prozent.</li>
+          <li><strong>PV + Speicher + Wärmepumpe + E-Auto:</strong> 75 bis 90 Prozent.</li>
+        </ul>
+
+        <section class="rg-faq" id="faq" aria-label="Häufige Fragen zum Eigenverbrauch">
+          <h2 class="rg-faq__h2">Häufige Fragen zum Eigenverbrauch</h2>
+
+          <details class="rg-faq__item">
+            <summary class="rg-faq__sum">
+              <span class="rg-faq__q">Warum ist Einspeisen so unrentabel im Vergleich?</span>
+              <span class="rg-faq__ic"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+            </summary>
+            <div class="rg-faq__a">Die Einspeisevergütung liegt 2026 bei rund 7,9 Cent pro kWh, der Netzstrom kostet 30 bis 40 Cent. Jede selbst genutzte kWh spart also 4 bis 5 mal mehr, als sie als Einspeisung bringt.</div>
+          </details>
+
+          <details class="rg-faq__item">
+            <summary class="rg-faq__sum">
+              <span class="rg-faq__q">Lohnt sich Eigenverbrauchs-Optimierung auch ohne Wärmepumpe?</span>
+              <span class="rg-faq__ic"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+            </summary>
+            <div class="rg-faq__a">Ja. Mit Speicher allein erreichen Sie schon 55 bis 70 Prozent Eigenverbrauch. Smart-Steuerung und Verbrauchsverlagerung erhöhen das nochmal um 5 bis 10 Prozentpunkte.</div>
+          </details>
+
+          <details class="rg-faq__item">
+            <summary class="rg-faq__sum">
+              <span class="rg-faq__q">Was kostet eine PV-Überschuss-Wallbox?</span>
+              <span class="rg-faq__ic"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+            </summary>
+            <div class="rg-faq__a">Mit allem drum und dran liegen Sie zwischen 1.500 € und 2.500 €. Über die Kostenersparnis beim Laden (50 Cent → unter 10 Cent pro kWh) amortisiert sich das meist innerhalb von 4 bis 6 Jahren.</div>
+          </details>
+
+          <details class="rg-faq__item">
+            <summary class="rg-faq__sum">
+              <span class="rg-faq__q">Brauche ich für Smart-Steuerung extra Hardware?</span>
+              <span class="rg-faq__ic"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+            </summary>
+            <div class="rg-faq__a">Meist nicht. Moderne Wechselrichter und Speicher haben Smart-Funktionen schon eingebaut. Smart-Plugs für einzelne Verbraucher kosten 30 bis 50 €.</div>
+          </details>
+
+          <details class="rg-faq__item">
+            <summary class="rg-faq__sum">
+              <span class="rg-faq__q">Hat zu hoher Eigenverbrauch auch Nachteile?</span>
+              <span class="rg-faq__ic"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+            </summary>
+            <div class="rg-faq__a">Nein. Je mehr Sonnenstrom Sie selbst nutzen, desto besser für Ihre Wirtschaftlichkeit. Die Einspeisevergütung ist nur Mitnahme, das Geld liegt im Eigenverbrauch.</div>
+          </details>
+        </section>
+
+        <a href="ratgeber.html" class="rg-back"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>Zurück zum Ratgeber</a>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="rg-related">
+    <div class="rg-related__wrap">
+      <div class="rg-related__head">
+        <h2 class="rg-related__h">Verwandte Artikel</h2>
+        <span class="rg-related__count">3 Beiträge</span>
       </div>
-    </article>
+      <div class="rg-related__grid">
+
+        <a href="ratgeber-pv-kosten.html" class="rg-rel">
+          <div class="rg-rel__imgwrap">
+            <img class="rg-rel__img" src="img/leistung-pv.jpg" alt="PV-Kosten 2026">
+            <span class="rg-rel__cat">Kosten</span>
+          </div>
+          <div class="rg-rel__body">
+            <h3 class="rg-rel__t">Was kostet eine Photovoltaik-Anlage 2026?</h3>
+            <p class="rg-rel__s">Preise, Förderung und ab wann sich Ihre Anlage rechnet.</p>
+          </div>
+        </a>
+
+        <a href="ratgeber-pv-waermepumpe.html" class="rg-rel">
+          <div class="rg-rel__imgwrap">
+            <img class="rg-rel__img" src="img/leistung-waermepumpe.png" alt="PV + Wärmepumpe">
+            <span class="rg-rel__cat">Kombi</span>
+          </div>
+          <div class="rg-rel__body">
+            <h3 class="rg-rel__t">PV + Wärmepumpe richtig kombinieren</h3>
+            <p class="rg-rel__s">Strom und Heizung in einem System gedacht.</p>
+          </div>
+        </a>
+
+        <a href="ratgeber-stromspeicher-groesse.html" class="rg-rel">
+          <div class="rg-rel__imgwrap">
+            <img class="rg-rel__img" src="img/leistung-speicher.jpg" alt="Speichergröße">
+            <span class="rg-rel__cat">Speicher</span>
+          </div>
+          <div class="rg-rel__body">
+            <h3 class="rg-rel__t">Wie groß muss der Speicher sein?</h3>
+            <p class="rg-rel__s">Faustregeln und ehrliche Empfehlungen.</p>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="rh-fullcta">
+    <div class="rh-fullcta__glow1"></div>
+    <div class="rh-fullcta__glow2"></div>
+    <div class="rh-fullcta__wrap">
+      <span class="rh-fullcta__eyebrow"><span class="dot"></span>Mehr Sonne · weniger Netzbezug</span>
+      <h2 class="rh-fullcta__h">Maximaler <span class="accent">Eigenverbrauch</span> für Ihre Anlage</h2>
+      <p class="rh-fullcta__s">Wir planen Speicher, Steuerung und Kombi-Geräte so, dass Sie das Maximum aus Ihrer PV-Anlage holen. Kostenlos, unverbindlich.</p>
+      <div class="rh-fullcta__btns">
+        <a href="kontakt.html" class="rh-fullcta__primary">Kostenloses Angebot anfragen <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        <a href="tel:+4915205999900" class="rh-fullcta__ghost"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>0152 5999900</a>
+      </div>
+    </div>
   </section>
 
   <div data-leadquiz></div>
   <div data-kaefer="footer"></div>
 
+  <script>
+    (function(){
+      var links = document.querySelectorAll('.rg-toc__link');
+      var ids = [].slice.call(links).map(function(a){ return a.getAttribute('href').slice(1); });
+      var sections = ids.map(function(id){ return document.getElementById(id); }).filter(Boolean);
+      if (!('IntersectionObserver' in window) || !sections.length) return;
+      function setActive(id){ links.forEach(function(a){ a.classList.toggle('is-on', a.getAttribute('href') === '#' + id); }); }
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ if (e.isIntersecting) setActive(e.target.id); });
+      }, { rootMargin: '-120px 0px -55% 0px', threshold: 0 });
+      sections.forEach(function(s){ io.observe(s); });
+    })();
+  </script>
+
   <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-  <script src="leadquiz.js?v=1782146000"></script>
-  <script src="partials.js?v=1782146000"></script>
+  <script src="leadquiz.js?v=1782147500"></script>
+  <script src="partials.js?v=1782147500"></script>
 </body>
 </html>
