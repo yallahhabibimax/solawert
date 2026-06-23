@@ -404,7 +404,12 @@
       '<div class="sw-mobilemenu" data-sw-mobile>' +
         '<span class="sw-mobile-eyebrow">Navigation</span>' +
         '<div class="sw-mobile-links">' +
-          L.map(function(x){ var base = '<a href="'+x[1]+'" class="sw-mobilelink">'+x[0]+'</a>'; return x[2] ? base + x[2].map(function(s){return '<a href="'+s[1]+'" class="sw-mobilelink sw-mobilelink--sub">'+s[0]+'</a>';}).join('') : base; }).join('') +
+          L.map(function(x){
+            if (!x[2]) return '<a href="'+x[1]+'" class="sw-mobilelink sw-mobile-row">'+x[0]+'</a>';
+            return '<details class="sw-mobile-row sw-mobile-acc"><summary class="sw-mobile-acc__sum"><span class="sw-mobile-acc__lbl">'+x[0]+'</span><span class="sw-mobile-acc__ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="sw-mobile-acc__body">' +
+              x[2].map(function(s){ return '<a href="'+s[1]+'" class="sw-mobilelink--sub">'+s[0]+'</a>'; }).join('') +
+            '</div></details>';
+          }).join('') +
         '</div>' +
         '<div class="sw-mobile-foot">' +
           '<div class="sw-mobile-btns">' +
@@ -436,7 +441,10 @@
         };
         burger.addEventListener('click', function () { setOpen(!mobile.classList.contains('open')); });
         mobile.addEventListener('click', function (e) {
-          var link = e.target.closest('.sw-mobilelink, .sw-mobile-btn');
+          /* Accordion-Summary nicht behandeln (laesst <details> normal togglen) */
+          if (e.target.closest('.sw-mobile-acc__sum')) return;
+          /* Echte Links + CTA-Buttons schliessen das Menue */
+          var link = e.target.closest('a.sw-mobilelink, a.sw-mobilelink--sub, a.sw-mobile-btn');
           if (link) setOpen(false);
         });
         document.addEventListener('keydown', function (e) {
