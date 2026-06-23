@@ -601,7 +601,7 @@ const Hero = () => {
     className: "sw-founder__top"
   }, /*#__PURE__*/React.createElement("img", {
     src: "img/inhaber-wp.png",
-    alt: "Schlüsselfertige Wärmepumpe von SolaWert"
+    alt: "Photovoltaik-Anlage und Wärmepumpe von SW Photovoltaik Wuppertal"
   })), /*#__PURE__*/React.createElement("div", {
     className: "sw-founder__body"
   }, /*#__PURE__*/React.createElement("div", {
