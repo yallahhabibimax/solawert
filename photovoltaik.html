@@ -38,6 +38,21 @@
     .lp-check { width:38px; height:38px; border-radius:11px; background:linear-gradient(180deg,#FFDD66,#F5B301); color:#1A1402; display:flex; align-items:center; justify-content:center; flex-shrink:0; box-shadow:0 8px 18px -8px rgba(245,179,1,.55); transition:transform .3s cubic-bezier(.16,1,.3,1); }
     .lp-check svg { width:18px; height:18px; }
     .lp-list-i:hover .lp-check { transform:translateY(-1px) rotate(-3deg); }
+
+    /* Stats — Editorial Solar */
+    .lp-stats { display:flex; flex-wrap:wrap; gap:1.4rem 2.6rem; margin-top:1.75rem; padding-top:1.25rem; border-top:1px dashed rgba(20,23,28,.18); }
+    .lp-stat { position:relative; padding-left:.95rem; }
+    .lp-stat__mark { position:absolute; left:0; top:.65rem; width:5px; height:5px; border-radius:50%; background:linear-gradient(180deg,#FFDD66,#F5B301); box-shadow:0 0 12px rgba(245,179,1,.6), 0 0 0 3px rgba(245,179,1,.12); animation:lpPulse 2.4s ease-out infinite; }
+    @keyframes lpPulse { 0%,100%{box-shadow:0 0 12px rgba(245,179,1,.6), 0 0 0 3px rgba(245,179,1,.12);} 50%{box-shadow:0 0 18px rgba(245,179,1,.85), 0 0 0 6px rgba(245,179,1,.05);} }
+    .lp-stat:nth-child(2) .lp-stat__mark { animation-delay:.4s; }
+    .lp-stat:nth-child(3) .lp-stat__mark { animation-delay:.8s; }
+    .lp-stat__n { font-family:'Archivo',sans-serif; font-weight:900; font-size:1.95rem; line-height:1; letter-spacing:-.025em; color:#14171C; font-feature-settings:'tnum' 1; }
+    .lp-stat__pre, .lp-stat__post { font-size:1.05rem; font-weight:700; color:#525A64; letter-spacing:0; }
+    .lp-stat__em { background:linear-gradient(180deg,#FFDD66 0%,#F5B301 55%,#D49100 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:transparent; padding:0 .04em; position:relative; display:inline-block; }
+    .lp-stat__em::after { content:''; position:absolute; left:0; right:0; bottom:-.05em; height:.18em; background:linear-gradient(90deg, rgba(245,179,1,0) 0%, rgba(245,179,1,.45) 50%, rgba(245,179,1,0) 100%); transform:scaleX(.5); transform-origin:center; transition:transform .6s cubic-bezier(.16,1,.3,1); filter:blur(.5px); }
+    .lp-stat:hover .lp-stat__em::after { transform:scaleX(1); }
+    .lp-stat__l { font-family:'Inter',sans-serif; font-size:10.5px; color:#8A5E00; margin-top:.5rem; letter-spacing:.18em; text-transform:uppercase; font-weight:700; display:flex; align-items:center; gap:.45rem; }
+    .lp-stat__l::before { content:''; width:14px; height:1px; background:linear-gradient(90deg,#F5B301, transparent); }
   </style>
 </head>
 <body class="font-body antialiased overflow-x-hidden" style="background:#FFFFFF;color:#14171C">
@@ -83,10 +98,22 @@
           <p>Eine Photovoltaik-Anlage macht aus Ihrem Dach ein kleines Kraftwerk. Tagsüber decken Sie Ihren Verbrauch mit eigenem Sonnenstrom, der überschüssige Strom wandert in den Speicher und versorgt Sie abends und nachts.</p>
           <p>Wir planen jede Anlage einzeln, nicht von der Stange: exakte String-Verteilung, der passende Speicher und ein bewusst größer dimensionierter Wechselrichter mit Reserve für die Zukunft. So holen wir das Maximum aus Ihrer Fläche.</p>
         </div>
-        <div class="flex flex-wrap gap-x-8 gap-y-3 mt-7">
-          <div><div class="font-heading" style="font-weight:900;font-size:1.9rem;color:#14171C;">bis 70 %</div><div style="font-size:13px;color:#525A64;">Autarkie möglich</div></div>
-          <div><div class="font-heading" style="font-weight:900;font-size:1.9rem;color:#14171C;">+60 %</div><div style="font-size:13px;color:#525A64;">mehr Speicher inkl.</div></div>
-          <div><div class="font-heading" style="font-weight:900;font-size:1.9rem;color:#14171C;">0 €</div><div style="font-size:13px;color:#525A64;">Anzahlung</div></div>
+        <div class="lp-stats">
+          <div class="lp-stat">
+            <span class="lp-stat__mark"></span>
+            <div class="lp-stat__n"><span class="lp-stat__pre">bis </span><span class="lp-stat__em">70</span>%</div>
+            <div class="lp-stat__l">Autarkie möglich</div>
+          </div>
+          <div class="lp-stat">
+            <span class="lp-stat__mark"></span>
+            <div class="lp-stat__n">+<span class="lp-stat__em">60</span>%</div>
+            <div class="lp-stat__l">mehr Speicher inkl.</div>
+          </div>
+          <div class="lp-stat">
+            <span class="lp-stat__mark"></span>
+            <div class="lp-stat__n"><span class="lp-stat__em">0</span>&nbsp;€</div>
+            <div class="lp-stat__l">Anzahlung</div>
+          </div>
         </div>
       </div>
       <div style="position:relative;">
