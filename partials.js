@@ -125,12 +125,12 @@
           '</div>' +
           '<div class="sw-fcol">' +
             '<h4 class="font-heading font-bold text-sm uppercase tracking-wider text-white mb-4">Kontakt</h4>' +
-            '<ul class="space-y-3 text-sm text-white">' +
-              '<li class="flex items-start gap-2.5"><span class="text-brand mt-0.5 shrink-0">' + svg('phone',17) + '</span><a href="tel:'+TEL+'" class="hover:text-brand">'+TELD+'</a></li>' +
-              '<li class="flex items-start gap-2.5"><span class="text-brand mt-0.5 shrink-0">' + svg('mail',17) + '</span><a href="mailto:'+MAIL+'" class="hover:text-brand break-all">'+MAIL+'</a></li>' +
-              '<li class="flex items-start gap-2.5"><span class="text-brand mt-0.5 shrink-0">' + svg('pin',17) + '</span><span>Friedrich-Ebert-Str. 55<br>42103 Wuppertal</span></li>' +
+            '<address class="not-italic" itemscope itemtype="https://schema.org/LocalBusiness"><meta itemprop="name" content="SolaWert"><ul class="space-y-3 text-sm text-white">' +
+              '<li class="flex items-start gap-2.5"><span class="text-brand mt-0.5 shrink-0">' + svg('phone',17) + '</span><a href="tel:'+TEL+'" class="hover:text-brand" itemprop="telephone">'+TELD+'</a></li>' +
+              '<li class="flex items-start gap-2.5"><span class="text-brand mt-0.5 shrink-0">' + svg('mail',17) + '</span><a href="mailto:'+MAIL+'" class="hover:text-brand break-all" itemprop="email">'+MAIL+'</a></li>' +
+              '<li class="flex items-start gap-2.5"><span class="text-brand mt-0.5 shrink-0">' + svg('pin',17) + '</span><span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress"><span itemprop="streetAddress">Friedrich-Ebert-Str. 55</span><br><span itemprop="postalCode">42103</span> <span itemprop="addressLocality">Wuppertal</span></span></li>' +
               '<li class="flex items-start gap-2.5"><span class="text-brand mt-0.5 shrink-0">' + svg('clock',17) + '</span><span>Mo bis Sa, 8:00 bis 18:00 Uhr</span></li>' +
-            '</ul>' +
+            '</ul></address>' +
           '</div>' +
         '</div>' +
         '<div class="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 text-sm text-white">' +
