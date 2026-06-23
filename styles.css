@@ -664,12 +664,14 @@ a.sw-mobilelink.sw-mobile-row:hover::after, a.sw-mobilelink.sw-mobile-row:focus:
 .sw-hero__left .sw-card--img { min-width:0; max-width:none; height:6.25rem; }
 .sw-hero__left .sw-card--img img { min-height:0; height:100%; }
 
-/* Mobile: Inhaber-Karte tiefer + Bild absolut am Container-Boden (Kopf darf raus, Koerper bleibt drin) */
+/* Mobile: Inhaber-Karte naeher an die 4 cards + hero kuerzer (nach inhaberkarte schnell zur naechsten section) */
 @media (max-width:640px){
-  .sw-hero__right { margin-top:8rem !important; }
+  .sw-hero__inner { padding-bottom:2rem !important; }
+  .sw-hero__bottom { gap:1.5rem; }
+  .sw-hero__right { margin-top:4rem !important; }
   .sw-founder__top { height:15rem; position:relative; }
   .sw-founder__top img { position:absolute !important; bottom:0 !important; left:50% !important; transform:translateX(-50%) !important; height:17rem !important; width:auto !important; max-width:none !important; }
-  .sw-founder__body { padding-top:1.5rem; }
+  .sw-founder__body { padding:1.5rem 1.25rem 1.2rem; }
 }
 
 
