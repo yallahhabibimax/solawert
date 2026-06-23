@@ -222,50 +222,8 @@
     </div>
   </header>
 
-  <!-- LEAD FORM (Schnellanfrage) -->
-  <section class="st-lead" id="anfrage">
-    <div class="st-lead__wrap">
-      <div class="st-lead__head">
-        <span class="st-lead__eyebrow"><span class="dot"></span>Antwort innerhalb eines Werktags</span>
-        <h2 class="st-lead__h2">Kostenlose Beratung in Wuppertal</h2>
-        <p class="st-lead__sub">Schildern Sie kurz Ihr Vorhaben, wir melden uns mit den nächsten Schritten.</p>
-      </div>
-      <form action="#" method="post" onsubmit="event.preventDefault(); alert('Vielen Dank, wir melden uns innerhalb eines Werktags.');">
-        <div class="st-lead__row">
-          <div class="st-lead__field">
-            <label for="st-name">Name</label>
-            <input id="st-name" name="name" type="text" required placeholder="Vor- und Nachname" autocomplete="name">
-          </div>
-          <div class="st-lead__field">
-            <label for="st-phone">Telefon</label>
-            <input id="st-phone" name="phone" type="tel" placeholder="0202 1234567" autocomplete="tel">
-          </div>
-        </div>
-        <div class="st-lead__field">
-          <label for="st-email">E-Mail</label>
-          <input id="st-email" name="email" type="email" required placeholder="ihre@adresse.de" autocomplete="email">
-        </div>
-        <div class="st-lead__row">
-          <div class="st-lead__field">
-            <label for="st-topic">Thema</label>
-            <select id="st-topic" name="topic">
-              <option>Photovoltaik (neu)</option>
-              <option>Stromspeicher</option>
-              <option>Wärmepumpe</option>
-              <option>PV + Wärmepumpe</option>
-              <option>Allgemeine Frage</option>
-            </select>
-          </div>
-          <div class="st-lead__field">
-            <label for="st-plz">PLZ in Wuppertal</label>
-            <input id="st-plz" name="plz" type="text" placeholder="z. B. 42103">
-          </div>
-        </div>
-        <button type="submit" class="st-lead__submit">Beratung anfragen <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
-        <p class="st-lead__meta">Ihre Daten landen direkt bei uns, nicht in einem CRM-Trichter.</p>
-      </form>
-    </div>
-  </section>
+  <!-- LEAD QUIZ (mehrstufige Solareinschätzung, identisch zur Homepage) -->
+  <div id="anfrage" data-leadquiz></div>
 
   <!-- WARUM SOLAWERT (Vertrauen Cards) -->
   <section class="st-warum">
@@ -469,6 +427,7 @@
 
   <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-  <script src="partials.js?v=1782145500"></script>
+  <script src="leadquiz.js?v=1782147000"></script>
+  <script src="partials.js?v=1782147000"></script>
 </body>
 </html>
