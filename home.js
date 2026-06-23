@@ -600,8 +600,8 @@ const Hero = () => {
   }, /*#__PURE__*/React.createElement("div", {
     className: "sw-founder__top"
   }, /*#__PURE__*/React.createElement("img", {
-    src: "img/inhaber-house.png",
-    alt: "Modernes Haus mit Photovoltaik-Anlage von SolaWert"
+    src: "img/inhaber-wp.png",
+    alt: "Schlüsselfertige Wärmepumpe von SolaWert"
   })), /*#__PURE__*/React.createElement("div", {
     className: "sw-founder__body"
   }, /*#__PURE__*/React.createElement("div", {
