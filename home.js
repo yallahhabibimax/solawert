@@ -6,7 +6,7 @@ const {
 } = React;
 const PHONE_FEST = "0152 5999900";
 const PHONE_FEST_TEL = "+4915205999900";
-const EMAIL = "info@solawert.de";
+const EMAIL = "info@sw-photovoltaik.de";
 
 /* utility icons (stroke, fragment-wrapped) */
 const ICO = {
@@ -676,9 +676,9 @@ const Features = () => {
     className: "max-w-2xl mb-14 reveal"
   }, /*#__PURE__*/React.createElement("span", {
     className: "text-brand-deep font-heading font-semibold tracking-[0.16em] uppercase text-xs mb-3 block"
-  }, "Warum SolaWert"), /*#__PURE__*/React.createElement("h2", {
+  }, "Warum SW Photovoltaik"), /*#__PURE__*/React.createElement("h2", {
     className: "text-3xl md:text-[2.7rem] font-heading font-black text-content leading-tight"
-  }, "Warum ", React.createElement("span", { style: { color: "#F5B301" } }, "SolaWert"), " die richtige Wahl ist")), /*#__PURE__*/React.createElement("div", {
+  }, "Warum ", React.createElement("span", { style: { color: "#F5B301" } }, "SW Photovoltaik"), " die richtige Wahl ist")), /*#__PURE__*/React.createElement("div", {
     className: "grid md:grid-cols-3 gap-6"
   }, items.map((f, i) => /*#__PURE__*/React.createElement("div", {
     key: i,
@@ -728,7 +728,7 @@ const WerWirSind = () => {
     className: "rounded-[28px] overflow-hidden shadow-2xl ring-1 ring-black/5 spot-item"
   }, /*#__PURE__*/React.createElement("img", {
     src: "img/projekt-1.jpg?v=1782000013",
-    alt: "SolaWert Monteure bei der Montage einer Photovoltaik-Anlage in NRW",
+    alt: "SW Photovoltaik Monteure bei der Montage einer Photovoltaik-Anlage in NRW",
     className: "w-full object-cover",
     style: {
       height: "480px"
@@ -748,7 +748,7 @@ const WerWirSind = () => {
     className: "rounded-2xl overflow-hidden shadow-xl ring-1 ring-black/5 spot-item"
   }, /*#__PURE__*/React.createElement("img", {
     src: "img/projekt-3.jpg?v=1782000013",
-    alt: "Wechselrichter und Stromspeicher einer SolaWert-Anlage",
+    alt: "Wechselrichter und Stromspeicher einer SW Photovoltaik-Anlage",
     className: "w-full object-cover",
     style: {
       height: "232px"
@@ -1165,7 +1165,7 @@ const RegionBand = () => {
     style: { minHeight: "clamp(380px, 46vh, 500px)", display: "flex", alignItems: "center" }
   }, /*#__PURE__*/React.createElement("img", {
     src: "img/solawert-montageteam-wuppertal.jpg?v=1782000017",
-    alt: "SolaWert montiert eine Photovoltaik-Anlage in NRW",
+    alt: "SW Photovoltaik montiert eine Photovoltaik-Anlage in NRW",
     className: "absolute inset-0 w-full h-full object-cover"
   }), /*#__PURE__*/React.createElement("div", {
     className: "absolute inset-0",
@@ -1240,7 +1240,7 @@ const About = () => /*#__PURE__*/React.createElement("section", {
   className: "rounded-[28px] overflow-hidden shadow-2xl ring-1 ring-black/5 about-media"
 }, /*#__PURE__*/React.createElement("img", {
   src: "img/solawert-montageteam-wuppertal.jpg?v=1782000017",
-  alt: "SolaWert im Einsatz in Wuppertal",
+  alt: "SW Photovoltaik im Einsatz in Wuppertal",
   className: "w-full h-[360px] md:h-[480px] object-cover object-[center_20%]"
 })), /*#__PURE__*/React.createElement("div", {
   className: "animate-float absolute -bottom-6 -right-4 md:-right-8 bg-white rounded-2xl shadow-xl border border-black/5 p-5 max-w-[220px]"
@@ -1263,7 +1263,7 @@ const About = () => /*#__PURE__*/React.createElement("section", {
   className: "text-3xl md:text-[2.6rem] font-heading font-black text-content leading-tight mb-5"
 }, "Ihr ", React.createElement("span", { style: { color: "#F5B301" } }, "Partner"), " für Photovoltaik & Wärmepumpe in NRW"), /*#__PURE__*/React.createElement("div", {
   className: "space-y-4 text-content-secondary leading-relaxed text-[15.5px]"
-}, /*#__PURE__*/React.createElement("p", null, "Bei SolaWert entscheiden Effizienz und Wirtschaftlichkeit über jede Anlage. Inhaber Gegam Sargsian und sein Team planen so, dass aus Ihrem Dach das Maximum herauskommt, statt einfach Standard zu verbauen. Vorkasse gibt es bei uns nicht: Sie zahlen erst, wenn die Anlage läuft und wir Ihnen die volle Funktion vorgeführt haben."), /*#__PURE__*/React.createElement("p", null, "Drei Dinge machen bei uns den Unterschied: eine sauber berechnete String-Verteilung der Module, einen passend dimensionierten Markenspeicher und ein bewusst größer dimensionierter Wechselrichter mit Reserve für die Zukunft. Und während die meisten nach der Montage verschwinden, nehmen wir uns danach rund eine Woche Zeit und stellen die Anlage gemeinsam mit Ihnen auf Ihren Verbrauch ein.")), /*#__PURE__*/React.createElement("div", {
+}, /*#__PURE__*/React.createElement("p", null, "Bei SW Photovoltaik entscheiden Effizienz und Wirtschaftlichkeit über jede Anlage. Inhaber Gegam Sargsian und sein Team planen so, dass aus Ihrem Dach das Maximum herauskommt, statt einfach Standard zu verbauen. Vorkasse gibt es bei uns nicht: Sie zahlen erst, wenn die Anlage läuft und wir Ihnen die volle Funktion vorgeführt haben."), /*#__PURE__*/React.createElement("p", null, "Drei Dinge machen bei uns den Unterschied: eine sauber berechnete String-Verteilung der Module, einen passend dimensionierten Markenspeicher und ein bewusst größer dimensionierter Wechselrichter mit Reserve für die Zukunft. Und während die meisten nach der Montage verschwinden, nehmen wir uns danach rund eine Woche Zeit und stellen die Anlage gemeinsam mit Ihnen auf Ihren Verbrauch ein.")), /*#__PURE__*/React.createElement("div", {
   className: "flex items-center gap-4 mt-7 p-4 rounded-2xl bg-white border border-black/5"
 }, /*#__PURE__*/React.createElement("img", {
   src: "img/portrait.jpg",
@@ -1334,7 +1334,7 @@ const Values = () => {
 
 /* ── Testimonials ── */
 const Testimonials = () => {
-  const reviews = [{"n": "Markus Hoffmann", "t": "Von der Beratung bis zur fertigen Anlage lief alles reibungslos. Dass wir erst nach der Inbetriebnahme gezahlt haben, hat uns ein richtig gutes Gefühl gegeben."}, {"n": "Sabine Krüger", "t": "Wir hatten mehrere Angebote. Bei SolaWert gab es spürbar mehr Speicher zum gleichen Preis. Die Planung war durchdacht, die Montage absolut sauber."}, {"n": "Thomas Berger", "t": "Photovoltaik und Wärmepumpe aus einer Hand, genau das hatten wir gesucht. Auch die Anmeldung wurde komplett übernommen, das hat uns viel Arbeit erspart."}, {"n": "Andrea Schmitz", "t": "Was mich überzeugt hat: Nach der Montage waren sie nicht weg, sondern haben die Anlage eine Woche lang mit uns optimiert. Das macht sonst keiner."}, {"n": "Peter Wagner", "t": "Für unser Gewerbedach wurde eine passgenaue Lösung durchgerechnet. Die Stromkosten sind seitdem spürbar gesunken."}, {"n": "Julia Neumann", "t": "Kompetent, termintreu und ehrlich beraten. Innerhalb weniger Wochen stand die Anlage. Wir würden jederzeit wieder hier kaufen."}];
+  const reviews = [{"n": "Markus Hoffmann", "t": "Von der Beratung bis zur fertigen Anlage lief alles reibungslos. Dass wir erst nach der Inbetriebnahme gezahlt haben, hat uns ein richtig gutes Gefühl gegeben."}, {"n": "Sabine Krüger", "t": "Wir hatten mehrere Angebote. Bei SW Photovoltaik gab es spürbar mehr Speicher zum gleichen Preis. Die Planung war durchdacht, die Montage absolut sauber."}, {"n": "Thomas Berger", "t": "Photovoltaik und Wärmepumpe aus einer Hand, genau das hatten wir gesucht. Auch die Anmeldung wurde komplett übernommen, das hat uns viel Arbeit erspart."}, {"n": "Andrea Schmitz", "t": "Was mich überzeugt hat: Nach der Montage waren sie nicht weg, sondern haben die Anlage eine Woche lang mit uns optimiert. Das macht sonst keiner."}, {"n": "Peter Wagner", "t": "Für unser Gewerbedach wurde eine passgenaue Lösung durchgerechnet. Die Stromkosten sind seitdem spürbar gesunken."}, {"n": "Julia Neumann", "t": "Kompetent, termintreu und ehrlich beraten. Innerhalb weniger Wochen stand die Anlage. Wir würden jederzeit wieder hier kaufen."}];
   const REVIEW_COLORS = ["#7E57C2", "#26A69A", "#EF5350", "#5C6BC0", "#FB8C00", "#43A047"];
   const REVIEW_DATES = ["vor 2 Wochen", "vor 1 Monat", "vor 3 Wochen", "vor 2 Monaten", "vor 1 Woche", "vor 1 Monat"];
   return /*#__PURE__*/React.createElement("section", {

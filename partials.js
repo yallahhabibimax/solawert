@@ -1,12 +1,12 @@
 /* ───────────────────────────────────────────────────────────
-   SolaWert · Shared Partials (EINE Quelle für Footer + Lead-Formular)
+   SW Photovoltaik · Shared Partials (EINE Quelle für Footer + Lead-Formular)
    Wird auf ALLEN Seiten via <script src="partials.js"> geladen.
    Platzhalter:  <div data-kaefer="footer"></div>   <section data-kaefer="form"></section>
    Hier editieren = überall geändert (Home + alle Unterseiten).
    ─────────────────────────────────────────────────────────── */
 (function () {
   var TEL = "+4915205999900", TELD = "0152 5999900";
-  var MAIL = "info@solawert.de";
+  var MAIL = "info@sw-photovoltaik.de";
 
   /* ═══ PAGE-TRANSITIONS (browseruebergreifend, fade per body-class) ═══ */
   (function setupPageTransitions(){
@@ -125,7 +125,7 @@
           '</div>' +
           '<div class="sw-fcol">' +
             '<h4 class="font-heading font-bold text-sm uppercase tracking-wider text-white mb-4">Kontakt</h4>' +
-            '<address class="not-italic" itemscope itemtype="https://schema.org/LocalBusiness"><meta itemprop="name" content="SolaWert"><ul class="space-y-3 text-sm text-white">' +
+            '<address class="not-italic" itemscope itemtype="https://schema.org/LocalBusiness"><meta itemprop="name" content="SW Photovoltaik"><ul class="space-y-3 text-sm text-white">' +
               '<li class="flex items-start gap-2.5"><span class="text-brand mt-0.5 shrink-0">' + svg('phone',17) + '</span><a href="tel:'+TEL+'" class="hover:text-brand" itemprop="telephone">'+TELD+'</a></li>' +
               '<li class="flex items-start gap-2.5"><span class="text-brand mt-0.5 shrink-0">' + svg('mail',17) + '</span><a href="mailto:'+MAIL+'" class="hover:text-brand break-all" itemprop="email">'+MAIL+'</a></li>' +
               '<li class="flex items-start gap-2.5"><span class="text-brand mt-0.5 shrink-0">' + svg('pin',17) + '</span><span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress"><span itemprop="streetAddress">Friedrich-Ebert-Str. 55</span><br><span itemprop="postalCode">42103</span> <span itemprop="addressLocality">Wuppertal</span></span></li>' +
@@ -134,7 +134,7 @@
           '</div>' +
         '</div>' +
         '<div class="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 text-sm text-white">' +
-          '<div>© ' + (new Date().getFullYear()) + ' SolaWert · Gegam Sargsian · Inhaber</div>' +
+          '<div>© ' + (new Date().getFullYear()) + ' SW Photovoltaik · Gegam Sargsian · Inhaber</div>' +
           '<a href="https://pstudio.io" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.6rem;opacity:.85;transition:opacity .25s ease" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.85"><span class="font-heading" style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.4)">Umgesetzt von</span><img src="img/pstudio-partner.webp?v=2" alt="PStudio" style="height:34px;width:auto;display:block"></a>' +
           '<div class="flex items-center gap-5"><a href="impressum" class="hover:text-brand">Impressum</a><a href="datenschutz" class="hover:text-brand">Datenschutz</a></div>' +
         '</div>' +

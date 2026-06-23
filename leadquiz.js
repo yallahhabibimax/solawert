@@ -1,4 +1,4 @@
-/* SolaWert LeadQuiz - eigenstaendig fuer Unterseiten. 1:1 das Formular der Homepage. */
+/* SW Photovoltaik LeadQuiz - eigenstaendig fuer Unterseiten. 1:1 das Formular der Homepage. */
 const {
   useEffect,
   useRef,
@@ -6,7 +6,7 @@ const {
 } = React;
 const PHONE_FEST = "0152 5999900";
 const PHONE_FEST_TEL = "+4915205999900";
-const EMAIL = "info@solawert.de";
+const EMAIL = "info@sw-photovoltaik.de";
 
 /* utility icons (stroke, fragment-wrapped) */
 const ICO = {
