@@ -36,12 +36,14 @@
 
 /* ─── Base ─────────────────────────────────────────────── */
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: var(--bg);
   color: var(--ink);
+  overflow-x: hidden;
+  max-width: 100%;
 }
 ::selection { background: rgba(var(--accent-rgb), 0.28); color: var(--ink); }
 img { transition: opacity .4s ease; }
