@@ -600,15 +600,15 @@ const Hero = () => {
   }, /*#__PURE__*/React.createElement("div", {
     className: "sw-founder__top"
   }, /*#__PURE__*/React.createElement("img", {
-    src: "img/inhaber.png",
-    alt: "Inhaber von SolaWert"
+    src: "img/inhaber-house.png",
+    alt: "Modernes Haus mit Photovoltaik-Anlage von SolaWert"
   })), /*#__PURE__*/React.createElement("div", {
     className: "sw-founder__body"
   }, /*#__PURE__*/React.createElement("div", {
     className: "sw-founder__name"
-  }, "Max Mustermann"), /*#__PURE__*/React.createElement("div", {
+  }, "SolaWert"), /*#__PURE__*/React.createElement("div", {
     className: "sw-founder__role"
-  }, "Inhaber · SolaWert"), /*#__PURE__*/React.createElement("div", {
+  }, "Schlüsselfertig aus Wuppertal"), /*#__PURE__*/React.createElement("div", {
     className: "sw-founder__stats"
   }, /*#__PURE__*/React.createElement("div", {
     className: "sw-founder__stat"
