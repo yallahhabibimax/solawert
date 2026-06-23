@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stromspeicher in Wuppertal & NRW | SolaWert</title>
+  <title>Stromspeicher schlüsselfertig in Wuppertal & NRW | SolaWert</title>
   <meta http-equiv="Cache-Control" content="no-store">
-  <meta name="description" content="Stromspeicher in Wuppertal und ganz NRW: passend zur PV-Anlage oder als Nachrüstung. Bei uns oft 60 % mehr Speicher zum gleichen Preis. Festpreis, ohne Anzahlung.">
+  <meta name="description" content="Stromspeicher mit deutlich mehr Kapazität zum gleichen Preis. Exakt auf Ihren Verbrauch dimensioniert, 10 bis 15 Jahre Garantie und Zahlung erst nach Inbetriebnahme.">
   <meta name="robots" content="index, follow">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Stromspeicher in Wuppertal & NRW | SolaWert">
-  <meta property="og:description" content="Stromspeicher passend dimensioniert oder nachgerüstet. Oft 60 % mehr Speicher zum gleichen Preis, ohne Anzahlung.">
+  <meta property="og:title" content="Stromspeicher schlüsselfertig in Wuppertal & NRW | SolaWert">
+  <meta property="og:description" content="Rund 60 Prozent mehr Speicher zum gleichen Preis. Bedarfsgerecht dimensioniert, 10 bis 15 Jahre Garantie, Zahlung erst nach Inbetriebnahme.">
   <meta property="og:image" content="img/leistung-speicher.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="img/leistung-speicher.jpg">
@@ -23,42 +23,99 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin href="fonts/inter-latin.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin href="fonts/archivo-latin.woff2">
 
-  <link rel="stylesheet" href="tailwind.css?v=1782146000">
-  <link rel="stylesheet" href="styles.css?v=1782146000">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","serviceType":"Stromspeicher-Installation","provider":{"@type":"LocalBusiness","name":"SolaWert","telephone":"+4915205999900","email":"info@solawert.de","address":{"@type":"PostalAddress","streetAddress":"Friedrich-Ebert-Str. 55","postalCode":"42103","addressLocality":"Wuppertal","addressCountry":"DE"}},"areaServed":["Wuppertal","Solingen","Remscheid","Velbert","Mettmann","Haan","Nordrhein-Westfalen"],"description":"Stromspeicher-Installation und Nachrüstung in Wuppertal und NRW. Passend zur PV-Anlage oder als Bestandsanlage-Erweiterung."}</script>
+  <link rel="stylesheet" href="tailwind.css?v=1782147000">
+  <link rel="stylesheet" href="styles.css?v=1782147000">
   <style>
     .lp-section { padding: clamp(3.5rem, 7vw, 6rem) 1.25rem; }
     @media (min-width:768px){ .lp-section { padding-left: 2rem; padding-right: 2rem; } }
     .lp-wrap { max-width: 80rem; margin: 0 auto; }
     .lp-eyebrow { display:inline-flex; align-items:center; gap:.5rem; font-family:'Archivo',sans-serif; font-weight:800; font-size:11px; letter-spacing:.16em; text-transform:uppercase; }
     .lp-h2 { font-family:'Archivo',sans-serif; font-weight:900; line-height:1.08; letter-spacing:-.02em; font-size:clamp(1.9rem,4vw,2.9rem); }
-    .lp-card { border-radius:22px; padding:1.6rem 1.5rem; background:#fff; border:1px solid rgba(20,23,28,.08); box-shadow:0 24px 50px -34px rgba(20,23,28,.35); }
     .lp-ico { width:46px; height:46px; border-radius:13px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
-    .lp-list-i { display:flex; align-items:flex-start; gap:1rem; padding:1.1rem 1.2rem; border-radius:16px; background:#FBF6E9; border:1px solid rgba(20,23,28,.06); transition:transform .3s cubic-bezier(.16,1,.3,1), border-color .3s ease, box-shadow .3s ease; }
-    .lp-list-i:hover { transform:translateY(-2px); border-color:rgba(245,179,1,.4); box-shadow:0 18px 36px -24px rgba(20,23,28,.3), 0 0 30px -14px rgba(245,179,1,.35); }
-    .lp-check { width:38px; height:38px; border-radius:11px; background:linear-gradient(180deg,#FFDD66,#F5B301); color:#1A1402; display:flex; align-items:center; justify-content:center; flex-shrink:0; box-shadow:0 8px 18px -8px rgba(245,179,1,.55); transition:transform .3s cubic-bezier(.16,1,.3,1); }
-    .lp-check svg { width:18px; height:18px; }
-    .lp-list-i:hover .lp-check { transform:translateY(-1px) rotate(-3deg); }
+
+    /* Stats - Minimal Black */
+    .lp-stats { display:flex; flex-wrap:wrap; gap:1.4rem 2.6rem; margin-top:1.75rem; padding-top:1.25rem; border-top:1px solid rgba(20,23,28,.12); }
+    .lp-stat { position:relative; padding-left:.95rem; }
+    .lp-stat__mark { position:absolute; left:0; top:.7rem; width:4px; height:4px; border-radius:50%; background:#14171C; }
+    .lp-stat__n { font-family:'Archivo',sans-serif; font-weight:900; font-size:1.95rem; line-height:1; letter-spacing:-.025em; color:#14171C; font-feature-settings:'tnum' 1; }
+    .lp-stat__pre, .lp-stat__post { font-size:1.05rem; font-weight:600; color:#525A64; letter-spacing:0; }
+    .lp-stat__em { color:#14171C; padding:0 .04em; position:relative; display:inline-block; }
+    .lp-stat__em::after { content:''; position:absolute; left:0; right:0; bottom:-.05em; height:2px; background:#14171C; transform:scaleX(0); transform-origin:left; transition:transform .5s cubic-bezier(.16,1,.3,1); }
+    .lp-stat:hover .lp-stat__em::after { transform:scaleX(1); }
+    .lp-stat__l { font-family:'Inter',sans-serif; font-size:10.5px; color:#525A64; margin-top:.5rem; letter-spacing:.18em; text-transform:uppercase; font-weight:700; display:flex; align-items:center; gap:.45rem; }
+    .lp-stat__l::before { content:''; width:14px; height:1px; background:#14171C; }
+
+    /* === Ratgeber Cards === */
+    .st-eyebrow { display:inline-flex; align-items:center; gap:.5rem; padding:.42rem 1rem; border-radius:999px; background:rgba(245,179,1,.12); color:#a37700; font-family:'Inter',sans-serif; font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; margin-bottom:1rem; }
+    .st-ratg { padding:5rem 1.25rem; background:#FBF6E9; }
+    @media (min-width:768px){ .st-ratg { padding:6rem 2rem; } }
+    .st-ratg__wrap { max-width:72rem; margin:0 auto; }
+    .st-ratg__head { text-align:center; margin-bottom:2.5rem; }
+    .st-ratg__h2 { font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(1.65rem,2.9vw,2.3rem); line-height:1.15; letter-spacing:-.02em; color:#14171C; margin:0; }
+    .st-ratg__grid { display:grid; grid-template-columns:1fr; gap:1rem; }
+    @media (min-width:768px){ .st-ratg__grid { grid-template-columns:repeat(3,1fr); gap:1.2rem; } }
+    .st-ratg__c { background:#fff; border:1px solid rgba(20,23,28,.06); border-radius:18px; overflow:hidden; display:flex; flex-direction:column; transition:transform .3s ease, box-shadow .3s ease; text-decoration:none; }
+    .st-ratg__c:hover { transform:translateY(-3px); box-shadow:0 18px 40px -22px rgba(20,23,28,.18); }
+    .st-ratg__c-img { aspect-ratio:16/9; overflow:hidden; background:#2A2E36; }
+    .st-ratg__c-img img { width:100%; height:100%; object-fit:cover; transition:transform .5s ease; }
+    .st-ratg__c:hover .st-ratg__c-img img { transform:scale(1.04); }
+    .st-ratg__c-body { padding:1.3rem 1.4rem 1.5rem; display:flex; flex-direction:column; flex:1; }
+    .st-ratg__c-cat { font-family:'Archivo',sans-serif; font-weight:700; font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:#a37700; margin-bottom:.55rem; }
+    .st-ratg__c-h { font-family:'Archivo',sans-serif; font-weight:800; font-size:1.05rem; line-height:1.3; color:#14171C; margin:0 0 .45rem; }
+    .st-ratg__c-p { font-family:'Inter',sans-serif; font-size:13.5px; line-height:1.55; color:#3D444E; margin:0 0 .85rem; flex:1; }
+    .st-ratg__c-arrow { color:#a37700; font-family:'Archivo',sans-serif; font-weight:800; font-size:12.5px; display:inline-flex; align-items:center; gap:.3rem; }
+
+    /* === 4 Schritte - Editorial Process Map === */
+    .lp-steps { position:relative; }
+    .lp-steps__head { display:flex; flex-direction:column; align-items:flex-start; max-width:46rem; margin-bottom:3rem; }
+    .lp-steps__eyebrow { display:inline-flex; align-items:center; gap:.55rem; padding:.42rem 1rem; border-radius:999px; background:rgba(245,179,1,.12); border:1px solid rgba(245,179,1,.28); color:#a37700; font-family:'Archivo',sans-serif; font-weight:800; font-size:11px; letter-spacing:.16em; text-transform:uppercase; margin-bottom:1.1rem; }
+    .lp-steps__eyebrow::before { content:''; width:7px; height:7px; border-radius:50%; background:#F5B301; box-shadow:0 0 0 0 rgba(245,179,1,.55); animation:lp-pulse 2s ease-out infinite; }
+    @keyframes lp-pulse { 0%{box-shadow:0 0 0 0 rgba(245,179,1,.55);} 70%{box-shadow:0 0 0 10px rgba(245,179,1,0);} 100%{box-shadow:0 0 0 0 rgba(245,179,1,0);} }
+    .lp-steps__h2 { font-family:'Archivo',sans-serif; font-weight:900; line-height:1.05; letter-spacing:-.025em; font-size:clamp(1.9rem,4vw,2.9rem); color:#14171C; margin:0; }
+    .lp-steps__h2 .accent { background:linear-gradient(120deg, transparent 0% 65%, rgba(245,179,1,.35) 65% 95%, transparent 95% 100%); padding:0 .12em; }
+
+    .lp-steps__grid { position:relative; display:grid; grid-template-columns:1fr; gap:1.1rem; }
+    @media (min-width:768px) { .lp-steps__grid { grid-template-columns:repeat(2,1fr); gap:1rem; } }
+    @media (min-width:1024px) { .lp-steps__grid { grid-template-columns:repeat(4,1fr); gap:.9rem; } }
+    @media (min-width:1024px) {
+      .lp-steps__grid::before { content:''; position:absolute; top:5.3rem; left:11%; right:11%; height:2px; background:repeating-linear-gradient(to right, rgba(245,179,1,.5) 0 6px, transparent 6px 14px); z-index:0; pointer-events:none; }
+    }
+
+    .lp-step { position:relative; background:linear-gradient(160deg,#ffffff 0%,#FDFAEF 100%); border-radius:22px; padding:1.7rem 1.4rem 1.5rem; border:1px solid rgba(20,23,28,.07); box-shadow:0 18px 40px -28px rgba(20,23,28,.18); transition:transform .4s cubic-bezier(.16,1,.3,1), box-shadow .4s ease, border-color .4s ease; overflow:hidden; z-index:1; }
+    .lp-step::before { content:''; position:absolute; top:0; left:1.4rem; right:1.4rem; height:3px; background:linear-gradient(90deg, transparent 0%, #F5B301 40%, #F5B301 60%, transparent 100%); border-radius:0 0 3px 3px; opacity:.7; transition:opacity .4s ease; }
+    .lp-step::after { content:''; position:absolute; bottom:-50px; right:-50px; width:140px; height:140px; background:radial-gradient(circle, rgba(245,179,1,.12) 0%, transparent 65%); pointer-events:none; opacity:0; transition:opacity .4s ease; }
+    .lp-step:hover { transform:translateY(-6px); box-shadow:0 32px 56px -28px rgba(20,23,28,.28), 0 0 0 1px rgba(245,179,1,.3), 0 0 40px -8px rgba(245,179,1,.25); border-color:rgba(245,179,1,.35); }
+    .lp-step:hover::before { opacity:1; }
+    .lp-step:hover::after { opacity:1; }
+
+    .lp-step__head { display:flex; align-items:flex-start; justify-content:space-between; gap:1rem; margin-bottom:1.15rem; }
+    .lp-step__num { position:relative; font-family:'Archivo',sans-serif; font-weight:900; font-size:2.45rem; line-height:1; letter-spacing:-.04em; color:#14171C; font-feature-settings:'tnum' 1; padding-bottom:.4rem; }
+    .lp-step__num::after { content:''; position:absolute; left:0; bottom:0; width:1.4em; height:3px; background:linear-gradient(90deg,#FFDD66,#F5B301); border-radius:2px; }
+    .lp-step__ico { width:42px; height:42px; flex-shrink:0; border-radius:13px; background:linear-gradient(180deg,#FFDD66,#F5B301); color:#1A1402; display:flex; align-items:center; justify-content:center; box-shadow:0 10px 22px -8px rgba(245,179,1,.55); transition:transform .4s cubic-bezier(.16,1,.3,1); }
+    .lp-step:hover .lp-step__ico { transform:rotate(-7deg) scale(1.08); }
+    .lp-step__h { font-family:'Archivo',sans-serif; font-weight:800; font-size:1.06rem; line-height:1.25; letter-spacing:-.01em; color:#14171C; margin:0 0 .55rem; }
+    .lp-step__p { font-family:'Inter',sans-serif; font-size:13.5px; line-height:1.6; color:#525A64; margin:0; }
   </style>
 </head>
 <body class="font-body antialiased overflow-x-hidden" style="background:#FFFFFF;color:#14171C">
 
+  <!-- NAVBAR (geteilt aus partials.js) -->
   <div data-kaefer="nav"></div>
 
   <!-- HERO -->
   <header style="position:relative; overflow:hidden; background:#2A2E36; padding:9rem 1.25rem 3.5rem;">
-    <img src="img/leistung-speicher.jpg?v=1782146000" alt="Stromspeicher im Heizungsraum" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
+    <img src="img/leistung-speicher.jpg?v=1782147000" alt="Stromspeicher von SolaWert" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
     <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(15,18,22,.72) 0%, rgba(15,18,22,.6) 38%, rgba(15,18,22,.92) 100%);"></div>
     <div class="lp-wrap" style="position:relative; z-index:2; color:#fff;">
       <span class="lp-eyebrow" style="color:#F5B301; margin-bottom:1rem;">
         <span style="width:7px;height:7px;border-radius:50%;background:#F5B301;display:inline-block;"></span>
         Leistung · Stromspeicher
       </span>
-      <h1 class="font-heading" style="font-weight:900; line-height:1.05; letter-spacing:-.03em; font-size:clamp(2.4rem,6vw,4.2rem); margin:1rem 0 1.1rem; max-width:20ch; text-shadow:0 2px 30px rgba(0,0,0,.4);">
-        Stromspeicher <span style="color:#F5B301;">richtig</span> dimensioniert
+      <h1 class="font-heading" style="font-weight:900; line-height:1.05; letter-spacing:-.03em; font-size:clamp(2.4rem,6vw,4.2rem); margin:1rem 0 1.1rem; max-width:18ch; text-shadow:0 2px 30px rgba(0,0,0,.4);">
+        Stromspeicher mit <span style="color:#F5B301;">deutlich mehr</span> Kapazität
       </h1>
-      <p style="color:rgba(255,255,255,.82); font-size:clamp(1.02rem,1.6vw,1.22rem); line-height:1.6; max-width:42rem; margin-bottom:2rem; text-shadow:0 1px 12px rgba(0,0,0,.4);">
-        Der Speicher entscheidet über die Effizienz Ihrer Solaranlage. Wir planen ihn ehrlich, passend zu Ihrem Verbrauch — und liefern oft 60 % mehr Speicher zum gleichen Preis wie der Wettbewerb.
+      <p style="color:rgba(255,255,255,.82); font-size:clamp(1.02rem,1.6vw,1.22rem); line-height:1.6; max-width:40rem; margin-bottom:2rem; text-shadow:0 1px 12px rgba(0,0,0,.4);">
+        Mehr Speicher zum gleichen Preis, exakt auf Ihren Verbrauch ausgelegt. So nutzen Sie Ihren Solarstrom auch abends und nachts, statt ihn günstig einzuspeisen.
       </p>
       <div class="flex flex-wrap items-center gap-3">
         <a href="#anfrage" class="btn-primary cta-pulse rounded-full font-heading inline-flex items-center gap-2.5" style="padding:.95rem 1.75rem;">
@@ -78,45 +135,36 @@
     <div class="lp-wrap grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
       <div>
         <span class="lp-eyebrow" style="color:#8A5E00; margin-bottom:.8rem;">Mehr Eigenverbrauch</span>
-        <h2 class="lp-h2 text-content" style="margin:.6rem 0 1.1rem;">Sonne aus dem Tag in die Nacht mitnehmen</h2>
+        <h2 class="lp-h2 text-content" style="margin:.6rem 0 1.1rem;">Der Speicher entscheidet, wie viel Solarstrom bei Ihnen bleibt</h2>
         <div class="space-y-4" style="color:#525A64; font-size:15.5px; line-height:1.7;">
-          <p>Ohne Speicher verkaufen Sie überschüssigen Sonnenstrom für ein paar Cent pro Kilowattstunde an den Netzbetreiber — und kaufen ihn abends teurer zurück. Ein passend dimensionierter Stromspeicher dreht das um: Was Sie tagsüber produzieren, nutzen Sie nachts.</p>
-          <p>Die Größe macht den Unterschied. Wir rechnen den Speicher auf Ihren tatsächlichen Verbrauch durch, nicht auf das, was sich am besten verkauft. Bei uns bekommen Sie oft deutlich mehr Speichervolumen zum gleichen Preis.</p>
+          <p>Ein zu kleiner Speicher ist der häufigste Grund, dass eine PV-Anlage hinter ihren Möglichkeiten bleibt. Tagsüber wird produziert, abends gebraucht. Ohne ausreichend Speicher landet der teure Sonnenstrom günstig im Netz statt im eigenen Haushalt.</p>
+          <p>Während die meisten Anbieter am Speicher sparen, um die Marge zu erhöhen, machen wir das Gegenteil: häufig rund 60 Prozent mehr Kapazität zum gleichen Preis, manchmal sogar günstiger. Bedarfsgerecht dimensioniert, nicht von der Stange.</p>
         </div>
-        <div class="flex flex-wrap gap-x-8 gap-y-3 mt-7">
-          <div><div class="font-heading" style="font-weight:900;font-size:1.9rem;color:#14171C;">+60 %</div><div style="font-size:13px;color:#525A64;">mehr Speicher inkl.</div></div>
-          <div><div class="font-heading" style="font-weight:900;font-size:1.9rem;color:#14171C;">bis 70 %</div><div style="font-size:13px;color:#525A64;">Autarkie möglich</div></div>
-          <div><div class="font-heading" style="font-weight:900;font-size:1.9rem;color:#14171C;">10+ J.</div><div style="font-size:13px;color:#525A64;">Garantie</div></div>
+        <div class="lp-stats">
+          <div class="lp-stat">
+            <span class="lp-stat__mark"></span>
+            <div class="lp-stat__n">+<span class="lp-stat__em">60</span>%</div>
+            <div class="lp-stat__l">mehr Kapazität inkl.</div>
+          </div>
+          <div class="lp-stat">
+            <span class="lp-stat__mark"></span>
+            <div class="lp-stat__n"><span class="lp-stat__em">10-15</span><span class="lp-stat__post">&nbsp;J.</span></div>
+            <div class="lp-stat__l">Garantie</div>
+          </div>
+          <div class="lp-stat">
+            <span class="lp-stat__mark"></span>
+            <div class="lp-stat__n"><span class="lp-stat__em">0</span>&nbsp;€</div>
+            <div class="lp-stat__l">Anzahlung</div>
+          </div>
         </div>
       </div>
       <div style="position:relative;">
-        <img src="img/leistung-speicher2.png" alt="Stromspeicher SolaWert" style="width:100%; height:clamp(320px,42vh,460px); object-fit:cover; border-radius:28px; box-shadow:0 40px 80px -40px rgba(20,23,28,.5);">
+        <img src="img/leistung-speicher2.png" alt="Stromspeicher von SolaWert" style="width:100%; height:clamp(320px,42vh,460px); object-fit:cover; border-radius:28px; box-shadow:0 40px 80px -40px rgba(20,23,28,.5);">
       </div>
     </div>
   </section>
 
-  <!-- LEISTUNGSUMFANG -->
-  <section class="lp-section" style="background:#fff;">
-    <div class="lp-wrap">
-      <div style="max-width:44rem; margin-bottom:2.5rem;">
-        <span class="lp-eyebrow" style="color:#8A5E00; margin-bottom:.7rem;">Alles aus einer Hand</span>
-        <h2 class="lp-h2 text-content" style="margin-top:.5rem;">Das ist beim Stromspeicher dabei</h2>
-      </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        <div class="lp-list-i"><span class="lp-check"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4.5 4.5L19 7"/></svg></span><div><div class="font-heading font-bold text-content" style="font-size:15.5px;">Verbrauchsanalyse</div><div style="font-size:13.5px;color:#525A64;line-height:1.5;">Tages- und Jahreslastgang ausgewertet.</div></div></div>
-        <div class="lp-list-i"><span class="lp-check"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4.5 4.5L19 7"/></svg></span><div><div class="font-heading font-bold text-content" style="font-size:15.5px;">Speicher-Dimensionierung</div><div style="font-size:13.5px;color:#525A64;line-height:1.5;">Größe passend zu PV und Verbrauch.</div></div></div>
-        <div class="lp-list-i"><span class="lp-check"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4.5 4.5L19 7"/></svg></span><div><div class="font-heading font-bold text-content" style="font-size:15.5px;">Hochwertige LFP-Module</div><div style="font-size:13.5px;color:#525A64;line-height:1.5;">Lithium-Eisen-Phosphat, brandsicher.</div></div></div>
-        <div class="lp-list-i"><span class="lp-check"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4.5 4.5L19 7"/></svg></span><div><div class="font-heading font-bold text-content" style="font-size:15.5px;">Modulare Erweiterbarkeit</div><div style="font-size:13.5px;color:#525A64;line-height:1.5;">Speicher später aufstocken möglich.</div></div></div>
-        <div class="lp-list-i"><span class="lp-check"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4.5 4.5L19 7"/></svg></span><div><div class="font-heading font-bold text-content" style="font-size:15.5px;">Nachrüstung Bestandsanlage</div><div style="font-size:13.5px;color:#525A64;line-height:1.5;">Auch für vorhandene PV-Anlagen.</div></div></div>
-        <div class="lp-list-i"><span class="lp-check"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4.5 4.5L19 7"/></svg></span><div><div class="font-heading font-bold text-content" style="font-size:15.5px;">Komplette Montage</div><div style="font-size:13.5px;color:#525A64;line-height:1.5;">In der Regel an einem Tag erledigt.</div></div></div>
-        <div class="lp-list-i"><span class="lp-check"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4.5 4.5L19 7"/></svg></span><div><div class="font-heading font-bold text-content" style="font-size:15.5px;">Wechselrichter-Update</div><div style="font-size:13.5px;color:#525A64;line-height:1.5;">Bei Bedarf passender Hybrid-Wechselrichter.</div></div></div>
-        <div class="lp-list-i"><span class="lp-check"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4.5 4.5L19 7"/></svg></span><div><div class="font-heading font-bold text-content" style="font-size:15.5px;">Notstrom-Option</div><div style="font-size:13.5px;color:#525A64;line-height:1.5;">Auf Wunsch mit Inselbetrieb bei Stromausfall.</div></div></div>
-        <div class="lp-list-i"><span class="lp-check"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4.5 4.5L19 7"/></svg></span><div><div class="font-heading font-bold text-content" style="font-size:15.5px;">Monitoring-App</div><div style="font-size:13.5px;color:#525A64;line-height:1.5;">Live-Werte und Auswertung am Handy.</div></div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WARUM -->
+  <!-- WARUM SOLAWERT (Benefits) -->
   <section class="lp-section" style="background:#181B21; color:#fff;">
     <div class="lp-wrap">
       <div style="max-width:44rem; margin-bottom:2.75rem;">
@@ -125,35 +173,35 @@
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
         <div style="border-radius:22px; padding:1.75rem; background:#2A2E36; border:1px solid rgba(245,179,1,.18);">
-          <div class="lp-ico" style="background:#F5B301; color:#1A1402; margin-bottom:1.1rem;"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12.8 2.2a2 2 0 0 0-1.6 0L2.6 6.1a1 1 0 0 0 0 1.8l8.6 3.9a2 2 0 0 0 1.6 0l8.6-3.9a1 1 0 0 0 0-1.8Z"/><path d="m22 17.6-9.2 4.2a2 2 0 0 1-1.6 0L2 17.6"/></svg></div>
-          <h3 class="font-heading font-bold" style="font-size:1.18rem; margin-bottom:.5rem;">60 % mehr Speicher</h3>
-          <p style="color:rgba(255,255,255,.62); font-size:14.5px; line-height:1.65;">Bei uns gibt es spürbar mehr Speichervolumen zum gleichen Preis. Direkter Lieferantenkontakt macht's möglich.</p>
+          <div class="lp-ico" style="background:#F5B301; color:#1A1402; margin-bottom:1.1rem;"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12.8 2.2a2 2 0 0 0-1.6 0L2.6 6.1a1 1 0 0 0 0 1.8l8.6 3.9a2 2 0 0 0 1.6 0l8.6-3.9a1 1 0 0 0 0-1.8Z"/><path d="m22 17.6-9.2 4.2a2 2 0 0 1-1.6 0L2 17.6"/><path d="m22 12.6-9.2 4.2a2 2 0 0 1-1.6 0L2 12.6"/></svg></div>
+          <h3 class="font-heading font-bold" style="font-size:1.18rem; margin-bottom:.5rem;">Rund 60 % mehr Kapazität</h3>
+          <p style="color:rgba(255,255,255,.62); font-size:14.5px; line-height:1.65;">Spürbar mehr Speicher zum gleichen Preis. Während die Konkurrenz spart, geben wir mehr für Ihre Effizienz.</p>
         </div>
         <div style="border-radius:22px; padding:1.75rem; background:#2A2E36; border:1px solid rgba(245,179,1,.18);">
-          <div class="lp-ico" style="background:#F5B301; color:#1A1402; margin-bottom:1.1rem;"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-          <h3 class="font-heading font-bold" style="font-size:1.18rem; margin-bottom:.5rem;">LFP-Sicherheit</h3>
-          <p style="color:rgba(255,255,255,.62); font-size:14.5px; line-height:1.65;">Lithium-Eisen-Phosphat statt billiger Alternativen. Hohe Lebensdauer, brandsicher, langlebig.</p>
-        </div>
-        <div style="border-radius:22px; padding:1.75rem; background:#2A2E36; border:1px solid rgba(245,179,1,.18);">
-          <div class="lp-ico" style="background:#F5B301; color:#1A1402; margin-bottom:1.1rem;"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M12 3v18"/></svg></div>
-          <h3 class="font-heading font-bold" style="font-size:1.18rem; margin-bottom:.5rem;">Modular erweiterbar</h3>
-          <p style="color:rgba(255,255,255,.62); font-size:14.5px; line-height:1.65;">Sie können später aufstocken, wenn sich Ihr Verbrauch ändert. Kein Komplettaustausch nötig.</p>
+          <div class="lp-ico" style="background:#F5B301; color:#1A1402; margin-bottom:1.1rem;"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6"/><path d="m20 20-3.2-3.2"/></svg></div>
+          <h3 class="font-heading font-bold" style="font-size:1.18rem; margin-bottom:.5rem;">Bedarfsgerecht dimensioniert</h3>
+          <p style="color:rgba(255,255,255,.62); font-size:14.5px; line-height:1.65;">Wir berechnen den Speicher genau auf Ihr Lastprofil. Weder zu klein noch unnötig überdimensioniert.</p>
         </div>
         <div style="border-radius:22px; padding:1.75rem; background:#2A2E36; border:1px solid rgba(245,179,1,.18);">
           <div class="lp-ico" style="background:#F5B301; color:#1A1402; margin-bottom:1.1rem;"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
-          <h3 class="font-heading font-bold" style="font-size:1.18rem; margin-bottom:.5rem;">Nachrüstung möglich</h3>
-          <p style="color:rgba(255,255,255,.62); font-size:14.5px; line-height:1.65;">Auch für Bestandsanlagen, die noch keinen Speicher haben. AC-gekoppelt oder mit neuem Hybrid-Wechselrichter.</p>
+          <h3 class="font-heading font-bold" style="font-size:1.18rem; margin-bottom:.5rem;">Hybrid-Wechselrichter</h3>
+          <p style="color:rgba(255,255,255,.62); font-size:14.5px; line-height:1.65;">PV und Speicher sauber zusammengeführt. Ein System steuert alles, kein doppelter Wandlungsverlust.</p>
+        </div>
+        <div style="border-radius:22px; padding:1.75rem; background:#2A2E36; border:1px solid rgba(245,179,1,.18);">
+          <div class="lp-ico" style="background:#F5B301; color:#1A1402; margin-bottom:1.1rem;"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <h3 class="font-heading font-bold" style="font-size:1.18rem; margin-bottom:.5rem;">10 bis 15 Jahre Garantie</h3>
+          <p style="color:rgba(255,255,255,.62); font-size:14.5px; line-height:1.65;">Auf den Speicher je nach Hersteller 10 bis 15 Jahre Garantie. Hochwertige Markenzellen, lange Lebensdauer.</p>
         </div>
         <div style="position:relative; overflow:hidden; border-radius:22px; padding:1.75rem; background:linear-gradient(155deg,rgba(245,179,1,.14) 0%,rgba(245,179,1,.04) 100%),#2A2E36; border:1px solid rgba(245,179,1,.55); box-shadow:0 0 50px -16px rgba(245,179,1,.4), inset 0 1px 0 rgba(255,255,255,.05);">
           <span aria-hidden="true" style="position:absolute; top:-45%; right:-25%; width:240px; height:240px; background:radial-gradient(circle,rgba(245,179,1,.22) 0%,transparent 65%); pointer-events:none;"></span>
           <div class="lp-ico" style="background:linear-gradient(180deg,#FFDD66,#F5B301); color:#1A1402; margin-bottom:1.1rem; position:relative; box-shadow:0 10px 24px -8px rgba(245,179,1,.6);"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 0 1 4.6 1c0 1.7-2.6 2.5-2.6 2.5"/><path d="M12 17h.01"/></svg></div>
           <h3 class="font-heading font-bold" style="font-size:1.18rem; margin-bottom:.5rem; position:relative;">Keine Anzahlung</h3>
-          <p style="color:rgba(255,255,255,.72); font-size:14.5px; line-height:1.65; position:relative;">Sie zahlen erst, wenn der Speicher läuft, in die Anlage integriert ist und Sie die Werte in der App sehen.</p>
+          <p style="color:rgba(255,255,255,.72); font-size:14.5px; line-height:1.65; position:relative;">Sie zahlen erst, wenn Ihr Speicher läuft und wir Ihnen die Funktion vorgeführt haben. Keine Vorkasse.</p>
         </div>
         <div style="border-radius:22px; padding:1.75rem; background:#2A2E36; border:1px solid rgba(245,179,1,.18);">
-          <div class="lp-ico" style="background:#F5B301; color:#1A1402; margin-bottom:1.1rem;"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l2.5 2"/></svg></div>
-          <h3 class="font-heading font-bold" style="font-size:1.18rem; margin-bottom:.5rem;">10+ Jahre Garantie</h3>
-          <p style="color:rgba(255,255,255,.62); font-size:14.5px; line-height:1.65;">Lange Hersteller-Garantie auf Zellen und Wechselrichter. Wir wählen nur Anbieter mit echter Service-Präsenz in DE.</p>
+          <div class="lp-ico" style="background:#F5B301; color:#1A1402; margin-bottom:1.1rem;"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg></div>
+          <h3 class="font-heading font-bold" style="font-size:1.18rem; margin-bottom:.5rem;">App & Monitoring inklusive</h3>
+          <p style="color:rgba(255,255,255,.62); font-size:14.5px; line-height:1.65;">Sie sehen jederzeit, wie viel geladen, gespeichert und genutzt wird, direkt am Handy.</p>
         </div>
       </div>
     </div>
@@ -162,34 +210,151 @@
   <!-- ABLAUF -->
   <section class="lp-section" style="background:#fff;">
     <div class="lp-wrap">
-      <div style="max-width:44rem; margin-bottom:2.5rem;">
-        <span class="lp-eyebrow" style="color:#8A5E00; margin-bottom:.7rem;">So einfach geht's</span>
-        <h2 class="lp-h2 text-content" style="margin-top:.5rem;">In 4 Schritten zum Stromspeicher</h2>
-      </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        <div class="lp-card"><div class="font-heading" style="font-weight:900;font-size:2rem;color:rgba(245,179,1,.85);margin-bottom:.5rem;">01</div><h3 class="font-heading font-bold text-content" style="font-size:1.05rem;margin-bottom:.4rem;">Verbrauch checken</h3><p style="font-size:13.5px;color:#525A64;line-height:1.6;">Wir werten Ihren Strom-Lastgang aus und ermitteln die ideale Speichergröße.</p></div>
-        <div class="lp-card"><div class="font-heading" style="font-weight:900;font-size:2rem;color:rgba(245,179,1,.85);margin-bottom:.5rem;">02</div><h3 class="font-heading font-bold text-content" style="font-size:1.05rem;margin-bottom:.4rem;">Planung & Festpreis</h3><p style="font-size:13.5px;color:#525A64;line-height:1.6;">Festpreisangebot mit Speichergröße, Wechselrichter und Monitoring.</p></div>
-        <div class="lp-card"><div class="font-heading" style="font-weight:900;font-size:2rem;color:rgba(245,179,1,.85);margin-bottom:.5rem;">03</div><h3 class="font-heading font-bold text-content" style="font-size:1.05rem;margin-bottom:.4rem;">Montage in 1 Tag</h3><p style="font-size:13.5px;color:#525A64;line-height:1.6;">Anschluss an PV-Anlage und Hausnetz, Konfiguration, App-Einrichtung.</p></div>
-        <div class="lp-card"><div class="font-heading" style="font-weight:900;font-size:2rem;color:rgba(245,179,1,.85);margin-bottom:.5rem;">04</div><h3 class="font-heading font-bold text-content" style="font-size:1.05rem;margin-bottom:.4rem;">Inbetriebnahme</h3><p style="font-size:13.5px;color:#525A64;line-height:1.6;">Sie sehen Live-Werte in der App, wir optimieren nach, dann zahlen Sie.</p></div>
+      <div class="lp-steps">
+        <div class="lp-steps__head">
+          <span class="lp-steps__eyebrow">So einfach geht's</span>
+          <h2 class="lp-steps__h2">In 4 Schritten zu Ihrem <span class="accent">Speicher</span></h2>
+        </div>
+        <div class="lp-steps__grid">
+          <div class="lp-step">
+            <div class="lp-step__head">
+              <div class="lp-step__num">01</div>
+              <div class="lp-step__ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div>
+            </div>
+            <h3 class="lp-step__h">Verbrauch & Lastprofil</h3>
+            <p class="lp-step__p">Wir schauen uns Verbrauch und Tagesablauf an, kostenlos und unverbindlich.</p>
+          </div>
+          <div class="lp-step">
+            <div class="lp-step__head">
+              <div class="lp-step__num">02</div>
+              <div class="lp-step__ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg></div>
+            </div>
+            <h3 class="lp-step__h">Planung & Festpreis</h3>
+            <p class="lp-step__p">Sie erhalten ein transparentes Festpreisangebot ohne versteckte Kosten.</p>
+          </div>
+          <div class="lp-step">
+            <div class="lp-step__head">
+              <div class="lp-step__num">03</div>
+              <div class="lp-step__ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+            </div>
+            <h3 class="lp-step__h">Montage in wenigen Tagen</h3>
+            <p class="lp-step__p">Terminiert in 2 bis 4 Wochen, die Installation selbst dauert meist wenige Stunden.</p>
+          </div>
+          <div class="lp-step">
+            <div class="lp-step__head">
+              <div class="lp-step__num">04</div>
+              <div class="lp-step__ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg></div>
+            </div>
+            <h3 class="lp-step__h">Inbetriebnahme</h3>
+            <p class="lp-step__p">Wir nehmen den Speicher in Betrieb, optimieren nach, dann zahlen Sie.</p>
+          </div>
+        </div>
       </div>
       <div style="margin-top:2.25rem; display:flex; justify-content:center;">
         <a href="#anfrage" class="btn-primary cta-pulse rounded-full font-heading inline-flex items-center gap-2.5" style="padding:1rem 1.85rem; font-weight:800; font-size:1rem;">
-          Jetzt Stromspeicher anfragen
+          Jetzt Angebot anfragen
           <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="m5 12 7 7 7-7"/></svg>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- LEAD-FORMULAR -->
-  <div data-leadquiz></div>
+  <!-- LEAD-FORMULAR (unter Ablauf) -->
+  <div id="anfrage" data-leadquiz></div>
 
-  <!-- FOOTER -->
+  <!-- FAQ (vorletzte Section) -->
+  <section class="st-faq">
+    <div class="st-faq__glow"></div>
+    <div class="st-faq__wrap">
+      <div>
+        <div class="st-faq__eyebrow">FAQ</div>
+        <h2 class="st-faq__h2">Häufige Fragen zum Stromspeicher</h2>
+        <p class="st-faq__lead">Noch offene Fragen zu Ihrem Speicher? Rufen Sie an, wir beraten Sie gern.</p>
+        <a href="tel:+4915205999900" class="st-faq__phone"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>0152 5999900</a>
+      </div>
+      <div class="st-faq__list">
+        <details class="st-faq__item">
+          <summary><span class="st-faq__q">Wie groß sollte mein Stromspeicher sein?</span><span class="st-faq__ic"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+          <div class="st-faq__a">Als Faustregel 1 kWh Speicher pro 1.000 kWh Jahresverbrauch. Für ein Einfamilienhaus mit 4.500 kWh sind 6 bis 10 kWh meist optimal, mit Wärmepumpe oder E-Auto eher 10 bis 15 kWh.</div>
+        </details>
+        <details class="st-faq__item">
+          <summary><span class="st-faq__q">Kann ich Speicher zur bestehenden PV nachrüsten?</span><span class="st-faq__ic"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+          <div class="st-faq__a">Ja, das geht und lohnt sich oft. Bei älteren Anlagen ergänzen wir den Speicher häufig über einen separaten AC-gekoppelten Speicher, der unabhängig vom alten Wechselrichter arbeitet.</div>
+        </details>
+        <details class="st-faq__item">
+          <summary><span class="st-faq__q">Wie lange hält ein Stromspeicher?</span><span class="st-faq__ic"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+          <div class="st-faq__a">Moderne Lithium-Speicher haben eine Lebensdauer von 15 bis 20 Jahren bei normaler Nutzung. Wir verbauen Speicher mit 10 bis 15 Jahren Herstellergarantie und mindestens 6.000 Vollladezyklen.</div>
+        </details>
+        <details class="st-faq__item">
+          <summary><span class="st-faq__q">Lohnt sich eine Notstrom-Funktion?</span><span class="st-faq__ic"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+          <div class="st-faq__a">In Stadtgebieten eher seltener nötig, auf dem Land oder bei häufigen Netz-Schwankungen aber sehr sinnvoll. Wir bieten die Notstrom-Option auf Wunsch direkt bei der Installation an.</div>
+        </details>
+        <details class="st-faq__item">
+          <summary><span class="st-faq__q">Was kostet ein Stromspeicher schlüsselfertig?</span><span class="st-faq__ic"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+          <div class="st-faq__a">Ein 10-kWh-Speicher inklusive Hybrid-Wechselrichter und Installation liegt typischerweise zwischen 6.000 und 9.000 €, abhängig von Marke und Konfiguration. Bei uns mit deutlich mehr Kapazität zum gleichen Preis.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- RATGEBER CARDS -->
+  <section class="st-ratg">
+    <div class="st-ratg__wrap">
+      <div class="st-ratg__head">
+        <span class="st-eyebrow">Ratgeber</span>
+        <h2 class="st-ratg__h2" style="margin-top:1rem;">Hilfreich vor der Entscheidung</h2>
+      </div>
+      <div class="st-ratg__grid">
+        <a href="ratgeber-stromspeicher-groesse.html" class="st-ratg__c">
+          <div class="st-ratg__c-img"><img src="img/leistung-speicher.jpg" alt="Speichergröße"></div>
+          <div class="st-ratg__c-body">
+            <div class="st-ratg__c-cat">Speicher</div>
+            <h3 class="st-ratg__c-h">Wie groß muss der Speicher sein?</h3>
+            <p class="st-ratg__c-p">Faustregeln und ehrliche Empfehlungen.</p>
+            <span class="st-ratg__c-arrow">Artikel lesen <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+          </div>
+        </a>
+        <a href="ratgeber-eigenverbrauch.html" class="st-ratg__c">
+          <div class="st-ratg__c-img"><img src="img/leistung-monitoring.png" alt="Eigenverbrauch maximieren"></div>
+          <div class="st-ratg__c-body">
+            <div class="st-ratg__c-cat">Eigenverbrauch</div>
+            <h3 class="st-ratg__c-h">Eigenverbrauch maximieren</h3>
+            <p class="st-ratg__c-p">So nutzen Sie mehr Sonnenstrom selbst.</p>
+            <span class="st-ratg__c-arrow">Artikel lesen <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+          </div>
+        </a>
+        <a href="ratgeber-pv-kosten.html" class="st-ratg__c">
+          <div class="st-ratg__c-img"><img src="img/leistung-pv.jpg" alt="PV-Kosten 2026"></div>
+          <div class="st-ratg__c-body">
+            <div class="st-ratg__c-cat">Kosten</div>
+            <h3 class="st-ratg__c-h">Was kostet eine PV-Anlage 2026?</h3>
+            <p class="st-ratg__c-p">Preise, Förderung und wann sich Ihre Anlage rechnet.</p>
+            <span class="st-ratg__c-arrow">Artikel lesen <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="st-finalcta">
+    <div class="st-finalcta__glow"></div>
+    <div class="st-finalcta__wrap">
+      <h2 class="st-finalcta__h2">Bereit für mehr <span class="accent">Eigenstrom</span>?</h2>
+      <p class="st-finalcta__sub">Kostenlose Vor-Ort-Beratung, schriftlicher Festpreis, keine Anzahlung. Sie zahlen erst nach Inbetriebnahme.</p>
+      <div class="st-finalcta__btns">
+        <a href="#anfrage" class="st-finalcta__primary">Termin vereinbaren <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        <a href="tel:+4915205999900" class="st-finalcta__ghost"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>0152 5999900</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER (geteilt aus partials.js) -->
   <div data-kaefer="footer"></div>
 
   <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-  <script src="leadquiz.js?v=1782146000"></script>
-  <script src="partials.js?v=1782146000"></script>
+  <script src="leadquiz.js?v=1782147000"></script>
+  <script src="partials.js?v=1782147000"></script>
 </body>
 </html>
