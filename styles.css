@@ -637,7 +637,7 @@ a.sw-mobilelink.sw-mobile-row:hover::after, a.sw-mobilelink.sw-mobile-row:focus:
   border-radius:1.5rem 1.5rem 0 0;
   background:radial-gradient(120% 95% at 72% 0%, rgba(var(--accent-rgb),.30), transparent 58%), linear-gradient(180deg,#1c2128,#12151a);
 }
-.sw-founder__top img { height:27rem; width:auto; object-fit:contain; position:relative; z-index:2; filter:drop-shadow(0 16px 28px rgba(0,0,0,.55)); }
+.sw-founder__top img { height:27rem; width:auto; object-fit:contain; position:relative; z-index:2; transform:translateY(2.5rem); filter:drop-shadow(0 16px 28px rgba(0,0,0,.55)); }
 .sw-founder__body { padding:1.05rem 1.25rem 1.2rem; text-align:center; }
 .sw-founder__name { font-family:'Archivo',system-ui,sans-serif; font-weight:800; color:#fff; font-size:1.18rem; line-height:1; letter-spacing:-.01em; }
 .sw-founder__role { color:rgba(255,255,255,.55); font-size:12.5px; margin-top:.32rem; font-weight:600; }
@@ -663,6 +663,13 @@ a.sw-mobilelink.sw-mobile-row:hover::after, a.sw-mobilelink.sw-mobile-row:focus:
 .sw-hero__left .sw-card__s { font-size:11px; margin-top:.35rem; }
 .sw-hero__left .sw-card--img { min-width:0; max-width:none; height:6.25rem; }
 .sw-hero__left .sw-card--img img { min-height:0; height:100%; }
+
+/* Mobile: Inhaber-Karte tiefer + Bild kompakter (Kopf ragt sonst in die 4 Cards) */
+@media (max-width:640px){
+  .sw-hero__right { margin-top:8rem !important; }
+  .sw-founder__top { height:13rem; }
+  .sw-founder__top img { height:21rem; }
+}
 
 
 /* ===================== Segments (Privat / Gewerbe) — fresh ===================== */
