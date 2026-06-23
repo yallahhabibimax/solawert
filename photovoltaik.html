@@ -50,6 +50,26 @@
     .lp-stat:hover .lp-stat__em::after { transform:scaleX(1); }
     .lp-stat__l { font-family:'Inter',sans-serif; font-size:10.5px; color:#525A64; margin-top:.5rem; letter-spacing:.18em; text-transform:uppercase; font-weight:700; display:flex; align-items:center; gap:.45rem; }
     .lp-stat__l::before { content:''; width:14px; height:1px; background:#14171C; }
+
+    /* === Ratgeber Cards === */
+    .st-eyebrow { display:inline-flex; align-items:center; gap:.5rem; padding:.42rem 1rem; border-radius:999px; background:rgba(245,179,1,.12); color:#a37700; font-family:'Inter',sans-serif; font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; margin-bottom:1rem; }
+    .st-ratg { padding:5rem 1.25rem; background:#FBF6E9; }
+    @media (min-width:768px){ .st-ratg { padding:6rem 2rem; } }
+    .st-ratg__wrap { max-width:72rem; margin:0 auto; }
+    .st-ratg__head { text-align:center; margin-bottom:2.5rem; }
+    .st-ratg__h2 { font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(1.65rem,2.9vw,2.3rem); line-height:1.15; letter-spacing:-.02em; color:#14171C; margin:0; }
+    .st-ratg__grid { display:grid; grid-template-columns:1fr; gap:1rem; }
+    @media (min-width:768px){ .st-ratg__grid { grid-template-columns:repeat(3,1fr); gap:1.2rem; } }
+    .st-ratg__c { background:#fff; border:1px solid rgba(20,23,28,.06); border-radius:18px; overflow:hidden; display:flex; flex-direction:column; transition:transform .3s ease, box-shadow .3s ease; text-decoration:none; }
+    .st-ratg__c:hover { transform:translateY(-3px); box-shadow:0 18px 40px -22px rgba(20,23,28,.18); }
+    .st-ratg__c-img { aspect-ratio:16/9; overflow:hidden; background:#2A2E36; }
+    .st-ratg__c-img img { width:100%; height:100%; object-fit:cover; transition:transform .5s ease; }
+    .st-ratg__c:hover .st-ratg__c-img img { transform:scale(1.04); }
+    .st-ratg__c-body { padding:1.3rem 1.4rem 1.5rem; display:flex; flex-direction:column; flex:1; }
+    .st-ratg__c-cat { font-family:'Archivo',sans-serif; font-weight:700; font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:#a37700; margin-bottom:.55rem; }
+    .st-ratg__c-h { font-family:'Archivo',sans-serif; font-weight:800; font-size:1.05rem; line-height:1.3; color:#14171C; margin:0 0 .45rem; }
+    .st-ratg__c-p { font-family:'Inter',sans-serif; font-size:13.5px; line-height:1.55; color:#3D444E; margin:0 0 .85rem; flex:1; }
+    .st-ratg__c-arrow { color:#a37700; font-family:'Archivo',sans-serif; font-weight:800; font-size:12.5px; display:inline-flex; align-items:center; gap:.3rem; }
   </style>
 </head>
 <body class="font-body antialiased overflow-x-hidden" style="background:#FFFFFF;color:#14171C">
@@ -119,28 +139,6 @@
     </div>
   </section>
 
-  <!-- LEISTUNGSUMFANG -->
-  <section class="lp-section" style="background:#fff;">
-    <div class="lp-wrap">
-      <div style="max-width:44rem; margin-bottom:2.5rem;">
-        <span class="lp-eyebrow" style="color:#8A5E00; margin-bottom:.7rem;">Alles aus einer Hand</span>
-        <h2 class="lp-h2 text-content" style="margin-top:.5rem;">Das ist alles bei Photovoltaik dabei</h2>
-      </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        <!-- items -->
-        <div class="lp-list-i"><span class="lp-check"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4.5 4.5L19 7"/></svg></span><div><div class="font-heading font-bold text-content" style="font-size:15.5px;">Beratung & Dachcheck</div><div style="font-size:13.5px;color:#525A64;line-height:1.5;">Unverbindlich und kostenlos vor Ort.</div></div></div>
-        <div class="lp-list-i"><span class="lp-check"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4.5 4.5L19 7"/></svg></span><div><div class="font-heading font-bold text-content" style="font-size:15.5px;">Planung & String-Verteilung</div><div style="font-size:13.5px;color:#525A64;line-height:1.5;">Exakt auf Dach und Verbrauch berechnet.</div></div></div>
-        <div class="lp-list-i"><span class="lp-check"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4.5 4.5L19 7"/></svg></span><div><div class="font-heading font-bold text-content" style="font-size:15.5px;">Hochwertige Module</div><div style="font-size:13.5px;color:#525A64;line-height:1.5;">Auf Wunsch vollschwarz und unauffällig.</div></div></div>
-        <div class="lp-list-i"><span class="lp-check"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4.5 4.5L19 7"/></svg></span><div><div class="font-heading font-bold text-content" style="font-size:15.5px;">Wechselrichter mit Reserve</div><div style="font-size:13.5px;color:#525A64;line-height:1.5;">Bewusst größer dimensioniert.</div></div></div>
-        <div class="lp-list-i"><span class="lp-check"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4.5 4.5L19 7"/></svg></span><div><div class="font-heading font-bold text-content" style="font-size:15.5px;">Passender Stromspeicher</div><div style="font-size:13.5px;color:#525A64;line-height:1.5;">Mehr Speicher zum gleichen Preis.</div></div></div>
-        <div class="lp-list-i"><span class="lp-check"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4.5 4.5L19 7"/></svg></span><div><div class="font-heading font-bold text-content" style="font-size:15.5px;">Komplette Montage</div><div style="font-size:13.5px;color:#525A64;line-height:1.5;">In der Regel in nur 1 bis 3 Tagen.</div></div></div>
-        <div class="lp-list-i"><span class="lp-check"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4.5 4.5L19 7"/></svg></span><div><div class="font-heading font-bold text-content" style="font-size:15.5px;">Elektrik & Anmeldung</div><div style="font-size:13.5px;color:#525A64;line-height:1.5;">Netzbetreiber und Marktstammdaten inklusive.</div></div></div>
-        <div class="lp-list-i"><span class="lp-check"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4.5 4.5L19 7"/></svg></span><div><div class="font-heading font-bold text-content" style="font-size:15.5px;">Monitoring & Nachoptimierung</div><div style="font-size:13.5px;color:#525A64;line-height:1.5;">Eine Woche Feintuning nach Inbetriebnahme.</div></div></div>
-        <div class="lp-list-i"><span class="lp-check"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4.5 4.5L19 7"/></svg></span><div><div class="font-heading font-bold text-content" style="font-size:15.5px;">Fester Ansprechpartner</div><div style="font-size:13.5px;color:#525A64;line-height:1.5;">Ein Team, kein Hin und Her.</div></div></div>
-      </div>
-    </div>
-  </section>
-
   <!-- WARUM SOLAWERT (Benefits) -->
   <section class="lp-section" style="background:#181B21; color:#fff;">
     <div class="lp-wrap">
@@ -156,8 +154,8 @@
         </div>
         <div style="border-radius:22px; padding:1.75rem; background:#2A2E36; border:1px solid rgba(245,179,1,.18);">
           <div class="lp-ico" style="background:#F5B301; color:#1A1402; margin-bottom:1.1rem;"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6"/><path d="m20 20-3.2-3.2"/></svg></div>
-          <h3 class="font-heading font-bold" style="font-size:1.18rem; margin-bottom:.5rem;">Optimierte String-Verteilung</h3>
-          <p style="color:rgba(255,255,255,.62); font-size:14.5px; line-height:1.65;">Module sauber verschaltet, damit Verschattung und Ausrichtung nicht den Ertrag drücken.</p>
+          <h3 class="font-heading font-bold" style="font-size:1.18rem; margin-bottom:.5rem;">Optimierte Modul-Verschaltung</h3>
+          <p style="color:rgba(255,255,255,.62); font-size:14.5px; line-height:1.65;">Wir berechnen genau, wie viele Module in einer Reihe zusammenarbeiten. So holt jede Reihe den maximalen Ertrag raus.</p>
         </div>
         <div style="border-radius:22px; padding:1.75rem; background:#2A2E36; border:1px solid rgba(245,179,1,.18);">
           <div class="lp-ico" style="background:#F5B301; color:#1A1402; margin-bottom:1.1rem;"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
@@ -240,6 +238,45 @@
           <summary><span class="st-faq__q">Brauche ich eine Baugenehmigung?</span><span class="st-faq__ic"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
           <div class="st-faq__a">In aller Regel nicht. Für die meisten Anlagen auf bestehenden Häusern genügt die Anmeldung beim Netzbetreiber und im Marktstammdatenregister. Bei Denkmalschutz oder Sonderfällen klären wir das vorher.</div>
         </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- RATGEBER CARDS -->
+  <section class="st-ratg">
+    <div class="st-ratg__wrap">
+      <div class="st-ratg__head">
+        <span class="st-eyebrow">Ratgeber</span>
+        <h2 class="st-ratg__h2" style="margin-top:1rem;">Hilfreich vor der Entscheidung</h2>
+      </div>
+      <div class="st-ratg__grid">
+        <a href="ratgeber-pv-kosten.html" class="st-ratg__c">
+          <div class="st-ratg__c-img"><img src="img/leistung-pv.jpg" alt="PV-Kosten 2026"></div>
+          <div class="st-ratg__c-body">
+            <div class="st-ratg__c-cat">Kosten</div>
+            <h3 class="st-ratg__c-h">Was kostet eine PV-Anlage 2026?</h3>
+            <p class="st-ratg__c-p">Preise, Förderung und wann sich Ihre Anlage rechnet.</p>
+            <span class="st-ratg__c-arrow">Artikel lesen <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+          </div>
+        </a>
+        <a href="ratgeber-pv-waermepumpe.html" class="st-ratg__c">
+          <div class="st-ratg__c-img"><img src="img/leistung-effizienz.jpg" alt="PV + Wärmepumpe"></div>
+          <div class="st-ratg__c-body">
+            <div class="st-ratg__c-cat">Kombi</div>
+            <h3 class="st-ratg__c-h">PV + Wärmepumpe richtig kombinieren</h3>
+            <p class="st-ratg__c-p">Strom und Heizung in einem System gedacht.</p>
+            <span class="st-ratg__c-arrow">Artikel lesen <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+          </div>
+        </a>
+        <a href="ratgeber-stromspeicher-groesse.html" class="st-ratg__c">
+          <div class="st-ratg__c-img"><img src="img/leistung-speicher.jpg" alt="Speichergröße"></div>
+          <div class="st-ratg__c-body">
+            <div class="st-ratg__c-cat">Speicher</div>
+            <h3 class="st-ratg__c-h">Wie groß muss der Speicher sein?</h3>
+            <p class="st-ratg__c-p">Faustregeln und ehrliche Empfehlungen.</p>
+            <span class="st-ratg__c-arrow">Artikel lesen <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+          </div>
+        </a>
       </div>
     </div>
   </section>
