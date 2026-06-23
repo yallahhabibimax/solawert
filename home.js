@@ -810,21 +810,21 @@ const WerWirSind = () => {
 /* ── SonneSlider (dunkle Leistungs-Section, durchblätterbar) ── */
 const SonneSlider = () => {
   const slides = [{
-    img: "img/leistung-pv.jpg?v=1782000016",
+    img: "img/photovoltaik-installation-wuppertal.jpg?v=1782000016",
     name: "Photovoltaik aus einer Hand",
     tag: "Privat & Gewerbe",
     desc: "Komplette PV-Anlage für Ihr Dach, von der Planung über die Montage bis zur Anmeldung. Am Ende nutzen Sie nur noch Ihren eigenen Strom.",
     foot: "Zum Festpreis",
     sub: "Zahlung nach Abnahme"
   }, {
-    img: "img/leistung-waermepumpe.png?v=1782000016",
+    img: "img/waermepumpe-installation-wuppertal.png?v=1782000016",
     name: "Wärmepumpe komplett installiert",
     tag: "Privat & Gewerbe",
     desc: "Moderne Wärmepumpen, komplett geplant und installiert. Heizung und Photovoltaik sinnvoll kombiniert, damit Sie mit eigenem Strom günstig heizen.",
     foot: "Bis 70 %",
     sub: "Förderung möglich"
   }, {
-    img: "img/leistung-speicher2.png?v=1782000018",
+    img: "img/stromspeicher-installation-wuppertal.png?v=1782000018",
     name: "Stromspeicher mit mehr Kapazität",
     tag: "Mehr Speicher",
     desc: "Deutlich mehr Speicher zum gleichen Preis, exakt auf Ihren Verbrauch dimensioniert. So nutzen Sie Ihren Solarstrom auch abends und nachts.",
@@ -991,7 +991,7 @@ const Segments = () => {
     className: "seg-amp"
   }, "&"), " Geschäftskunden")), /*#__PURE__*/React.createElement("div", {
     className: "seg-grid reveal"
-  }, card(ICO.home, "Für Privatkunden", "Machen Sie Ihren eigenen Strom, heizen Sie mit der Wärmepumpe und werden Sie unabhängiger von steigenden Preisen.", ["Eigenheim, Doppelhaus & Neubau", "Photovoltaik, Speicher & Wärmepumpe", "Oft mehr Speicher zum gleichen Preis"], "img/privatkunden.jpg?v=1782170016"), card(ICO.building, "Für Geschäftskunden", "Senken Sie Ihre Energiekosten, nutzen Sie Ihre Dachflächen wirtschaftlich aus und sichern Sie sich gegen steigende Strompreise ab.", ["Gewerbe- & Industriedächer", "Hohe Eigenverbrauchsquote", "Wirtschaftlich durchgerechnet"], "img/firmendach.jpg?v=1782170099"))));
+  }, card(ICO.home, "Für Privatkunden", "Machen Sie Ihren eigenen Strom, heizen Sie mit der Wärmepumpe und werden Sie unabhängiger von steigenden Preisen.", ["Eigenheim, Doppelhaus & Neubau", "Photovoltaik, Speicher & Wärmepumpe", "Oft mehr Speicher zum gleichen Preis"], "img/privatkunden.jpg?v=1782170016"), card(ICO.building, "Für Geschäftskunden", "Senken Sie Ihre Energiekosten, nutzen Sie Ihre Dachflächen wirtschaftlich aus und sichern Sie sich gegen steigende Strompreise ab.", ["Gewerbe- & Industriedächer", "Hohe Eigenverbrauchsquote", "Wirtschaftlich durchgerechnet"], "img/photovoltaik-gewerbedach-wuppertal.jpg?v=1782170099"))));
 };
 
 /* ── Process ── */
@@ -1164,7 +1164,7 @@ const RegionBand = () => {
     className: "relative rounded-[28px] overflow-hidden reveal-scale",
     style: { minHeight: "clamp(380px, 46vh, 500px)", display: "flex", alignItems: "center" }
   }, /*#__PURE__*/React.createElement("img", {
-    src: "img/einsatz-team.jpg?v=1782000017",
+    src: "img/solawert-montageteam-wuppertal.jpg?v=1782000017",
     alt: "SolaWert montiert eine Photovoltaik-Anlage in NRW",
     className: "absolute inset-0 w-full h-full object-cover"
   }), /*#__PURE__*/React.createElement("div", {
@@ -1197,11 +1197,11 @@ const RegionBand = () => {
 /* ── Blog / Ratgeber-Teaser ── */
 const BlogTeaser = () => {
   const posts = [
-    ["Was kostet eine Photovoltaik-Anlage 2026?", "Preise, Förderung und ab wann sich Ihre Anlage rechnet, transparent erklärt.", "Kosten", "img/leistung-pv.jpg", "ratgeber-pv-kosten.html"],
-    ["Photovoltaik und Wärmepumpe kombinieren", "Warum beides zusammen am meisten bringt und wie Sie mit eigenem Strom heizen.", "Wärmepumpe", "img/leistung-waermepumpe.png", "ratgeber-pv-waermepumpe.html"],
-    ["Wie viel Stromspeicher brauche ich wirklich?", "Den Speicher richtig dimensionieren, damit der Sonnenstrom auch abends reicht.", "Speicher", "img/leistung-speicher.jpg", "ratgeber-stromspeicher-groesse.html"],
-    ["Photovoltaik-Förderung 2026: Welche Zuschüsse gibt es?", "KfW, Einspeisevergütung und steuerliche Vorteile, übersichtlich für Eigenheim und Gewerbe.", "Förderung", "img/leistung-effizienz.jpg", "ratgeber-pv-foerderung.html"],
-    ["Wie groß muss meine Photovoltaik-Anlage sein?", "Verbrauch, Dachfläche und kWp richtig zusammenbringen, damit nichts verschenkt wird.", "Planung", "img/leistung-effizienz-haus.jpg", "ratgeber-pv-groesse.html"],
+    ["Was kostet eine Photovoltaik-Anlage 2026?", "Preise, Förderung und ab wann sich Ihre Anlage rechnet, transparent erklärt.", "Kosten", "img/photovoltaik-installation-wuppertal.jpg", "ratgeber-pv-kosten.html"],
+    ["Photovoltaik und Wärmepumpe kombinieren", "Warum beides zusammen am meisten bringt und wie Sie mit eigenem Strom heizen.", "Wärmepumpe", "img/waermepumpe-installation-wuppertal.png", "ratgeber-pv-waermepumpe.html"],
+    ["Wie viel Stromspeicher brauche ich wirklich?", "Den Speicher richtig dimensionieren, damit der Sonnenstrom auch abends reicht.", "Speicher", "img/stromspeicher-wuppertal.jpg", "ratgeber-stromspeicher-groesse.html"],
+    ["Photovoltaik-Förderung 2026: Welche Zuschüsse gibt es?", "KfW, Einspeisevergütung und steuerliche Vorteile, übersichtlich für Eigenheim und Gewerbe.", "Förderung", "img/photovoltaik-effizienz-wuppertal.jpg", "ratgeber-pv-foerderung.html"],
+    ["Wie groß muss meine Photovoltaik-Anlage sein?", "Verbrauch, Dachfläche und kWp richtig zusammenbringen, damit nichts verschenkt wird.", "Planung", "img/photovoltaik-effizienzhaus-wuppertal.jpg", "ratgeber-pv-groesse.html"],
     ["Eigenverbrauch maximieren: Mehr aus Ihrer PV-Anlage", "Wie Sie mit Speicher, Wärmepumpe und Steuerung mehr Sonnenstrom selbst nutzen.", "Wirtschaftlichkeit", "img/leistung-monitoring.png", "ratgeber-eigenverbrauch.html"]
   ];
   return React.createElement("section", {
@@ -1239,7 +1239,7 @@ const About = () => /*#__PURE__*/React.createElement("section", {
 }, /*#__PURE__*/React.createElement("div", {
   className: "rounded-[28px] overflow-hidden shadow-2xl ring-1 ring-black/5 about-media"
 }, /*#__PURE__*/React.createElement("img", {
-  src: "img/einsatz-team.jpg?v=1782000017",
+  src: "img/solawert-montageteam-wuppertal.jpg?v=1782000017",
   alt: "SolaWert im Einsatz in Wuppertal",
   className: "w-full h-[360px] md:h-[480px] object-cover object-[center_20%]"
 })), /*#__PURE__*/React.createElement("div", {
