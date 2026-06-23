@@ -125,7 +125,10 @@ const ICO = {
   })),
   close: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("path", {
     d: "M6 6l12 12M18 6 6 18"
-  }))
+  })),
+  caret: /*#__PURE__*/React.createElement("path", {
+    d: "m6 9 6 6 6-6"
+  })
 };
 const Svg = ({
   children,
@@ -376,6 +379,12 @@ const Navbar = () => {
     });
     return () => window.removeEventListener('scroll', f);
   }, []);
+  useEffect(() => {
+    document.body.style.overflow = open ? 'hidden' : '';
+    const esc = (e) => { if (e.key === 'Escape' && open) setOpen(false); };
+    if (open) document.addEventListener('keydown', esc);
+    return () => { document.body.style.overflow = ''; document.removeEventListener('keydown', esc); };
+  }, [open]);
   const leistSub = [["Photovoltaik", "photovoltaik.html", "sun", "Eigener Strom vom Dach"], ["Wärmepumpe", "waermepumpe.html", "flame", "Effizient heizen mit Strom"], ["Stromspeicher", "stromspeicher.html", "bolt", "Mehr Speicher inklusive"], ["Alle Leistungen", "leistungen.html", "combo", "Überblick aller Leistungen", "all"]];
   const einsatzSub = [["Wuppertal", "wuppertal.html", "home", "Hauptstandort"], ["Solingen", "solingen.html", "pin", "13 km · ca. 15 Min."], ["Remscheid", "remscheid.html", "pin", "16 km · ca. 20 Min."], ["Velbert", "velbert.html", "pin", "18 km · ca. 20 Min."], ["Mettmann", "mettmann.html", "pin", "20 km · ca. 25 Min."], ["Haan", "haan.html", "pin", "12 km · ca. 15 Min."], ["Alle Einsatzgebiete", "einsatzgebiete.html", "combo", "Übersicht aller Städte", "all"]];
   const ratgeberSub = [["PV-Kosten 2026", "ratgeber-pv-kosten.html", "euro", "Preise & wann es sich rechnet"], ["PV + Wärmepumpe", "ratgeber-pv-waermepumpe.html", "flame", "Strom und Heizung kombinieren"], ["Speicher richtig wählen", "ratgeber-stromspeicher-groesse.html", "bolt", "Wie groß muss er sein?"], ["PV-Förderung 2026", "ratgeber-pv-foerderung.html", "shield", "Zuschüsse & KfW-Programme"], ["Anlagengröße planen", "ratgeber-pv-groesse.html", "search", "kWp richtig auswählen"], ["Eigenverbrauch maximieren", "ratgeber-eigenverbrauch.html", "sun", "Mehr Sonne, weniger Netz"], ["Alle Ratgeber", "ratgeber.html", "combo", "Übersicht aller Artikel", "all"]];
@@ -458,32 +467,55 @@ const Navbar = () => {
     sw: 2.4
   }, ICO.arrow))), /*#__PURE__*/React.createElement("button", {
     onClick: () => setOpen(!open),
-    className: "lg:hidden sw-navburger",
-    "aria-label": "Menü"
-  }, /*#__PURE__*/React.createElement(Svg, {
-    size: 24
-  }, open ? ICO.close : ICO.menu))))), /*#__PURE__*/React.createElement("div", {
+    className: "lg:hidden sw-navburger" + (open ? " is-open" : ""),
+    "aria-label": "Menü",
+    "aria-expanded": open ? "true" : "false"
+  }, /*#__PURE__*/React.createElement("span", null), /*#__PURE__*/React.createElement("span", null), /*#__PURE__*/React.createElement("span", null))))), /*#__PURE__*/React.createElement("div", {
     className: "sw-mobilemenu" + (open ? " open" : "")
-  }, links.flatMap(([t, h, sub]) => [/*#__PURE__*/React.createElement("a", {
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "sw-mobile-eyebrow"
+  }, "Navigation"), /*#__PURE__*/React.createElement("div", {
+    className: "sw-mobile-links"
+  }, links.map(([t, h, sub]) => sub ? /*#__PURE__*/React.createElement("details", {
     key: h,
-    href: h,
-    onClick: () => setOpen(false),
-    className: "sw-mobilelink"
-  }, t)].concat(sub ? sub.map(([st, sh]) => /*#__PURE__*/React.createElement("a", {
+    className: "sw-mobile-row sw-mobile-acc"
+  }, /*#__PURE__*/React.createElement("summary", {
+    className: "sw-mobile-acc__sum"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "sw-mobile-acc__lbl"
+  }, t), /*#__PURE__*/React.createElement("span", {
+    className: "sw-mobile-acc__ico",
+    "aria-hidden": "true"
+  }, /*#__PURE__*/React.createElement(Svg, {
+    size: 22,
+    sw: 2.4
+  }, ICO.caret))), /*#__PURE__*/React.createElement("div", {
+    className: "sw-mobile-acc__body"
+  }, sub.map(([st, sh]) => /*#__PURE__*/React.createElement("a", {
     key: sh,
     href: sh,
     onClick: () => setOpen(false),
-    className: "sw-mobilelink sw-mobilelink--sub"
-  }, st)) : [])), /*#__PURE__*/React.createElement("div", {
-    className: "flex gap-3 mt-3"
+    className: "sw-mobilelink--sub"
+  }, st)))) : /*#__PURE__*/React.createElement("a", {
+    key: h,
+    href: h,
+    onClick: () => setOpen(false),
+    className: "sw-mobilelink sw-mobile-row"
+  }, t))), /*#__PURE__*/React.createElement("div", {
+    className: "sw-mobile-foot"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "sw-mobile-btns"
   }, /*#__PURE__*/React.createElement("a", {
     href: "tel:" + PHONE_FEST_TEL,
-    className: "flex-1 btn-dark rounded-full py-3 text-center font-heading font-semibold text-sm"
-  }, "Anrufen"), /*#__PURE__*/React.createElement("a", {
+    onClick: () => setOpen(false),
+    className: "sw-mobile-btn sw-mobile-btn--ghost"
+  }, /*#__PURE__*/React.createElement(Svg, { size: 16, sw: 2 }, ICO.phone), " Anrufen"), /*#__PURE__*/React.createElement("a", {
     href: "#anfrage",
     onClick: () => setOpen(false),
-    className: "flex-1 btn-primary rounded-full py-3 text-center font-heading text-sm"
-  }, "Angebot anfragen"))));
+    className: "sw-mobile-btn sw-mobile-btn--primary"
+  }, "Angebot anfragen ", /*#__PURE__*/React.createElement(Svg, { size: 16, sw: 2.4 }, ICO.arrow))), /*#__PURE__*/React.createElement("div", {
+    className: "sw-mobile-meta"
+  }, /*#__PURE__*/React.createElement("div", { className: "sw-mobile-meta__row" }, /*#__PURE__*/React.createElement(Svg, { size: 13, sw: 2 }, ICO.phone), /*#__PURE__*/React.createElement("span", null, PHONE_FEST)), /*#__PURE__*/React.createElement("div", { className: "sw-mobile-meta__row" }, /*#__PURE__*/React.createElement(Svg, { size: 13, sw: 2 }, ICO.mail), /*#__PURE__*/React.createElement("span", null, EMAIL)), /*#__PURE__*/React.createElement("div", { className: "sw-mobile-meta__row" }, /*#__PURE__*/React.createElement(Svg, { size: 13, sw: 2 }, ICO.pin), /*#__PURE__*/React.createElement("span", null, "Friedrich-Ebert-Str. 55, 42103 Wuppertal"))))));
 };
 const Hero = () => {
   useEffect(() => {
