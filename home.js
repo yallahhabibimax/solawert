@@ -606,7 +606,7 @@ const Hero = () => {
     className: "sw-founder__body"
   }, /*#__PURE__*/React.createElement("div", {
     className: "sw-founder__name"
-  }, "SolaWert"), /*#__PURE__*/React.createElement("div", {
+  }, "SW Photovoltaik"), /*#__PURE__*/React.createElement("div", {
     className: "sw-founder__role"
   }, "Schlüsselfertig aus Wuppertal"), /*#__PURE__*/React.createElement("div", {
     className: "sw-founder__stats"

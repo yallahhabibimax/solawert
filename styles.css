@@ -525,9 +525,9 @@ body.nav-solid .sw-navlogo { height:60px; }
 @media (min-width:1024px){ .sw-navburger { display:none; } }
 
 /* === Full-Screen Mobile Menu — Editorial Premium === */
-.sw-mobilemenu { position:fixed; inset:0; z-index:198; background:linear-gradient(180deg,#14171C 0%,#0E1014 100%); opacity:0; visibility:hidden; transition:opacity .45s cubic-bezier(.16,1,.3,1), visibility 0s linear .45s; display:flex; flex-direction:column; padding:5.5rem 1.5rem 1.8rem; overflow-y:auto; overscroll-behavior:contain; max-width:none; margin:0; border-radius:0; max-height:none; border:0; }
-.sw-mobilemenu::before { content:''; position:absolute; top:-12%; left:50%; transform:translateX(-50%); width:140%; height:80%; background:radial-gradient(ellipse at center top, rgba(245,179,1,.22) 0%, rgba(245,179,1,.06) 35%, transparent 65%); pointer-events:none; z-index:0; }
-.sw-mobilemenu::after { content:''; position:absolute; bottom:-30%; right:-20%; width:80%; height:60%; background:radial-gradient(circle, rgba(245,179,1,.1) 0%, transparent 60%); pointer-events:none; z-index:0; }
+.sw-mobilemenu { position:fixed; inset:0; z-index:198; background:linear-gradient(180deg,#14171C 0%,#0E1014 100%); opacity:0; visibility:hidden; transition:opacity .45s cubic-bezier(.16,1,.3,1), visibility 0s linear .45s; display:flex; flex-direction:column; padding:5.5rem 1.5rem 1.8rem; overflow-y:auto; overflow-x:hidden; overscroll-behavior:contain; max-width:none; margin:0; border-radius:0; max-height:none; border:0; }
+.sw-mobilemenu::before { content:''; position:absolute; top:0; left:0; right:0; height:80%; background:radial-gradient(ellipse 70% 55% at center top, rgba(245,179,1,.26) 0%, rgba(245,179,1,.06) 38%, transparent 68%); pointer-events:none; z-index:0; }
+.sw-mobilemenu::after { content:''; position:absolute; bottom:0; left:0; right:0; height:50%; background:radial-gradient(ellipse 60% 70% at right bottom, rgba(245,179,1,.12) 0%, transparent 60%); pointer-events:none; z-index:0; }
 .sw-mobilemenu.open { opacity:1; visibility:visible; transition:opacity .45s cubic-bezier(.16,1,.3,1), visibility 0s linear 0s; }
 .sw-mobilemenu > * { position:relative; z-index:1; }
 
