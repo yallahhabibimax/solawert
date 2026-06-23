@@ -1122,6 +1122,32 @@ html.page-leaving body { opacity:0; transition: opacity .22s ease; animation: no
   html.page-leaving body { transition: none; opacity:1; }
 }
 
+/* ─── MOBILE PERFORMANCE OVERRIDES ───
+   backdrop-filter ist GPU-killer auf mobile (besonders bei sticky/scroll).
+   Wir ersetzen es durch deckendere hintergruende → kein visueller verlust,
+   massive performance-gewinne. plus reveal-animations entschaerfen (kein blur). */
+@media (max-width:640px){
+  /* Backdrop-blur komplett aus */
+  .sw-navwrap.scrolled .sw-navpill2 { backdrop-filter:none !important; -webkit-backdrop-filter:none !important; background:rgba(20,23,28,.92) !important; }
+  body.nav-solid .sw-navpill2 { backdrop-filter:none !important; -webkit-backdrop-filter:none !important; background:rgba(20,23,28,.94) !important; }
+  .sw-dropdown { backdrop-filter:none !important; -webkit-backdrop-filter:none !important; background:#181B21 !important; }
+  .sw-navlink.active { backdrop-filter:none !important; -webkit-backdrop-filter:none !important; }
+  .sw-pill { backdrop-filter:none !important; -webkit-backdrop-filter:none !important; background:rgba(255,255,255,.18) !important; }
+  .sw-card { backdrop-filter:none !important; -webkit-backdrop-filter:none !important; background:rgba(22,26,31,.92) !important; }
+  .sw-founder { backdrop-filter:none !important; -webkit-backdrop-filter:none !important; background:rgba(22,26,31,.96) !important; }
+  .sw-glass-chip { backdrop-filter:none !important; -webkit-backdrop-filter:none !important; }
+  .hero-srv { backdrop-filter:none !important; -webkit-backdrop-filter:none !important; background:rgba(22,26,31,.88) !important; }
+  .sw-mobilemenu { backdrop-filter:none !important; -webkit-backdrop-filter:none !important; }
+
+  /* Reveal-animations ohne blur (blur in transitions ist sehr teuer auf mobile) */
+  .reveal { filter:none !important; transition:opacity .4s ease, transform .4s cubic-bezier(.16,1,.3,1) !important; }
+  .reveal-left, .reveal-right { filter:none !important; transition:opacity .4s ease, transform .4s cubic-bezier(.16,1,.3,1) !important; }
+  .reveal-scale { filter:none !important; transition:opacity .4s ease, transform .4s cubic-bezier(.16,1,.3,1) !important; }
+
+  /* Will-change reset auf scroll-statische elemente (befreit gpu-layers) */
+  .sw-card, .sw-founder, .hero-srv { will-change:auto !important; }
+}
+
 /* ── Ratgeber-Article 2-Spalten-Layout (linke Sticky-Sidebar) ── */
 .rg-2col { background:#fff; padding:0 1.25rem 4rem; }
 @media (min-width:768px){ .rg-2col { padding:0 2rem 5.5rem; } }
